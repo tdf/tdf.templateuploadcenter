@@ -41,6 +41,15 @@ setup(name='tdf.templateuploadcenter',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'Products.CMFPlone',
+          'plone.app.dexterity [grok, relations]',
+          'plone.app.referenceablebehavior',
+          'plone.app.relationfield',
+          'plone.namedfile [blobs]',
+
+          'plone.app.registry',
+          'collective.dexteritytextindexer',
+          'cioppino.twothumbs',
       ],
       extras_require={'test': ['plone.app.testing[robot]>=4.2.2']},
       entry_points="""
