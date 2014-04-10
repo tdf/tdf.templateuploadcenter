@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: tdf.templateuploadcenter
+Version: 0.1
+Summary: A Plone add-on for the LibreOffice template uploadcenter
+Home-page: http://github.com/tdf/tdf.templateuploadcenter
+Author: Andreas Mantke
+Author-email: maand@gmx.de
+License: gpl
+Description: .. contents::
+        
+        Introduction
+        ============
+        
+        A Plone add-on for the LibreOffice template uploadcenter that will make the publishing of templates for LibreOffice much easier.
+        Contributors
+        ============
+        
+        Andreas Mantke, Author
+        
+        Changelog
+        =========
+        
+        0.1-dev (unreleased)
+        --------------------
+        
+        - Package created using templer
+          [Andreas Mantke]
+        
+Keywords: Plone Add-On LibreOffice template templateuploadcenter
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
