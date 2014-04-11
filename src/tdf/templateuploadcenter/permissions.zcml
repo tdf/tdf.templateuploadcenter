@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="tdf.templateuploadcenter">
+
+    <permission
+        id="tdf.templateuploadcenter.AddTemplateCenter"
+        title="tdf.templateuploadcenter: Add TemplateCenter"
+        />
+
+    <permission
+        id="tdf.templateuploadcenter.AddTemplateProject"
+        title="tdf.templateuploadcenter: Add TemplateProject"
+        />
+
+
+
+</configure>
