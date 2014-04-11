@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rolemap>
+    <roles>
+        <role name="TemplateProjectReviewer" />
+    </roles>
+    <permissions>
+        <permission name="View" acquire="True">
+            <role name="Owner" />
+            <role name="Manager" />
+            <role name="Site Administrator" />
+            <role name="Contributor" />
+            <role name="Reader" />
+            <role name="Editor" />
+            <role name="TemplateProjectReviewer" />
+        </permission>
+        <permission name="tdf.extensionsuploadcenter: Add TemplateCenter" acquire="True">
+            <role name="Owner" />
+            <role name="Manager" />
+        </permission>
+        <permission name="tdf.extensionsuploadcenter: Add TemplateProject" acquire="True">
+            <role name="Owner" />
+            <role name="Manager" />
+            <role name="Site Administrator" />
+            <role name="Contributor" />
+            <role name="Reader" />
+            <role name="Editor" />
+            <role name="TemplateProjectReviewer" />
+            <role name="Member" />
+        </permission>
+    </permissions>
+
+
+</rolemap>
