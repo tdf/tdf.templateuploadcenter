@@ -13,11 +13,11 @@
             <role name="Editor" />
             <role name="TemplateProjectReviewer" />
         </permission>
-        <permission name="tdf.extensionsuploadcenter: Add TemplateCenter" acquire="True">
+        <permission name="tdf.templateuploadcenter: Add TemplateCenter" acquire="True">
             <role name="Owner" />
             <role name="Manager" />
         </permission>
-        <permission name="tdf.extensionsuploadcenter: Add TemplateProject" acquire="True">
+        <permission name="tdf.templateuploadcenter: Add TemplateProject" acquire="True">
             <role name="Owner" />
             <role name="Manager" />
             <role name="Site Administrator" />

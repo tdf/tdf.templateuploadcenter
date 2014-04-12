@@ -1,4 +1,4 @@
-README
+README.txt
 setup.cfg
 setup.py
 src/tdf/__init__.py
@@ -13,6 +13,9 @@ src/tdf.templateuploadcenter.egg-info/requires.txt
 src/tdf.templateuploadcenter.egg-info/top_level.txt
 src/tdf/templateuploadcenter/__init__.py
 src/tdf/templateuploadcenter/testing.py
+src/tdf/templateuploadcenter/tupcenter.py
+src/tdf/templateuploadcenter/tupproject.py
+src/tdf/templateuploadcenter/tuprelease.py
 src/tdf/templateuploadcenter/tests/__init__.py
 src/tdf/templateuploadcenter/tests/test_example.py
 src/tdf/templateuploadcenter/tests/test_robot.py
