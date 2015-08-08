@@ -20,7 +20,11 @@ from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 
 from Acquisition import aq_inner
+from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent
+from tdf.templateuploadcenter.tupproject import ITUpProject
 
+from plone.app.layout.viewlets.interfaces import IAboveContentTitle
+from zope.lifecycleevent import modified
 
 
 
@@ -61,17 +65,53 @@ class ITUpCenter(form.Schema):
     )
 
     available_category = schema.List(title=_(u"Available Categories"),
-        default=['All modules',
-                 'Gallery Contents',
-                 'Language Tools',
-                 'Dictionary',
-                 'Writer_Extension',
-                 'Calc_Extension',
-                 'Impress_Extension',
-                 'Draw_Extension',
-                 'Base_Extension',
-                 'Math_Extension',
-                 'Extension_Building',
+        default=['Accounting',
+                 'Agenda',
+                 'Arts',
+                 'Book',
+                 'Brochure / Pamphlet',
+                 'Budget',
+                 'Business',
+                 'Business POS'
+                 'Business Shipping',
+                 'Calendar',
+                 'Cards',
+                 'Curriculum Vitae',
+                 'CD / DVD|CD',
+                 'Certificate',
+                 'Checkbook',
+                 'Christmas',
+                 'Computer',
+                 'Conference',
+                 'E-book',
+                 'Education',
+                 'Academia',
+                 'Elementary/Secondary school panels',
+                 'Envelope'
+                 'Fax',
+                 'Genealogy',
+                 'Grocery',
+                 'Invoice',
+                 'Labels',
+                 'LibreLogo',
+                 'Letter',
+                 'Magazine',
+                 'Media',
+                 'Medical',
+                 'Memo',
+                 'Music',
+                 'Newsletter',
+                 'Notes',
+                 'Paper',
+                 'Presentation',
+                 'Recipe',
+                 'Science',
+                 'Sports',
+                 'Timeline',
+                 'Timesheet',
+                 'Trades',
+                 'To Do List',
+                 'Writer',
                  ],
         value_type=schema.TextLine())
 
@@ -90,14 +130,16 @@ class ITUpCenter(form.Schema):
         value_type=schema.TextLine())
 
     available_versions = schema.List(title=_(u"Available Versions"),
-        default=['All Versions',
-                 'LibreOffice 4.2',
-                 'LibreOffice 4.1',
-                 'LibreOffice 4.0',
-                 'LibreOffice 3.6',
-                 'LibreOffice 3.5',
+        default=['LibreOffice 3.3',
                  'LibreOffice 3.4',
-                 'LibreOffice 3.3'],
+                 'LibreOffice 3.5',
+                 'LibreOffice 3.6',
+                 'LibreOffice 4.0',
+                 'LibreOffice 4.1',
+                 'LibreOffice 4.2',
+                 'LibreOffice 4.3',
+                 'LibreOffice 4.4',
+                 'LibreOffice 5.0'],
         value_type=schema.TextLine())
 
     available_platforms = schema.List(title=_(u"Available Platforms"),
@@ -152,6 +194,16 @@ class ITUpCenter(form.Schema):
         required=False
     )
 
+@grok.subscribe(ITUpProject,IObjectAddedEvent)
+def notifyAboutNewProject(tupproject, event):
+    mailhost = getToolByName(tupproject, 'MailHost')
+    urltool = getToolByName(tupproject,t'portal_url')
+    portal = urltool.getPortalObject()
+    toAddress = portal.getProperty('email_from_address')
+    message = "A member added a new project"
+    subject = "A Project with the title %s was added" % (tupproject.title)
+    source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
+    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
 
 
 
@@ -202,23 +254,19 @@ class View(dexterity.DisplayForm):
 
     def get_products(self, category, version, sort_on, SearchableText=None):
         self.catalog = getToolByName(self.context, 'portal_catalog')
-        featured = False
-        # featured content should be filtered by state and then
-        # sorted by average rating
-        if sort_on == 'featured':
-            featured = True
-            sort_on = 'positive_ratings'
+
+        sort_on = 'positive_ratings'
 
         contentFilter = {
-	                     'SearchableText': SearchableText,
-	                     'getCompatibility' : version,
-                         'sort_order': 'reverse'}
+	                     'sort_on' : sort_on,
 
+                         'SearchableText': SearchableText,
+	                     'sort_order': 'reverse',
+                         'portal_type': 'tdf.templateuploadcenter.tupproject'}
 
         if version != 'any':
             contentFilter['getCompatibility'] = version
-        if featured:
-            contentFilter['review_state'] = 'featured'
+        
         if category:
             contentFilter['getCategories'] = category
 
@@ -229,18 +277,19 @@ class View(dexterity.DisplayForm):
         self.catalog = getToolByName(self.context, 'portal_catalog')
         sort_on = 'positive_ratings'
         contentFilter = {
+                         'sort_on' : sort_on,
                          'sort_order': 'reverse',
                          'review_state': 'published',
                          'portal_type' : 'tdf.templateuploadcenter.tupproject'}
-        results = self.catalog(**contentFilter)
+        return self.catalog(**contentFilter)
 
-        return results[:5]
 
 
     def get_newest_products(self):
         self.catalog = getToolByName(self.context, 'portal_catalog')
         sort_on = 'created'
         contentFilter = {
+                          'sort_on' : sort_on,
                           'sort_order' : 'reverse',
                           'review_state': 'published',
                           'portal_type':'tdf.templateuploadcenter.tupproject'}
