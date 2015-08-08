@@ -197,7 +197,7 @@ class ITUpCenter(form.Schema):
 @grok.subscribe(ITUpProject,IObjectAddedEvent)
 def notifyAboutNewProject(tupproject, event):
     mailhost = getToolByName(tupproject, 'MailHost')
-    urltool = getToolByName(tupproject,t'portal_url')
+    urltool = getToolByName(tupproject,'portal_url')
     portal = urltool.getPortalObject()
     toAddress = portal.getProperty('email_from_address')
     message = "A member added a new project"
