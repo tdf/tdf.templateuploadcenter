@@ -303,3 +303,14 @@ class View(dexterity.DisplayForm):
         category = list(self.context.available_category)
         return category
 
+
+
+class tupownprojects(grok.Viewlet):
+    grok.context(ITUpCenter)
+    grok.viewletmanager(IAboveContentTitle)
+    grok.template('own_projects')
+    grok.order(1)
+    grok.require('zope2.View')
+
+
+
