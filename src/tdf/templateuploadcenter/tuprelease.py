@@ -8,6 +8,7 @@ from zope.security import checkPermission
 from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 
 
@@ -55,6 +56,13 @@ def vocabAvailPlatforms(context):
 
 
 
+
+yesnochoice = SimpleVocabulary(
+    [SimpleTerm(value=0, title=_(u'No')),
+     SimpleTerm(value=1, title=_(u'Yes')),]
+    )
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -69,10 +77,10 @@ class ITUpRelease(form.Schema):
         min_length=5
     )
 
-    releasenumber=schema.Int(
+    releasenumber=schema.Float(
         title=_(u"Release Number"),
         description=_(u"Release Number"),
-        default=1,
+        default=1.0,
     )
 
 
@@ -104,14 +112,18 @@ class ITUpRelease(form.Schema):
         required=True
     )
 
+    form.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice= schema.List(
         title=_(u'License of the uploaded file'),
+        description=_(u"Please mark one or more licenses you publish your release."),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
 
+    form.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice= schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
+        description=_(u"Please mark one or more program versions with which this release is compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
     )
@@ -143,89 +155,88 @@ class ITUpRelease(form.Schema):
         required=False
     )
 
+    source_code_inside = schema.Choice(
+        title=_(u"Is the source code inside the extension?"),
+        vocabulary=yesnochoice,
+        required=True
+    )
+
+    link_to_source = schema.URI(
+        title=_(u"Please fill in the Link (URL) to the Source Code"),
+        required=False
+    )
+
 
     file = NamedBlobFile(
         title=_(u"The File you want to upload"),
         description=_(u"Please upload your file."),
-        required=False,
+        required=True,
     )
 
 
-
+    form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice= schema.List(
-        title=_(u"Compatible with Platform(s)"),
+        title=_(u" First uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
 
+    form.mode(information_further_file_uploads='display')
+    form.primary('information_further_file_uploads')
+    information_further_file_uploads = RichText(
+        title = _(u"Further File Uploads for this Release"),
+        description = _(u"If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."),
+        required = False
+     )
+
+    form.fieldset('fileset1',
+        label=u"File Upload 1",
+        fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
+    )
+
     file1 = NamedBlobFile(
-        title=_(u"The File you want to upload"),
+        title=_(u"The second file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
     )
 
 
-
+    form.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1= schema.List(
-        title=_(u"Compatible with Platform(s)"),
+        title=_(u"Second uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
 
     file2 = NamedBlobFile(
-        title=_(u"The File you want to upload"),
+        title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
     )
 
 
-
+    form.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2= schema.List(
-        title=_(u"Compatible with Platform(s)"),
+        title=_(u"Third uploaded file is compatible with the Platform(s))"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
     file3 = NamedBlobFile(
-        title=_(u"The File you want to upload"),
+        title=_(u"The fourth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
     )
 
-
-
+    form.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3= schema.List(
-        title=_(u"Compatible with Platform(s)"),
-        value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
-    )
-
-    file4 = NamedBlobFile(
-        title=_(u"The File you want to upload"),
-        description=_(u"Please upload your file."),
-        required=False,
-    )
-
-
-
-    platform_choice4= schema.List(
-        title=_(u"Compatible with Platform(s)"),
-        value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
-    )
-
-    file5 = NamedBlobFile(
-        title=_(u"The File you want to upload"),
-        description=_(u"Please upload your file."),
-        required=False,
-    )
-
-
-
-    platform_choice5= schema.List(
-        title=_(u"Compatible with Platform(s)"),
+        title=_(u"Fourth uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
@@ -233,9 +244,30 @@ class ITUpRelease(form.Schema):
 
 
     @invariant
+    def licensenotchoosen(value):
+        if value.licenses_choice == []:
+            raise Invalid(_(u"Please choose a license for your release."))
+
+    @invariant
+    def compatibilitynotchoosen(data):
+        if data.compatibility_choice == []:
+            raise Invalid(_(u"Please choose one or more compatible product versions for your release"))
+
+    @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
            raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
+
+    @invariant
+    def testingvalue(data):
+        if data.source_code_inside is not 1 and data.link_to_source is None:
+            raise Invalid(_(u"Please fill in the Link (URL) to the Source Code."))
+
+    @invariant
+    def noOSChosen(data):
+        if data.file is not None and data.platform_choice ==[]:
+            raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
+
 
 
 @form.default_value(field=ITUpRelease['declaration_legal'])
@@ -251,6 +283,30 @@ def legal_declaration_title_default(data):
 @form.default_value(field=ITUpRelease['contact_address2'])
 def contactinfoDefaultValue(data):
     return data.context.contactAddress
+
+
+@form.default_value(field=ITUpRelease['title'])
+def releaseDefaultTitleValue(self):
+    title= self.context.title
+    return (title)
+
+@form.default_value(field=ITUpRelease['licenses_choice'])
+def defaultLicense(self):
+    licenses = list( self.context.available_licenses)
+    defaultlicenses = licenses[0]
+    return [defaultlicenses]
+
+@form.default_value(field=ITUpRelease['compatibility_choice'])
+def defaultcompatibility(self):
+    compatibility = list( self.context.available_versions)
+    defaultcompatibility = compatibility[0]
+    return [defaultcompatibility]
+
+@form.default_value(field=ITUpRelease['platform_choice'])
+def defaultplatform(self):
+    platform = list( self.context.available_platforms)
+    defaultplatform = platform[0]
+    return [defaultplatform]
 
 
 
