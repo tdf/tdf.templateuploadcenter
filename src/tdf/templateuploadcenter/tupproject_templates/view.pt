@@ -4,12 +4,48 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="tdf.templateuploadcenter">
+      i18n:domain="tdf.extensionsuploadcenter">
+
+
+<head>
+    <metal:block fill-slot="top_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++tdf.templateuploadcenter/templateuploadcenter.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
+
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
+    <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                                          is_editable context/@@plone_context_state/is_editable;
+                                                          wf_tool here/portal_workflow;
+                                                          review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
+<div class="grid-row">
+    <div class="grid-cell position-leftmost width-two-thirds">
+                  <p class="portalinfomessage"
+           tal:condition="python: is_editable and not review_state == 'published' "
+           i18n:domain="plone" i18n:translate="description_cannot_add_before_approved">
+           Please make sure the relevant project information has been entered and a release has been added to your project.
+           Once you have finished that you could submit your project for approval (publication).
+        </p>
+        <p tal:condition="python: is_editable and len(context.getFolderContents()) is 0">Your next step: add a first release to your project please.</p>
+
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tuprelease" i18n:translate="">
+                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> Submit a Release to your
+                            <span tal:content="context/product_title | string:template_project" i18n:name="product_title_tupproject" /> Project
+
+                        </a>
+
+
+
+         <div class="paneeucproject">
+
 
          <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
         <div tal:content="structure context/@@rate-if-you-dare"/>
@@ -23,21 +59,11 @@
 
 <h4>Logo</h4>
 
-      <div class="tupcenterprojectlogo" width="70px" tal:define="projectlogo nocall:context/project_logo"
-                   tal:condition="nocall:projectlogo"
-                   class="tdftupcenter-projectlogo">
-                   <img tal:define="scale context/@@images"
-                        tal:replace="structure python: scale.scale('project_logo',
-                        width=90, direction='down').tag()" />
-      </div>
-        <h4>Screenshot</h4>
-
-              <div class="tupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
-                   tal:condition="nocall:screenshot">
-              <img tal:define="scales context/@@images"
-                   tal:replace="structure python: scales.tag('screenshot',
-                        width=250, height=200, direction='down')" />
-      </div>
+<img src="" alt=""
+     tal:condition="context/project_logo|nothing"
+          tal:define="scales context/@@images;
+          scale python:scales.scale('project_logo', 'mini')"
+           tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
 
         <table class="tupcenterprojecttable" border="1" width="100%">
             <thead>
@@ -120,7 +146,46 @@
 
       <h4 class="tupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
       <div class="tupcenterlegaldownload" tal:content="structure context/legal_downloaddisclaimer/output" />
+             </div>
+        </div>
 
+	<div class="grid-cell position-two-thirds width-third">
+		<div class="sidebar">
+            <div id="projectresources">
+            <h2 i18n:translate="title_project_resources">Project Resources</h2>
+            <ul>
+            <li tal:condition="context/documentation_link">
+                <a href="" tal:attributes="href context/documentation_link">External Documentation</a>
+            </li>
+                <li tal:condition="context/homepage">
+                    <a href="" tal:attributes="href context/homepage">External Project Page</a>
+                </li>
+            </ul>
+
+        <div tal:condition="context/screenshot">
+            <h4 i18n:translate="title_screenshot">Screenshot</h4>
+
+              <div class="tupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
+                   tal:condition="nocall:screenshot">
+              <img tal:define="scales context/@@images"
+                   tal:replace="structure python: scales.tag('screenshot',
+                        width=250, height=200, direction='down')" />
+
+        </div>
+            </div>
+        </div>
+        <div class="eupcenterprojectinstallinstructions" tal:condition="context/install_instructions">
+            <h3>Install Instructions</h3>
+            <span tal:content="structure context/install_instructions/output" />
+        </div>
+            <div class="eupcenterprojectreportingbugs" tal:condition="context/reporting_bugs">
+                <h3>Reporting Template-Bugs</h3>
+                <span tal:content="structure context/reporting_bugs/output" />
+            </div>
+            </div>
+        </div>
+
+</div>
 
 </tal:main-macro>
 </metal:main>
