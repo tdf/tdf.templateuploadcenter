@@ -1,3 +1,5 @@
+from zope.interface import Invalid, invariant
+
 from five import grok
 from zope import schema
 from tdf.templateuploadcenter import _
@@ -11,8 +13,12 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from Products.CMFCore.utils import getToolByName
-
-
+from Products.validation import V_REQUIRED
+from Products.CMFCore.interfaces import IActionSucceededEvent
+from zope.lifecycleevent.interfaces import IObjectAddedEvent
+from tdf.templateuploadcenter.tuprelease import ITUpRelease
+from plone.indexer import indexer
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 
 checkEmail = re.compile(
@@ -45,22 +51,34 @@ def vocabCategories(context):
     return SimpleVocabulary(terms)
 
 
+def isNotEmptyCategory(value):
+    if not value:
+        raise Invalid(u'You must choose at least one category for your project.')
+    return True
+
+class ProvideScreenshotLogo(Invalid):
+    __doc__ =  _(u"Please add a Screenshot or a Logo to your project")
+
+
+class MissingCategory(Invalid):
+    __doc__ = _(u"You have not chosen a category for the project")
 
 
 class ITUpProject(form.Schema):
 
-
+    dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Title"),
         description=_(u"Project Title"),
-        min_length=5
+        min_length=5,
+        max_length=50
     )
-
+    dexteritytextindexer.searchable('description')
     description = schema.Text(
         title=_(u"Project Summary"),
     )
 
-
+    dexteritytextindexer.searchable('details')
     form.primary('details')
     details = RichText(
         title=_(u"Full Project Description"),
@@ -68,9 +86,12 @@ class ITUpProject(form.Schema):
     )
 
     dexteritytextindexer.searchable('category_choice')
+    form.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
+        description=_(u"Please mark one or more categories your project and product belongs to."),
         value_type=schema.Choice(source=vocabCategories),
+        constraint = isNotEmptyCategory,
         required=True,
     )
 
@@ -83,13 +104,13 @@ class ITUpProject(form.Schema):
 
     homepage=schema.URI(
         title=_(u"Homepage"),
-        description=_(u"If the project has an external home page, enter its URL."),
+        description=_(u"If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."),
         required=False
     )
 
     documentation_link=schema.URI(
         title=_(u"URL of documentation repository "),
-        description=_(u"If the project has externally hosted documentation, enter its URL."),
+        description=_(u"If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."),
         required=False
     )
 
@@ -106,6 +127,56 @@ class ITUpProject(form.Schema):
     )
 
 
+    @invariant
+    def missingScreenshotOrLogo(data):
+        if not data.screenshot and not data.project_logo:
+            raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
+
+@form.default_value(field=ITUpProject['category_choice'])
+def defaultCategory(self):
+    categories = list( self.context.available_category)
+    defaultcategory = categories[0]
+    return [defaultcategory]
+
+@grok.subscribe(ITUpRelease,IObjectAddedEvent)
+def notifyProjectManagerReleaseAdd (tupproject, event):
+    mailhost = getToolByName(tupproject, 'MailHost')
+    toAddress = "%s" % (tupproject.contactAddress)
+    message = "The new release %s was added to your LibreOffice templates project" % (tupproject.title)
+    subject = "A new release was added to your LibreOffice templates project"
+    source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
+    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
+
+
+def getLatestRelease(self):
+
+    res = None
+    catalog = getToolByName(self, 'portal_catalog')
+    res = catalog.searchResults(
+        folderpath = '/'.join(context.getPhysicalPath()),
+        review_state = 'published',
+        sort_on = 'Date',
+        sort_order = 'reverse',
+        portal_type = 'tdf.templateuploadcenter.tuprelease')
+
+    if not res:
+        return None
+    else:
+        return res[0]
+
+@grok.adapter(ITUpProject, name='getCompatibility')
+@indexer(ITUpProject)
+def getCompatibilityIndexer(obj):
+    """Get the compatibility of the product by getting the compatibilities of the latest published release.
+    This is been used for the index"""
+
+    compatabilities = []
+    release = obj.getLatestRelease()
+    if release:
+        for release_compatability in release.getCompatibility:
+            compatabilities.append(release_compatability)
+    compatabilities.sort(reverse=True)
+    return set(compatabilities)
 
 class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
     """Validate site-wide uniquneess of project titles.
