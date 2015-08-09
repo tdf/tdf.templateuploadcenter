@@ -69,7 +69,7 @@ class ITUpProject(form.Schema):
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Title"),
-        description=_(u"Project Title"),
+        description=_(u"Project Title - minimum 5 and maximum 50 characters"),
         min_length=5,
         max_length=50
     )
@@ -188,7 +188,7 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
 
         if value is not None:
             catalog = getToolByName(self.context, 'portal_catalog')
-            results = catalog({'title': value,
+            results = catalog({'Title': value,
                                'object_provides': ITUpProject.__identifier__})
 
             contextUUID = IUUID(self.context, None)
