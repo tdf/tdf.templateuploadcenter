@@ -24,7 +24,6 @@ from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEve
 from tdf.templateuploadcenter.tupproject import ITUpProject
 
 from plone.app.layout.viewlets.interfaces import IAboveContentTitle
-from zope.lifecycleevent import modified
 
 
 
