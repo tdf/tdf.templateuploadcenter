@@ -78,15 +78,25 @@
             </tr>
             </thead>
             <tbody tal:repeat="item container/values">
-            <tr bgcolor="#EEEEEE" tal:condition="repeat/item/even">
-                <td> <h4><a tal:attributes="href item/getId">
-           <span tal:content="item/Title" /> - <span tal:content="item/releasenumber" /></a></h4>
-                </td>
-                <td><span tal:condition="item/file">
+             <tr bgcolor="#EEEEEE" tal:condition="repeat/item/even">
+                 <td> <h4><a tal:attributes="href item/getId">
+                     <span tal:content="item/Title" /> - <span tal:content="item/releasenumber" /></a></h4>
+                 </td>
+                 <td><span tal:condition="not:python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                     <span tal:condition="item/file">
                     <a i18n:translate="label_template_file" tal:attributes="href string:${item/absolute_url}/@@download/file/${item/file/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
                     </span>
-                </td>
+                 </span>
+<span tal:condition="python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                     <span tal:condition="item/link_to_file">
+                    <a i18n:translate="label_template_file" tal:attributes=" href item/link_to_file">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                    </span>
+                 </span>
+
+                 </td>
+
                 <td tal:content="item/Description">Description</td>
 
                 <td>
@@ -107,17 +117,25 @@
 </td>
 <td tal:content="item/developmentstatus_choice">Development Status</td>
             </tr>
-
-            <tr bgcolor="#F1FB9B" tal:condition="repeat/item/odd">
+             <tr bgcolor="#F1FB9B" tal:condition="repeat/item/odd">
                 <td> <h4><a tal:attributes="href item/getId">
                 <span tal:content="item/Title" /> - <span tal:content="item/releasenumber" /></a></h4>
                 </td>
-                <td><span tal:condition="item/file">
+                 <td><span tal:condition="not:python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                     <span tal:condition="item/file">
                     <a i18n:translate="label_template_file" tal:attributes="href string:${item/absolute_url}/@@download/file/${item/file/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
                     </span>
-</td>
-                <td tal:content="item/Description">Description</td>
+                 </span>
+<span tal:condition="python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                     <span tal:condition="item/link_to_file">
+                    <a i18n:translate="label_template_file" tal:attributes=" href item/link_to_file">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                    </span>
+                 </span>
+
+                 </td>
+                  <td tal:content="item/Description">Description</td>
 
                 <td>
 <ul><tal:loop repeat="compatibility_choice item/compatibility_choice">
@@ -135,10 +153,10 @@
     </tal:loop></ul>
 </td>
 <td tal:content="item/developmentstatus_choice">Development Status</td>
+
             </tr>
 
             </tbody>
-
 
 
         </table>
