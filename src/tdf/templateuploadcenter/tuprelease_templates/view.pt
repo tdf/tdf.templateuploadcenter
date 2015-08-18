@@ -80,8 +80,6 @@
       <h4 class="tupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
       <div class="tupcenterlegaldownload" tal:content="structure context/legal_downloaddisclaimer/output" />
 
-      <h4 class="eupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
-      <div class="eupcenterlegaldownload" tal:content="structure context/legal_downloaddisclaimer/output" />
 
 </div>
 </div>
