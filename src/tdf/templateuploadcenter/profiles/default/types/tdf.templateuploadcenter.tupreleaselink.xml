@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="tdf.templateuploadcenterlink.tuprelease" meta_type="Dexterity FTI"
+<object name="tdf.templateuploadcenter.tupreleaselink" meta_type="Dexterity FTI"
         i18n:domain="tdf.templateuploadcenter" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <!-- Basic metadata -->
@@ -23,7 +23,6 @@
 
     <!-- enabled behaviors -->
     <property name="behaviors">
-        <element value="tdf.templateuploadcenter.interfaces.INameForRelease" />
         <!-- IReferenceable might not be available, but it will not break. -->
         <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
         <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
