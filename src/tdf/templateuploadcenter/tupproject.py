@@ -17,6 +17,7 @@ from Products.validation import V_REQUIRED
 from Products.CMFCore.interfaces import IActionSucceededEvent
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from tdf.templateuploadcenter.tuprelease import ITUpRelease
+from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
 from plone.indexer import indexer
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
@@ -147,6 +148,14 @@ def notifyProjectManagerReleaseAdd (tupproject, event):
     source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
     return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
 
+@grok.subscribe(ITUpReleaseLink,IObjectAddedEvent)
+def notifyProjectManagerReleaseLinkedAdd (tupproject, event):
+    mailhost = getToolByName(tupproject, 'MailHost')
+    toAddress = "%s" % (tupproject.contactAddress)
+    message = "The new release %s was added to your LibreOffice templates project" % (tupproject.title)
+    subject = "A new release was added to your LibreOffice templates project"
+    source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
+    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
 
 def getLatestRelease(self):
 
@@ -157,7 +166,7 @@ def getLatestRelease(self):
         review_state = 'published',
         sort_on = 'Date',
         sort_order = 'reverse',
-        portal_type = 'tdf.templateuploadcenter.tuprelease')
+        portal_type = 'tdf.templateuploadcenter.tuprelease, tdf.templateuploadcenter.tupreleaselink')
 
     if not res:
         return None
