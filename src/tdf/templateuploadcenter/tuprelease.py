@@ -9,7 +9,7 @@ from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
-
+from plone.app.content.interfaces import INameFromTitle
 
 
 
@@ -321,3 +321,14 @@ class View(dexterity.DisplayForm):
 
 
 
+class NameForRelease(grok.Adapter):
+    grok.context(ITUpRelease)
+    grok.provides(INameFromTitle)
+
+    @property
+    def title(self):
+        context = self.context
+        title = context.title
+        releasenumber = context.releasenumber
+        title = u'%s %s' % (title,releasenumber)
+        return u'Custom Title %s' % title
