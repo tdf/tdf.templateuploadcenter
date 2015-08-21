@@ -4,7 +4,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      i18n:domain="tdf.templatesploadcenter">
+      i18n:domain="tdf.templateuploadcenter">
 
 
 
