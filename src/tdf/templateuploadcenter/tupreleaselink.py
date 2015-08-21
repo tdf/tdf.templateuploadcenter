@@ -193,6 +193,64 @@ class ITUpReleaseLink(form.Schema):
      )
 
 
+
+    form.fieldset('fileset1',
+        label=u"Further linked releases",
+        fields=['link_to_file1', 'platform_choice1', 'link_to_file2', 'platform_choice2', 'link_to_file3', 'platform_choice3']
+    )
+
+
+    link_to_file1 = schema.URI(
+        title=_(u"The Link to the file of the release"),
+        description=_(u"Please insert a link to your template file."),
+        required=False
+    )
+
+
+    form.widget(platform_choice=CheckBoxFieldWidget)
+    platform_choice1= schema.List(
+        title=_(u" Second linked file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the linked file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
+    )
+
+
+
+    link_to_file2 = schema.URI(
+        title=_(u"The Link to the file of the release"),
+        description=_(u"Please insert a link to your template file."),
+        required=False
+    )
+
+
+    form.widget(platform_choice=CheckBoxFieldWidget)
+    platform_choice2= schema.List(
+        title=_(u" Third linked file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the linked file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True
+    )
+
+
+
+    link_to_file3 = schema.URI(
+        title=_(u"The Link to the file of the release"),
+        description=_(u"Please insert a link to your template file."),
+        required=False
+    )
+
+
+    form.widget(platform_choice=CheckBoxFieldWidget)
+    platform_choice3= schema.List(
+        title=_(u" Fourth linked file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the linked file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
+    )
+
+
+
     @invariant
     def licensenotchoosen(value):
         if value.licenses_choice == []:
