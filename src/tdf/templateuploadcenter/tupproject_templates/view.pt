@@ -25,6 +25,7 @@
     <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                                                           is_editable context/@@plone_context_state/is_editable;
                                                           wf_tool here/portal_workflow;
+                                                          all_releases view/all_releases;
                                                           review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
 <div class="grid-row">
     <div class="grid-cell position-leftmost width-two-thirds">
@@ -65,101 +66,65 @@
           scale python:scales.scale('project_logo', 'mini')"
            tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
 
-        <table class="tupcenterprojecttable" border="1" width="100%">
+<table class="tupcenterprojecttable" border="1" width="100%">
             <thead>
             <tr bgcolor="#40FB27">
                 <td><h4 i18n:translate="title_extension">Extension</h4></td>
                 <td><h4 i18n:translate="title_file">File</h4></td>
-                <td><h4 i18n:translate="title_description">Description</h4></td>
-                <td><h4 i18n:translate="title_compatiblity">Compatibility</h4></td>
                 <td><h4 i18n:translate="title_platform">Platform(s)</h4></td>
+                <td><h4 i18n:translate="title_compatiblity">Compatibility</h4></td>
+                <td><h4 i18n:translate="title_description">Description</h4></td>
                 <td><h4 i18n:translate="title_lisenses">License(s)</h4></td>
                 <td><h4 i18n:translate="title_development_status">Development <br />Status</h4></td>
             </tr>
             </thead>
-            <tbody tal:repeat="item container/values">
-             <tr bgcolor="#EEEEEE" tal:condition="repeat/item/even">
-                 <td> <h4><a tal:attributes="href item/getId">
-                     <span tal:content="item/Title" /> - <span tal:content="item/releasenumber" /></a></h4>
+             <tbody>
+             <tal:loop repeat="release all_releases">
+             <tr>
+                 <td>
+                 <h4><a tal:attributes="href release/getId">
+                     <span tal:content="release/Title" /> - <span tal:content="release/releasenumber" /></a></h4>
                  </td>
-                 <td><span tal:condition="not:python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
-                     <span tal:condition="item/file">
-                    <a i18n:translate="label_template_file" tal:attributes="href string:${item/absolute_url}/@@download/file/${item/file/filename}">
+                 <td>
+                     <span tal:condition="not:python:release.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                     <span tal:condition="release/file">
+                         <a i18n:translate="label_template_file" tal:attributes="href string:${release/absolute_url}/@@download/file/${release/file/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
-                    </span>
-                 </span>
-<span tal:condition="python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
-                     <span tal:condition="item/link_to_file">
-                    <a i18n:translate="label_template_file" tal:attributes=" href item/link_to_file">
+                     </span>
+                         </span>
+                     <span tal:condition="python:release.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                     <span tal:condition="release/link_to_file">
+                    <a i18n:translate="label_template_file" tal:attributes=" href release/link_to_file">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
-                    </span>
-                 </span>
-
+                         </span>
+                     </span>
                  </td>
-
-                <td tal:content="item/Description">Description</td>
-
-                <td>
-                  <ul>
-                      <tal:loop repeat="compatibility_choice item/compatibility_choice">
+                 <td>
+                     <ul><tal:loop repeat="platform_choice release/platform_choice">
+                         <li><div tal:content="platform_choice"/></li>
+                     </tal:loop></ul>
+                 </td>
+                 <td>
+                     <ul>
+                         <tal:loop repeat="compatibility_choice release/compatibility_choice">
                             <li><div tal:content="compatibility_choice"/></li>
-                      </tal:loop></ul>
+                         </tal:loop>
+                     </ul>
                 </td>
-<td>
-<ul><tal:loop repeat="platform_choice item/platform_choice">
-    <li><div tal:content="platform_choice"/></li>
-    </tal:loop></ul>
-</td>
-<td>
-<ul><tal:loop repeat="licenses_choice item/licenses_choice">
-    <li><div tal:content="licenses_choice"/></li>
-    </tal:loop></ul>
-</td>
-<td tal:content="item/developmentstatus_choice">Development Status</td>
-            </tr>
-             <tr bgcolor="#F1FB9B" tal:condition="repeat/item/odd">
-                <td> <h4><a tal:attributes="href item/getId">
-                <span tal:content="item/Title" /> - <span tal:content="item/releasenumber" /></a></h4>
-                </td>
-                 <td><span tal:condition="not:python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
-                     <span tal:condition="item/file">
-                    <a i18n:translate="label_template_file" tal:attributes="href string:${item/absolute_url}/@@download/file/${item/file/filename}">
-                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
-                    </span>
-                 </span>
-<span tal:condition="python:item.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
-                     <span tal:condition="item/link_to_file">
-                    <a i18n:translate="label_template_file" tal:attributes=" href item/link_to_file">
-                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
-                    </span>
-                 </span>
-
-                 </td>
-                  <td tal:content="item/Description">Description</td>
-
+                <td tal:content="release/Description">Description</td>
                 <td>
-<ul><tal:loop repeat="compatibility_choice item/compatibility_choice">
-    <li><div tal:content="compatibility_choice"/></li>
-    </tal:loop></ul>
-</td>
-<td>
-<ul><tal:loop repeat="platform_choice item/platform_choice">
-    <li><div tal:content="platform_choice"/></li>
-    </tal:loop></ul>
-</td>
-<td>
-<ul><tal:loop repeat="licenses_choice item/licenses_choice">
-    <li><div tal:content="licenses_choice"/></li>
-    </tal:loop></ul>
-</td>
-<td tal:content="item/developmentstatus_choice">Development Status</td>
-
-            </tr>
-
-            </tbody>
+                    <ul>
+                        <tal:loop repeat="licenses_choice release/licenses_choice">
+                            <li><div tal:content="licenses_choice"/></li>
+                        </tal:loop></ul>
+                </td>
+                <td tal:content="release/developmentstatus_choice">Development Status</td>
+             </tr>
+             </tal:loop>
+             </tbody>
+             </table>
 
 
-        </table>
 
 
       <h4 class="tupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
