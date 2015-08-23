@@ -212,7 +212,7 @@ class ITUpReleaseLink(form.Schema):
         title=_(u" Second linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
 
@@ -229,7 +229,7 @@ class ITUpReleaseLink(form.Schema):
         title=_(u" Third linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True
+        required=False
     )
 
 
@@ -246,7 +246,7 @@ class ITUpReleaseLink(form.Schema):
         title=_(u" Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
 
