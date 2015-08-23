@@ -219,3 +219,18 @@ class View(dexterity.DisplayForm):
     grok.context(ITUpProject)
     grok.require('zope2.View')
 
+
+    def all_releases(self):
+        """Get a list of all releases, ordered by version, starting with the latest.
+        """
+        proj = self.context
+
+        catalog = getToolByName(proj, 'portal_catalog')
+        res = catalog.searchResults(
+            portal_type = ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
+            path = '/'.join(proj.getPhysicalPath()),
+            sort_on = 'id',
+            sort_order = 'reverse')
+        return [r.getObject() for r in res]
+
+
