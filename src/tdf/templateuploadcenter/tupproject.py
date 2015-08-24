@@ -234,3 +234,26 @@ class View(dexterity.DisplayForm):
         return [r.getObject() for r in res]
 
 
+    def latest_release(self):
+        """Get the most recent final release or None if none can be found.
+        """
+
+        proj = self.context
+        res = None
+        catalog = getToolByName(proj, 'portal_catalog')
+
+        res = catalog.searchResults(
+            portal_type = ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
+            path = '/'.join(proj.getPhysicalPath()),
+            review_state = 'published',
+            sort_on = 'id',
+            sort_order = 'reverse')
+
+        if not res:
+            return None
+        else:
+            return res[0].getObject()
+
+
+
+
