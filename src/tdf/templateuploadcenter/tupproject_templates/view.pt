@@ -123,11 +123,13 @@
                     <span tal:condition="latestRelease/file">
                          <a i18n:translate="label_template_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file/${latestRelease/file/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
                      </span>
 
                 </span>
             </dl>
-
 
 
 
