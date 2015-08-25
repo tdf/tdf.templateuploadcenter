@@ -255,5 +255,13 @@ class View(dexterity.DisplayForm):
             return res[0].getObject()
 
 
+    def latest_release_date(self):
+        """Get the date of the latest release
+        """
 
+        latest_release = self.latest_release()
+        if latest_release:
+            return self.context.toLocalizedTime(latest_release.effective())
+        else:
+            return None
 
