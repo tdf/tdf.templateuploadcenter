@@ -126,6 +126,9 @@
                         <tal:loop repeat="platform_choice latestRelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
+                        <div class="tucfilesize">
+                       <span>File size: </span> <span tal:content="python:latestRelease.file.size / 1024" /><span> kb</span>
+                            </div>
                      </span>
 
                 </span>
@@ -133,8 +136,8 @@
 
 
 
-
         </tal:stable>
+             <h2 i18n:translate="">All Releases</h2>
 
 
 <table class="tupcenterprojecttable" border="1" width="100%">
