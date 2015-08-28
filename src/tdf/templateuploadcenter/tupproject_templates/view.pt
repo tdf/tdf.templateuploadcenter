@@ -132,6 +132,12 @@
                      </span>
 
                 </span>
+                <span tal:condition="python:latestRelease.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                    <span tal:condition="latestRelease/link_to_file">
+                        <a i18n:translate="label_template_file" tal:attributes=" href latestRelease/link_to_file">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                    </span>
+                </span>
             </dl>
 
 
