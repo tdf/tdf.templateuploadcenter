@@ -130,6 +130,36 @@
                        <span>File size: </span> <span tal:content="python:latestRelease.file.size / 1024" /><span> kb</span>
                             </div>
                      </span>
+                    <span tal:condition="latestRelease/file1">
+                         <a i18n:translate="label_template_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file1/${latestRelease/file1/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice1">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span>File size: </span> <span tal:content="python:latestRelease.file1.size / 1024" /><span> kb</span>
+                            </div>
+                    </span>
+                    <span tal:condition="latestRelease/file2">
+                         <a i18n:translate="label_template_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file2/${latestRelease/file2/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice2">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span>File size: </span> <span tal:content="python:latestRelease.file2.size / 1024" /><span> kb</span>
+                            </div>
+                    </span>
+                    <span tal:condition="latestRelease/file3">
+                         <a i18n:translate="label_template_file" tal:attributes="href string:${latestRelease/absolute_url}/@@download/file3/${latestRelease/file3/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice3">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span>File size: </span> <span tal:content="python:latestRelease.file3.size / 1024" /><span> kb</span>
+                            </div>
+                    </span>
 
                 </span>
                 <span tal:condition="python:latestRelease.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
