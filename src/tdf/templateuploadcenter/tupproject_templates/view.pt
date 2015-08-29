@@ -166,6 +166,30 @@
                     <span tal:condition="latestRelease/link_to_file">
                         <a i18n:translate="label_template_file" tal:attributes=" href latestRelease/link_to_file">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestRelease/link_to_file1">
+                        <a i18n:translate="label_template_file" tal:attributes=" href latestRelease/link_to_file1">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice1">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestRelease/link_to_file2">
+                        <a i18n:translate="label_template_file" tal:attributes=" href latestRelease/link_to_file2">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice2">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+                    <span tal:condition="latestRelease/link_to_file3">
+                        <a i18n:translate="label_template_file" tal:attributes=" href latestRelease/link_to_file3">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice3">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
                     </span>
                 </span>
             </dl>
