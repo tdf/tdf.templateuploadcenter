@@ -149,8 +149,7 @@
 <table class="tupcenterprojecttable" border="1" width="100%">
             <thead>
             <tr bgcolor="#40FB27">
-                <td><h4 i18n:translate="title_extension">Extension</h4></td>
-                <td><h4 i18n:translate="title_file">File</h4></td>
+                <td><h4 i18n:translate="title_extension">Extension Version</h4></td>
                 <td><h4 i18n:translate="title_platform">Platform(s)</h4></td>
                 <td><h4 i18n:translate="title_compatiblity">Compatibility</h4></td>
                 <td><h4 i18n:translate="title_description">Description</h4></td>
@@ -164,20 +163,6 @@
                  <td>
                  <h4><a tal:attributes="href release/getId">
                      <span tal:content="release/Title" /> - <span tal:content="release/releasenumber" /></a></h4>
-                 </td>
-                 <td>
-                     <span tal:condition="not:python:release.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
-                     <span tal:condition="release/file">
-                         <a i18n:translate="label_template_file" tal:attributes="href string:${release/absolute_url}/@@download/file/${release/file/filename}">
-                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
-                     </span>
-                         </span>
-                     <span tal:condition="python:release.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
-                     <span tal:condition="release/link_to_file">
-                    <a i18n:translate="label_template_file" tal:attributes=" href release/link_to_file">
-                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
-                         </span>
-                     </span>
                  </td>
                  <td>
                      <ul><tal:loop repeat="platform_choice release/platform_choice">
