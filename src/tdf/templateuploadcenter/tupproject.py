@@ -139,6 +139,15 @@ def defaultCategory(self):
     defaultcategory = categories[0]
     return [defaultcategory]
 
+@grok.subscribe(ITUpProject, IActionSucceededEvent)
+def notifyProjectManager (tupproject, event):
+    mailhost = getToolByName(tupproject, 'MailHost')
+    toAddress = "%s" % (tupproject.contactAddress)
+    message= "The status of your LibreOffice template project changed"
+    subject = "Your Project %s" % (tupproject.title)
+    source = "%s <%s>" % ('Admin of the LibreOffice Template site', 'templates@libreoffice.org')
+    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
+
 @grok.subscribe(ITUpRelease,IObjectAddedEvent)
 def notifyProjectManagerReleaseAdd (tupproject, event):
     mailhost = getToolByName(tupproject, 'MailHost')
