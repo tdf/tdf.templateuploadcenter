@@ -62,7 +62,10 @@
 
       <div  class="tupcenterfile">
           <p tal:condition="context/link_to_file"> <a i18n:translate="label_template_file" tal:attributes=" href context/link_to_file">
-        The linked Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" /></p>
+        The linked Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" />
+          <span tal:condition="context/external_file_size">
+             <br />File size: <span tal:content="structure context/external_file_size" /> kb
+          </span> </p>
 
           </div>
 
