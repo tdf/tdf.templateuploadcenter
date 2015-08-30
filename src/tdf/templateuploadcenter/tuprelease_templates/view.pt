@@ -67,13 +67,13 @@
         The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" /><br />File size: <span tal:content="python:context.file.size / 1024" /> kb </p>
 
        <p tal:condition="context/file1"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" /></p>
+        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" /><br />File size: <span tal:content="python:context.file1.size / 1024" /> kb </p>
 
         <p tal:condition="context/file2"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" /></p>
+        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" /><br />File size: <span tal:content="python:context.file2.size / 1024" /> kb </p>
 
       <p tal:condition="context/file3"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" /></p>
+        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" /><br />File size: <span tal:content="python:context.file3.size / 1024" /> kb </p>
 
 </div>
 
