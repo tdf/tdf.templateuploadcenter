@@ -212,6 +212,13 @@ class ITUpReleaseLink(form.Schema):
         required=False
     )
 
+    external_file_size1 = schema.Float(
+        title=_(u"The size of the external hosted file"),
+        description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
+        required=False
+    )
+
+
 
     form.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1= schema.List(
@@ -229,6 +236,13 @@ class ITUpReleaseLink(form.Schema):
         required=False
     )
 
+    external_file_size2 = schema.Float(
+        title=_(u"The size of the external hosted file"),
+        description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
+        required=False
+    )
+
+
 
     form.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2= schema.List(
@@ -245,6 +259,13 @@ class ITUpReleaseLink(form.Schema):
         description=_(u"Please insert a link to your template file."),
         required=False
     )
+
+    external_file_size3 = schema.Float(
+        title=_(u"The size of the external hosted file"),
+        description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
+        required=False
+    )
+
 
 
     form.widget(platform_choice3=CheckBoxFieldWidget)
