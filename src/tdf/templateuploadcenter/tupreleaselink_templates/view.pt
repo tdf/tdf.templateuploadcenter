@@ -67,6 +67,40 @@
              <br />File size: <span tal:content="structure context/external_file_size" /> kb
           </span> </p>
 
+          <p tal:condition="context/link_to_file1"> <a i18n:translate="label_template_file" tal:attributes=" href context/link_to_file1">
+        The linked Template file</a>
+              <span tal:condition="context/platform_choice1">
+                  <span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" />
+              </span>
+          <span tal:condition="context/external_file_size1">
+             <br />File size: <span tal:content="structure context/external_file_size1" /> kb
+          </span>
+          </p>
+
+
+          <p tal:condition="context/link_to_file2"> <a i18n:translate="label_template_file" tal:attributes=" href context/link_to_file2">
+        The linked Template file</a>
+              <span tal:condition="context/platform_choice2">
+                  <span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" />
+              </span>
+          <span tal:condition="context/external_file_size2">
+             <br />File size: <span tal:content="structure context/external_file_size2" /> kb
+          </span>
+          </p>
+
+
+          <p tal:condition="context/link_to_file3"> <a i18n:translate="label_template_file" tal:attributes=" href context/link_to_file3">
+        The linked Template file</a>
+              <span tal:condition="context/platform_choice3">
+                  <span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" />
+              </span>
+          <span tal:condition="context/external_file_size3">
+             <br />File size: <span tal:content="structure context/external_file_size3" /> kb
+          </span>
+          </p>
+
+
+
           </div>
 
       <h4 class="tupcenterlegaldownload" tal:content="structure context/title_legaldownloaddisclaimer" />
