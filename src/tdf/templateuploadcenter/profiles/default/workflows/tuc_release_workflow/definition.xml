@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<dc-workflow workflow_id="tuc_release_workflow"
+             title="TUC Release Publication Workflow"
+             description=" - A simple workflow for Template Release objects."
+             state_variable="review_state"
+             initial_state="pre-release"
+             manager_bypass="False">
+    <permission>Access contents information</permission>
+    <permission>Change portal events</permission>
+    <permission>Modify portal content</permission>
+    <permission>View</permission>
+
+</dc-workflow>
