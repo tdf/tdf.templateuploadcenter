@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_workflow">
+    <object name="tuc_project_workflow" meta_type="Workflow"/>
+    <bindings>
+        <default>
+            <bound-workflow workflow_id="tuc_project_workflow"/>
+        </default>
+        <type type_id="tdf.templateuploadcenter.project" />
+     </bindings>
+</object>
