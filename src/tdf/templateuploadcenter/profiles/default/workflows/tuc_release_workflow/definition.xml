@@ -120,20 +120,73 @@
     </state>
 
 
+    <transition transition_id="hide"
+                title="Hide"
+                new_state="hidden" trigger="USER" before_script=""
+                after_script=""
+                i18n:attributes="title">
+        <description i18n:translate="">Hide this release</description>
+        <action url="" category="workflow"
+                i18n:translate="title_tuc_wf_hide_release">Hide release</action>
+        <guard>
+            <guard-permission>Modify portal content</guard-permission>
+        </guard>
+    </transition>
+
+    <transition transition_id="re-release"
+                title="Re-release"
+                new_state="" trigger="USER" before_script=""
+                after_script=""
+                i18n:attributes="title">
+        <description i18n:translate="">re-release</description>
+        <action url="" category="workflow"
+                i18n:translate="title_tuc_wf_re_release">Re-Release</action>
+        <guard>
+            <guard-permission>Modify portal content</guard-permission>
+        </guard>
+    </transition>
 
 
-     <transition transition_id="release-alpha"
+    <transition transition_id="release-alpha"
              title="Release alpha"
              new_state="alpha" trigger="USER" before_script=""
              after_script=""
              i18n:attributes="title">
-        <description i18n:translate="">Change the release project stage to 'Release alpha'</description>
+        <description i18n:translate="">Change the release stage to 'Release alpha'</description>
         <action url="" category="workflow"
              i18n:translate="title_tuc_wf_alpha_release">Release alpha</action>
         <guard>
              <guard-permission>Modify portal content</guard-permission>
         </guard>
-     </transition>
+    </transition>
+
+    <transition transition_id="release-beta"
+                title="Release beta"
+                new_state="beta" trigger="USER" before_script=""
+                after_script=""
+                i18n:attributes="title">
+        <description i18n:translate="">Change the release stage to 'Release beta'</description>
+        <action url="" category="workflow"
+                i18n:translate="title_tuc_wf_beta_release">Release beta</action>
+        <guard>
+            <guard-permission>Modify portal content</guard-permission>
+        </guard>
+    </transition>
+
+    <transition transition_id="release-candidate"
+                title="Release-Candidate"
+                new_state="release-candidate" trigger="USER" before_script=""
+                after_script=""
+                i18n:attributes="title">
+        <description i18n:translate="">Release candidate</description>
+        <action url="" category="workflow"
+                i18n:translate="title_tuc_wf_release_candidate">Release candidate</action>
+        <guard>
+            <guard-permission>Modify portal content</guard-permission>
+        </guard>
+    </transition>
+
+
 
 
 
