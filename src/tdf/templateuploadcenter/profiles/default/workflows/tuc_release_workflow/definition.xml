@@ -219,7 +219,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Unhide release project</description>
         <action url="" category="workflow"
-                i18n:translate="title_psc_wf_unhide_release">Unhide release</action>
+                i18n:translate="title_tuc_wf_unhide_release">Unhide release</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
