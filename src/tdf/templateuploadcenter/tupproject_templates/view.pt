@@ -37,14 +37,18 @@
            Once you have finished that you could submit your project for approval (publication).
         </p>
         <p tal:condition="python: is_editable and len(context.getFolderContents()) is 0">Your next step: add a first release to your project please.</p>
-
+        <p>Please submit:</p>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tuprelease" i18n:translate="">
-                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> Submit a Release to your
+                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> a Release to your
                             <span tal:content="context/product_title | string:template_project" i18n:name="product_title_tupproject" /> Project
 
                         </a>
+        <p>or:</p>
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupreleaselink" i18n:translate="">
+                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> a linked Release to your
+                            <span tal:content="context/product_title | string:template_project" i18n:name="product_title_tupproject" /> Project
 
-
+                        </a>
 
          <div class="paneeucproject">
 

@@ -254,7 +254,7 @@ class View(dexterity.DisplayForm):
         res = catalog.searchResults(
             portal_type = ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
             path = '/'.join(proj.getPhysicalPath()),
-            review_state = 'published',
+            review_state = 'final',
             sort_on = 'id',
             sort_order = 'reverse')
 
