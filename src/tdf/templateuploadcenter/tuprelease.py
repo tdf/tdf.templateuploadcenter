@@ -77,10 +77,11 @@ class ITUpRelease(form.Schema):
         min_length=5
     )
 
-    releasenumber=schema.Float(
+    releasenumber=schema.TextLine(
         title=_(u"Release Number"),
-        description=_(u"Release Number"),
+        description=_(u"Release Number (up to eight chars)"),
         default=1.0,
+        max_length=8
     )
 
 
