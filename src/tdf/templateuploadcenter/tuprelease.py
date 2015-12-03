@@ -1,9 +1,13 @@
-from five import grok
-from zope import schema
 from tdf.templateuploadcenter import _
-from plone.directives import form, dexterity
 from plone.app.textfield import RichText
+from plone.supermodel import model
+from zope import schema
+from plone.autoform import directives as form
+from plone.dexterity.browser.view import DefaultView
+from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.interface import directlyProvides
+
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
@@ -11,9 +15,13 @@ from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.app.content.interfaces import INameFromTitle
 
+from plone.directives import form
+from zope import schema
+
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
-@grok.provider(schema.interfaces.IContextSourceBinder)
 def vocabDevelopmentStatus(context):
     """pick up developmnet status from parent"""
     developmentstatus_list = getattr(context.__parent__, 'development_status', [])
@@ -21,10 +29,9 @@ def vocabDevelopmentStatus(context):
     for value in developmentstatus_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+directlyProvides(vocabDevelopmentStatus, IContextSourceBinder)
 
 
-
-@grok.provider(schema.interfaces.IContextSourceBinder)
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
 
@@ -33,8 +40,9 @@ def vocabAvailLicenses(context):
     for value in license_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
-@grok.provider(schema.interfaces.IContextSourceBinder)
+
 def vocabAvailVersions(context):
     """ pick up the program versions list from parent """
 
@@ -43,8 +51,9 @@ def vocabAvailVersions(context):
     for value in versions_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
-@grok.provider(schema.interfaces.IContextSourceBinder)
+
 def vocabAvailPlatforms(context):
     """ pick up the list of platforms from parent """
 
@@ -53,8 +62,7 @@ def vocabAvailPlatforms(context):
     for value in platforms_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
-
-
+directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 
 yesnochoice = SimpleVocabulary(
@@ -63,25 +71,49 @@ yesnochoice = SimpleVocabulary(
     )
 
 
+
+@provider(IContextAwareDefaultFactory)
+def getContainerTitle(context):
+    return context.title
+
+
+@provider(IContextAwareDefaultFactory)
+def contactinfoDefault(context):
+    return context.contactAddress
+
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_title(context):
+    context = context.aq_inner.aq_parent
+    return context.title_legaldisclaimer
+
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_text(context):
+    context = context.aq_inner.aq_parent
+    return context.legal_disclaimer
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
-class ITUpRelease(form.Schema):
 
+
+class ITUpRelease(model.Schema):
 
 
     title = schema.TextLine(
         title=_(u"Title"),
         description=_(u"Release Title"),
-        min_length=5
+        min_length=5,
+        defaultFactory= getContainerTitle
     )
 
     releasenumber=schema.TextLine(
         title=_(u"Release Number"),
         default=_(u"1.0"),
-        max_length=8
-
+        max_length=8,
     )
 
 
@@ -134,14 +166,15 @@ class ITUpRelease(form.Schema):
     form.mode(title_declaration_legal='display')
     title_declaration_legal=schema.TextLine(
         title=_(u""),
-        required=False
+        required=False,
+        defaultFactory = legal_declaration_title
     )
 
     form.mode(declaration_legal='display')
-    form.primary('declaration_legal')
-    declaration_legal = RichText(
+    declaration_legal = schema.Text(
         title=_(u""),
-        required=False
+        required=False,
+        defaultFactory = legal_declaration_text
     )
 
     accept_legal_declaration=schema.Bool(
@@ -153,7 +186,8 @@ class ITUpRelease(form.Schema):
     contact_address2 = schema.ASCIILine(
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
-        required=False
+        required=False,
+        defaultFactory = contactinfoDefault
     )
 
     source_code_inside = schema.Choice(
@@ -271,65 +305,11 @@ class ITUpRelease(form.Schema):
 
 
 
-@form.default_value(field=ITUpRelease['declaration_legal'])
-def LegalTextDefaultValue(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.__parent__.legal_disclaimer
-
-@form.default_value(field=ITUpRelease['title_declaration_legal'])
-def legal_declaration_title_default(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.aq_inner.aq_parent.title_legaldisclaimer
-
-@form.default_value(field=ITUpRelease['contact_address2'])
-def contactinfoDefaultValue(data):
-    return data.context.contactAddress
-
-
-@form.default_value(field=ITUpRelease['title'])
-def releaseDefaultTitleValue(self):
-    title= self.context.title
-    return (title)
-
-@form.default_value(field=ITUpRelease['licenses_choice'])
-def defaultLicense(self):
-    licenses = list( self.context.available_licenses)
-    defaultlicenses = licenses[0]
-    return [defaultlicenses]
-
-@form.default_value(field=ITUpRelease['compatibility_choice'])
-def defaultcompatibility(self):
-    compatibility = list( self.context.available_versions)
-    defaultcompatibility = compatibility[0]
-    return [defaultcompatibility]
-
-@form.default_value(field=ITUpRelease['platform_choice'])
-def defaultplatform(self):
-    platform = list( self.context.available_platforms)
-    defaultplatform = platform[0]
-    return [defaultplatform]
-
 
 
 #View
-class View(dexterity.DisplayForm):
-    grok.context(ITUpRelease)
-    grok.require('zope2.View')
+class TUpReleaseView(DefaultView):
 
     def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
 
-
-
-
-class NameForRelease(grok.Adapter):
-    grok.context(ITUpRelease)
-    grok.provides(INameFromTitle)
-
-    @property
-    def title(self):
-        context = self.context
-        title = context.title
-        releasenumber = context.releasenumber
-        title = u'%s %s' % (title,releasenumber)
-        return u'Custom Title %s' % title
