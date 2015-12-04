@@ -1,25 +1,26 @@
-from zope.interface import Invalid, invariant
-
-from five import grok
-from zope import schema
 from tdf.templateuploadcenter import _
-from plone.directives import form, dexterity
 from plone.app.textfield import RichText
+from plone.supermodel import model
+from zope import schema
+from plone.dexterity.browser.view import DefaultView
+from Acquisition import aq_inner
+from plone import api
 from collective import dexteritytextindexer
 from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.interface import directlyProvides
 import re
 from plone.namedfile.field import NamedBlobImage
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from z3c.form import validator
-from plone.uuid.interfaces import IUUID
-from Products.CMFCore.utils import getToolByName
-from Products.validation import V_REQUIRED
-from Products.CMFCore.interfaces import IActionSucceededEvent
-from zope.lifecycleevent.interfaces import IObjectAddedEvent
+from zope.interface import Invalid, invariant
+from plone import api
 from tdf.templateuploadcenter.tuprelease import ITUpRelease
 from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
+from z3c.form import validator
+from plone.uuid.interfaces import IUUID
+from Products.validation import V_REQUIRED
 from plone.indexer import indexer
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from plone.directives import form
 
 
 checkEmail = re.compile(
@@ -31,7 +32,7 @@ def validateEmail(value):
     return True
 
 
-@grok.provider(schema.interfaces.IContextSourceBinder)
+
 def vocabCategories(context):
     # For add forms
 
@@ -50,6 +51,8 @@ def vocabCategories(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
+directlyProvides(vocabCategories, IContextSourceBinder)
+
 
 
 def isNotEmptyCategory(value):
@@ -65,7 +68,7 @@ class MissingCategory(Invalid):
     __doc__ = _(u"You have not chosen a category for the project")
 
 
-class ITUpProject(form.Schema):
+class ITUpProject(model.Schema):
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -133,43 +136,37 @@ class ITUpProject(form.Schema):
         if not data.screenshot and not data.project_logo:
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
-@form.default_value(field=ITUpProject['category_choice'])
-def defaultCategory(self):
-    categories = list( self.context.available_category)
-    defaultcategory = categories[0]
-    return [defaultcategory]
 
-@grok.subscribe(ITUpProject, IActionSucceededEvent)
 def notifyProjectManager (tupproject, event):
-    mailhost = getToolByName(tupproject, 'MailHost')
-    toAddress = "%s" % (tupproject.contactAddress)
-    message= "The status of your LibreOffice template project changed"
-    subject = "Your Project %s" % (tupproject.title)
-    source = "%s <%s>" % ('Admin of the LibreOffice Template site', 'templates@libreoffice.org')
-    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
+    api.portal.send_email(
+        recipient= "%s" % (tupproject.contactAddress),
+        sender= "%s <%s>" % ('Admin of the LibreOffice Template site', 'templates@libreoffice.org'),
+        subject = "Your Project %s" % (tupproject.title),
+        body = "The status of your LibreOffice template project changed"
+    )
 
-@grok.subscribe(ITUpRelease,IObjectAddedEvent)
+
 def notifyProjectManagerReleaseAdd (tupproject, event):
-    mailhost = getToolByName(tupproject, 'MailHost')
-    toAddress = "%s" % (tupproject.contactAddress)
-    message = "The new release %s was added to your LibreOffice templates project" % (tupproject.title)
-    subject = "A new release was added to your LibreOffice templates project"
-    source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
-    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
+    api.portal.send_email(
+        recipient= "%s" % (tupproject.contactAddress),
+        sender= "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject= "A new release was added to your LibreOffice templates project",
+        body= "A new release was added to your project: '%s'" % (tupproject.title)
+    )
 
-@grok.subscribe(ITUpReleaseLink,IObjectAddedEvent)
+
 def notifyProjectManagerReleaseLinkedAdd (tupproject, event):
-    mailhost = getToolByName(tupproject, 'MailHost')
-    toAddress = "%s" % (tupproject.contactAddress)
-    message = "The new release %s was added to your LibreOffice templates project" % (tupproject.title)
-    subject = "A new release was added to your LibreOffice templates project"
-    source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
-    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
+    api.portal.send_email(
+        recipient= "%s" % (tupproject.contactAddress),
+        sender= "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject = "Your Project %s: new linked Release added"  % (tupproject.title),
+        body= "A new linked release was added to your project"
+    )
 
 def getLatestRelease(self):
 
     res = None
-    catalog = getToolByName(self, 'portal_catalog')
+    catalog = api.portal.get_tool(name= 'portal_catalog')
     res = catalog.searchResults(
         folderpath = '/'.join(context.getPhysicalPath()),
         review_state = 'published',
@@ -182,19 +179,7 @@ def getLatestRelease(self):
     else:
         return res[0]
 
-@grok.adapter(ITUpProject, name='getCompatibility')
-@indexer(ITUpProject)
-def getCompatibilityIndexer(obj):
-    """Get the compatibility of the product by getting the compatibilities of the latest published release.
-    This is been used for the index"""
 
-    compatabilities = []
-    release = obj.getLatestRelease()
-    if release:
-        for release_compatability in release.getCompatibility:
-            compatabilities.append(release_compatability)
-    compatabilities.sort(reverse=True)
-    return set(compatabilities)
 
 class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
     """Validate site-wide uniquneess of project titles.
@@ -205,7 +190,7 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
         super(ValidateTUpProjectUniqueness, self).validate(value)
 
         if value is not None:
-            catalog = getToolByName(self.context, 'portal_catalog')
+            catalog = api.portal.get_tool(name= 'portal_catalog')
             results = catalog({'Title': value,
                                'object_provides': ITUpProject.__identifier__})
 
@@ -218,26 +203,22 @@ validator.WidgetValidatorDiscriminators(
     ValidateTUpProjectUniqueness,
     field=ITUpProject['title'],
 )
-grok.global_adapter(ValidateTUpProjectUniqueness)
 
 
 
 # View
 
-class View(dexterity.DisplayForm):
-    grok.context(ITUpProject)
-    grok.require('zope2.View')
-
+class TUpProjectView(DefaultView):
 
     def all_releases(self):
         """Get a list of all releases, ordered by version, starting with the latest.
         """
-        proj = self.context
 
-        catalog = getToolByName(proj, 'portal_catalog')
+        catalog = api.portal.get_tool(name='portal_catalog')
+        current_path = "/".join(self.context.getPhysicalPath())
         res = catalog.searchResults(
             portal_type = ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
-            path = '/'.join(proj.getPhysicalPath()),
+            path= current_path,
             sort_on = 'id',
             sort_order = 'reverse')
         return [r.getObject() for r in res]
@@ -247,13 +228,13 @@ class View(dexterity.DisplayForm):
         """Get the most recent final release or None if none can be found.
         """
 
-        proj = self.context
+        context = self.context
         res = None
-        catalog = getToolByName(proj, 'portal_catalog')
+        catalog = api.portal.get_tool(name= 'portal_catalog')
 
         res = catalog.searchResults(
             portal_type = ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
-            path = '/'.join(proj.getPhysicalPath()),
+            path = '/'.join(context.getPhysicalPath()),
             review_state = 'final',
             sort_on = 'id',
             sort_order = 'reverse')
