@@ -1,34 +1,21 @@
-from five import grok
+from tdf.templateuploadcenter import _
+from plone.app.textfield import RichText
+from plone.supermodel import model
+from zope import schema
+from Products.Five import BrowserView
+from Acquisition import aq_inner
+from plone import api
+from plone.directives import form
 from zope import schema
 
-from zope.component import createObject
-from zope.event import notify
-from zope.lifecycleevent import ObjectCreatedEvent
-from zope.filerepresentation.interfaces import IFileFactory
+from plone.app.layout.viewlets import ViewletBase
 
-from plone.indexer import indexer
-
-from plone.directives import form, dexterity
-from plone.app.textfield import RichText
-
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-from z3c.form.browser.textlines import TextLinesFieldWidget
-
-from tdf.templateuploadcenter import _
-
-from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
-
-from Acquisition import aq_inner
-from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectModifiedEvent
 from tdf.templateuploadcenter.tupproject import ITUpProject
 
-from plone.app.layout.viewlets.interfaces import IAboveContentTitle
-from plone import api
 
 
-
-class ITUpCenter(form.Schema):
+class ITUpCenter(model.Schema):
 
     """ An Extensions Upload Center for LibreOffice extensions.
     """
@@ -173,8 +160,7 @@ class ITUpCenter(form.Schema):
     )
 
 
-    form.primary('legal_disclaimer')
-    legal_disclaimer = RichText(
+    legal_disclaimer = schema.Text(
         title=_(u"Text of the Legal Disclaimer and Limitations"),
         description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."),
         default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
@@ -195,20 +181,14 @@ class ITUpCenter(form.Schema):
         required=False
     )
 
-@grok.subscribe(ITUpProject,IObjectAddedEvent)
+
 def notifyAboutNewProject(tupproject, event):
-    mailhost = getToolByName(tupproject, 'MailHost')
-    urltool = getToolByName(tupproject,'portal_url')
-    portal = urltool.getPortalObject()
-    toAddress = portal.getProperty('email_from_address')
-    message = "A member added a new project"
-    subject = "A Project with the title %s was added" % (tupproject.title)
-    source = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org')
-    return mailhost.send(message, mto=toAddress, mfrom=str(source), subject=subject, charset='utf8')
+    api.portal.send_email(
+        recipient="templates@libreoffice.org",
+        subject="A Project with the title %s was added" % (tupproject.title),
+        body= "A member added a new project"
+    )
 
-
-
-@grok.subscribe(ITUpCenter, IObjectModifiedEvent)
 def notifiyAboutNewVersion(tupproject, event):
     if hasattr(event, 'descriptions') and event.descriptions:
         for d in event.descriptions:
@@ -231,15 +211,12 @@ def notifiyAboutNewVersion(tupproject, event):
 
 # Views
 
-class View(dexterity.DisplayForm):
-    grok.context(ITUpCenter)
-    grok.require('zope2.View')
-
+class View(BrowserView):
 
 
     def tupprojects(self):
         context = aq_inner(self.context)
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool(name= 'portal_catalog')
 
         return catalog(object_provides=ITUpProject.__identifier__,
              path='/'.join(context.getPhysicalPath()),
@@ -250,7 +227,7 @@ class View(dexterity.DisplayForm):
         """Return number of projects
         """
         context = aq_inner(self.context)
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool(name= 'portal_catalog')
 
         return len(catalog(portal_type='tdf.templateuploadcenter.tupproject'))
 
@@ -259,7 +236,7 @@ class View(dexterity.DisplayForm):
         """Return number of downloadable files
         """
         context = aq_inner(self.context)
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool(name= 'portal_catalog')
 
         return len(catalog(portal_type='tdf.templateuploadcenter.tuprelease'))
 
@@ -275,7 +252,7 @@ class View(dexterity.DisplayForm):
 
 
     def get_products(self, category, version, sort_on, SearchableText=None):
-        self.catalog = getToolByName(self.context, 'portal_catalog')
+        self.catalog = api.portal.get_tool(name= 'portal_catalog')
 
         sort_on = 'positive_ratings'
 
@@ -296,7 +273,7 @@ class View(dexterity.DisplayForm):
 
 
     def get_most_popular_products(self):
-        self.catalog = getToolByName(self.context, 'portal_catalog')
+        self.catalog = api.portal.get_tool(name= 'portal_catalog')
         sort_on = 'positive_ratings'
         contentFilter = {
                          'sort_on' : sort_on,
@@ -308,7 +285,7 @@ class View(dexterity.DisplayForm):
 
 
     def get_newest_products(self):
-        self.catalog = getToolByName(self.context, 'portal_catalog')
+        self.catalog = api.portal.get_tool(name= 'portal_catalog')
         sort_on = 'created'
         contentFilter = {
                           'sort_on' : sort_on,
@@ -327,12 +304,8 @@ class View(dexterity.DisplayForm):
 
 
 
-class tupownprojects(grok.Viewlet):
-    grok.context(ITUpCenter)
-    grok.viewletmanager(IAboveContentTitle)
-    grok.template('own_projects')
-    grok.order(1)
-    grok.require('zope2.View')
+class TUpCenterOwnProjectsViewlet(ViewletBase):
+    pass
 
 
 
