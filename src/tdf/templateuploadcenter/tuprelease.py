@@ -13,7 +13,6 @@ from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from plone.app.content.interfaces import INameFromTitle
 
 from plone.directives import form
 from zope import schema
