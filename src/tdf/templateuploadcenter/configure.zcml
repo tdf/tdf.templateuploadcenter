@@ -10,7 +10,6 @@
     <include package="five.grok" />
 
     <includeDependencies package="." />
-    <grok:grok package="." />
     <include file="permissions.zcml" />
     <i18n:registerTranslations directory="locales" />
 
@@ -18,7 +17,7 @@
       name="default"
       title="tdf.templateuploadcenter"
       directory="profiles/default"
-      description="Installs the tdf.templateuploadcenter package"
+      description="Extension profile for TDF Template Upload Center"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
@@ -28,6 +27,40 @@
       directory="static" />
 
 
+  <subscriber
+    for="tdf.templateuploadcenter.tupproject.ITUpProject
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.templateuploadcenter.tupcenter.notifyAboutNewProject"
+    />
+
+
+  <subscriber
+    for="tdf.templateuploadcenter.tupcenter.ITUpCenter
+             zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler="tdf.templateuploadcenter.tupcenter.notifiyAboutNewVersion"
+    />
+
+  <subscriber
+    for="tdf.templateuploadcenter.tupproject.ITUpProject
+             Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.templateuploadcenter.tupproject.notifyProjectManager"
+    />
+
+  <subscriber
+    for="tdf.templateuploadcenter.tuprelease.ITUpRelease
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.templateuploadcenter.tupproject.notifyProjectManagerReleaseAdd"
+    />
+
+  <subscriber
+    for="tdf.templateuploadcenter.tupreleaselink.ITUpReleaseLink
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.templateuploadcenter.tupproject.notifyProjectManagerReleaseLinkedAdd"
+    />
+
+  <adapter
+    factory=".tupproject.ValidateTUpProjectUniqueness"
+    />
 
 
 </configure>
