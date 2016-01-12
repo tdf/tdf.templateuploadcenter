@@ -16,7 +16,7 @@ long_description = (
 
 setup(name='tdf.templateuploadcenter',
       version=version,
-      description="A Plone add-on for the LibreOffice template uploadcenter",
+      description="TDF Template Upload Center",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -42,14 +42,10 @@ setup(name='tdf.templateuploadcenter',
           'setuptools',
           # -*- Extra requirements: -*-
           'Products.CMFPlone',
-          'plone.app.dexterity [grok, relations]',
-          'plone.app.referenceablebehavior',
-          'plone.app.relationfield',
-          'plone.namedfile [blobs]',
-
-          'plone.app.registry',
+          'plone.app.dexterity',
           'collective.dexteritytextindexer',
           'cioppino.twothumbs',
+          'plone.directives.form',
       ],
       extras_require={'test': ['plone.app.testing[robot]>=4.2.2']},
       entry_points="""
