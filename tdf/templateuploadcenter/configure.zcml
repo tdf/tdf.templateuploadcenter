@@ -1,61 +1,113 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:grok="http://namespaces.zope.org/grok"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:five="http://namespaces.zope.org/five"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="tdf.templateuploadcenter">
 
-    <include package="five.grok" />
+  <!-- Include configuration for dependencies listed in setup.py -->
+  <includeDependencies package="." />
 
-    <includeDependencies package="." />
-    <include file="permissions.zcml" />
-    <i18n:registerTranslations directory="locales" />
+  <!-- Register a resource directory from which we can deploy static
+   resource files. -->
+  <browser:resourceDirectory
+    name="tdf.templateuploadcenter"
+    directory="resources" />
 
+  <i18n:registerTranslations directory="locales" />
+
+  <!-- Register an extension profile to make the product installable
+       in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="tdf.templateuploadcenter"
+      title="TDF Template Upload Center"
       directory="profiles/default"
       description="Extension profile for TDF Template Upload Center"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
   <!-- -*- extra stuff goes here -*- -->
 
-  <browser:resourceDirectory
-      name="tdf.templateuploadcenter"
-      directory="static" />
+  <include file="permissions.zcml" />
 
-  <plone:behavior
-      title="Name from product name and release number"
-      description="generates a name from product name and release number"
-      for="plone.dexterity.interfaces.IDexterityContent"
-      provides=".behaviors.INameForRelease"
-      factory=".behaviors.NameForRelease"
+  <browser:page
+      name="view"
+      for="tdf.templateuploadcenter.tupcenter.ITUpCenter"
+      class="tdf.templateuploadcenter.tupcenter.TUpCenterView"
+      template="tupcenter_templates/view.pt"
+      permission="zope2.View"
       />
+
+
+  <browser:page
+      name="view"
+      for="tdf.templateuploadcenter.tupproject.ITUpProject"
+      class="tdf.templateuploadcenter.tupproject.TUpProjectView"
+      template="tupproject_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="tdf.templateuploadcenter.tuprelease.ITUpRelease"
+      class="tdf.templateuploadcenter.tuprelease.TUpReleaseView"
+      template="tuprelease_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
+      for="tdf.templateuploadcenter.tupreleaselink.ITUpReleaseLink"
+      class="tdf.templateuploadcenter.tupreleaselink.TUpReleaseLinkView"
+      template="tupreleaselink_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:viewlet
+      name="ownprojects"
+      for="tdf.templateuploadcenter.tupcenter.ITUpCenter"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      class="tdf.templateuploadcenter.tupcenter.TUpCenterOwnProjectsViewlet"
+      template="tupcenter_templates/own_project.pt"
+      permission="zope2.View"
+      />
+
+  <adapter for="tdf.templateuploadcenter.tuprelease.ITUpRelease"
+      factory="tdf.templateuploadcenter.releasecustomurl.NameForReleaseURL"
+      provides="tdf.templateuploadcenter.releasecustomurl.INameForReleaseURL"
+      />
+
+
+  <adapter for="tdf.templateuploadcenter.tupreleaselink.ITUpReleaseLink"
+      factory="tdf.templateuploadcenter.releasecustomurl.NameForReleaseURL"
+      provides="tdf.templateuploadcenter.releasecustomurl.INameForReleaseURL"
+      />
+
 
   <subscriber
     for="tdf.templateuploadcenter.tupproject.ITUpProject
-             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler="tdf.templateuploadcenter.tupcenter.notifyAboutNewProject"
     />
 
-
   <subscriber
     for="tdf.templateuploadcenter.tupcenter.ITUpCenter
-             zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-    handler="tdf.templateuploadcenter.tupcenter.notifiyAboutNewVersion"
+               zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler="tdf.templateuploadcenter.notifications.notifiyAboutNewVersion"
     />
 
   <subscriber
     for="tdf.templateuploadcenter.tupproject.ITUpProject
-             Products.CMFCore.interfaces.IActionSucceededEvent"
+               Products.CMFCore.interfaces.IActionSucceededEvent"
     handler="tdf.templateuploadcenter.tupproject.notifyProjectManager"
     />
 
   <subscriber
     for="tdf.templateuploadcenter.tuprelease.ITUpRelease
-             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+              zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler="tdf.templateuploadcenter.tupproject.notifyProjectManagerReleaseAdd"
     />
 
@@ -68,6 +120,5 @@
   <adapter
     factory=".tupproject.ValidateTUpProjectUniqueness"
     />
-
 
 </configure>
