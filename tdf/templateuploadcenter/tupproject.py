@@ -1,4 +1,4 @@
-from tdf.templateuploadcenter import _
+from tdf.templateuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
@@ -17,19 +17,9 @@ from tdf.templateuploadcenter.tuprelease import ITUpRelease
 from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from Products.validation import V_REQUIRED
-from plone.indexer import indexer
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.directives import form
 
 
-checkEmail = re.compile(
-    r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
-
-def validateEmail(value):
-    if not checkEmail(value):
-        raise Invalid(_(u"Invalid email address"))
-    return True
 
 
 
@@ -60,15 +50,30 @@ def isNotEmptyCategory(value):
         raise Invalid(u'You must choose at least one category for your project.')
     return True
 
+
+
+
+checkEmail = re.compile(
+    r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
+
+def validateEmail(value):
+    if not checkEmail(value):
+        raise Invalid(_(u"Invalid email address"))
+    return True
+
+
 class ProvideScreenshotLogo(Invalid):
     __doc__ =  _(u"Please add a Screenshot or a Logo to your project")
+
 
 
 class MissingCategory(Invalid):
     __doc__ = _(u"You have not chosen a category for the project")
 
 
+
 class ITUpProject(model.Schema):
+
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -77,6 +82,7 @@ class ITUpProject(model.Schema):
         min_length=5,
         max_length=50
     )
+
     dexteritytextindexer.searchable('description')
     description = schema.Text(
         title=_(u"Project Summary"),
@@ -89,14 +95,15 @@ class ITUpProject(model.Schema):
         required=False
     )
 
+
+
     dexteritytextindexer.searchable('category_choice')
-    form.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
-        description=_(u"Please mark one or more categories your project and product belongs to."),
+        description=_(u"Please mark one or using the 'CTRL' key two and more entry on the left side and use the arrows in the middle to choose them and get them into the selected items box on the right side."),
         value_type=schema.Choice(source=vocabCategories),
         constraint = isNotEmptyCategory,
-        required=True,
+        required=True
     )
 
 
@@ -137,31 +144,31 @@ class ITUpProject(model.Schema):
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
 
+
+
 def notifyProjectManager (tupproject, event):
     api.portal.send_email(
-        recipient= "%s" % (tupproject.contactAddress),
-        sender= "%s <%s>" % ('Admin of the LibreOffice Template site', 'templates@libreoffice.org'),
+        recipient ="%s" % (tupproject.contactAddress),
+        sender = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
         subject = "Your Project %s" % (tupproject.title),
         body = "The status of your LibreOffice template project changed"
     )
 
-
 def notifyProjectManagerReleaseAdd (tupproject, event):
     api.portal.send_email(
-        recipient= "%s" % (tupproject.contactAddress),
-        sender= "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject= "A new release was added to your LibreOffice templates project",
-        body= "A new release was added to your project: '%s'" % (tupproject.title)
-    )
-
+        recipient ="%s" % (tupproject.contactAddress),
+        sender = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject = "Your Project %s: new Release added"  % (tupproject.title),
+        body = "A new release was added to your project: '%s'" % (tupproject.title),
+         )
 
 def notifyProjectManagerReleaseLinkedAdd (tupproject, event):
     api.portal.send_email(
-        recipient= "%s" % (tupproject.contactAddress),
-        sender= "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        recipient ="%s" % (tupproject.contactAddress),
+        sender = "%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
         subject = "Your Project %s: new linked Release added"  % (tupproject.title),
-        body= "A new linked release was added to your project"
-    )
+        body = "A new linked release was added to your project: '%s'" % (tupproject.title),
+         )
 
 def getLatestRelease(self):
 
@@ -190,7 +197,7 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
         super(ValidateTUpProjectUniqueness, self).validate(value)
 
         if value is not None:
-            catalog = api.portal.get_tool(name= 'portal_catalog')
+            catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({'Title': value,
                                'object_provides': ITUpProject.__identifier__})
 
@@ -210,6 +217,7 @@ validator.WidgetValidatorDiscriminators(
 
 class TUpProjectView(DefaultView):
 
+
     def all_releases(self):
         """Get a list of all releases, ordered by version, starting with the latest.
         """
@@ -218,7 +226,7 @@ class TUpProjectView(DefaultView):
         current_path = "/".join(self.context.getPhysicalPath())
         res = catalog.searchResults(
             portal_type = ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
-            path= current_path,
+            path =current_path,
             sort_on = 'id',
             sort_order = 'reverse')
         return [r.getObject() for r in res]
