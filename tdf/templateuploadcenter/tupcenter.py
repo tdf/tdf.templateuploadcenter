@@ -13,11 +13,12 @@ from plone.app.layout.viewlets import ViewletBase
 from Products.CMFCore.utils import getToolByName
 from tdf.templateuploadcenter.tupproject import ITUpProject
 
+from plone.app.multilingual.dx import directives
 
 
 class ITUpCenter(model.Schema):
 
-    """ An Extensions Upload Center for LibreOffice extensions.
+    """ An Template Upload Center for LibreOffice templates.
     """
 
 
@@ -37,19 +38,11 @@ class ITUpCenter(model.Schema):
 
     product_title = schema.TextLine(
         title=_(u"Template Product Name"),
-        description=_(u"Name of the template product, e.g. only Templates or LibreOffice Templates"),
+        description=_(u"Name of the Template product, e.g. only Templates or LibreOffice Templates"),
     )
 
-    development_status = schema.List(title=_(u"Development Status"),
-        default=['Planing',
-                 'Pre-Alpha',
-                 'Alpha',
-                 'Beta',
-                 'Production/Stable',
-                 'Mature',
-                 'Inactive'],
-        value_type=schema.TextLine()
-    )
+
+
 
     available_category = schema.List(title=_(u"Available Categories"),
         default=['Accounting',
@@ -103,7 +96,6 @@ class ITUpCenter(model.Schema):
         value_type=schema.TextLine())
 
 
-
     available_licenses =schema.List(title=_(u"Available Licenses"),
         default=['GNU-GPL-v3+ (General Public License Version 3 and later)',
                  'GNU-GPL-v2 (GNU General Public License Version 2)',
@@ -113,8 +105,7 @@ class ITUpCenter(model.Schema):
                  'MPL-v2.0+ (Mozilla Public License Version 2.0 or later)',
                  'MPL-v1.1 (Mozilla Public License Version 1.1)',
                  'CC-BY-SA-v4 (Creative Commons Attribution-ShareAlike 4.0 International)'
-                 'CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',
-                 'ASF-v2 (Apache License Version 2.0)'],
+                 'CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',],
         value_type=schema.TextLine())
 
     available_versions = schema.List(title=_(u"Available Versions"),
@@ -127,7 +118,8 @@ class ITUpCenter(model.Schema):
                  'LibreOffice 4.2',
                  'LibreOffice 4.3',
                  'LibreOffice 4.4',
-                 'LibreOffice 5.0'],
+                 'LibreOffice 5.0',
+                 'LibreOffice 5.1'],
         value_type=schema.TextLine())
 
     available_platforms = schema.List(title=_(u"Available Platforms"),
@@ -140,9 +132,11 @@ class ITUpCenter(model.Schema):
                  'UNIX (other)'],
          value_type=schema.TextLine())
 
+
+
     form.primary('install_instructions')
     install_instructions = RichText(
-        title=_(u"Extension Installation Instructions"),
+        title=_(u"Template Installation Instructions"),
         default=_(u"Fill in the install instructions"),
         required=False
     )
@@ -160,12 +154,15 @@ class ITUpCenter(model.Schema):
     )
 
 
+
+
     legal_disclaimer = schema.Text(
         title=_(u"Text of the Legal Disclaimer and Limitations"),
         description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."),
         default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
         required=False
     )
+
 
     title_legaldownloaddisclaimer = schema.TextLine(
         title=_(u"Title of the Legal Disclaimer and Limitations for Downloads"),
@@ -184,61 +181,30 @@ class ITUpCenter(model.Schema):
 
 def notifyAboutNewProject(tupproject, event):
     api.portal.send_email(
-        recipient="templates@libreoffice.org",
-        subject="A Project with the title %s was added" % (tupproject.title),
-        body= "A member added a new project"
+        recipient = "templates@libreoffice.org",
+        subject = "A Project with the title %s was added" % (tupproject.title),
+        body =  "A member added a new project"
     )
 
-def notifiyAboutNewVersion(tupproject, event):
-    if hasattr(event, 'descriptions') and event.descriptions:
-        for d in event.descriptions:
-            if d.interface is ITUpCenter and 'available_versions' in d.attributes:
-                users=api.user.get_users()
-                message='We added a new version of LibreOffice to the list.\n' \
-                        'Please add this version to your LibreOffice template release(s), ' \
-                        'if it is (they are) compatible with this version.\n\n' \
-                        'Kind regards,\n\n' \
-                        'The LibreOffice Extension and Template Site Administration Team'
-                for f in users:
-                    mailaddress = f.getProperty('email')
-                    api.portal.send_email(
-                        recipient=mailaddress,
-                        sender="noreply@libreoffice.org",
-                        subject="New Version of LibreOffice Added",
-                        body=message,
-                    )
-
+directives.languageindependent('available_category')
+directives.languageindependent('available_licenses')
+directives.languageindependent('available_versions')
+directives.languageindependent('available_platforms')
 
 # Views
 
-class View(BrowserView):
+class TUpCenterView(BrowserView):
+
 
 
     def tupprojects(self):
         context = aq_inner(self.context)
-        catalog = api.portal.get_tool(name= 'portal_catalog')
+        catalog = api.portal.get_tool(name='portal_catalog')
 
         return catalog(object_provides=ITUpProject.__identifier__,
              path='/'.join(context.getPhysicalPath()),
              sort_order='sortable_title')
 
-
-    def tupproject_count(self):
-        """Return number of projects
-        """
-        context = aq_inner(self.context)
-        catalog = api.portal.get_tool(name= 'portal_catalog')
-
-        return len(catalog(portal_type='tdf.templateuploadcenter.tupproject'))
-
-
-    def tuprelease_count(self):
-        """Return number of downloadable files
-        """
-        context = aq_inner(self.context)
-        catalog = api.portal.get_tool(name= 'portal_catalog')
-
-        return len(catalog(portal_type='tdf.templateuploadcenter.tuprelease'))
 
 
     def get_latest_program_release(self):
@@ -251,8 +217,59 @@ class View(BrowserView):
         return versions[0]
 
 
+    def category_name(self):
+        category = list(self.context.available_category)
+        return category
+
+
+
+    def tupproject_count(self):
+        """Return number of projects
+        """
+        context = aq_inner(self.context)
+        catalog = api.portal.get_tool(name='portal_catalog')
+
+        return len(catalog(portal_type='tdf.templateuploadcenter.tupproject'))
+
+
+    def tuprelease_count(self):
+        """Return number of downloadable files
+        """
+        context = aq_inner(self.context)
+        catalog = api.portal.get_tool(name='portal_catalog')
+
+        return len(catalog(portal_type='tdf.templateuploadcenter.tuprelease'))
+
+
+
+
+    def get_most_popular_products(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'positive_ratings'
+        contentFilter = {
+                         'sort_on' : sort_on,
+                         'sort_order': 'reverse',
+                         'review_state': 'published',
+                         'portal_type' : 'tdf.templateuploadcenter.tupproject'}
+        return catalog(**contentFilter)
+
+
+    def get_newest_products(self):
+        self.catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'created'
+        contentFilter = {
+                          'sort_on' : sort_on,
+                          'sort_order' : 'reverse',
+                          'review_state': 'published',
+                          'portal_type':'tdf.templateuploadcenter.tupproject'}
+
+        results = self.catalog(**contentFilter)
+
+        return results
+
+
     def get_products(self, category, version, sort_on, SearchableText=None):
-        self.catalog = api.portal.get_tool(name= 'portal_catalog')
+        self.catalog = getToolByName(self.context, 'portal_catalog')
 
         sort_on = 'positive_ratings'
 
@@ -265,47 +282,12 @@ class View(BrowserView):
 
         if version != 'any':
             contentFilter['getCompatibility'] = version
-        
+
         if category:
             contentFilter['getCategories'] = category
 
         return self.catalog(**contentFilter)
 
 
-    def get_most_popular_products(self):
-        self.catalog = api.portal.get_tool(name= 'portal_catalog')
-        sort_on = 'positive_ratings'
-        contentFilter = {
-                         'sort_on' : sort_on,
-                         'sort_order': 'reverse',
-                         'review_state': 'published',
-                         'portal_type' : 'tdf.templateuploadcenter.tupproject'}
-        return self.catalog(**contentFilter)
-
-
-
-    def get_newest_products(self):
-        self.catalog = api.portal.get_tool(name= 'portal_catalog')
-        sort_on = 'created'
-        contentFilter = {
-                          'sort_on' : sort_on,
-                          'sort_order' : 'reverse',
-                          'review_state': 'published',
-                          'portal_type':'tdf.templateuploadcenter.tupproject'}
-
-        results = self.catalog(**contentFilter)
-
-        return results[:5]
-
-
-    def category_name(self):
-        category = list(self.context.available_category)
-        return category
-
-
-
 class TUpCenterOwnProjectsViewlet(ViewletBase):
     pass
-
-
-
