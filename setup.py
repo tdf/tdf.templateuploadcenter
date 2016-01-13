@@ -42,6 +42,6 @@ setup(name='tdf.templateuploadcenter',
       # addcontent support from paster and before you distribute
       # your package.
 #      setup_requires=["PasteScript"],
-#      paster_plugins=["templer.localcommands"],
+#      paster_plugins = ["ZopeSkel"],
 
       )
