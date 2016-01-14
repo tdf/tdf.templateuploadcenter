@@ -10,7 +10,7 @@
         <indexed_attr value="compatibility_choice" />
     </index>
     <index name="getCategories" meta_type="KeywordIndex">
-        <indexed_attr value="category_choice"/>
+        <indexed_attr value="category_choice" />
     </index>
-    <column value="getCategories"/>
-</object> 
+    <column value="getCategories" />
+</object>
