@@ -1,0 +1,189 @@
+#content-wrapper {
+    margin: 1em auto 0;
+    width: 910px;
+}
+
+
+#content {
+    clear: both;
+    line-height: 1.5em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-row {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.position-two-thirds {
+    margin-left: -33.33%;
+}
+
+.width-third {
+    width: 33.33%;
+}
+
+.grid-cell {
+    float: left;
+    left: 100%;
+    position: relative;
+}
+
+
+#sidebar-downloads {
+    height: 15em;
+}
+
+div.pullout {
+    background-color: #00A500;
+    margin-left: -1em;
+    padding-left: 2.5em;
+}
+
+div.splash {
+
+    border-radius: 0.5em;
+    color: #FFFFFF;
+    font-family: "Helvetica Neue",Arial,FreeSans,sans-serif;
+    margin-bottom: 1em;
+    padding: 0.5em 1.5em 1em;
+}
+
+#content div.splash h1 {
+    color: #FFFFFF;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-size: 1.75em;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 0.5em;
+}
+
+
+#content div.splash a.pointer {
+    background: no-repeat scroll 0 -115px rgba(0, 0, 0, 0);
+    font-size: 115%;
+    padding-left: 16px;
+}
+
+#content div.splash a {
+    border: medium none;
+    color: #FFFFFF !important;
+    font-weight: bold;
+}
+
+.position-leftmost {
+    margin-left: -100%;
+}
+.width-two-thirds {
+    width: 66.67%;
+}
+
+#sort-by {
+    font-size: 0.8em;
+    margin-left: 0.7em;
+}
+
+
+div.sidebar {
+    margin-left: 1em;
+    padding-top: 0.5em;
+}
+
+.panetuc{
+    width: 90%;
+    float: left;
+}
+
+.panetuc h2{
+    margin-top: 1em;
+}
+
+#mostpopular {
+    width: 90%;
+    float: left;
+}
+
+
+ul.popularproducts,
+ul.userprojects,
+ul.newestproducts,
+ul.downloads
+{
+    list-style-type: none;
+}
+
+#ownprojects h3,
+#mostrecent h3
+{
+    font-size: 1.5em;
+    line-height: 0.5em;
+}
+
+#ownProjects h4 {
+    margin-top: 1.5em;
+    margin-left: -0.5em;
+    background-color: #C0C0C0;
+    border-radius: 0.3em;
+    padding-top:0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.3em;
+}
+
+#ownProjects h2,
+#mostrecent h2,
+#by-category h2
+{
+    font-size: 1.75em;
+    background-color:#C0C0C0;
+    border-radius: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    margin-left: -0.5em;
+}
+
+div.installinstructions h3,
+div.aboutproduct h3
+{
+    font-size: 1.5em;
+    background-color:#C0C0C0;
+    border-radius: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    margin-left: -0.5em;
+}
+
+#by-category ol {
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+}
+
+
+span.product-leadin {
+    display: block;
+    font-size: 0.7em;
+    font-color: #999;
+}
+
+
+#mostpopular img.eupcenterprojectlogo {
+    float: left;
+    margin-right: 2em;
+}
+
+
+table.eupcenterprojecttable ul{
+    list-style-type: none;
+}
+
+table.eupcenterprojecttable td {
+    padding: 1em;
+}
