@@ -5,12 +5,14 @@
     <!-- Basic metadata -->
     <property name="title" i18n:translate="">Template Project</property>
     <property name="description" i18n:translate="">A template project</property>
+
     <property name="allow_discussion">True</property>
     <property name="global_allow">False</property>
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
         <element value="tdf.templateuploadcenter.tuprelease" />
         <element value="tdf.templateuploadcenter.tupreleaselink" />
+
     </property>
 
     <!-- schema interface -->
@@ -25,13 +27,11 @@
     <!-- enabled behaviors -->
     <property name="behaviors">
         <element value="plone.app.content.interfaces.INameFromTitle" />
-        <!-- IReferenceable might not be available, but it will not break. -->
-        <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
-        <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
         <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
         <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
         <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
         <element value="cioppino.twothumbs.interfaces.ILoveThumbsDontYou" />
+        <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
     </property>
 
     <!-- View information -->

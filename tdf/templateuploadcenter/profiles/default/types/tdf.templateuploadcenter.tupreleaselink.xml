@@ -4,7 +4,8 @@
 
     <!-- Basic metadata -->
     <property name="title" i18n:translate="">Template Linked Release</property>
-    <property name="description" i18n:translate="">An template release with linked file(s)</property>
+    <property name="description" i18n:translate="">A linked template release</property>
+
     <property name="allow_discussion">True</property>
     <property name="global_allow">False</property>
     <property name="filter_content_types">True</property>
@@ -16,15 +17,13 @@
     <property name="schema">tdf.templateuploadcenter.tupreleaselink.ITUpReleaseLink</property>
 
     <!-- class used for content items -->
-    <property name="klass">plone.dexterity.content.Item</property>
+    <property name="klass">tdf.templateuploadcenter.customreleasename.ReleaseCustomName</property>
 
     <!-- add permission -->
     <property name="add_permission">tdf.templateuploadcenter.AddTemplateProject</property>
 
     <!-- enabled behaviors -->
     <property name="behaviors">
-        <!-- IReferenceable might not be available, but it will not break. -->
-        <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
         <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
         <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
         <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
