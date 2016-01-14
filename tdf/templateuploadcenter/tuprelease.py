@@ -1,4 +1,4 @@
-from tdf.templateuploadcenter import _
+from tdf.templateuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
@@ -20,15 +20,6 @@ from zope import schema
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
-
-def vocabDevelopmentStatus(context):
-    """pick up developmnet status from parent"""
-    developmentstatus_list = getattr(context.__parent__, 'development_status', [])
-    terms = []
-    for value in developmentstatus_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
-    return SimpleVocabulary(terms)
-directlyProvides(vocabDevelopmentStatus, IContextSourceBinder)
 
 
 def vocabAvailLicenses(context):
@@ -101,18 +92,19 @@ class AcceptLegalDeclaration(Invalid):
 
 class ITUpRelease(model.Schema):
 
-
-    title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Release Title"),
-        min_length=5,
+    form.mode(projecttitle='hidden')
+    projecttitle = schema.TextLine(
+        title=_(u"The Computed Project Title"),
+        description=_(u"The project title will be computed from the parent project title"),
         defaultFactory= getContainerTitle
     )
 
+
     releasenumber=schema.TextLine(
         title=_(u"Release Number"),
+        description=_(u"Release Number (up to eight chars)"),
         default=_(u"1.0"),
-        max_length=8,
+        max_length=8
     )
 
 
@@ -137,12 +129,6 @@ class ITUpRelease(model.Schema):
         required=False,
     )
 
-
-    developmentstatus_choice=schema.Choice(
-        title = _(u"Development Status"),
-        source=vocabDevelopmentStatus,
-        required=True
-    )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice= schema.List(
@@ -169,11 +155,13 @@ class ITUpRelease(model.Schema):
         defaultFactory = legal_declaration_title
     )
 
+
     form.mode(declaration_legal='display')
     declaration_legal = schema.Text(
         title=_(u""),
         required=False,
         defaultFactory = legal_declaration_text
+
     )
 
     accept_legal_declaration=schema.Bool(
@@ -202,7 +190,7 @@ class ITUpRelease(model.Schema):
 
 
     file = NamedBlobFile(
-        title=_(u"The File you want to upload"),
+        title=_(u"The first file you want to upload"),
         description=_(u"Please upload your file."),
         required=True,
     )
@@ -218,7 +206,7 @@ class ITUpRelease(model.Schema):
 
 
     form.mode(information_further_file_uploads='display')
-    form.primary('information_further_file_uploads')
+    model.primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title = _(u"Further File Uploads for this Release"),
         description = _(u"If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."),
@@ -276,6 +264,42 @@ class ITUpRelease(model.Schema):
     )
 
 
+    form.fieldset('fileset2',
+        label=u"File Upload 2",
+        fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
+    )
+
+
+    file4 = NamedBlobFile(
+        title=_(u"The fifth file you want to upload (this is optional)"),
+        description=_(u"Please upload your file."),
+        required=False,
+    )
+
+    form.widget(platform_choice4=CheckBoxFieldWidget)
+    platform_choice4= schema.List(
+        title=_(u"Fifth uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
+    )
+
+    file5 = NamedBlobFile(
+        title=_(u"The sixth file you want to upload (this is optional)"),
+        description=_(u"Please upload your file."),
+        required=False,
+    )
+
+    form.widget(platform_choice5=CheckBoxFieldWidget)
+    platform_choice5= schema.List(
+        title=_(u"Sixth uploaded file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
+    )
+
+
+
 
     @invariant
     def licensenotchoosen(value):
@@ -306,9 +330,9 @@ class ITUpRelease(model.Schema):
 
 
 
-#View
+
 class TUpReleaseView(DefaultView):
 
-    def canPublishContent(self):
-        return checkPermission('cmf.ModifyPortalContent', self.context)
 
+     def canPublishContent(self):
+        return checkPermission('cmf.ModifyPortalContent', self.context)

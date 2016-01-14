@@ -16,21 +16,12 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 from plone.directives import form
 from zope import schema
-from plone.app.content.interfaces import INameFromTitle
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
 
-def vocabDevelopmentStatus(context):
-    """pick up developmnet status from parent"""
-    developmentstatus_list = getattr(context.__parent__, 'development_status', [])
-    terms = []
-    for value in developmentstatus_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
-    return SimpleVocabulary(terms)
-directlyProvides(vocabDevelopmentStatus, IContextSourceBinder)
 
 
 def vocabAvailLicenses(context):
@@ -99,14 +90,15 @@ class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
+
+
 class ITUpReleaseLink(model.Schema):
 
 
-
-    title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Release Title"),
-        min_length=5,
+    form.mode(projecttitle='hidden')
+    projecttitle = schema.TextLine(
+        title=_(u"The Computed Project Title"),
+        description=_(u"The project title will be computed from the parent project title"),
         defaultFactory= getContainerTitle
     )
 
@@ -137,13 +129,6 @@ class ITUpReleaseLink(model.Schema):
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
         required=False,
-    )
-
-
-    developmentstatus_choice=schema.Choice(
-        title = _(u"Development Status"),
-        source=vocabDevelopmentStatus,
-        required=True
     )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
@@ -205,7 +190,7 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your template file."),
+        description=_(u"Please insert a link to your extension file."),
         required=True
     )
 
@@ -218,7 +203,7 @@ class ITUpReleaseLink(model.Schema):
 
     form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice= schema.List(
-        title=_(u" First uploaded file is compatible with the Platform(s)"),
+        title=_(u" First linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
@@ -228,22 +213,22 @@ class ITUpReleaseLink(model.Schema):
     form.mode(information_further_file_uploads='display')
     form.primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
-        title = _(u"Further File Uploads for this Release"),
-        description = _(u"If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."),
+        title = _(u"Further linked files for this Release"),
+        description = _(u"If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the register 'Further linked files for this Release'."),
         required = False
      )
 
 
 
     form.fieldset('fileset1',
-        label=u"Further linked releases",
+        label=u"Further linked files for this release",
         fields=['link_to_file1', 'platform_choice1', 'link_to_file2', 'platform_choice2', 'link_to_file3', 'platform_choice3']
     )
 
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your template file."),
+        description=_(u"Please insert a link to your extension file."),
         required=False
     )
 
@@ -253,23 +238,22 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-
-
     form.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1= schema.List(
         title=_(u" Second linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=False,
+        required=True,
     )
 
 
 
     link_to_file2 = schema.URI(
         title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your template file."),
+        description=_(u"Please insert a link to your extension file."),
         required=False
     )
+
 
     external_file_size2 = schema.Float(
         title=_(u"The size of the external hosted file"),
@@ -277,23 +261,23 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-
-
     form.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2= schema.List(
         title=_(u" Third linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=False
+        required=True
     )
 
 
 
     link_to_file3 = schema.URI(
         title=_(u"The Link to the file of the release"),
-        description=_(u"Please insert a link to your template file."),
+        description=_(u"Please insert a link to your extension file."),
         required=False
     )
+
+
 
     external_file_size3 = schema.Float(
         title=_(u"The size of the external hosted file"),
@@ -301,14 +285,57 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-
-
     form.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3= schema.List(
         title=_(u" Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=False,
+        required=True,
+    )
+
+    link_to_file4 = schema.URI(
+        title=_(u"The Link to the file of the release"),
+        description=_(u"Please insert a link to your extension file."),
+        required=False
+    )
+
+
+
+    external_file_size4 = schema.Float(
+        title=_(u"The size of the external hosted file"),
+        description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
+        required=False
+    )
+
+    form.widget(platform_choice4=CheckBoxFieldWidget)
+    platform_choice4= schema.List(
+        title=_(u" Fourth linked file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the linked file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
+    )
+
+
+    link_to_file5 = schema.URI(
+        title=_(u"The Link to the file of the release"),
+        description=_(u"Please insert a link to your extension file."),
+        required=False
+    )
+
+
+
+    external_file_size5 = schema.Float(
+        title=_(u"The size of the external hosted file"),
+        description=_(u"Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"),
+        required=False
+    )
+
+    form.widget(platform_choice5=CheckBoxFieldWidget)
+    platform_choice5= schema.List(
+        title=_(u" Fourth linked file is compatible with the Platform(s)"),
+        description=_(u"Please mark one or more platforms with which the linked file is compatible."),
+        value_type=schema.Choice(source=vocabAvailPlatforms),
+        required=True,
     )
 
 
@@ -326,7 +353,7 @@ class ITUpReleaseLink(model.Schema):
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
-           raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about your Release and your Uploaded File"))
+           raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about your Release and your linked File"))
 
     @invariant
     def testingvalue(data):
@@ -336,54 +363,14 @@ class ITUpReleaseLink(model.Schema):
     @invariant
     def noOSChosen(data):
         if data.link_to_file is not None and data.platform_choice ==[]:
-            raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
+            raise Invalid(_(u"Please choose a compatible platform for the linked file."))
 
 
 
-@form.default_value(field=ITUpReleaseLink['declaration_legal'])
-def LegalTextDefaultValue(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.__parent__.legal_disclaimer
-
-@form.default_value(field=ITUpReleaseLink['title_declaration_legal'])
-def legal_declaration_title_default(data):
-    # To get hold of the folder, do: context = data.context
-    return data.context.aq_inner.aq_parent.title_legaldisclaimer
-
-@form.default_value(field=ITUpReleaseLink['contact_address2'])
-def contactinfoDefaultValue(data):
-    return data.context.contactAddress
 
 
-@form.default_value(field=ITUpReleaseLink['title'])
-def releaseDefaultTitleValue(self):
-    title= self.context.title
-    return (title)
-
-@form.default_value(field=ITUpReleaseLink['licenses_choice'])
-def defaultLicense(self):
-    licenses = list( self.context.available_licenses)
-    defaultlicenses = licenses[0]
-    return [defaultlicenses]
-
-@form.default_value(field=ITUpReleaseLink['compatibility_choice'])
-def defaultcompatibility(self):
-    compatibility = list( self.context.available_versions)
-    defaultcompatibility = compatibility[0]
-    return [defaultcompatibility]
-
-@form.default_value(field=ITUpReleaseLink['platform_choice'])
-def defaultplatform(self):
-    platform = list( self.context.available_platforms)
-    defaultplatform = platform[0]
-    return [defaultplatform]
-
-
-
-#View
 class TUpReleaseLinkView(DefaultView):
 
 
     def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
-
