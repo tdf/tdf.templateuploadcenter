@@ -18,6 +18,7 @@ from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone.directives import form
+from Products.validation import V_REQUIRED
 
 
 

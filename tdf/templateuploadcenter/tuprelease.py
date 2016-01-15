@@ -19,6 +19,7 @@ from zope import schema
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
+from Products.validation import V_REQUIRED
 
 
 
