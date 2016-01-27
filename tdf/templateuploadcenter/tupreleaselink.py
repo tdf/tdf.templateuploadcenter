@@ -1,4 +1,4 @@
-from tdf.templateuploadcenter import _
+from tdf.templateuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema

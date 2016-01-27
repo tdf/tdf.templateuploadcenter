@@ -7,12 +7,8 @@ from Acquisition import aq_inner
 from plone import api
 from plone.directives import form
 from zope import schema
-
 from plone.app.layout.viewlets import ViewletBase
-
-from Products.CMFCore.utils import getToolByName
 from tdf.templateuploadcenter.tupproject import ITUpProject
-
 from plone.app.multilingual.dx import directives
 
 
@@ -269,10 +265,8 @@ class TUpCenterView(BrowserView):
 
 
     def get_products(self, category, version, sort_on, SearchableText=None):
-        self.catalog = getToolByName(self.context, 'portal_catalog')
-
+        self.catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'positive_ratings'
-
         contentFilter = {
 	                     'sort_on' : sort_on,
 
