@@ -66,44 +66,45 @@
                                           </h3>
                                           <div tal:content="structure project/@@rate-if-you-dare" />
 
-                                          <div class="project-thumb thumbzoom"
-                                                  tal:condition="screenshot">
-                                              <a tal:attributes="href projectURL">
-                                                  <img tal:condition="project/screenshot_thumb|nothing"
-                                                          tal:replace="structure project/screenshot_thumb" />
-                                              </a>
-                                          </div>
-                                          <span class="project-thumb"
-                                                  tal:condition="not:screenshot">
-                                              <img tal:condition="project/project_logo|nothing"
-                                                      tal:define="scales project/@@images;
-                                                                  projectlogo project/@@images/project_logo;
-                                                                  scale python:scales.scale('project_logo', 'tile')"
-                                                      tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
-                                          </span>
+                                                <div class="project-thumb thumbzoom"
+                                                        tal:condition="screenshot">
+                                                    <a tal:attributes="href projectURL">
+                                                        <img tal:condition="screenshot"
+                                                                tal:replace="structure project/@@images/screenshot/thumb" />
+                                                    </a>
+                                                </div>
+                                                <span class="project-thumb"
+						                                    tal:condition="not:screenshot">
+                                                    <img tal:condition="project/project_logo|nothing"
+                                                            tal:define="scales project/@@images;
+                                                                    projectlogo project/@@images/project_logo;
+                                                                    scale python:scales.scale('project_logo', 'tile')"
+                                                            tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
+                                                </span>
 
 
-                                          <div class="product-details">
-                                              <span class="product-leadin">
-                                                  <!---
-                                                  <span tal:replace="python:toLocalizedTime(result.getLatestReleaseDate or result.modified, long_format=0)">
-                                                  Sept. 3, 2008
-                                                  </span>
-                                                  -->
-                                                  <span i18n:translate="">in</span>
-                                                  <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
-                                              </span>
-                                              <p class="product-description"
-                                                      tal:content="structure project/description">
-                                                  <tal:comment replace="nothing">Project Description.</tal:comment>
-                                              </p>
-                                          </div>
-                                      </tal:entry>
-                                 </li>
-                             </ul>
-                         </tal:results>
+                                                <div class="product-details">
+                                                    <span class="product-leadin">
+
+                                                        <span tal:define="LatestReleaseDate project/view/latest_release_date;"
+                                                                tal:replace="python:toLocalizedTime(LatestReleaseDate , long_format=0)">
+                                                            Jan. 22, 2016
+                                                        </span>
+
+                                                        <span i18n:translate="">in</span>
+                                                        <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
+                                                    </span>
+                                                    <p class="product-description"
+                                                            tal:content="structure project/description">
+                                                        <tal:comment replace="nothing">Project Description.</tal:comment>
+                                                    </p>
+                                                </div>
+                                            </tal:entry>
+                                       </li>
+                                   </ul>
+                              </tal:results>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                  <div tal:condition="python: searchForProducts.find('getCategories') != -1">
@@ -161,7 +162,7 @@
 							                             projectURL project/absolute_url;
 							                             result_type result/portal_type;
 							                             zoomid   python:project.id.replace('.', '_');
-							                             screenshot   project/getScreenshot | nothing">
+							                             screenshot   project/screenshot">
                                              <h3 style="border-top: none">
                                                  <a href=""
                                                          tal:attributes="href projectURL;"
@@ -172,8 +173,8 @@
                                              <div tal:content="structure project/@@rate-if-you-dare" />
                                              <div class="project-thumb thumbzoom" tal:condition="screenshot">
                                                  <a tal:attributes="href projectURL">
-                                                     <img tal:condition="project/screenshot_thumb|nothing"
-                                                             tal:replace="structure project/screenshot_thumb" />
+                                                     <img tal:condition="screenshot"
+                                                             tal:replace="structure project/@@images/screenshot/thumb" />
                                                  </a>
                                              </div>
                                              <span class="project-thumb" tal:condition="not:screenshot">
@@ -185,11 +186,10 @@
                                              </span>
                                              <div class="product-details">
                                                  <span class="product-leadin">
-                                                     <!---
-                                                     <span tal:replace="python:toLocalizedTime(result.getLatestReleaseDate or result.modified, long_format=0)">
-                                                     Sept. 3, 2008
+                                                     <span tal:define="LatestReleaseDate project/view/latest_release_date;"
+                                                           tal:replace="python:toLocalizedTime(LatestReleaseDate , long_format=0)">
+                                                            Jan. 22, 2016
                                                      </span>
-                                                     -->
                                                      <span i18n:translate="">in</span>
                                                      <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
                                            </span>
@@ -247,7 +247,7 @@
 
                                         <h3 style="border-top: none">
                                             <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
-                                                <tal:comment replace="nothing">Extension One</tal:comment></a>
+                                                <tal:comment replace="nothing">Template One</tal:comment></a>
                                         </h3>
                                     </tal:entry>
                                 </li>
