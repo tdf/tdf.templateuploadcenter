@@ -95,7 +95,7 @@
               <a href="#" title="Current release for the project"
                i18n:attributes="title title_latest_release_project"
                tal:attributes="href latestRelease/absolute_url">
-               <span tal:content="latestRelease/Title" /> - <span tal:content="latestRelease/releasenumber" />
+               <span tal:content="latestRelease/Title" />
               </a>
             </h2>
 
