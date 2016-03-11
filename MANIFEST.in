@@ -1,0 +1,14 @@
+include *.py
+include *.txt
+include buildout.cfg
+include plone.cfg
+recursive-include docs *.GPL
+recursive-include docs *.txt
+recursive-include tdf *.css
+recursive-include tdf *.gif
+recursive-include tdf *.png
+recursive-include tdf *.pot
+recursive-include tdf *.pt
+recursive-include tdf *.txt
+recursive-include tdf *.xml
+recursive-include tdf *.zcml
