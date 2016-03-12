@@ -4,7 +4,7 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fixed an import in tupcenter.py [Andreas Mantke]
 
 
 0.2 (2016-03-11)
