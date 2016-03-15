@@ -4,7 +4,7 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Removed obsolet History.txt [Andreas Mantke]
 
 
 0.3 (2016-03-12)
