@@ -4,6 +4,7 @@ Changelog
 0.4 (unreleased)
 ----------------
 
+- Update of the internationalisation template file [Andreas Mantke]
 - Removed obsolet History.txt [Andreas Mantke]
 
 

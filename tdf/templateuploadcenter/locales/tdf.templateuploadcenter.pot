@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-02-21 09:23+0000\n"
+"POT-Creation-Date: 2016-03-24 08:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,12 +55,20 @@ msgstr ""
 msgid "1.0"
 msgstr ""
 
-#: ./tupcenter_templates/own_projects.pt:64
+#: ./tupcenter_templates/own_project.pt:64
 msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> ${product_title_tupproject}"
 msgstr ""
 
 #: ./tupcenter_templates/view.pt:225
 msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> Submit your ${product_title_tupproject}"
+msgstr ""
+
+#: ./tupproject_templates/view.pt:46
+msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> a Release to your ${product_title_tupproject} Project"
+msgstr ""
+
+#: ./tupproject_templates/view.pt:52
+msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> a linked Release to your ${product_title_tupproject} Project"
 msgstr ""
 
 #: ./tuprelease.py:131
@@ -95,6 +103,10 @@ msgstr ""
 
 #: ./tupproject.py:139
 msgid "Add a screenshot by clicking the 'Browse' button."
+msgstr ""
+
+#: ./tupproject_templates/view.pt:209
+msgid "All Releases"
 msgstr ""
 
 #: ./tupcenter_templates/view.pt:119
@@ -169,6 +181,10 @@ msgstr ""
 #: ./tuprelease.py:178
 #: ./tupreleaselink.py:175
 msgid "Contact email-address for the project."
+msgstr ""
+
+#: ./tupproject_templates/view.pt:94
+msgid "Current Release"
 msgstr ""
 
 #: ./tupcenter_templates/view.pt:221
@@ -286,8 +302,8 @@ msgstr ""
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
 msgstr ""
 
-#: ./tuprelease_templates/view.pt:32
-#: ./tupreleaselink_templates/view.pt:33
+#: ./tuprelease_templates/view.pt:34
+#: ./tupreleaselink_templates/view.pt:35
 msgid "Info"
 msgstr ""
 
@@ -488,6 +504,10 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
+#: ./tupproject_templates/view.pt:105
+msgid "Released ${latest_release_date}"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Retract"
@@ -677,9 +697,14 @@ msgid "description_no_results_found"
 msgstr ""
 
 #. Default: "Remember to publish your release once all files have been added."
-#: ./tuprelease_templates/view.pt:34
-#: ./tupreleaselink_templates/view.pt:35
+#: ./tuprelease_templates/view.pt:36
+#: ./tupreleaselink_templates/view.pt:37
 msgid "help_message_remember_is_editable"
+msgstr ""
+
+#. Default: "No stable release available yet."
+#: ./tupproject_templates/view.pt:84
+msgid "help_not_stable_release"
 msgstr ""
 
 #: ./tupcenter_templates/view.pt:94
@@ -691,18 +716,29 @@ msgstr ""
 msgid "label_any_version"
 msgstr ""
 
+#. Default: "Current Release"
+#: ./tupproject_templates/view.pt:82
+msgid "label_current_stable_release"
+msgstr ""
+
 #. Default: "The Template file"
-#: ./tuprelease_templates/view.pt:66
+#: ./tuprelease_templates/view.pt:65
 msgid "label_downloadable_template_file"
 msgstr ""
 
 #. Default: "The linked Template file"
-#: ./tupreleaselink_templates/view.pt:65
+#: ./tupreleaselink_templates/view.pt:64
 msgid "label_linked_template_file"
 msgstr ""
 
+#. Default: "More about this release…"
+#: ./tupproject_templates/view.pt:126
+msgid "label_release_details"
+msgstr ""
+
 #. Default: "<img src=\"++resource++tdf.templateuploadcenter/download_icon.gif\" />"
-#: ./tuprelease_templates/view.pt:66
+#: ./tupproject_templates/view.pt:133
+#: ./tuprelease_templates/view.pt:65
 msgid "label_template_file"
 msgstr ""
 
@@ -711,51 +747,81 @@ msgstr ""
 msgid "re-release"
 msgstr ""
 
-#. Default: "Please don't forget to publish your release."
-#: ./tuprelease_templates/view.pt:45
-#: ./tupreleaselink_templates/view.pt:46
-msgid "suggest_publish"
+#: ./tupproject_templates/view.pt:110
+msgid "tested with:"
 msgstr ""
 
 #. Default: "Available Downloads"
-#: ./tuprelease_templates/view.pt:60
-#: ./tupreleaselink_templates/view.pt:62
+#: ./tuprelease_templates/view.pt:59
+#: ./tupreleaselink_templates/view.pt:61
 msgid "title_available_downloads"
 msgstr ""
 
 #. Default: "Compatibility"
-#: ./tuprelease_templates/view.pt:55
-#: ./tupreleaselink_templates/view.pt:57
+#: ./tuprelease_templates/view.pt:54
+#: ./tupreleaselink_templates/view.pt:56
 msgid "title_compatibility"
 msgstr ""
 
+#. Default: "Compatibility"
+#: ./tupproject_templates/view.pt:217
+msgid "title_compatiblity"
+msgstr ""
+
+#. Default: "Description"
+#: ./tupproject_templates/view.pt:218
+msgid "title_description"
+msgstr ""
+
+#. Default: "Extension Version"
+#: ./tupproject_templates/view.pt:215
+msgid "title_extension"
+msgstr ""
+
+#. Default: "Current release for the project"
+#: ./tupproject_templates/view.pt:95
+msgid "title_latest_release_project"
+msgstr ""
+
 #. Default: "License(s)"
-#: ./tuprelease_templates/view.pt:53
-#: ./tupreleaselink_templates/view.pt:55
+#: ./tuprelease_templates/view.pt:52
+#: ./tupreleaselink_templates/view.pt:54
 msgid "title_license_s"
 msgstr ""
 
 #. Default: "Link to Source Code"
-#: ./tuprelease_templates/view.pt:115
-#: ./tupreleaselink_templates/view.pt:140
+#: ./tuprelease_templates/view.pt:114
+#: ./tupreleaselink_templates/view.pt:139
 msgid "title_link_to_sourcecode"
 msgstr ""
 
+#. Default: "License(s)"
+#: ./tupproject_templates/view.pt:219
+msgid "title_lisenses"
+msgstr ""
+
+#. Default: "Platform(s)"
+#: ./tupproject_templates/view.pt:216
+msgid "title_platform"
+msgstr ""
+
 #. Default: "Project Resources"
-#: ./tuprelease_templates/view.pt:90
-#: ./tupreleaselink_templates/view.pt:115
+#: ./tupproject_templates/view.pt:267
+#: ./tuprelease_templates/view.pt:89
+#: ./tupreleaselink_templates/view.pt:114
 msgid "title_project_resources"
 msgstr ""
 
 #. Default: "Release Details"
-#: ./tuprelease_templates/view.pt:50
-#: ./tupreleaselink_templates/view.pt:51
+#: ./tuprelease_templates/view.pt:49
+#: ./tupreleaselink_templates/view.pt:50
 msgid "title_release_details"
 msgstr ""
 
 #. Default: "Screenshot"
-#: ./tuprelease_templates/view.pt:103
-#: ./tupreleaselink_templates/view.pt:128
+#: ./tupproject_templates/view.pt:278
+#: ./tuprelease_templates/view.pt:102
+#: ./tupreleaselink_templates/view.pt:127
 msgid "title_screenshot"
 msgstr ""
 
