@@ -100,7 +100,7 @@ class ITUpCenter(model.Schema):
                  'BSD (BSD License (revised))',
                  'MPL-v2.0+ (Mozilla Public License Version 2.0 or later)',
                  'MPL-v1.1 (Mozilla Public License Version 1.1)',
-                 'CC-BY-SA-v4 (Creative Commons Attribution-ShareAlike 4.0 International)'
+                 'CC-BY-SA-v4 (Creative Commons Attribution-ShareAlike 4.0 International)',
                  'CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',],
         value_type=schema.TextLine())
 
