@@ -58,7 +58,7 @@
 							                    projectURL project/absolute_url;
 							                    result_type result/portal_type;
 							                    zoomid   python:project.id.replace('.', '_');
-							                    screenshot   project/getScreenshot | nothing">
+							                    screenshot   project/screenshot | nothing">
 
                                           <h3 style="border-top: none">
                                               <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
@@ -243,7 +243,7 @@
 							                    projectURL project/absolute_url;
 							                    result_type result/portal_type;
 							                    zoomid   python:project.id.replace('.', '_');
-							                    screenshot   project/getScreenshot | nothing">
+							                    screenshot   project/screenshot | nothing">
 
                                         <h3 style="border-top: none">
                                             <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
