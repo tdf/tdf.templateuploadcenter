@@ -4,6 +4,9 @@ Changelog
 0.4 (unreleased)
 ----------------
 
+- Fixed the screenshot definition in the tupcenter-view [Andreas Mantke]
+- Added a missing comma in a listing of tupcenter.py [Andreas Mantke]
+- Changed in setup.py from History.txt to CHANGES.txt [Andreas Mantke]
 - Update of the internationalisation template file [Andreas Mantke]
 - Removed obsolet History.txt [Andreas Mantke]
 
