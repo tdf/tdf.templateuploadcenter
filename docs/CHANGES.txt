@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4 (unreleased)
+0.4 (2016-04-05)
 ----------------
 
 - Fixed the screenshot definition in the tupcenter-view [Andreas Mantke]
