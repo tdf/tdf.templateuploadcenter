@@ -202,3 +202,16 @@ table.tupcenterprojecttable td {
     font-size: .8em;
     color: #999;
 }
+
+
+
+div.eupcenterreleaseinstallinstructions h3
+{
+    font-size: 1.5em;
+    background-color:#C0C0C0;
+    border-radius: 0.3em;
+    padding-left: 0.3em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    margin-left: -0.5em;
+}
