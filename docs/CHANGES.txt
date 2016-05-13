@@ -5,6 +5,7 @@ Changelog
 ----------------
 
 - Added a css style for release install instructions [Andreas Mantke]
+- Fix for getting the title of the project [Andreas Mantke]
 - Removed the column one from project and (linked) release views [Andreas Mantke]
 
 
