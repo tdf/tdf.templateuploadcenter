@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5 (unreleased)
+0.5 (2016-05-14)
 ----------------
 
 - Added a css style for release install instructions [Andreas Mantke]
