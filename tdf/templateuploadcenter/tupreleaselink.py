@@ -95,7 +95,6 @@ class AcceptLegalDeclaration(Invalid):
 
 class ITUpReleaseLink(model.Schema):
 
-
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),

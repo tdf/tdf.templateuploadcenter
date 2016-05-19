@@ -52,7 +52,6 @@
                             <span tal:content="context/product_title | string:template_project" i18n:name="product_title_tupproject" /> Project
 
                         </a>
-             </div>
 
 <div class="grid-row">
 
@@ -102,14 +101,14 @@
          <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
         <div tal:content="structure context/@@rate-if-you-dare"/>
         <p class="documentDescription"><span tal:content="context/description" /></p>
-        <h2 class="documentSecondHeading">Project Description</h2>
+        <h2 tal:condition="context/details" class="documentSecondHeading">Project Description</h2>
         <p class="documentDescription" tal:content="structure view/w/details/render" />
         <h3>Category/Categories</h3>
         <div tal:content="structure view/w/category_choice/render" />
         <h3 tal:condition="context/homepage">Homepage of the Project</h3>
         <div tal:content="context/homepage" />
 
-<h4>Logo</h4>
+<h4 tal:condition="context/project_logo">Logo</h4>
 
 <img src="" alt=""
      tal:condition="context/project_logo|nothing"
@@ -131,14 +130,14 @@
 
         </tal:nostable>
         <tal:stable condition="nocall:latestRelease">
-             <h2>
-              <span i18n:translate="">Current Release</span> <br />
+             <h2 i18n:translate="">Current Release</h2>
+            <h3>
               <a href="#" title="Current release for the project"
                i18n:attributes="title title_latest_release_project"
                tal:attributes="href latestRelease/absolute_url">
                <span tal:content="latestRelease/Title" />
               </a>
-            </h2>
+            </h3>
 
             <p class="discreet">
 
