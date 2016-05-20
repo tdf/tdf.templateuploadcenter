@@ -4,6 +4,10 @@ Changelog
 0.6 (unreleased)
 ----------------
 
+- Smaller fixes on the project view the project view template:
+  removed an obsolete div tag and made logo and project description heading
+  conditional, changed the heading for the current release down the hierarchy
+  [Andreas Mantke]
 - Fix in the project view for the link to css file [Andreas Mantke]
 
 
