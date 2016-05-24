@@ -99,7 +99,7 @@
 
 
          <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
-        <div tal:content="structure context/@@rate-if-you-dare"/>
+        <div tal:content="structure context/@@rate-if-you-dare" />
         <p class="documentDescription"><span tal:content="context/description" /></p>
         <h2 tal:condition="context/details" class="documentSecondHeading">Project Description</h2>
         <p class="documentDescription" tal:content="structure view/w/details/render" />
@@ -152,11 +152,11 @@
 
 </p>
             <tal:compatibility condition="latestRelease/compatibility_choice">
- <ul class="latestreleasecompatiblity">
+                <p class="latestreleasecompatibility">
                          <tal:loop repeat="compatibility_choice latestRelease/compatibility_choice">
-                            <li><div tal:content="compatibility_choice" /></li>
+                            <span tal:content="compatibility_choice" />,
                          </tal:loop>
-                     </ul>
+                     </p>
 </tal:compatibility>
 
 <p tal:condition="latestRelease/description">
