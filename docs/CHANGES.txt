@@ -4,7 +4,8 @@ Changelog
 0.7 (unreleased)
 ----------------
 
-- Added a validator for the uniqueness of the naming of release and linked release [Andreas Mantke]
+- Added a validator for the uniqueness of the release and linked release naming and
+  and the corresponding adapter [Andreas Mantke]
 - Changed the compatibility list in the project view to a text line [Andreas Mantke]
 
 
