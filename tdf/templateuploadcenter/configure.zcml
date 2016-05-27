@@ -121,4 +121,13 @@
     factory=".tupproject.ValidateTUpProjectUniqueness"
     />
 
+  <adapter
+    factory=".tuprelease.ValidateTUpReleaseUniqueness"
+    />
+
+  <adapter
+    factory=".tupreleaselink.ValidateTUpReleaseLinkUniqueness"
+    />
+
+
 </configure>

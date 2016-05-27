@@ -20,6 +20,9 @@ from zope import schema
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
+from z3c.form import validator
+from plone.uuid.interfaces import IUUID
+from plone import api
 
 
 
@@ -364,6 +367,34 @@ class ITUpReleaseLink(model.Schema):
     def noOSChosen(data):
         if data.link_to_file is not None and data.platform_choice ==[]:
             raise Invalid(_(u"Please choose a compatible platform for the linked file."))
+
+
+
+
+
+class ValidateTUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of release titles.
+
+
+    def validate(self, value):
+        # Perform the standard validation first
+        super(ValidateTUpReleaseLinkUniqueness, self).validate(value)
+
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': value,
+                               'portal_type': ('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),})
+
+            contextUUID = IUUID(self.context, None)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u"The release number is already in use. Please choose another one."))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateTUpReleaseLinkUniqueness,
+    field=ITUpReleaseLink['releasenumber'],
+)
 
 
 
