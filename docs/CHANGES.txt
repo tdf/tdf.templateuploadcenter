@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.8 (unreleased)
+0.8 (2016-07-11)
 ----------------
 
 - CSS-Style fixes
