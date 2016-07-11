@@ -4,7 +4,9 @@ Changelog
 0.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- CSS-Style fixes
+- Markup style fix [Andreas Mantke]
+- PEP-8-Fixes [Andreas Mantke]
 
 
 0.7 (2016-05-27)
