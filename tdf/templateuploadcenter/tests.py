@@ -23,7 +23,7 @@ class TestCase(ptc.PloneTestCase):
         @classmethod
         def setUp(cls):
             zcml.load_config('configure.zcml',
-              tdf.templateuploadcenter)
+                             tdf.templateuploadcenter)
 
         @classmethod
         def tearDown(cls):
@@ -34,11 +34,11 @@ def test_suite():
     return unittest.TestSuite([
 
         # Unit tests
-        #doctestunit.DocFileSuite(
+        # doctestunit.DocFileSuite(
         #    'README.txt', package='tdf.templateuploadcenter',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
-        #doctestunit.DocTestSuite(
+        # doctestunit.DocTestSuite(
         #    module='tdf.templateuploadcenter.mymodule',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
@@ -47,7 +47,7 @@ def test_suite():
         ztc.ZopeDocFileSuite(
             'INTEGRATION.txt',
             package='tdf.templateuploadcenter',
-            optionflags = OPTION_FLAGS,
+            optionflags=OPTION_FLAGS,
             test_class=TestCase),
 
         # -*- extra stuff goes here -*-

@@ -1,9 +1,11 @@
 from plone.app.content.interfaces import INameFromTitle
 from zope.interface import implements
 
+
 class INameForReleaseURL(INameFromTitle):
     def title():
         """Return a processed title"""
+
 
 class NameForReleaseURL(object):
     implements(INameForReleaseURL)
