@@ -161,16 +161,14 @@ div.aboutproduct h3
 }
 
 #by-category ol {
-    list-style-type: none;
-    list-style-image: none;
-    list-style-position: outside;
+    list-style: none outside none;
 }
 
 
 span.product-leadin {
     display: block;
     font-size: 0.7em;
-    font-color: #999;
+    color: #999;
 }
 
 
