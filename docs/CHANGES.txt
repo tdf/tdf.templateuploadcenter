@@ -4,7 +4,10 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Adding file extension validation to the linked release module [Andreas Mantke]
+- Adding image file extension validation to the project module [Andreas Mantke]
+- Added a validator for the uniqueness of the naming of release and linked release [Andreas Mantke]
+- Changed the compatibility list in the project view to a text line [Andreas Mantke].
 
 
 0.8 (2016-07-11)
