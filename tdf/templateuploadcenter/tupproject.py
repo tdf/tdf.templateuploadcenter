@@ -21,6 +21,15 @@ from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from Products.validation import V_REQUIRED
 
+checkfileextension = re.compile(
+    r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
+
+def validateImageextension(value):
+    if not checkfileextension(value.filename):
+        raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
+    return True
+
+
 
 def vocabCategories(context):
     # For add forms
@@ -122,12 +131,14 @@ class ITUpProject(model.Schema):
         title=_(u"Logo"),
         description=_(u"Add a logo for the project (or organization/company) by clicking the 'Browse' button."),
         required=False,
+        constraint=validateImageextension
     )
 
     screenshot = NamedBlobImage(
         title=_(u"Screemshot of the Template"),
         description=_(u"Add a screenshot by clicking the 'Browse' button."),
         required=False,
+        constraint=validateImageextension
     )
 
     @invariant
