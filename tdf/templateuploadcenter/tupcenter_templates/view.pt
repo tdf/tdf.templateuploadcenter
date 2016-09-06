@@ -127,7 +127,7 @@
                                                  tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
                                      </tal:block>
                                      <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
-                                          i18n:translate="label_any_version"> Any version</option>
+                                          i18n:translate=""> Any version</option>
                                  </select>
                                  <label for="project-sort" i18n:translate="">Sort On</label>
                                  <select name="sort_on" id="project-sort" onchange="this.form.submit()">
@@ -147,7 +147,7 @@
 				                        b_size python:10;b_start python:0;b_start request/b_start | b_start;
 				                        ">
                              <p tal:condition="not: results">
-                                 <strong i18n:translate="description_no_results_found">No results were found.</strong>
+                                 <strong i18n:translate="">No results were found.</strong>
                              </p>
                              <p id="numreleases" i18n:translate="">
                                  <span tal:replace="python:len(results)" i18n:name="results_tupprojects">234</span> projects matching your criteria.
@@ -256,10 +256,11 @@
                     </div>
                 </div>
                 <div id="by-category">
-                    <h2 tal:condition="here/product_title" i18n:translate="">
-                        Browse <span tal:content="context/product_title" i18n:name="product_title" /> by Category
+                    <h2 tal:condition="here/product_title">
+                        <span i18n:translate="">Browse</span>
+                        <span tal:content="context/product_title" /> <span i18n:translate="">by Category</span>
                     </h2>
-                    <h2 tal:condition="not:context/product_title" i18n:translate="">Browse Templates by Category</h2>
+                    <h2 tal:condition="not:context/product_title"><span i18n:translate="">Browse Templates by Category</span></h2>
                     <ol id="add-on-categories">
                         <tal:categories repeat="category context/available_category">
                             <li><a href=""
@@ -272,15 +273,15 @@
                     </ol>
                 </div>
                 <div class="installinstructions" tal:condition="context/install_instructions">
-                    <h3>Install Instructions</h3>
+                    <h3 i18n:translate="">Install Instructions</h3>
                     <p tal:replace="structure context/install_instructions/output" />
                 </div>
                 <div class="bugreporting" tal:condition="context/reporting_bugs">
-                    <h3>Reporting Template-Bugs</h3>
+                    <h3 i18n:translate="">Reporting Template-Bugs</h3>
                     <p tal:replace="structure context/reporting_bugs/output" />
                 </div>
                 <div class="aboutproduct" tal:condition="context/product_description">
-                    <h3>About</h3>
+                    <h3 i18n:translate="">About</h3>
                     <p tal:content="structure context/product_description" />
                 </div>
             </div>
