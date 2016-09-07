@@ -5,7 +5,7 @@
             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="enabled">True</value>
 
-    <value key="csscompilation">++resources++tempuploadcenter.css</value>
+    <value key="csscompilation">++resource++tdf.templateuploadcenter/tempuploadcenter.css</value>
 
     <value key="last_compilation">2019-11-26 00:00:00</value>
     <value key="compile">False</value>
