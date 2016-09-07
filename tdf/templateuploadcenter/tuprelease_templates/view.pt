@@ -34,7 +34,7 @@
             tal:condition="python: is_editable and review_state == 'pre-release' ">
             <dt i18n:translate="">Info</dt>
             <dd>
-                <span i18n:translate="help_message_remember_is_editable">Remember to publish your release once all files have been added.</span>
+                <span i18n:translate="">Remember to publish your release once all files have been added.</span>
             </dd>
         </dl>
 
@@ -43,7 +43,7 @@
            <div class="grid-cell position-two-thirds width-third">
                <div class="sidebar">
                    <div id="projectresources">
-                       <h2 i18n:translate="title_project_resources">Project Resources</h2>
+                       <h2 i18n:translate="">Project Resources</h2>
                        <ul>
                            <li tal:condition="context/documentation_link">
                                <a href="" tal:attributes="href context/documentation_link">External Documentation</a>
@@ -53,7 +53,7 @@
                            </li>
                        </ul>
                        <div tal:condition="context/screenshot">
-                           <h4 i18n:translate="title_screenshot">Screenshot</h4>
+                           <h4 i18n:translate="">Screenshot</h4>
 
                                <div class="eupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
                                        tal:condition="nocall:screenshot">
@@ -66,11 +66,11 @@
 
                        </div>
                        <div tal:condition="context/link_to_source">
-                           <h4 class="eupcenter" i18n:translate="title_link_to_sourcecode">Link to Source Code</h4>
+                           <h4 class="eupcenter" i18n:translate="">Link to Source Code</h4>
                            <p tal:content="context/link_to_source">The Link to the Source Code</p>
                        </div>
                        <div class="eupcenterreleaseinstallinstructions" tal:condition="context/install_instructions">
-                           <h3>Install Instructions</h3>
+                           <h3 i18n:translate="">Install Instructions</h3>
                            <span tal:content="structure context/install_instructions/output" />
                        </div>
                        <div class="eupcenterreleasereportingbugs" tal:condition="context/reporting_bugs">
@@ -89,32 +89,56 @@
                <div class="paneeucrelease">
                    <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
                    <p class="documentDescription" tal:content="context/description/title" />
-                   <h4 class="extcenter" i18n:translate="title_release_details">Release Details</h4>
+                   <h4 class="extcenter" i18n:translate="">Release Details</h4>
                    <p class="documentDescription" tal:content="structure view/w/details/render" />
-                   <h4 class="tupcenterlicense" i18n:translate="title_license_s">License(s)</h4>
+                   <h4 class="tupcenterlicense" i18n:translate="">License(s)</h4>
                    <div class="tupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
-                   <h4 class="tupcentercompatibility" i18n:translate="title_compatibility">Compatibility</h4>
+                   <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
                    <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
                    <h4 class="documentSecondheading">Changelog</h4>
                    <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
-                   <h2 class="tupcenter" i18n:translate="title_available_downloads">Available Downloads</h2>
+                   <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>
 
 
       <div  class="tupcenterfile">
 
 
 
-      <p tal:condition="context/file"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_downloadable_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" /><br />File size: <span tal:content="python:context.file.size / 1024" /> kb </p>
+      <p tal:condition="context/file">
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
+              <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
+              <span i18n:translate="">The Template file</span></a>
+          <span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" /><br />
+          <span i18n:translate="" >File size:</span>
+          <span tal:content="python:context.file.size / 1024" /> kb </p>
 
-       <p tal:condition="context/file1"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_downloadable_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" /><br />File size: <span tal:content="python:context.file1.size / 1024" /> kb </p>
+       <p tal:condition="context/file1">
+           <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}">
+               <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+           <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}">
+               <span i18n:translate="">The Template file</span></a>
+           <span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" /><br />
+           <span i18n:translate="">File size:</span>
+           <span tal:content="python:context.file1.size / 1024" /> kb </p>
 
-        <p tal:condition="context/file2"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_downloadable_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" /><br />File size: <span tal:content="python:context.file2.size / 1024" /> kb </p>
+        <p tal:condition="context/file2">
+            <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}">
+                <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+            <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}">
+                <span i18n:translate="">The Template file</span></a>
+            <span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" /><br />
+            <span i18n:translate="">File size:</span>
+            <span tal:content="python:context.file2.size / 1024" /> kb </p>
 
-      <p tal:condition="context/file3"> <a i18n:translate="label_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}"><img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a> <a i18n:translate="label_downloadable_template_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}">
-        The Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" /><br />File size: <span tal:content="python:context.file3.size / 1024" /> kb </p>
+      <p tal:condition="context/file3">
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}">
+              <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}">
+              <span i18n:translate="">The Template file</span></a>
+          <span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" /><br />
+          <span i18n:translate="">File size:</span>
+          <span tal:content="python:context.file3.size / 1024" /> kb </p>
 
 </div>
 

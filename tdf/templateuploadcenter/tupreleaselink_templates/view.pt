@@ -35,7 +35,7 @@
             tal:condition="python: is_editable and review_state == 'pre-release' ">
             <dt i18n:translate="">Info</dt>
             <dd>
-                <span i18n:translate="help_message_remember_is_editable">Remember to publish your release once all files have been added.</span>
+                <span i18n:translate="">Remember to publish your release once all files have been added.</span>
             </dd>
         </dl>
 
@@ -44,20 +44,22 @@
             <div class="grid-cell position-two-thirds width-third">
 		<div class="sidebar">
             <div id="projectresources">
-            <h2 i18n:translate="title_project_resources">Project Resources</h2>
+            <h2 i18n:translate="">Project Resources</h2>
                 <ul>
             <li tal:condition="context/documentation_link">
-                <a href="" tal:attributes="href context/documentation_link">External Documentation</a>
+                <a href="" tal:attributes="href context/documentation_link">
+                    <span i18n:translate="">External Documentation</span></a>
             </li>
                 <li tal:condition="context/homepage">
 
-                <a href="" tal:attributes="href context/homepage">External Project Page</a>
+                <a href="" tal:attributes="href context/homepage">
+                    <span i18n:translate="">External Project Page</span></a>
                 </li>
             </ul>
 
 
         <div tal:condition="context/screenshot">
-            <h4 i18n:translate="title_screenshot">Screenshot</h4>
+            <h4 i18n:translate="">Screenshot</h4>
               <div class="eupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
                    tal:condition="nocall:screenshot">
               <img tal:define="scales context/@@images"
@@ -69,15 +71,15 @@
                 </div>
 
         <div tal:condition="context/link_to_source">
-            <h4 class="eupcenter" i18n:translate="title_link_to_sourcecode">Link to Source Code</h4>
-            <p tal:content="context/link_to_source">The Link to the Source Code</p>
+            <h4 class="eupcenter" i18n:translate="">Link to Source Code</h4>
+            <p tal:content="context/link_to_source"><span i18n:translate="">The Link to the Source Code</span></p>
         </div>
             <div class="eupcenterreleaseinstallinstructions" tal:condition="context/install_instructions">
-            <h3>Install Instructions</h3>
+            <h3 i18n:translate="">Install Instructions</h3>
             <span tal:content="structure context/install_instructions/output" />
         </div>
             <div class="eupcenterreleasereportingbugs" tal:condition="context/reporting_bugs">
-                <h3>Reporting Extension-Bugs</h3>
+                <h3 i18n:translate="">Reporting Extension-Bugs</h3>
                 <span tal:content="structure context/reporting_bugs/output" />
             </div>
 
@@ -91,55 +93,59 @@
 
 
       <p class="documentDescription" tal:content="context/description/title" />
-        <h4 class="extcenter" i18n:translate="title_release_details">Release Details</h4>
+        <h4 class="extcenter" i18n:translate="">Release Details</h4>
       <p class="documentDescription" tal:content="structure view/w/details/render" />
 
 
-     <h4 class="tupcenterlicense" i18n:translate="title_license_s">License(s)</h4>
+     <h4 class="tupcenterlicense" i18n:translate="">License(s)</h4>
       <div class="tupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
-      <h4 class="tupcentercompatibility" i18n:translate="title_compatibility">Compatibility</h4>
+      <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
-        <h4 class="documentSecondheading">Changelog</h4>
+        <h4 class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
-        <h2 class="tupcenter" i18n:translate="title_available_downloads">Available Downloads</h2>
+        <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>
 
       <div  class="tupcenterfile">
-          <p tal:condition="context/link_to_file"> <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file">
-        The linked Template file</a><span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" />
-          <span tal:condition="context/external_file_size">
-             <br />File size: <span tal:content="structure context/external_file_size" /> kb
+          <p tal:condition="context/link_to_file"> <a tal:attributes=" href context/link_to_file">
+        <span i18n:translate="">The linked Template file</span></a>
+              <span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" />
+          <span tal:condition="context/external_file_size"><br />
+              <span i18n:translate="">File size:</span> <span tal:content="structure context/external_file_size" /> kb
           </span> </p>
 
-          <p tal:condition="context/link_to_file1"> <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file1">
-        The linked Template file</a>
+          <p tal:condition="context/link_to_file1">
+              <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file1">
+                  <span i18n:translate="">The linked Template file</span></a>
               <span tal:condition="context/platform_choice1">
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" />
               </span>
-          <span tal:condition="context/external_file_size1">
-             <br />File size: <span tal:content="structure context/external_file_size1" /> kb
+          <span tal:condition="context/external_file_size1"><br />
+              <span i18n:translate="">File size:></span> <span tal:content="structure context/external_file_size1" /> kb
           </span>
           </p>
 
 
-          <p tal:condition="context/link_to_file2"> <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file2">
-        The linked Template file</a>
+          <p tal:condition="context/link_to_file2">
+              <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file2">
+                  <span i18n:translate="">The linked Template file</span></a>
               <span tal:condition="context/platform_choice2">
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" />
               </span>
-          <span tal:condition="context/external_file_size2">
-             <br />File size: <span tal:content="structure context/external_file_size2" /> kb
+          <span tal:condition="context/external_file_size2"><br />
+              <span i18n:translate="">File size:</span> <span tal:content="structure context/external_file_size2" /> kb
           </span>
           </p>
 
 
-          <p tal:condition="context/link_to_file3"> <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file3">
-        The linked Template file</a>
+          <p tal:condition="context/link_to_file3">
+              <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file3">
+                  <span i18n:translate="">The linked Template file</span></a>
               <span tal:condition="context/platform_choice3">
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" />
               </span>
-          <span tal:condition="context/external_file_size3">
-             <br />File size: <span tal:content="structure context/external_file_size3" /> kb
+          <span tal:condition="context/external_file_size3"><br />
+              <span i18n:translate="">File size:</span> <span tal:content="structure context/external_file_size3" /> kb
           </span>
           </p>
 
