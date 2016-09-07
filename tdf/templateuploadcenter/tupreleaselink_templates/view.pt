@@ -115,7 +115,7 @@
           </span> </p>
 
           <p tal:condition="context/link_to_file1">
-              <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file1">
+              <a tal:attributes=" href context/link_to_file1">
                   <span i18n:translate="">The linked Template file</span></a>
               <span tal:condition="context/platform_choice1">
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" />
