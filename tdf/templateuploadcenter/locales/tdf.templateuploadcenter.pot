@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-07 09:59+0000\n"
+"POT-Creation-Date: 2016-09-07 13:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,29 +46,9 @@ msgstr ""
 msgid "${product_title}"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:153
-msgid "${results_tupprojects} projects matching your criteria."
-msgstr ""
-
 #: ./tuprelease.py:116
 #: ./tupreleaselink.py:115
 msgid "1.0"
-msgstr ""
-
-#: ./tupcenter_templates/own_project.pt:66
-msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> ${product_title_tupproject}"
-msgstr ""
-
-#: ./tupcenter_templates/view.pt:225
-msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> Submit your ${product_title_tupproject}"
-msgstr ""
-
-#: ./tupproject_templates/view.pt:46
-msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> a Release to your <span>${DYNAMIC_CONTENT}</span> Project"
-msgstr ""
-
-#: ./tupproject_templates/view.pt:52
-msgid "<img src=\"++resource++tdf.templateuploadcenter/yellowarrow.png\" alt=\"\" /> a linked Release to your <span>${DYNAMIC_CONTENT}</span> Project"
 msgstr ""
 
 #: ./tuprelease.py:133
@@ -211,8 +191,8 @@ msgstr ""
 msgid "Current Release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:221
-msgid "Currently there are ${tup_project_count} project(s) with <span>${DYNAMIC_CONTENT}</span> release(s) available."
+#: ./tupcenter_templates/view.pt:219
+msgid "Currently there are"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:259
@@ -255,10 +235,6 @@ msgstr ""
 #: ./tuprelease_templates/view.pt:113
 #: ./tupreleaselink_templates/view.pt:114
 msgid "File size:"
-msgstr ""
-
-#: ./tupreleaselink_templates/view.pt:124
-msgid "File size:>"
 msgstr ""
 
 #: ./tupcenter.py:127
@@ -423,7 +399,7 @@ msgid "Most popular ${product_title}"
 msgstr ""
 
 #: ./tupcenter_templates/view.pt:230
-msgid "Most recent ${product_title}"
+msgid "Most recent"
 msgstr ""
 
 #: ./tupcenter.py:21
@@ -607,8 +583,8 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:146
-msgid "Released ${DYNAMIC_CONTENT}"
+#: ./tupproject_templates/view.pt:145
+msgid "Released"
 msgstr ""
 
 #: ./tuprelease_templates/view.pt:37
@@ -670,6 +646,10 @@ msgstr ""
 
 #: ./tupcenter_templates/own_project.pt:60
 msgid "Submit new"
+msgstr ""
+
+#: ./tupcenter_templates/view.pt:224
+msgid "Submit your"
 msgstr ""
 
 #: ./configure.zcml:29
@@ -759,14 +739,14 @@ msgstr ""
 msgid "The project title is already in use"
 msgstr ""
 
-#: ./tuprelease.py:109
-#: ./tupreleaselink.py:108
-msgid "The project title will be computed from the parent project title"
-msgstr ""
-
 #: ./tuprelease.py:344
 #: ./tupreleaselink.py:381
 msgid "The release number is already in use. Please choose another one."
+msgstr ""
+
+#: ./tuprelease.py:109
+#: ./tupreleaselink.py:108
+msgid "The release title will be computed from the parent project title"
 msgstr ""
 
 #: ./tuprelease.py:223
@@ -842,6 +822,14 @@ msgstr ""
 msgid "Your Own Projects"
 msgstr ""
 
+#: ./tupproject_templates/view.pt:45
+msgid "a Release to your"
+msgstr ""
+
+#: ./tupproject_templates/view.pt:51
+msgid "a linked Release to your"
+msgstr ""
+
 #: ./tupcenter_templates/view.pt:261
 msgid "by Category"
 msgstr ""
@@ -855,13 +843,25 @@ msgstr ""
 msgid "label_linked_template_file"
 msgstr ""
 
+#: ./tupproject_templates/view.pt:49
+msgid "or:"
+msgstr ""
+
 #: ./tupcenter_templates/own_project.pt:63
 msgid "please submit your new"
+msgstr ""
+
+#: ./tupcenter_templates/view.pt:153
+msgid "projects matching your criteria."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "re-release"
+msgstr ""
+
+#: ./tupcenter_templates/view.pt:221
+msgid "release(s) available."
 msgstr ""
 
 #: ./tupproject_templates/view.pt:151
@@ -919,4 +919,8 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_unhide_release"
+msgstr ""
+
+#: ./tupcenter_templates/view.pt:220
+msgid "with"
 msgstr ""
