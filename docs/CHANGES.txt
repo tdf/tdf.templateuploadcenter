@@ -4,6 +4,7 @@ Changelog
 0.10 (unreleased)
 -----------------
 
+- Add German localization [Andreas Mantke]
 - Update of the localisation template file [Anddreas Mantke]
 - Fixing and adding localisation tags [Andreas Mantke]
 - Fix ressource registry css URL [Victor Fernandez de Alba]
