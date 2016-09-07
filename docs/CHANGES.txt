@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.10 (unreleased)
+0.10 (2016-09-07)
 -----------------
 
 - Add German localization [Andreas Mantke]
