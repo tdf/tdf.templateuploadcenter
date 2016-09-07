@@ -105,7 +105,7 @@ class ITUpReleaseLink(model.Schema):
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
-        description=_(u"The project title will be computed from the parent project title"),
+        description=_(u"The release title will be computed from the parent project title"),
         defaultFactory=getContainerTitle
     )
 

@@ -61,9 +61,9 @@
         <p><span i18n:translate="">If you already created a new</span>
             <span tal:replace="context/product_title">Template</span>,
             <span i18n:translate="">please submit your new</span> <br />
-    <a class="pointer"  tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject" i18n:translate="">
+    <a class="pointer"  tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject">
                             <img src="++resource++tdf.templateuploadcenter/yellowarrow.png" alt="" />
-                            <span tal:content="context/product_title | string:template_project" i18n:name="product_title_tupproject" />
+                            <span tal:content="context/product_title | string:template_project" />
     </a>
 </p>
 

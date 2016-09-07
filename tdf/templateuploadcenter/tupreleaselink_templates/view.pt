@@ -121,7 +121,7 @@
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" />
               </span>
           <span tal:condition="context/external_file_size1"><br />
-              <span i18n:translate="">File size:></span> <span tal:content="structure context/external_file_size1" /> kb
+              <span i18n:translate="">File size:</span> <span tal:content="structure context/external_file_size1" /> kb
           </span>
           </p>
 

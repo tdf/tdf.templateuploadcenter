@@ -41,14 +41,14 @@
         <p tal:condition="python: is_editable and len(context.getFolderContents()) is 0">Your next step: add a first release to your project please.</p>
          <div tal:condition="python: is_editable">
         <p>Please submit:</p>
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tuprelease" i18n:translate="">
-                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> a Release to your
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tuprelease">
+                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">a Release to your</span>
                             <span tal:content="context/product_title | string:template_project" i18n:name="" /> Project
 
                         </a>
-        <p>or:</p>
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupreleaselink" i18n:translate="">
-                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> a linked Release to your
+        <p i18n:translate="">or:</p>
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupreleaselink">
+                            <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">a linked Release to your</span>
                             <span tal:content="context/product_title | string:template_project" i18n:name="" /> Project
 
                         </a>
@@ -142,8 +142,8 @@
 
             <p class="discreet">
 
-                <tal:releasedate condition="latestRelease/effective" i18n:translate="">
-                    Released <span tal:replace="view/latest_release_date" i18n:name="" />
+                <tal:releasedate condition="latestRelease/effective"><span i18n:translate="">
+                    Released</span> <span tal:replace="view/latest_release_date" i18n:name="" />
                 </tal:releasedate>
 
 

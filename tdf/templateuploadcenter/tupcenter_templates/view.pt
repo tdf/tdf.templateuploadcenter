@@ -149,8 +149,8 @@
                              <p tal:condition="not: results">
                                  <strong i18n:translate="">No results were found.</strong>
                              </p>
-                             <p id="numreleases" i18n:translate="">
-                                 <span tal:replace="python:len(results)" i18n:name="results_tupprojects">234</span> projects matching your criteria.
+                             <p id="numreleases">
+                                 <span tal:replace="python:len(results)">234</span> <span i18n:translate="">projects matching your criteria.</span>
                              </p>
                              <tal:results condition="results"
                                           define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
@@ -216,18 +216,18 @@
                             </h1>
                         	<h1 tal:condition="not:context/product_title" i18n:translate="">Templates</h1>
                     <span tal:content="structure context/product_description | nothing"/>
-                    <p class="current-projects" i18n:translate="">Currently there are
-                            <span tal:content="view/tupproject_count" i18n:name="tup_project_count" /> project(s) with
-                            <span tal:content="view/tuprelease_count" /> release(s) available.
+                    <p class="current-projects"><span i18n:translate="">Currently there are</span>
+                            <span tal:content="view/tupproject_count" /> <span i18n:translate="">with</span>
+                            <span tal:content="view/tuprelease_count" /> <span i18n:translate="">release(s) available.</span>
                     </p>
-                    <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject" i18n:translate="">
-                        <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> Submit your
-                        <span tal:content="context/product_title | string:template_project" i18n:name="product_title_tupproject" />
+                    <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject">
+                        <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">Submit your</span>
+                        <span tal:content="context/product_title | string:template_project" />
                     </a>
                 </div>
                 <div tal:condition="not: isAnon" tal:replace="structure provider:plone.abovecontenttitle" />
                 <div id="mostrecent">
-                    <h2 i18n:translate="">Most recent <span tal:content="context/product_title" i18n:name="product_title" /></h2>
+                    <h2><span i18n:translate="">Most recent </span><span tal:content="context/product_title" /></h2>
                     <div class=""
                             tal:define="results python:view.get_newest_products();
                                         Batch python:modules['Products.CMFPlone'].Batch;
