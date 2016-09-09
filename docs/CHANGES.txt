@@ -4,7 +4,7 @@ Changelog
 0.11 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix of the header of the German localization file. [Andreas Mantke]
 
 
 0.10 (2016-09-07)
