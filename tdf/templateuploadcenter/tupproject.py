@@ -108,7 +108,7 @@ class ITUpProject(model.Schema):
         required=True
     )
 
-    contactAddress = schema.ASCIILine(
+    contactAddress = schema.TextLine(
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
         constraint=validateEmail
@@ -260,4 +260,3 @@ class TUpProjectView(DefaultView):
             return self.context.toLocalizedTime(latest_release.effective())
         else:
             return None
-

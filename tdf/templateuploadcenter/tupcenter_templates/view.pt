@@ -74,12 +74,11 @@
                                                     </a>
                                                 </div>
                                                 <span class="project-thumb"
-						                                    tal:condition="not:screenshot">
-                                                    <img tal:condition="project/project_logo|nothing"
-                                                            tal:define="scales project/@@images;
-                                                                    projectlogo project/@@images/project_logo;
-                                                                    scale python:scales.scale('project_logo', 'tile')"
-                                                            tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
+						                                          tal:condition="python: not screenshot and project.project_logo">
+                                                    <img tal:define="scales project/@@images;
+                                                                     projectlogo project/@@images/project_logo;
+                                                                     scale python:scales.scale('project_logo', 'tile')"
+                                                         tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
                                                 </span>
 
 

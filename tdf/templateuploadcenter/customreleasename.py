@@ -8,6 +8,9 @@ class ReleaseCustomName(Item):
     @property
     def title(self):
         if hasattr(self, 'projecttitle') and hasattr(self, 'releasenumber'):
+            # Guard required for migration
+            if self.projecttitle is None:
+                self.projecttitle = ''
             return self.projecttitle + ' - ' + self.releasenumber
         else:
             return ''

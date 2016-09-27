@@ -171,7 +171,7 @@ class ITUpRelease(model.Schema):
         required=True
     )
 
-    contact_address2 = schema.ASCIILine(
+    contact_address2 = schema.TextLine(
         title=_(u"Contact email-address"),
         description=_(u"Contact email-address for the project."),
         required=False,
