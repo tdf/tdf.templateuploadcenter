@@ -109,15 +109,16 @@
         <h3 tal:condition="context/homepage" i18n:translate="">Homepage of the Project</h3>
         <div tal:content="context/homepage" />
 
-<h4 tal:condition="context/project_logo" i18n:translate="">Logo</h4>
+<tal:have_logo tal:condition="context/project_logo">
+  <h4 i18n:translate="">Logo</h4>
 
-<img src="" alt=""
-     tal:condition="context/project_logo|nothing"
-          tal:define="scales context/@@images;
-          scale python:scales.scale('project_logo', 'mini')"
-           tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
+  <img src="" alt=""
+       tal:define="scales context/@@images;
+                   scale python:scales.scale('project_logo', 'mini')"
+       tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
+</tal:have_logo>
 
-             <div class="visualClear"></div>
+<div class="visualClear"></div>
 
         <tal:nostable condition="nocall:not:latestRelease">
             <h2 i18n:translate="">Current Release</h2>

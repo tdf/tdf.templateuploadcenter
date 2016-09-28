@@ -120,7 +120,7 @@
                                          <option tal:content="category" tal:attributes="value category; selected python:(currentCategory==category, 'selected', nothing)" />
                                      </tal:block>
                                  </select>
-                                 <select name="getCompatibility" onchange="this.form.submit()">
+                                 <select class="sortby-compatibility" name="getCompatibility" onchange="this.form.submit()">
                                      <tal:block tal:repeat="version context/available_versions">
                                          <option tal:content="version"
                                                  tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
@@ -136,8 +136,13 @@
                                  </select>
                                  <input type="hidden" name="path" tal:attributes="value python:'/'.join(context.getPhysicalPath())" /> &nbsp;
                                  <input type="hidden" name="portal_type" value="tdf.templateuploadcenter.tupproject" />
-                                 <input type="search" name="SearchableText" tal:attributes="value SearchableText" value="" class="inputLabel" size="20" />
-                                 <input type="submit" value="Search" i18n:attributes="value" />
+                                  <div class="input-group">
+                                    <input class="searchPage form-control" name="SearchableText" type="text" size="25" title="Search Site" value=""
+                                           tal:attributes="value SearchableText" />
+                                    <span class="input-group-btn">
+                                      <input class="searchPage allowMultiSubmit btn btn-primary" type="submit" value="Search" i18n:attributes="value" />
+                                    </span>
+                                  </div>
                              </form>
                          </div>
                          <div class="" id="categories"
@@ -176,12 +181,11 @@
                                                              tal:replace="structure project/@@images/screenshot/thumb" />
                                                  </a>
                                              </div>
-                                             <span class="project-thumb" tal:condition="not:screenshot">
-                                                 <img tal:condition="project/project_logo|nothing"
-                                                         tal:define="scales project/@@images;
-                                                                 projectlogo project/@@images/project_logo;
-                                                                         scale python:scales.scale('project_logo', 'tile')"
-                                                         tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
+                                             <span class="project-thumb" tal:condition="python: not screenshot and project.project_logo">
+                                                 <img tal:define="scales project/@@images;
+                                                                  projectlogo project/@@images/project_logo;
+                                                                  scale python:scales.scale('project_logo', 'tile')"
+                                                      tal:replace="structure python:scale and scale.tag(css_class='tupcenterprojectlogo') or None" />
                                              </span>
                                              <div class="product-details">
                                                  <span class="product-leadin">
@@ -236,18 +240,16 @@
                                      define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
                             <ul class="newestproducts">
                                 <li tal:repeat="result batch">
-                                    <tal:entry
-						                define="project result/getObject;
-						                        url result/getURL;
-							                    projectURL project/absolute_url;
-							                    result_type result/portal_type;
-							                    zoomid   python:project.id.replace('.', '_');
-							                    screenshot   project/screenshot | nothing">
-
-                                        <h3 style="border-top: none">
+                                    <tal:entry define="project result/getObject;
+                                                       url result/getURL;
+							                                         projectURL project/absolute_url;
+							                                         result_type result/portal_type;
+							                                         zoomid   python:project.id.replace('.', '_');
+							                                         screenshot   project/screenshot | nothing">
+                                        <span style="border-top: none">
                                             <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
                                                 <tal:comment replace="nothing">Template One</tal:comment></a>
-                                        </h3>
+                                        </span>
                                     </tal:entry>
                                 </li>
                             </ul>
