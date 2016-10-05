@@ -40,53 +40,9 @@
         </dl>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
-       <div class="grid-row">
-            <div class="grid-cell position-two-thirds width-third">
-		<div class="sidebar">
-            <div id="projectresources">
-            <h2 i18n:translate="">Project Resources</h2>
-                <ul>
-            <li tal:condition="context/documentation_link">
-                <a href="" tal:attributes="href context/documentation_link">
-                    <span i18n:translate="">External Documentation</span></a>
-            </li>
-                <li tal:condition="context/homepage">
+       <div class="row">
 
-                <a href="" tal:attributes="href context/homepage">
-                    <span i18n:translate="">External Project Page</span></a>
-                </li>
-            </ul>
-
-
-        <div tal:condition="context/screenshot">
-            <h4 i18n:translate="">Screenshot</h4>
-              <div class="eupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
-                   tal:condition="nocall:screenshot">
-              <img tal:define="scales context/@@images"
-                   tal:replace="structure python: scales.tag('screenshot',
-                        width=250, height=200, direction='down')" />
-
-        </div>
-            </div>
-                </div>
-
-        <div tal:condition="context/link_to_source">
-            <h4 class="eupcenter" i18n:translate="">Link to Source Code</h4>
-            <p tal:content="context/link_to_source"><span i18n:translate="">The Link to the Source Code</span></p>
-        </div>
-            <div class="eupcenterreleaseinstallinstructions" tal:condition="context/install_instructions">
-            <h3 i18n:translate="">Install Instructions</h3>
-            <span tal:content="structure context/install_instructions/output" />
-        </div>
-            <div class="eupcenterreleasereportingbugs" tal:condition="context/reporting_bugs">
-                <h3 i18n:translate="">Reporting Extension-Bugs</h3>
-                <span tal:content="structure context/reporting_bugs/output" />
-            </div>
-
-            </div>
-        </div>
-
-            <div class="grid-cell position-leftmost width-two-thirds">
+            <div class="col-xs-12 col-sm-8">
                 <div class="paneeucrelease">
 
          <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
@@ -157,6 +113,50 @@
       <div class="tupcenterlegaldownload" tal:content="structure context/legal_downloaddisclaimer/output" />
 
                     </div>
+            <div class="col-xs-12 col-sm-4">
+		<div class="sidebar">
+            <div id="projectresources">
+            <h2 i18n:translate="">Project Resources</h2>
+                <ul>
+            <li tal:condition="context/documentation_link">
+                <a href="" tal:attributes="href context/documentation_link">
+                    <span i18n:translate="">External Documentation</span></a>
+            </li>
+                <li tal:condition="context/homepage">
+
+                <a href="" tal:attributes="href context/homepage">
+                    <span i18n:translate="">External Project Page</span></a>
+                </li>
+            </ul>
+
+
+        <div tal:condition="context/screenshot">
+            <h4 i18n:translate="">Screenshot</h4>
+              <div class="eupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
+                   tal:condition="nocall:screenshot">
+              <img tal:define="scales context/@@images"
+                   tal:replace="structure python: scales.tag('screenshot',
+                        width=250, height=200, direction='down')" />
+
+        </div>
+            </div>
+                </div>
+
+        <div tal:condition="context/link_to_source">
+            <h4 class="eupcenter" i18n:translate="">Link to Source Code</h4>
+            <p tal:content="context/link_to_source"><span i18n:translate="">The Link to the Source Code</span></p>
+        </div>
+            <div class="eupcenterreleaseinstallinstructions" tal:condition="context/install_instructions">
+            <h3 i18n:translate="">Install Instructions</h3>
+            <span tal:content="structure context/install_instructions/output" />
+        </div>
+            <div class="eupcenterreleasereportingbugs" tal:condition="context/reporting_bugs">
+                <h3 i18n:translate="">Reporting Extension-Bugs</h3>
+                <span tal:content="structure context/reporting_bugs/output" />
+            </div>
+
+            </div>
+        </div>
           </div>
 
 

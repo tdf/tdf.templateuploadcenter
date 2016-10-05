@@ -37,8 +37,8 @@
 
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
-        <div class="grid-row">
-            <div class="grid-cell position-leftmost width-two-thirds">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
                 <div tal:condition="python: searchForProducts.find('getCategories')">
                 <div class="" id="mostpopular">
                 <h2 i18n:translate="">Most popular <span tal:content="context/product_title" i18n:name="product_title" /></h2>
@@ -212,7 +212,7 @@
                      </div>
                  </div>
             </div>
-            <div class="grid-cell position-two-thirds width-third">
+            <div class="col-xs-12 col-sm-4">
                 <div class="splash pullout" id="sidebar-downloads">
                         	<h1 tal:condition="context/product_title" i18n:translate="">
                                 <span tal:content="context/product_title" i18n:name="product_title" />
