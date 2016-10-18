@@ -231,7 +231,7 @@ class ITUpRelease(model.Schema):
         title=_(u"Second uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
     file2 = NamedBlobFile(
@@ -246,7 +246,7 @@ class ITUpRelease(model.Schema):
         title=_(u"Third uploaded file is compatible with the Platform(s))"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
     file3 = NamedBlobFile(
@@ -261,7 +261,7 @@ class ITUpRelease(model.Schema):
         title=_(u"Fourth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
     form.fieldset('fileset2',
@@ -281,7 +281,7 @@ class ITUpRelease(model.Schema):
         title=_(u"Fifth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
     file5 = NamedBlobFile(
@@ -296,7 +296,7 @@ class ITUpRelease(model.Schema):
         title=_(u"Sixth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
-        required=True,
+        required=False,
     )
 
     @invariant
