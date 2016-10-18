@@ -29,6 +29,7 @@
         <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
         <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
         <element value="cioppino.twothumbs.interfaces.ILoveThumbsDontYou" />
+        <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
     </property>
 
     <!-- View information -->
