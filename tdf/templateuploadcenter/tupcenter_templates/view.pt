@@ -33,13 +33,13 @@
                         isAnon context/@@plone_portal_state/anonymous;
                         herePath python:'/'.join(context.getPhysicalPath());
                         getCategoryName nocall:view/category_name;
-                        searchForProducts python:request['QUERY_STRING']">
+                        show_search_form view/show_search_form">
 
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div class="row">
             <div class="col-xs-12 col-sm-8">
-                <div tal:condition="python: searchForProducts.find('getCategories')">
+                <div tal:condition="not: show_search_form">
                 <div class="" id="mostpopular">
                 <h2 i18n:translate="">Most popular <span tal:content="context/product_title" i18n:name="product_title" /></h2>
                     <div tal:define="results python:view.get_most_popular_products();
@@ -106,7 +106,7 @@
                     </div>
                 </div>
 
-                 <div tal:condition="python: searchForProducts.find('getCategories') != -1">
+                 <div tal:condition="show_search_form">
                      <div class="panetuc">
                          <h2 tal:condition="context/product_title" i18n:translate="">Search
                              <span tal:content="context/product_title" i18n:name="product_title" />
@@ -117,16 +117,16 @@
                                  <select name="getCategories" onchange="this.form.submit()">
                                      <option value="" i18n:translate="">All categories</option>
                                      <tal:block tal:repeat="category context/available_category">
-                                         <option tal:content="category" tal:attributes="value category; selected python:(currentCategory==category, 'selected', nothing)" />
+                                       <option tal:content="category" tal:attributes="value category; selected python: 'selected' if currentCategory==category else ''" />
                                      </tal:block>
                                  </select>
                                  <select class="sortby-compatibility" name="getCompatibility" onchange="this.form.submit()">
                                      <tal:block tal:repeat="version context/available_versions">
                                          <option tal:content="version"
-                                                 tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
+                                                 tal:attributes="value version; selected python: 'selected' if currentVersion==version else ''" />
                                      </tal:block>
-                                     <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
-                                          i18n:translate=""> Any version</option>
+                                     <option value="any" tal:attributes="selected python: 'selected' if currentVersion in ['', 'any'] else ''"
+                                             i18n:translate=""> Any version</option>
                                  </select>
                                  <label for="project-sort" i18n:translate="">Sort On</label>
                                  <select name="sort_on" id="project-sort" onchange="this.form.submit()">

@@ -259,6 +259,9 @@ class TUpCenterView(BrowserView):
 
         return self.catalog(**contentFilter)
 
+    def show_search_form(self):
+        return 'getCategories' in self.request.environ['QUERY_STRING']
+
 
 class TUpCenterOwnProjectsViewlet(ViewletBase):
     pass
