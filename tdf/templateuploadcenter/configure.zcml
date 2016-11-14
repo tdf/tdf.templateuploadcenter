@@ -86,7 +86,7 @@
       provides="tdf.templateuploadcenter.releasecustomurl.INameForReleaseURL"
       />
 
-<!--
+
   <subscriber
     for="tdf.templateuploadcenter.tupproject.ITUpProject
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
@@ -115,7 +115,7 @@
     for="tdf.templateuploadcenter.tupreleaselink.ITUpReleaseLink
              zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler="tdf.templateuploadcenter.tupproject.notifyProjectManagerReleaseLinkedAdd"
-    /> -->
+    />
 
   <adapter
     factory=".tupproject.ValidateTUpProjectUniqueness"
