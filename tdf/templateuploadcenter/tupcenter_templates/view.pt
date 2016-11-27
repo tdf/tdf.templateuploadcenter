@@ -120,14 +120,14 @@
                                        <option tal:content="category" tal:attributes="value category; selected python: 'selected' if currentCategory==category else ''" />
                                      </tal:block>
                                  </select>
-                                 <!-- <select class="sortby-compatibility" name="getCompatibility" onchange="this.form.submit()">
+                                 <select style="display:none" class="sortby-compatibility" name="getCompatibility" onchange="this.form.submit()">
                                      <tal:block tal:repeat="version context/available_versions">
                                          <option tal:content="version"
                                                  tal:attributes="value version; selected python: 'selected' if currentVersion==version else ''" />
                                      </tal:block>
                                      <option value="any" tal:attributes="selected python: 'selected' if currentVersion in ['', 'any'] else ''"
                                              i18n:translate=""> Any version</option>
-                                 </select> -->
+                                 </select>
                                  <label for="project-sort" i18n:translate="">Sort On</label>
                                  <select name="sort_on" id="project-sort" onchange="this.form.submit()">
                                      <tal:comment replace="nothing">Featured items are sorted by rating</tal:comment>
