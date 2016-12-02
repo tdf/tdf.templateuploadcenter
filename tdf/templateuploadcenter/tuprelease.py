@@ -341,6 +341,7 @@ class ValidateTUpReleaseUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({
+                'path': {'query': '/'.join(self.context.aq_parent.getPhysicalPath()), 'depth': 1},
                 'portal_type': ['tdf.templateuploadcenter.tuprelease',
                                 'tdf.templateuploadcenter.tupreleaselink'],
                 'release_number': value})
