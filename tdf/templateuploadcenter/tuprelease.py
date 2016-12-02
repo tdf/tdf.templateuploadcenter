@@ -3,6 +3,7 @@ from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
 from plone.autoform import directives as form
+from plone.indexer.decorator import indexer
 from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -22,7 +23,6 @@ from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
 from plone import api
 import re
 
@@ -326,6 +326,11 @@ class ITUpRelease(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the uploaded file."))
 
 
+@indexer(ITUpRelease)
+def release_number(context, **kw):
+    return context.releasenumber
+
+
 class ValidateTUpReleaseUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of release titles.
 
@@ -335,13 +340,12 @@ class ValidateTUpReleaseUniqueness(validator.SimpleFieldValidator):
 
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': value,
-                               'object_provides': (ITUpRelease.__identifier__, ITUpReleaseLink.__identifier__), })
-
-            contextUUID = IUUID(self.context, None)
-            for result in results:
-                if result.UID != contextUUID:
-                    raise Invalid(_(u"The release number is already in use. Please choose another one."))
+            results = catalog({
+                'portal_type': ['tdf.templateuploadcenter.tuprelease',
+                                'tdf.templateuploadcenter.tupreleaselink'],
+                'release_number': value})
+            if len(results) > 0:
+                raise Invalid(_(u"The release number is already in use. Please choose another one."))
 
 
 validator.WidgetValidatorDiscriminators(

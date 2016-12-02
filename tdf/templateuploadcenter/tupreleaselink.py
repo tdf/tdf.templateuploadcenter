@@ -7,6 +7,7 @@ from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
+from plone.indexer.decorator import indexer
 
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
@@ -362,6 +363,11 @@ class ITUpReleaseLink(model.Schema):
             raise Invalid(_(u"Please choose a compatible platform for the linked file."))
 
 
+@indexer(ITUpReleaseLink)
+def release_number(context, **kw):
+    return context.releasenumber
+
+
 class ValidateTUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of release titles.
 
@@ -371,15 +377,12 @@ class ValidateTUpReleaseLinkUniqueness(validator.SimpleFieldValidator):
 
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': value,
-                               'portal_type': ('tdf.templateuploadcenter.tuprelease',
-                                               'tdf.templateuploadcenter.tupreleaselink'), })
-
-            contextUUID = IUUID(self.context, None)
-            for result in results:
-                if result.UID != contextUUID:
-                    raise Invalid(_(u"The release number is already in use. "
-                                    u"Please choose another one."))
+            results = catalog({
+                'portal_type': ['tdf.templateuploadcenter.tuprelease',
+                                'tdf.templateuploadcenter.tupreleaselink'],
+                'release_number': value})
+            if len(results) > 0:
+                raise Invalid(_(u"The release number is already in use. Please choose another one."))
 
 
 validator.WidgetValidatorDiscriminators(

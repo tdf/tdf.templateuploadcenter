@@ -129,5 +129,7 @@
     factory=".tupreleaselink.ValidateTUpReleaseLinkUniqueness"
     />
 
+    <adapter name="release_number" factory=".tuprelease.release_number"/>
+    <adapter name="release_number" factory=".tupreleaselink.release_number"/>
 
 </configure>
