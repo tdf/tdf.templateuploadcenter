@@ -264,4 +264,12 @@ class TUpCenterView(BrowserView):
 
 
 class TUpCenterOwnProjectsViewlet(ViewletBase):
-    pass
+
+    def get_results(self):
+        current_user = api.user.get_current()
+        pc = api.portal.get_tool('portal_catalog')
+        return pc.portal_catalog(
+            portal_type='tdf.templateuploadcenter.tupproject',
+            sort_on='Date',
+            sort_order='reverse',
+            Creator=current_user)

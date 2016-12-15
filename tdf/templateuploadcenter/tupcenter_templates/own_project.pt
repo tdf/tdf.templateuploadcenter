@@ -13,15 +13,7 @@
         <p i18n:translate="">This are your projects on this site:</p>
 
 <div class="" id="ownprojects"
-        tal:define="mt context/portal_membership;
-                    user python:mt.getAuthenticatedMember();
-                    current_user python:user.getUserName();
-                    results python:container.portal_catalog(
-                                               portal_type='tdf.templateuploadcenter.tupproject',
-                                               sort_on='Date',
-                                               sort_order='reverse',
-                                               Creator = current_user
-                                               );
+        tal:define="results view/get_results;
                     Batch python:modules['Products.CMFPlone'].Batch;
                     b_size python:10;b_start python:0;b_start request/b_start | b_start;">
 
