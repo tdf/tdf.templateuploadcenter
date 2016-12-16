@@ -252,7 +252,9 @@ class TUpCenterView(BrowserView):
                          'sort_order': 'reverse',
                          'portal_type': 'tdf.templateuploadcenter.tupproject'}
         if version != 'any':
-            contentFilter['getCompatibility'] = version
+            # We ask to the indexed value on the project (aggregated from
+            # releases on creation/modify/delete of releases)
+            contentFilter['releases_compat_versions'] = version
 
         if category:
             contentFilter['getCategories'] = category

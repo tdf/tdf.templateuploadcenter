@@ -120,7 +120,7 @@
                                        <option tal:content="category" tal:attributes="value category; selected python: 'selected' if currentCategory==category else ''" />
                                      </tal:block>
                                  </select>
-                                 <select style="display:none" class="sortby-compatibility" name="getCompatibility" onchange="this.form.submit()">
+                                 <select class="sortby-compatibility" name="getCompatibility" onchange="this.form.submit()">
                                      <tal:block tal:repeat="version context/available_versions">
                                          <option tal:content="version"
                                                  tal:attributes="value version; selected python: 'selected' if currentVersion==version else ''" />

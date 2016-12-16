@@ -14,6 +14,7 @@ from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
 
 from plone.directives import form
 from zope import schema
@@ -148,6 +149,7 @@ class ITUpRelease(model.Schema):
         description=_(u"Please mark one or more program versions with which this release is compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
+        default=[]
     )
 
     form.mode(title_declaration_legal='display')
@@ -329,6 +331,30 @@ class ITUpRelease(model.Schema):
 @indexer(ITUpRelease)
 def release_number(context, **kw):
     return context.releasenumber
+
+
+def update_project_releases_compat_versions_on_creation(tuprelease, event):
+    IReleasesCompatVersions(
+        tuprelease.aq_parent).update(tuprelease.compatibility_choice)
+
+
+def update_project_releases_compat_versions(tuprelease, event):
+    pc = api.portal.get_tool(name='portal_catalog')
+    query = '/'.join(tuprelease.aq_parent.getPhysicalPath())
+    brains = pc.searchResults({
+        'path': {'query': query, 'depth': 1},
+        'portal_type': ['tdf.templateuploadcenter.tuprelease',
+                        'tdf.templateuploadcenter.tupreleaselink']
+    })
+
+    result = []
+    for brain in brains:
+        if isinstance(brain.compatibility_choice, list):
+            result = result + brain.compatibility_choice
+
+    IReleasesCompatVersions(
+        tuprelease.aq_parent).set(list(set(result)))
+
 
 
 class ValidateTUpReleaseUniqueness(validator.SimpleFieldValidator):
