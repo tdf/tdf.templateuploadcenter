@@ -10,7 +10,7 @@
 
 <div id="ownProjects">
 <h2 i18n:translate="">Your Own Projects</h2>
-        <p i18n:translate="">This are your projects on this site:</p>
+        <p i18n:translate="">These are your projects on this site:</p>
 
 <div class="" id="ownprojects"
         tal:define="results view/get_results;
