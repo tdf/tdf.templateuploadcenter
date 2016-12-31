@@ -5,6 +5,18 @@ Changelog
 -----------------
 
 - Fix of the header of the German localization file. [Andreas Mantke]
+- Fix field related issues [Victor Fernandez de Alba]
+- Fix views and project_logo conditions [Victor Fernandez de Alba]
+- Fix templates responsive classes and use the Bootstrap ones [Victor Fernandez de Alba]
+- Fix optional fields for additional file fields marked as required [Victor Fernandez de Alba]
+- Add categorization behavior to the custom contenttypes [Victor Fernandez de Alba]
+- Unify the license list [Victor Fernandez de Alba]
+- Fix search issues in templates [Victor Fernandez de Alba]
+- Fix rough edges in some use cases [Victor Fernandez de Alba]
+- Transfer code to proper class method to fix unicode errors on template [Victor Fernandez de Alba]
+- Add support for querying the release compatibility versions of inner releases from projects [Victor Fernandez de Alba]
+- Set the max length of a release name/numbering to twelf [Andreas Mantke]
+- Spellcheck fix in own_projects.pt [Andreas Mantke]
 
 
 0.10 (2016-09-07)
