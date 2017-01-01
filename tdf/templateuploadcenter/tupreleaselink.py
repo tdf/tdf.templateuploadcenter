@@ -216,14 +216,43 @@ class ITUpReleaseLink(model.Schema):
         title=_(u"Further linked files for this Release"),
         description=_(u"If you want to link more files for this release, e.g. because there are files for "
                       u"other operating systems, you'll find the fields to link this files on the "
-                      u"register 'Further linked files for this Release'."),
+                      u"next registers, e.g. 'Second linked file'."),
         required=False
      )
 
     form.fieldset('fileset1',
-                  label=u"Further linked files for this release",
-                  fields=['link_to_file1', 'platform_choice1', 'link_to_file2', 'platform_choice2',
-                          'link_to_file3', 'platform_choice3']
+                  label=u"Second linked file",
+                  fields=['link_to_file1',
+                          'external_file_size1',
+                          'platform_choice1']
+                  )
+
+    form.fieldset('fileset2',
+                  label=u"Third linked file",
+                  fields=['link_to_file2',
+                          'external_file_size2',
+                          'platform_choice2']
+                  )
+
+    form.fieldset('fileset3',
+                  label=u"Fourth linked file",
+                  fields=['link_to_file3',
+                          'external_file_size3',
+                          'platform_choice3']
+                  )
+
+    form.fieldset('fileset4',
+                  label=u"Fifth linked file",
+                  fields=['link_to_file4',
+                          'external_file_size4',
+                          'platform_choice4']
+                  )
+
+    form.fieldset('fileset5',
+                  label=u"Sixth linked file",
+                  fields=['link_to_file5',
+                          'external_file_size5',
+                          'platform_choice5']
                   )
 
     link_to_file1 = schema.URI(
