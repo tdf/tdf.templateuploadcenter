@@ -17,6 +17,7 @@ Changelog
 - Add support for querying the release compatibility versions of inner releases from projects [Victor Fernandez de Alba]
 - Set the max length of a release name/numbering to twelf [Andreas Mantke]
 - Spellcheck fix in own_projects.pt [Andreas Mantke]
+- Add an index for the project contact address to the portal catalog [Andreas Mantke]
 
 
 0.10 (2016-09-07)
