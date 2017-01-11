@@ -12,7 +12,7 @@
     <index name="getCategories" meta_type="KeywordIndex">
         <indexed_attr value="category_choice" />
     </index>
-    <index name="templateprojectcontact" meta_type="KeywordIndex">
+    <index name="projectcontact" meta_type="KeywordIndex">
         <indexed_attr value="contactAddress" />
     </index>
     <column value="getCategories" />
