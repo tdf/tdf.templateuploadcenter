@@ -135,7 +135,7 @@ class ITUpProject(model.Schema):
     )
 
     screenshot = NamedBlobImage(
-        title=_(u"Screemshot of the Template"),
+        title=_(u"Screenshot of the Template"),
         description=_(u"Add a screenshot by clicking the 'Browse' button."),
         required=False,
         constraint=validateImageextension
