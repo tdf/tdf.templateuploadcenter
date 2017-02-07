@@ -111,7 +111,9 @@ class ITUpCenter(model.Schema):
                                               'LibreOffice 4.3',
                                               'LibreOffice 4.4',
                                               'LibreOffice 5.0',
-                                              'LibreOffice 5.1'],
+                                              'LibreOffice 5.1',
+                                              'LibreOffice 5.2',
+                                              'LibreOffice 5.3'],
                                      value_type=schema.TextLine())
 
     available_platforms = schema.List(title=_(u"Available Platforms"),
