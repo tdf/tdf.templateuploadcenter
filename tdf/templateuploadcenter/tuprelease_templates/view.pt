@@ -63,7 +63,7 @@
           <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
               <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
           <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
-              <span i18n:translate="">The Template file</span></a>
+              <span tal:content="context/file/filename">The Template file</span></a>
           <span class="tupcenterplatform" tal:content="structure view/w/platform_choice/render" /><br />
           <span i18n:translate="" >File size:</span>
           <span tal:content="python:context.file.size / 1024" /> kb </p>
@@ -72,7 +72,7 @@
            <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}">
                <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
            <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file1/filename}">
-               <span i18n:translate="">The Template file</span></a>
+               <span tal:content="context/file1/filename">The Template file</span></a>
            <span class="tupcenterplatform" tal:content="structure view/w/platform_choice1/render" /><br />
            <span i18n:translate="">File size:</span>
            <span tal:content="python:context.file1.size / 1024" /> kb </p>
@@ -81,7 +81,7 @@
             <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}">
                 <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
             <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file2/filename}">
-                <span i18n:translate="">The Template file</span></a>
+                <span tal:content="context/file2/filename">The Template file</span></a>
             <span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" /><br />
             <span i18n:translate="">File size:</span>
             <span tal:content="python:context.file2.size / 1024" /> kb </p>
@@ -90,10 +90,31 @@
           <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}">
               <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
           <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file3/filename}">
-              <span i18n:translate="">The Template file</span></a>
+              <span tal:content="context/file3/filename">The Template file</span></a>
           <span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" /><br />
           <span i18n:translate="">File size:</span>
           <span tal:content="python:context.file3.size / 1024" /> kb </p>
+
+
+      <p tal:condition="context/file4">
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file4/filename}">
+              <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file4/filename}">
+              <span tal:content="context/file4/filename">The Template file</span></a>
+          <span class="tupcenterplatform" tal:content="structure view/w/platform_choice4/render" /><br />
+          <span i18n:translate="">File size:</span>
+          <span tal:content="python:context.file4.size / 1024" /> kb </p>
+
+
+      <p tal:condition="context/file5">
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file5/filename}">
+              <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+          <a tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file5/filename}">
+              <span tal:content="context/file5/filename">The Template file</span></a>
+          <span class="tupcenterplatform" tal:content="structure view/w/platform_choice5/render" /><br />
+          <span i18n:translate="">File size:</span>
+          <span tal:content="python:context.file3.size / 1024" /> kb </p>
+
 
 </div>
 
