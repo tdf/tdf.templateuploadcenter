@@ -220,7 +220,7 @@
                         	<h1 tal:condition="not:context/product_title" i18n:translate="">Templates</h1>
                     <span tal:content="structure context/product_description | nothing"/>
                     <p class="current-projects"><span i18n:translate="">Currently there are</span>
-                            <span tal:content="view/tupproject_count" /> <span i18n:translate="">with</span>
+                            <span tal:content="view/tupproject_count" /> <span i18n:translate="">project(s) with</span>
                             <span tal:content="view/tuprelease_count" /> <span i18n:translate="">release(s) available.</span>
                     </p>
                     <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject">
@@ -230,7 +230,7 @@
                 </div>
                 <div tal:condition="not: isAnon" tal:replace="structure provider:plone.abovecontenttitle" />
                 <div id="mostrecent">
-                    <h2><span i18n:translate="">Most recent </span><span tal:content="context/product_title" /></h2>
+                    <h2><span i18n:translate="">Most recent</span> <span tal:content="context/product_title" /></h2>
                     <div class=""
                             tal:define="results python:view.get_newest_products();
                                         Batch python:modules['Products.CMFPlone'].Batch;
