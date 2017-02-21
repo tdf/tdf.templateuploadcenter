@@ -135,44 +135,81 @@
             <dl>
                 <span tal:condition="not:python:latestRelease.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
                     <span tal:condition="latestRelease/file">
-                         <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file/${latestRelease/file/filename}">
-                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file/${latestRelease/file/filename}">
+                            <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file/${latestRelease/file/filename}">
+                            <span tal:content="latestRelease/file/filename">The Template File</span></a>
+                        <div class="tucfilesize">
+                            <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file.size / 1024" /><span> kb</span>
+                        </div>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice">
                             <dl><div tal:content="platform_choice" /></dl>
-                         </tal:loop>
-                        <div class="tucfilesize">
-                       <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file.size / 1024" /><span> kb</span>
-                            </div>
-                     </span>
+                        </tal:loop>
+                    </span>
+
                     <span tal:condition="latestRelease/file1">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file1/${latestRelease/file1/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file1/${latestRelease/file1/filename}">
+                            <span tal:content="latestRelease/file1/filename">The Template File</span></a>
+                        <div class="tucfilesize">
+                            <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file1.size / 1024" /><span> kb</span>
+                        </div>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice1">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
-                       <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file1.size / 1024" /><span> kb</span>
-                            </div>
                     </span>
+
                     <span tal:condition="latestRelease/file2">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file2/${latestRelease/file2/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file2/${latestRelease/file2/filename}">
+                            <span tal:content="latestRelease/file2/filename">The Template File</span></a>
+                        <div class="tucfilesize">
+                            <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file2.size / 1024" /><span> kb</span>
+                        </div>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice2">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
-                        <div class="tucfilesize">
-                       <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file2.size / 1024" /><span> kb</span>
-                            </div>
                     </span>
+
                     <span tal:condition="latestRelease/file3">
                          <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file3/${latestRelease/file3/filename}">
                         <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file3/${latestRelease/file3/filename}">
+                            <span tal:content="latestRelease/file3/filename">The Template File</span></a>
+                        <div class="tucfilesize">
+                            <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file3.size / 1024" /><span> kb</span>
+                        </div>
                         <tal:loop repeat="platform_choice latestRelease/platform_choice3">
                             <dl><div tal:content="platform_choice" /></dl>
                          </tal:loop>
+                    </span>
+
+                    <span tal:condition="latestRelease/file4">
+                         <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file4/${latestRelease/file4/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file4/${latestRelease/file4/filename}">
+                            <span tal:content="latestRelease/file4/filename">The Template File</span></a>
                         <div class="tucfilesize">
-                       <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file3.size / 1024" /><span> kb</span>
-                            </div>
+                            <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file4.size / 1024" /><span> kb</span>
+                        </div>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice4">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                    </span>
+
+                    <span tal:condition="latestRelease/file5">
+                         <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file5/${latestRelease/file5/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" /></a>
+                        <a tal:attributes="href string:${latestRelease/absolute_url}/@@download/file5/${latestRelease/file5/filename}">
+                            <span tal:content="latestRelease/file5/filename">The Template File</span></a>
+                        <div class="tucfilesize">
+                            <span i18n:translate="">File size: </span> <span tal:content="python:latestRelease.file5.size / 1024" /><span> kb</span>
+                        </div>
+                        <tal:loop repeat="platform_choice latestRelease/platform_choice5">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
                     </span>
 
                 </span>
