@@ -20,6 +20,8 @@ Changelog
 - Add an index for the project contact address to the portal catalog [Andreas Mantke]
 - Add missing file links to the view template of the releases and add the file name to the download link
   [Andreas Mantke]
+- Add missing file links to the view of the project view for current releases [Andreas Mantke]
+- Add a missing string and missing space to the template center view [Andreas Mantke]
 
 
 0.10 (2016-09-07)
