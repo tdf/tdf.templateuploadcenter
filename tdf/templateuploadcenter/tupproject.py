@@ -54,7 +54,7 @@ directlyProvides(vocabCategories, IContextSourceBinder)
 
 def isNotEmptyCategory(value):
     if not value:
-        raise Invalid(u'You must choose at least one category for your project.')
+        raise Invalid(u'You have to choose at least one category for your project.')
     return True
 
 
@@ -69,7 +69,8 @@ def validateEmail(value):
 
 
 class ProvideScreenshotLogo(Invalid):
-    __doc__ = _(u"Please add a Screenshot or a Logo to your project")
+    __doc__ = _(u"Please add a Screenshot or a Logo to your project. You find the appropriate fields below "
+                u"on this page.")
 
 
 class MissingCategory(Invalid):
@@ -129,14 +130,16 @@ class ITUpProject(model.Schema):
 
     project_logo = NamedBlobImage(
         title=_(u"Logo"),
-        description=_(u"Add a logo for the project (or organization/company) by clicking the 'Browse' button."),
+        description=_(u"Add a logo for the project (or organization/company) by clicking the 'Browse' button. "
+                      u"You could provide an image of the file format 'png', 'gif' or 'jpg'."),
         required=False,
         constraint=validateImageextension
     )
 
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Template"),
-        description=_(u"Add a screenshot by clicking the 'Browse' button."),
+        description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
+                      u"format 'png', 'gif' or 'jpg'. "),
         required=False,
         constraint=validateImageextension
     )
@@ -144,7 +147,8 @@ class ITUpProject(model.Schema):
     @invariant
     def missingScreenshotOrLogo(data):
         if not data.screenshot and not data.project_logo:
-            raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
+            raise ProvideScreenshotLogo(_(u'Please add a screenshot or a logo to your project page. You will find the'
+                                          u'appropriate fields below on this page.'))
 
 
 def notifyProjectManager(tupproject, event):
