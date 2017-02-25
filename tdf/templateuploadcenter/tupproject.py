@@ -20,6 +20,8 @@ from plone.uuid.interfaces import IUUID
 from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from Products.validation import V_REQUIRED
+from tdf.templateuploadcenter import quote_chars
+
 
 checkfileextension = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
@@ -205,13 +207,14 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
 
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': value,
+            results = catalog({'Title': quote_chars(value),
                                'object_provides': ITUpProject.__identifier__})
 
             contextUUID = IUUID(self.context, None)
             for result in results:
                 if result.UID != contextUUID:
                     raise Invalid(_(u"The project title is already in use"))
+
 
 validator.WidgetValidatorDiscriminators(
     ValidateTUpProjectUniqueness,
