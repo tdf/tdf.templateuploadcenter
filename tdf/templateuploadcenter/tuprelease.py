@@ -320,7 +320,9 @@ class ITUpRelease(model.Schema):
     @invariant
     def testingvalue(data):
         if data.source_code_inside is not 1 and data.link_to_source is None:
-            raise Invalid(_(u"Please fill in the Link (URL) to the Source Code."))
+            raise Invalid(_(u"You answered the question, whether the source code is inside your template with no "
+                            u"(default answer). If this is the correct answer, please fill in the Link (URL) "
+                            u"to the Source Code."))
 
     @invariant
     def noOSChosen(data):
