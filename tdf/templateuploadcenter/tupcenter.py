@@ -1,15 +1,19 @@
-from tdf.templateuploadcenter import MessageFactory as _
-from plone.app.textfield import RichText
-from plone.supermodel import model
-from zope import schema
-from Products.Five import BrowserView
 from Acquisition import aq_inner
 from plone import api
-from plone.directives import form
-from zope import schema
 from plone.app.layout.viewlets import ViewletBase
-from tdf.templateuploadcenter.tupproject import ITUpProject
 from plone.app.multilingual.dx import directives
+from plone.app.textfield import RichText
+from plone.directives import form
+from plone.supermodel import model
+from Products.CMFPlone.browser.search import quote_chars
+from Products.Five import BrowserView
+from tdf.templateuploadcenter import MessageFactory as _
+from tdf.templateuploadcenter.tupproject import ITUpProject
+from zope import schema
+
+
+MULTISPACE = u'\u3000'.encode('utf-8')
+BAD_CHARS = ('?', '-', '+', '*', MULTISPACE)
 
 
 class ITUpCenter(model.Schema):
@@ -248,7 +252,10 @@ class TUpCenterView(BrowserView):
 
     def get_products(self, category, version, sort_on, SearchableText=None):
         self.catalog = api.portal.get_tool(name='portal_catalog')
-        sort_on = 'positive_ratings'
+        # sort_on = 'positive_ratings'
+        if SearchableText:
+            SearchableText = self.munge_search_term(SearchableText)
+
         contentFilter = {'sort_on': sort_on,
                          'SearchableText': SearchableText,
                          'sort_order': 'reverse',
@@ -262,6 +269,14 @@ class TUpCenterView(BrowserView):
             contentFilter['getCategories'] = category
 
         return self.catalog(**contentFilter)
+
+    def munge_search_term(self, q):
+        for char in BAD_CHARS:
+            q = q.replace(char, ' ')
+        r = q.split()
+        r = " AND ".join(r)
+        r = quote_chars(r) + '*'
+        return r
 
     def show_search_form(self):
         return 'getCategories' in self.request.environ['QUERY_STRING']
