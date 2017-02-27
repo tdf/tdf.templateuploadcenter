@@ -24,7 +24,8 @@ Changelog
 - Add a missing string and missing space to the template center view [Andreas Mantke]
 - Fix catalog search to the Title index in case of special () characters [Victor Fernandez de Alba]
 - Improvement for the error messages and instructions on tupprojects [Andreas Mantke]
-- Improved error message for source code question on tupreleases [Andreas Mantke]
+- Improved error message for source code question on tupreleases and linked tupreleases [Andreas Mantke]
+- Added a description to the install instructions field and removed the default value (text) [Andreas Mantke]
 
 
 0.10 (2016-09-07)
