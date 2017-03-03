@@ -26,6 +26,7 @@ Changelog
 - Improvement for the error messages and instructions on tupprojects [Andreas Mantke]
 - Improved error message for source code question on tupreleases and linked tupreleases [Andreas Mantke]
 - Added a description to the install instructions field and removed the default value (text) [Andreas Mantke]
+- Add guard in case that a malformed query was entered, return empty record [Victor Fernandez de Alba]
 - Update of the localisation template and the German localisation [Andreas Mantke]
 
 0.10 (2016-09-07)
