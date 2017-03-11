@@ -4,7 +4,7 @@ Changelog
 0.12 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Screenshot displayed on mouse click in scale large on project page [Andreas Mantke]
 
 
 0.11 (2017-03-03)
