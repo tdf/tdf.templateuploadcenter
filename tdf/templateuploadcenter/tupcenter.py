@@ -295,4 +295,4 @@ class TUpCenterOwnProjectsViewlet(ViewletBase):
             portal_type='tdf.templateuploadcenter.tupproject',
             sort_on='Date',
             sort_order='reverse',
-            Creator=current_user)
+            Creator=str(current_user))
