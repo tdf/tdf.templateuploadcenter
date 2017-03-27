@@ -5,6 +5,10 @@ Changelog
 -----------------
 
 - Screenshot displayed on mouse click in scale large on project page [Andreas Mantke]
+- Fix for display projects of current user [Andreas Mantke]
+- Improve the messaging for new projects according to the review status
+  and remove  not necessary i18-domain declarations [Andreas Mantke]
+
 
 
 0.11 (2017-03-03)
