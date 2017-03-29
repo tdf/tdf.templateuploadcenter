@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-03-02 20:50+0000\n"
+"POT-Creation-Date: 2017-03-29 19:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr ""
 
-#: ./tupproject_templates/view.pt:251
+#: ./tupproject_templates/view.pt:272
 msgid "All Releases"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Browse Templates by Category"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:70
+#: ./tupproject_templates/view.pt:91
 msgid "Category/Categories"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Choose your categories"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:259
+#: ./tupproject_templates/view.pt:280
 #: ./tuprelease_templates/view.pt:51
 #: ./tupreleaselink_templates/view.pt:58
 msgid "Compatibility"
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Contact email-address for the project."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:87
+#: ./tupproject_templates/view.pt:108
 msgid "Current Release"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "Currently there are"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:260
+#: ./tupproject_templates/view.pt:281
 msgid "Description"
 msgstr ""
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:143
+#: ./tupproject_templates/view.pt:164
 #: ./tuprelease_templates/view.pt:68
 #: ./tupreleaselink_templates/view.pt:70
 msgid "File size:"
@@ -304,7 +304,7 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:72
+#: ./tupproject_templates/view.pt:93
 msgid "Homepage of the Project"
 msgstr ""
 
@@ -370,7 +370,7 @@ msgstr ""
 msgid "License of the uploaded file"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:261
+#: ./tupproject_templates/view.pt:282
 #: ./tuprelease_templates/view.pt:49
 #: ./tupreleaselink_templates/view.pt:56
 msgid "License(s)"
@@ -382,11 +382,11 @@ msgid "Link to Source Code"
 msgstr ""
 
 #: ./tupproject.py:134
-#: ./tupproject_templates/view.pt:76
+#: ./tupproject_templates/view.pt:97
 msgid "Logo"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:131
+#: ./tupproject_templates/view.pt:152
 msgid "More about this release&hellip;"
 msgstr ""
 
@@ -419,11 +419,11 @@ msgstr ""
 msgid "No results were found."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:89
+#: ./tupproject_templates/view.pt:110
 msgid "No stable release available yet."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:258
+#: ./tupproject_templates/view.pt:279
 msgid "Platform(s)"
 msgstr ""
 
@@ -483,6 +483,10 @@ msgstr ""
 msgid "Please insert a link to your extension file."
 msgstr ""
 
+#: ./tupproject_templates/view.pt:35
+msgid "Please make sure the relevant project information has been entered and a release has been added to your project. Once you have finished that you could submit your project for approval (publication)."
+msgstr ""
+
 #: ./tuprelease.py:141
 #: ./tupreleaselink.py:140
 msgid "Please mark one or more licenses you publish your release."
@@ -510,11 +514,11 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:68
+#: ./tupproject_templates/view.pt:89
 msgid "Project Description"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:308
+#: ./tupproject_templates/view.pt:329
 #: ./tuprelease_templates/view.pt:132
 #: ./tupreleaselink_templates/view.pt:119
 msgid "Project Resources"
@@ -578,7 +582,7 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:109
+#: ./tupproject_templates/view.pt:130
 msgid "Released"
 msgstr ""
 
@@ -605,7 +609,7 @@ msgstr ""
 msgid "Retract release"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:319
+#: ./tupproject_templates/view.pt:340
 #: ./tuprelease_templates/view.pt:142
 #: ./tupreleaselink_templates/view.pt:134
 msgid "Screenshot"
@@ -675,7 +679,7 @@ msgstr ""
 msgid "Template Release"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:257
+#: ./tupproject_templates/view.pt:278
 msgid "Template Version"
 msgstr ""
 
@@ -818,11 +822,15 @@ msgstr ""
 msgid "Your Own Projects"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:45
+#: ./tupproject_templates/view.pt:56
+msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
+msgstr ""
+
+#: ./tupproject_templates/view.pt:43
 msgid "a Release to your"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:51
+#: ./tupproject_templates/view.pt:49
 msgid "a linked Release to your"
 msgstr ""
 
@@ -839,7 +847,7 @@ msgstr ""
 msgid "label_linked_template_file"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:49
+#: ./tupproject_templates/view.pt:47
 msgid "or:"
 msgstr ""
 
@@ -864,12 +872,12 @@ msgstr ""
 msgid "release(s) available."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:115
+#: ./tupproject_templates/view.pt:136
 msgid "tested with:"
 msgstr ""
 
 #. Default: "Current release for the project"
-#: ./tupproject_templates/view.pt:100
+#: ./tupproject_templates/view.pt:121
 msgid "title_latest_release_project"
 msgstr ""
 
