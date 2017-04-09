@@ -234,7 +234,7 @@ class TUpProjectView(DefaultView):
         res = catalog.searchResults(
             portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
             path=current_path,
-            sort_on='id',
+            sort_on='Date',
             sort_order='reverse')
         return [r.getObject() for r in res]
 
@@ -250,7 +250,7 @@ class TUpProjectView(DefaultView):
             portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
             review_state='final',
-            sort_on='id',
+            sort_on='effective',
             sort_order='reverse')
 
         if not res:
