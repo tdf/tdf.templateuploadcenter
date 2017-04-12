@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.12 (unreleased)
+0.12 (2017-04-12)
 -----------------
 
 - Screenshot displayed on mouse click in scale large on project page [Andreas Mantke]
