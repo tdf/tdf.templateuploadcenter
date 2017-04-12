@@ -16,867 +16,909 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Poedit 1.8.9\n"
 
-#: tupreleaselink.py:207
+#: ./tupreleaselink.py:207
 msgid " First linked file is compatible with the Platform(s)"
 msgstr "Die erste verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tuprelease.py:203
+#: ./tuprelease.py:203
 msgid " First uploaded file is compatible with the Platform(s)"
 msgstr "Die erste hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupreleaselink.py:318
+#: ./tupreleaselink.py:318
 msgid " Fourth linked file is compatible with the Platform(s)"
 msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tupreleaselink.py:274
+#: ./tupreleaselink.py:274
 msgid " Second linked file is compatible with the Platform(s)"
 msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tupreleaselink.py:296
+#: ./tupreleaselink.py:296
 msgid " Third linked file is compatible with the Platform(s)"
 msgstr "Die dritte verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tupcenter_templates/view.pt:218
+#: ./tupcenter_templates/view.pt:218
 msgid "${product_title}"
 msgstr "${product_title}"
 
-#: tuprelease.py:117 tupreleaselink.py:116
+#: ./tuprelease.py:117
+#: ./tupreleaselink.py:116
 msgid "1.0"
 msgstr "1.0"
 
-#: tuprelease.py:134 tupreleaselink.py:133
+#: ./tuprelease.py:134
+#: ./tupreleaselink.py:133
 msgid "A detailed log of what has changed since the previous release."
 msgstr "Eine detaillierte Aufstellung über das, was sich seit dem letzten Release verändert hat."
 
-#: profiles/default/types/tdf.templateuploadcenter.tupreleaselink.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tupreleaselink.xml
 msgid "A linked template release"
 msgstr "Ein verlinktes Template Release"
 
-#: profiles/default/types/tdf.templateuploadcenter.tupcenter.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tupcenter.xml
 msgid "A template center"
 msgstr "Ein Template-Center"
 
-#: profiles/default/types/tdf.templateuploadcenter.tupproject.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tupproject.xml
 msgid "A template project"
 msgstr "Ein Template-Projekt"
 
-#: profiles/default/types/tdf.templateuploadcenter.tuprelease.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tuprelease.xml
 msgid "A template release"
 msgstr "Ein Template-Release"
 
-#: tupcenter_templates/view.pt:285
+#: ./tupcenter_templates/view.pt:285
 msgid "About"
 msgstr "Über"
 
-#: tuprelease.py:171 tupreleaselink.py:168
+#: ./tuprelease.py:171
+#: ./tupreleaselink.py:168
 msgid "Accept the above legal disclaimer"
 msgstr "Akzeptieren Sie den obigen Haftungsausschlluss"
 
-#: tupproject.py:135
+#: ./tupproject.py:135
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr "Bitte fügen Sie ein Logo für Ihr Projekt (oder Organisation/Unternehmen) durch Klicken auf die Schaltfläche \"Durchsuchen\"  hinzu. Sie können Grafiken der Dateiformate \"png\", \"gif\" oder \"jpg\"  verwenden."
 
-#: tupproject.py:143
+#: ./tupproject.py:143
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr "Bitte fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche \"Durchsuchen\"  hinzu. Sie können Grafiken der Dateiformate \"png\", \"gif\" oder \"jpg\"  verwenden."
 
-#: tupproject_templates/view.pt:272
+#: ./tupproject_templates/view.pt:272
 msgid "All Releases"
 msgstr "Alle Releases"
 
-#: tupcenter_templates/view.pt:118
+#: ./tupcenter_templates/view.pt:118
 msgid "All categories"
 msgstr "Alle Kategorien"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Alpha Release"
 msgstr "Alpha Release"
 
-#: tupcenter_templates/view.pt:128
+#: ./tupcenter_templates/view.pt:128
 msgid "Any version"
 msgstr "Jede Version"
 
-#: tupcenter.py:42
+#: ./tupcenter.py:42
 msgid "Available Categories"
 msgstr "Verfügbare Kategorien"
 
-#: tuprelease_templates/view.pt:55 tupreleaselink_templates/view.pt:63
+#: ./tuprelease_templates/view.pt:55
+#: ./tupreleaselink_templates/view.pt:63
 msgid "Available Downloads"
 msgstr "Verfügbare Downloads"
 
-#: tupcenter.py:93
+#: ./tupcenter.py:93
 msgid "Available Licenses"
 msgstr "Verfügbare Lizenzen"
 
-#: tupcenter.py:124
+#: ./tupcenter.py:124
 msgid "Available Platforms"
 msgstr "Verfügbare Plattformen"
 
-#: tupcenter.py:108
+#: ./tupcenter.py:108
 msgid "Available Versions"
 msgstr "Verfügbare Versionen"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Beta Release"
 msgstr "Beta Release"
 
-#: tupcenter_templates/view.pt:261
+#: ./tupcenter_templates/view.pt:261
 msgid "Browse"
 msgstr "Suchen"
 
-#: tupcenter_templates/view.pt:264
+#: ./tupcenter_templates/view.pt:264
 msgid "Browse Templates by Category"
 msgstr "Suchen von Vorlagen nach Kategorie"
 
-#: tupproject_templates/view.pt:91
+#: ./tupproject_templates/view.pt:91
 msgid "Category/Categories"
 msgstr "Kategorie/Kategorien"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Change the release stage to 'Release alpha'"
 msgstr "Ändere den Release-Status zu \"Release alpha\""
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Change the release stage to 'Release beta'"
 msgstr "Ändere den Release-Status zu \"Release beta\""
 
-#: tuprelease.py:133 tupreleaselink.py:132 tupreleaselink_templates/view.pt:60
+#: ./tuprelease.py:133
+#: ./tupreleaselink.py:132
+#: ./tupreleaselink_templates/view.pt:60
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
-#: tupproject.py:107
+#: ./tupproject.py:107
 msgid "Choose your categories"
 msgstr "Wählen Sie Ihre Kategorien"
 
-#: tupproject_templates/view.pt:280 tuprelease_templates/view.pt:51
-#: tupreleaselink_templates/view.pt:58
+#: ./tupproject_templates/view.pt:280
+#: ./tuprelease_templates/view.pt:51
+#: ./tupreleaselink_templates/view.pt:58
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
-#: tuprelease.py:148 tupreleaselink.py:147
+#: ./tuprelease.py:148
+#: ./tupreleaselink.py:147
 msgid "Compatible with versions of LibreOffice"
 msgstr "Kompatibel mit den LibreOffice-Versionen"
 
-#: tupproject.py:115 tuprelease.py:177 tupreleaselink.py:174
+#: ./tupproject.py:115
+#: ./tuprelease.py:177
+#: ./tupreleaselink.py:174
 msgid "Contact email-address"
 msgstr "Kontakt-Email-Adresse"
 
-#: tupproject.py:116 tuprelease.py:178 tupreleaselink.py:175
+#: ./tupproject.py:116
+#: ./tuprelease.py:178
+#: ./tupreleaselink.py:175
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt"
 
-#: tupproject_templates/view.pt:108
+#: ./tupproject_templates/view.pt:108
 msgid "Current Release"
 msgstr "Aktuelles Release"
 
-#: tupcenter_templates/view.pt:222
+#: ./tupcenter_templates/view.pt:222
 msgid "Currently there are"
 msgstr "Aktuell sind hier"
 
-#: tupproject_templates/view.pt:281
+#: ./tupproject_templates/view.pt:281
 msgid "Description"
 msgstr "Beschreibung"
 
-#: tupcenter.py:30
+#: ./tupcenter.py:30
 msgid "Description of the Template Center"
 msgstr "Beschreibung des Vorlagen-Centers"
 
-#: tupcenter.py:34
+#: ./tupcenter.py:34
 msgid "Description of the features of templates"
 msgstr "Beschreibung der Funktionen von Vorlagen"
 
-#: tupcenter.py:170
+#: ./tupcenter.py:170
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr "Fügen Sie den Text der  rechtlichen Hinweise und Einschränkungen für Downloads ein, der auf jeder Seite für herunter ladbare Dateien erscheinen soll."
 
-#: tupcenter.py:155
+#: ./tupcenter.py:155
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, der dem Ersteller eines Projektes angezeigt und von dem Projekt-Eigentümer zu akzeptieren ist."
 
-#: configure.zcml:31
+#: ./configure.zcml:31
 msgid "Extension profile for TDF Template Upload Center"
 msgstr "Extension profile for TDF Template Upload Center"
 
-#: tupreleaselink_templates/view.pt:123
+#: ./tupreleaselink_templates/view.pt:123
 msgid "External Documentation"
 msgstr "Externe Dokumentation"
 
-#: tupreleaselink_templates/view.pt:128
+#: ./tupreleaselink_templates/view.pt:128
 msgid "External Project Page"
 msgstr "Externe Projektseite"
 
-#: tuprelease.py:283
+#: ./tuprelease.py:283
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject_templates/view.pt:164 tuprelease_templates/view.pt:68
-#: tupreleaselink_templates/view.pt:70
+#: ./tupproject_templates/view.pt:164
+#: ./tuprelease_templates/view.pt:68
+#: ./tupreleaselink_templates/view.pt:70
 msgid "File size:"
 msgstr "Dateigröße:"
 
-#: tupcenter.py:157
+#: ./tupcenter.py:157
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern zu akzeptieren ist."
 
-#: tupcenter.py:172
+#: ./tupcenter.py:172
 msgid "Fill in the text for the legal download disclaimer"
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein."
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Final Release"
 msgstr "Finales Release"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Final release"
 msgstr "Finales Release"
 
-#: tuprelease.py:263
+#: ./tuprelease.py:263
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr "Die vierte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject.py:100
+#: ./tupproject.py:100
 msgid "Full Project Description"
 msgstr "Komplette Projekt-Beschreibung"
 
-#: tuprelease.py:127 tupreleaselink.py:126
+#: ./tuprelease.py:127
+#: ./tupreleaselink.py:126
 msgid "Full Release Description"
 msgstr "Komplette Release-Beschreibung"
 
-#: tuprelease.py:212
+#: ./tuprelease.py:212
 msgid "Further File Uploads for this Release"
 msgstr "Weitere Datei-Hochlademöglichkeiten für dieses Release"
 
-#: tupreleaselink.py:216
+#: ./tupreleaselink.py:216
 msgid "Further linked files for this Release"
 msgstr "Weitere verlinkte Dateien für dieses Release"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Hidden"
 msgstr "Versteckt"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Hidden template release"
 msgstr "Verstecktes Vorlagen-Release"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Hide"
 msgstr "Verstecken"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Hide this release"
 msgstr "Verstecken Sie dieses Release"
 
-#: tupcenter_templates/view.pt:134
+#: ./tupcenter_templates/view.pt:134
 msgid "Highest Rated"
 msgstr "Am höchsten bewerted"
 
-#: tupproject.py:121
+#: ./tupproject.py:121
 msgid "Homepage"
 msgstr "Homepage"
 
-#: tupproject_templates/view.pt:93
+#: ./tupproject_templates/view.pt:93
 msgid "Homepage of the Project"
 msgstr "Homepage des Projekts"
 
-#: tupproject.py:122
+#: ./tupproject.py:122
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls das Projekt eine externe Homepage hat, füllen Sie hier die URL (Beispiel: 'http://www.mysite.org') ein."
 
-#: tupproject.py:128
+#: ./tupproject.py:128
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls Ihr Projekt eine extern verfügbare Dokumentation besitzt, fügen Sie hier die entsprechende URL (Beispiel: \"http://www.mysite.org\") ein."
 
-#: tupcenter_templates/own_project.pt:46
+#: ./tupcenter_templates/own_project.pt:46
 msgid "If you already created a new"
 msgstr "Falls Sie bereits ein neues"
 
-#: tupreleaselink.py:217
+#: ./tupreleaselink.py:217
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file'."
 msgstr "Falls Sie weitere Dateien für dieses Release verlinken wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die Felder dafür auf den nächsten Registern, z.B. \"Zweite verlinkte Datei\"."
 
-#: tuprelease.py:213
+#: ./tuprelease.py:213
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
 msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die entsprechenden Felder auf dem Register \"File Upload 1\" und \"File Upload 2\"."
 
-#: tuprelease_templates/view.pt:35 tupreleaselink_templates/view.pt:36
+#: ./tuprelease_templates/view.pt:35
+#: ./tupreleaselink_templates/view.pt:36
 msgid "Info"
 msgstr "Info"
 
-#: tupcenter_templates/view.pt:277 tuprelease_templates/view.pt:159
-#: tupreleaselink_templates/view.pt:150
+#: ./tupcenter_templates/view.pt:277
+#: ./tuprelease_templates/view.pt:159
+#: ./tupreleaselink_templates/view.pt:150
 msgid "Install Instructions"
 msgstr "Installationsanleitung"
 
-#: tupcenter.py:143
+#: ./tupcenter.py:143
 msgid "Instruction how to report Bugs"
 msgstr "Anleitung, wie ein Fehler gemeldet wird."
 
-#: tupproject.py:69
+#: ./tupproject.py:69
 msgid "Invalid email address"
 msgstr "Ungültige Email-Adresse"
 
-#: tuprelease.py:184 tupreleaselink.py:181
+#: ./tuprelease.py:184
+#: ./tupreleaselink.py:181
 msgid "Is the source code inside the extension?"
 msgstr "Ist der Quellcode in der Extension enthalten?"
 
-#: tuprelease.py:102 tupreleaselink.py:101
+#: ./tuprelease.py:102
+#: ./tupreleaselink.py:101
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 
-#: tupcenter.py:149
+#: ./tupcenter.py:149
 msgid "Legal Disclaimer and Limitations"
 msgstr "Rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:163
+#: ./tupcenter.py:163
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 
-#: tuprelease.py:140 tupreleaselink.py:139
+#: ./tuprelease.py:140
+#: ./tupreleaselink.py:139
 msgid "License of the uploaded file"
 msgstr "Lizenz der hochgeladenen Datei"
 
-#: tupproject_templates/view.pt:282 tuprelease_templates/view.pt:49
-#: tupreleaselink_templates/view.pt:56
+#: ./tupproject_templates/view.pt:282
+#: ./tuprelease_templates/view.pt:49
+#: ./tupreleaselink_templates/view.pt:56
 msgid "License(s)"
 msgstr "Lizenz(en)"
 
-#: tuprelease_templates/view.pt:155 tupreleaselink_templates/view.pt:146
+#: ./tuprelease_templates/view.pt:155
+#: ./tupreleaselink_templates/view.pt:146
 msgid "Link to Source Code"
 msgstr "Link zum Quellcode"
 
-#: tupproject.py:134 tupproject_templates/view.pt:97
+#: ./tupproject.py:134
+#: ./tupproject_templates/view.pt:97
 msgid "Logo"
 msgstr "Logo"
 
-#: tupproject_templates/view.pt:152
+#: ./tupproject_templates/view.pt:152
 msgid "More about this release&hellip;"
 msgstr "Mehr über dieses Release&hellip;"
 
-#: tupcenter_templates/view.pt:44
+#: ./tupcenter_templates/view.pt:44
 msgid "Most popular ${product_title}"
 msgstr "Beliebteste ${product_title}"
 
-#: tupcenter_templates/view.pt:233
+#: ./tupcenter_templates/view.pt:233
 msgid "Most recent"
 msgstr "Aktuellste"
 
-#: tupcenter.py:26
+#: ./tupcenter.py:26
 msgid "Name of the Template Center"
 msgstr "Name des Vorlagen-Center"
 
-#: tupcenter.py:39
+#: ./tupcenter.py:39
 msgid "Name of the Template product, e.g. only Templates or LibreOffice Templates"
 msgstr "Name des Vorlagen-Produkts, z.B.. nur Vorlagen oder LibreOffice-Vorlagen"
 
-#: tupcenter_templates/view.pt:135
+#: ./tupcenter_templates/view.pt:135
 msgid "Newest"
 msgstr "Neueste"
 
-#: tuprelease.py:74 tupreleaselink.py:73
+#: ./tuprelease.py:74
+#: ./tupreleaselink.py:73
 msgid "No"
 msgstr "Nein"
 
-#: tupcenter_templates/view.pt:154
+#: ./tupcenter_templates/view.pt:154
 msgid "No results were found."
 msgstr "Keine Ergebnisse gefunden"
 
-#: tupproject_templates/view.pt:110
+#: ./tupproject_templates/view.pt:110
 msgid "No stable release available yet."
 msgstr "Aktuell kein stabiles Release verfügbar."
 
-#: tupproject_templates/view.pt:279
+#: ./tupproject_templates/view.pt:279
 msgid "Platform(s)"
 msgstr "Plattform(en)"
 
-#: tuprelease.py:317
+#: ./tuprelease.py:317
 msgid "Please accept the Legal Declaration about your Release and your Uploaded File"
 msgstr "Bitte akzeptieren Sie den Haftungsausschluss für Ihr Release und Ihre hochgeladenen Dateien"
 
-#: tupreleaselink.py:381
+#: ./tupreleaselink.py:381
 msgid "Please accept the Legal Declaration about your Release and your linked File"
 msgstr "Bitte akzeptieren Sie den Haftungsausschluss für Ihr Release und Ihre verlinkten Dateien"
 
-#: tupproject.py:74
+#: ./tupproject.py:74
 msgid "Please add a Screenshot or a Logo to your project. You find the appropriate fields below on this page."
 msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrer Projektseite hinzu. Sie finden die entsprechenden Felder unten auf dieser Seite."
 
-#: tupproject.py:152
+#: ./tupproject.py:152
 msgid "Please add a screenshot or a logo to your project page. You will find theappropriate fields below on this page."
 msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrer Projektseite hinzu. Sie finden die entsprechenden Felder unten auf dieser Seite."
 
-#: tupreleaselink.py:394
+#: ./tupreleaselink.py:394
 msgid "Please choose a compatible platform for the linked file."
 msgstr "Bitte wählen Sie eine zu der verlinkten Datei kompatible Plattform"
 
-#: tuprelease.py:330
+#: ./tuprelease.py:330
 msgid "Please choose a compatible platform for the uploaded file."
 msgstr "Bitte wählen Sie eine zu der hochgeladenen Datei kompatible Plattform"
 
-#: tuprelease.py:307 tupreleaselink.py:371
+#: ./tuprelease.py:307
+#: ./tupreleaselink.py:371
 msgid "Please choose a license for your release."
 msgstr "Bitte wählen Sie eine Lizenz für Ihr Release."
 
-#: tuprelease.py:312 tupreleaselink.py:376
+#: ./tuprelease.py:312
+#: ./tupreleaselink.py:376
 msgid "Please choose one or more compatible product versions for your release"
 msgstr "Bitte wählen Sie eine oder mehrere kompatible Produkt-Versionen für Ihr Release."
 
-#: tuprelease.py:172 tupreleaselink.py:169
+#: ./tuprelease.py:172
+#: ./tupreleaselink.py:169
 msgid "Please declare that you accept the above legal disclaimer"
 msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren."
 
-#: tuprelease.py:190 tupreleaselink.py:187
+#: ./tuprelease.py:190
+#: ./tupreleaselink.py:187
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein."
 
-#: tupcenter.py:137
+#: ./tupcenter.py:137
 msgid "Please fill in the install instructions"
 msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 
-#: tupreleaselink.py:200
+#: ./tupreleaselink.py:200
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr "Bitte füllen Sie die Größe der extern gehosteten Datei  in Kilobyte (z.B. 633, falls die Größe 633 KB ist) ein."
 
-#: tupreleaselink.py:193
+#: ./tupreleaselink.py:193
 msgid "Please insert a link to your extension file."
 msgstr "Bitte fügen Sie einen Link zu Ihrer Extension-Datei ein."
 
-#: tupproject_templates/view.pt:35
+#: ./tupproject_templates/view.pt:35
 msgid "Please make sure the relevant project information has been entered and a release has been added to your project. Once you have finished that you could submit your project for approval (publication)."
 msgstr "Bitte stellen Sie sicher, dass Sie alle relevanten Informationen eingetragen und Ihrem Projekt ein Release hinzugefügt haben. Sobald Sie diese Arbeiten beendet haben, können Sie das Projekt zur Überprüfung (Veröffentlichung) übermitteln."
 
-#: tuprelease.py:141 tupreleaselink.py:140
+#: ./tuprelease.py:141
+#: ./tupreleaselink.py:140
 msgid "Please mark one or more licenses you publish your release."
 msgstr "Bitte markieren Sie eine oder mehrere Lizenzen, unter denen Sie Ihr Release veröffentlichen."
 
-#: tupreleaselink.py:275
+#: ./tupreleaselink.py:275
 msgid "Please mark one or more platforms with which the linked file is compatible."
 msgstr "Bitte markieren Sie eine oder mehrere Plattformen, mit denen Ihre verlinkte Datei kompatibel ist."
 
-#: tuprelease.py:204 tupreleaselink.py:208
+#: ./tuprelease.py:204
+#: ./tupreleaselink.py:208
 msgid "Please mark one or more platforms with which the uploaded file is compatible."
 msgstr "Bitte markieren Sie eine oder mehrere Plattformen, mit denen die hochgeladene Datei kompatibel ist."
 
-#: tuprelease.py:149 tupreleaselink.py:148
+#: ./tuprelease.py:149
+#: ./tupreleaselink.py:148
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr "Bitte markieren Sie eine oder mehrere Programm-Versionen, mit denen dieses Release kompatibel ist."
 
-#: tupproject.py:108
+#: ./tupproject.py:108
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre Projekt."
 
-#: tuprelease.py:196
+#: ./tuprelease.py:196
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
 
-#: tupproject_templates/view.pt:89
+#: ./tupproject_templates/view.pt:89
 msgid "Project Description"
 msgstr "Projekt-Beschreibung"
 
-#: tupproject_templates/view.pt:329 tuprelease_templates/view.pt:132
-#: tupreleaselink_templates/view.pt:119
+#: ./tupproject_templates/view.pt:329
+#: ./tuprelease_templates/view.pt:132
+#: ./tupreleaselink_templates/view.pt:119
 msgid "Project Resources"
 msgstr "Projekt Ressourcen"
 
-#: tupproject.py:94
+#: ./tupproject.py:94
 msgid "Project Summary"
 msgstr "Projekt-Zusammenfassung"
 
-#: tupproject.py:87
+#: ./tupproject.py:87
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr "Projekt-Titel  - mindestens 5 und höchstens 50 Zeichen"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Re-release"
 msgstr "Erneut Releasen"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Release Candidate"
 msgstr "Release-Kandidat"
 
-#: tuprelease_templates/view.pt:47 tupreleaselink_templates/view.pt:52
+#: ./tuprelease_templates/view.pt:47
+#: ./tupreleaselink_templates/view.pt:52
 msgid "Release Details"
 msgstr "Release-Details"
 
-#: tuprelease.py:115 tupreleaselink.py:114
+#: ./tuprelease.py:115
+#: ./tupreleaselink.py:114
 msgid "Release Number"
 msgstr "Release-Nummer"
 
-#: tuprelease.py:116 tupreleaselink.py:115
+#: ./tuprelease.py:116
+#: ./tupreleaselink.py:115
 msgid "Release Number (up to twelf chars)"
 msgstr "Release-Nummer (bis zu zwölf Zeichen)"
 
-#: tuprelease.py:122 tupreleaselink.py:121
+#: ./tuprelease.py:122
+#: ./tupreleaselink.py:121
 msgid "Release Summary"
 msgstr "Release-Zusammenfassung"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Release alpha"
 msgstr "Veröffentlichen als Alpha Release"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Release beta"
 msgstr "Veröffentlichen als Beta-Release"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Release candidate"
 msgstr "Release-Kandidat"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Release-Candidate"
 msgstr "Release-Kandidat"
 
-#: tupproject_templates/view.pt:130
+#: ./tupproject_templates/view.pt:130
 msgid "Released"
 msgstr "Released"
 
-#: tuprelease_templates/view.pt:37 tupreleaselink_templates/view.pt:38
+#: ./tuprelease_templates/view.pt:37
+#: ./tupreleaselink_templates/view.pt:38
 msgid "Remember to publish your release once all files have been added."
 msgstr "Denken Sie daran Ihr Release zu veröffentlichen, sobald Sie alle Dateien ergänzt haben."
 
-#: tupreleaselink_templates/view.pt:154
+#: ./tupreleaselink_templates/view.pt:154
 msgid "Reporting Extension-Bugs"
 msgstr "Extension-Fehler melden"
 
-#: tupcenter_templates/view.pt:281
+#: ./tupcenter_templates/view.pt:281
 msgid "Reporting Template-Bugs"
 msgstr "Vorlagen-Bugs melden"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Retract"
 msgstr "Zurückziehen"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Retract release"
 msgstr "Release zurückziehen"
 
-#: tupproject_templates/view.pt:340 tuprelease_templates/view.pt:142
-#: tupreleaselink_templates/view.pt:134
+#: ./tupproject_templates/view.pt:340
+#: ./tuprelease_templates/view.pt:142
+#: ./tupreleaselink_templates/view.pt:134
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
-#: tupproject.py:142
+#: ./tupproject.py:142
 msgid "Screenshot of the Template"
 msgstr "Bildschirmfoto der Vorlage"
 
-#: tupcenter_templates/view.pt:143
+#: ./tupcenter_templates/view.pt:143
 msgid "Search"
 msgstr "Suchen"
 
-#: tupcenter_templates/view.pt:112
+#: ./tupcenter_templates/view.pt:112
 msgid "Search ${product_title}"
 msgstr "Suche ${product_title}"
 
-#: tuprelease.py:233
+#: ./tuprelease.py:233
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupcenter_templates/view.pt:116
+#: ./tupcenter_templates/view.pt:116
 msgid "Show"
 msgstr "Anzeigen"
 
-#: tuprelease.py:298
+#: ./tuprelease.py:298
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr "Die sechste hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupcenter_templates/view.pt:131
+#: ./tupcenter_templates/view.pt:131
 msgid "Sort On"
 msgstr "Sortieren nach"
 
-#: tupcenter_templates/own_project.pt:45
+#: ./tupcenter_templates/own_project.pt:45
 msgid "Submit new"
 msgstr "Übermittele neue"
 
-#: tupcenter_templates/view.pt:227
+#: ./tupcenter_templates/view.pt:227
 msgid "Submit your"
 msgstr "Übermitteln Sie Ihre"
 
-#: configure.zcml:31
+#: ./configure.zcml:31
 msgid "TDF Template Upload Center"
 msgstr "TDF Template Upload Center"
 
-#: profiles/default/types/tdf.templateuploadcenter.tupcenter.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tupcenter.xml
 msgid "Template Center"
 msgstr "Template Center"
 
-#: tupcenter.py:136
+#: ./tupcenter.py:136
 msgid "Template Installation Instructions"
 msgstr "Installationsanleitung für Vorlagen"
 
-#: profiles/default/types/tdf.templateuploadcenter.tupreleaselink.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tupreleaselink.xml
 msgid "Template Linked Release"
 msgstr "Template Linked Release"
 
-#: tupcenter.py:38
+#: ./tupcenter.py:38
 msgid "Template Product Name"
 msgstr "Vorlagen-Produktname"
 
-#: profiles/default/types/tdf.templateuploadcenter.tupproject.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tupproject.xml
 msgid "Template Project"
 msgstr "Vorlagen-Projekt"
 
-#: profiles/default/types/tdf.templateuploadcenter.tuprelease.xml
+#: ./profiles/default/types/tdf.templateuploadcenter.tuprelease.xml
 msgid "Template Release"
 msgstr "Vorlagen-Release"
 
-#: tupproject_templates/view.pt:278
+#: ./tupproject_templates/view.pt:278
 msgid "Template Version"
 msgstr "Vorlagen-Version"
 
-#: tupcenter_templates/view.pt:220
+#: ./tupcenter_templates/view.pt:220
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: tupcenter.py:154
+#: ./tupcenter.py:154
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen"
 
-#: tupcenter.py:169
+#: ./tupcenter.py:169
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 
-#: tuprelease.py:109 tupreleaselink.py:108
+#: ./tuprelease.py:109
+#: ./tupreleaselink.py:108
 msgid "The Computed Project Title"
 msgstr "Der berechnete Projekt-Titel"
 
-#: tupreleaselink.py:192
+#: ./tupreleaselink.py:192
 msgid "The Link to the file of the release"
 msgstr "Der Link zu der Datei dieses Release"
 
-#: tuprelease.py:275
+#: ./tuprelease.py:275
 msgid "The fifth file you want to upload (this is optional)"
 msgstr "Die fünfte Datei, die Sie hochladen wollen (dies ist optional)"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "The final stage of a template release"
 msgstr "Der finale Status eines Vorlagen-Release"
 
-#: tuprelease.py:195
+#: ./tuprelease.py:195
 msgid "The first file you want to upload"
 msgstr "Die erste Datei, die Sie hochladen wollen."
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "The first stage of a template release"
 msgstr "Der erste Status eines Vorlagen-Release"
 
-#: tuprelease.py:255
+#: ./tuprelease.py:255
 msgid "The fourth file you want to upload (this is optional)"
 msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 
-#: tupreleaselink_templates/view.pt:67
+#: ./tupreleaselink_templates/view.pt:67
 msgid "The linked Template file"
 msgstr "Die verlinkte Vorlagen-Datei"
 
-#: tupproject.py:216
+#: ./tupproject.py:216
 msgid "The project title is already in use"
 msgstr "Der Projekt-Titel wird bereits verwendet."
 
-#: tuprelease.py:392 tupreleaselink.py:432
+#: ./tuprelease.py:392
+#: ./tupreleaselink.py:432
 msgid "The release number is already in use. Please choose another one."
 msgstr "Die Release-Nummer ist bereits im Gebrauch. Bitte wählen Sie eine andere."
 
-#: tuprelease.py:110 tupreleaselink.py:109
+#: ./tuprelease.py:110
+#: ./tupreleaselink.py:109
 msgid "The release title will be computed from the parent project title"
 msgstr "Der Release-Titel wird maschinell aus dem Projekt-Titel erstellt"
 
-#: tuprelease.py:225
+#: ./tuprelease.py:225
 msgid "The second file you want to upload (this is optional)"
 msgstr "Die zweite Datei, die Sie hochladen wollen (dies ist optional)."
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "The second stage of a template release"
 msgstr "Der zweite Status eines Vorlagen-Release"
 
-#: tuprelease.py:290
+#: ./tuprelease.py:290
 msgid "The sixth file you want to upload (this is optional)"
 msgstr "Die sechste Datei, die Sie hochladen wollen (dies ist optional)."
 
-#: tupreleaselink.py:199
+#: ./tupreleaselink.py:199
 msgid "The size of the external hosted file"
 msgstr "Die Größe der extern gehosteten Datei"
 
-#: tuprelease.py:240
+#: ./tuprelease.py:240
 msgid "The third file you want to upload (this is optional)"
 msgstr "Die dritte Datei, die Sie hochladen wollen (dies ist optional)"
 
-#: tupcenter_templates/own_project.pt:13
+#: ./tupcenter_templates/own_project.pt:13
 msgid "These are your projects on this site:"
 msgstr "Dies sind Ihre Projekte auf dieser Seite:"
 
-#: tuprelease.py:248
+#: ./tuprelease.py:248
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr "Die dritte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject.py:86
+#: ./tupproject.py:86
 msgid "Title"
 msgstr "Titel"
 
-#: tupcenter.py:148
+#: ./tupcenter.py:148
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:162
+#: ./tupcenter.py:162
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 
-#: tupproject.py:127
+#: ./tupproject.py:127
 msgid "URL of documentation repository "
 msgstr "URL des Repository der Dokumentation"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Unhide"
 msgstr "Nicht mehr verstecken"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Unhide release project"
 msgstr "Release Projekt sichtbar machen"
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Unreleased"
 msgstr "unveröffentlicht"
 
-#: tuprelease.py:75 tupreleaselink.py:74
+#: ./tuprelease.py:75
+#: ./tupreleaselink.py:74
 msgid "Yes"
 msgstr "Ja"
 
-#: tuprelease.py:323 tupreleaselink.py:387
+#: ./tuprelease.py:323
+#: ./tupreleaselink.py:387
 msgid "You answered the question, whether the source code is inside your template with no (default answer). If this is the correct answer, please fill in the Link (URL) to the Source Code."
 msgstr "Sie haben die Frage, ob der Quelltext in Ihrer Vorlage ist, mit nein (Standardantwort) beantwortet. Falls dies zutreffend ist, schreiben Sie bitte den Link (URL) zum Quelltext unten in das entsprechende Feld."
 
-#: tupproject.py:79
+#: ./tupproject.py:79
 msgid "You have not chosen a category for the project"
 msgstr "Sie haben noch keine Kategorie für Ihr Projekt gewählt."
 
-#: tupcenter_templates/own_project.pt:12
+#: ./tupcenter_templates/own_project.pt:12
 msgid "Your Own Projects"
 msgstr "Ihre eigenen Projekte"
 
-#: tupproject_templates/view.pt:56
+#: ./tupproject_templates/view.pt:56
 msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
 msgstr "Ihr Projekt wurde zur Veröffentlichung übermittelt und wird nun geprüft. Sie bekommen eine Email, sobald sich der Status Ihres Projektes erneut ändert."
 
-#: tupproject_templates/view.pt:43
+#: ./tupproject_templates/view.pt:43
 msgid "a Release to your"
 msgstr "ein Release zu Ihrem"
 
-#: tupproject_templates/view.pt:49
+#: ./tupproject_templates/view.pt:49
 msgid "a linked Release to your"
 msgstr "ein verlinktes Release zu Ihrem"
 
-#: tupcenter_templates/view.pt:262
+#: ./tupcenter_templates/view.pt:262
 msgid "by Category"
 msgstr "nach Kategorie"
 
-#: tupcenter_templates/view.pt:93
+#: ./tupcenter_templates/view.pt:93
 msgid "in"
 msgstr "in"
 
 #. Default: "<span>x</span>"
-#: tupreleaselink_templates/view.pt:87
+#: ./tupreleaselink_templates/view.pt:87
 msgid "label_linked_template_file"
 msgstr ""
 
-#: tupproject_templates/view.pt:47
+#: ./tupproject_templates/view.pt:47
 msgid "or:"
 msgstr "oder:"
 
-#: tupcenter_templates/own_project.pt:48
+#: ./tupcenter_templates/own_project.pt:48
 msgid "please submit your new"
 msgstr "bitte übermitteln Sie Ihre neue"
 
-#: tupcenter_templates/view.pt:223
+#: ./tupcenter_templates/view.pt:223
 msgid "project(s) with"
 msgstr "Projekt(e) mit"
 
-#: tupcenter_templates/view.pt:157
+#: ./tupcenter_templates/view.pt:157
 msgid "projects matching your criteria."
 msgstr "Projekte entsprechen Ihren Kritierien."
 
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "re-release"
 msgstr "Erneut veröffentlichen"
 
-#: tupcenter_templates/view.pt:224
+#: ./tupcenter_templates/view.pt:224
 msgid "release(s) available."
 msgstr "Releases verfügbar"
 
-#: tupproject_templates/view.pt:136
+#: ./tupproject_templates/view.pt:136
 msgid "tested with:"
 msgstr "getestet mit"
 
 #. Default: "Current release for the project"
-#: tupproject_templates/view.pt:121
+#: ./tupproject_templates/view.pt:121
 msgid "title_latest_release_project"
 msgstr ""
 
 #. Default: "Release alpha"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_alpha_release"
 msgstr ""
 
 #. Default: "Release beta"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_beta_release"
 msgstr ""
 
 #. Default: "Final Release"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_final_release"
 msgstr ""
 
 #. Default: "Hide release"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_hide_release"
 msgstr ""
 
 #. Default: "Re-Release"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_re_release"
 msgstr ""
 
 #. Default: "Release candidate"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_release_candidate"
 msgstr ""
 
 #. Default: "Retract release"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_retract_release"
 msgstr ""
 
 #. Default: "Unhide release"
-#: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
-#: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "title_tuc_wf_unhide_release"
 msgstr ""
