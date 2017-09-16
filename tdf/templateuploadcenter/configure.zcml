@@ -119,6 +119,12 @@
     handler="tdf.templateuploadcenter.tupproject.notifyProjectManagerReleaseLinkedAdd"
     />
 
+  <subscriber
+    for="tdf.templateuploadcenter.tupproject.ITUpProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.templateuploadcenter.tupproject.notifyAboutNewReviewlistentry"
+    />
+
   <adapter
     factory=".tupproject.ValidateTUpProjectUniqueness"
     />

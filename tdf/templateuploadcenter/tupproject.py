@@ -180,6 +180,21 @@ def notifyProjectManagerReleaseLinkedAdd(tupproject, event):
          )
 
 
+def notifyAboutNewReviewlistentry(self, event):
+    portal = api.portal.get()
+    state = api.content.get_state(self)
+    print(state)
+    if state == "pending":
+        api.portal.send_email(
+            recipient="templates@libreoffice.org",
+            subject="A Project with the title %s was added to the review list" % (self.title),
+            body="Please have a look at the review list and check if the project is "
+                 "ready for publication. \n"
+                 "\n"
+                 "Kind regards,\n"
+                 "The Admin of the LibreOffice Templates Website"
+        )
+
 def getLatestRelease(self):
 
     res = None
