@@ -43,7 +43,7 @@
            <div class="col-xs-12 col-sm-8">
                <div class="paneeucrelease">
                    <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
-                   <p class="documentDescription" tal:content="context/description/title" />
+                   <div class="documentDescription"><span tal:content="context/description" /></div>
                    <h4 class="extcenter" i18n:translate="">Release Details</h4>
                    <p class="documentDescription" tal:content="structure view/w/details/render" />
                    <h4 class="tupcenterlicense" i18n:translate="">License(s)</h4>
