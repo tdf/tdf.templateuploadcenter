@@ -49,7 +49,7 @@
 
 
                     <p class="documentDescription"><span tal:content="context/description" /></p>
-        <h4 class="extcenter" i18n:translate="">Release Details</h4>
+        <h4 tal:condition="context/details" class="extcenter" i18n:translate="">Release Details</h4>
       <p class="documentDescription" tal:content="structure view/w/details/render" />
 
 
@@ -57,7 +57,7 @@
       <div class="tupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
       <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
-        <h4 class="documentSecondheading" i18n:translate="">Changelog</h4>
+        <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
 
         <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>

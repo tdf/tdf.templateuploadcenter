@@ -4,8 +4,9 @@ Changelog
 0.15 (unreleased)
 -----------------
 
-- Heading for release details and changelog will be hidden in tupreleases,
-  if there is no content for this topics [Andreas Mantke]
+- Heading for release details and changelog will be hidden in the view
+  tupreleases and tupreleaselink view, if there is no content for this
+  topics [Andreas Mantke]
 
 
 0.14 (2018-01-07)
