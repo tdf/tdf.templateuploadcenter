@@ -31,7 +31,7 @@
             tal:define="is_editable context/@@plone_context_state/is_editable;
                         wf_tool here/portal_workflow;
                         review_state python:wf_tool.getInfoFor( here, 'review_state', '');"
-            tal:condition="python: is_editable and review_state == 'pre-release' ">
+            tal:condition="python: is_editable and review_state == 'pre-release', 'unreleased' ">
             <dt i18n:translate="">Info</dt>
             <dd>
                 <span i18n:translate="">Remember to publish your release once all files have been added.</span><br />
