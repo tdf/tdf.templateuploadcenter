@@ -35,8 +35,10 @@
             <dt i18n:translate="">Info</dt>
             <dd>
                 <span i18n:translate="">Remember to publish your release once all files have been added.<br />
-                    Link
-                <a tal:attributes="href string:${context/absolute_url}/content_status_history">You could do this following this link.</a>
+                You can do that on the left side within the menubar. Click on the entry 'State: Unreleased'.<br /></span>
+                <span>
+                    Or
+                <a tal:attributes="href string:${context/absolute_url}/content_status_history"> you could do this following this link.</a>
                 </span>
             </dd>
         </dl>
