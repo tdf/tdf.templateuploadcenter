@@ -35,6 +35,7 @@
             <dt i18n:translate="">Info</dt>
             <dd>
                 <span i18n:translate="">Remember to publish your release once all files have been added.<br />
+                    Link
                 <a tal:attributes="href string:${context/absolute_url}/content_status_history">You could do this following this link.</a>
                 </span>
             </dd>
