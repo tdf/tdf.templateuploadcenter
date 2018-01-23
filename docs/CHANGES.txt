@@ -7,6 +7,8 @@ Changelog
 - Heading for release details and changelog will be hidden in the view
   tupreleases and tupreleaselink view, if there is no content for this
   topics [Andreas Mantke]
+- Add a further explanation for publishing a release and linked release
+  and a link to the advanced state change. [Andreas Mantke]
 
 
 0.14 (2018-01-07)
