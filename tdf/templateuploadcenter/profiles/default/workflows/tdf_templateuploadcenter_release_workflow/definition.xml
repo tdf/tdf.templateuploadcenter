@@ -128,7 +128,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Hide this release</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_hide_release">Hide release</action>
+                i18n:translate="">Hide release</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -141,7 +141,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">re-release</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_re_release">Re-Release</action>
+                i18n:translate="">Re-Release</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -155,7 +155,7 @@
              i18n:attributes="title">
         <description i18n:translate="">Change the release stage to 'Release alpha'</description>
         <action url="" category="workflow"
-             i18n:translate="title_tuc_wf_alpha_release">Release alpha</action>
+             i18n:translate="">Release alpha</action>
         <guard>
              <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -168,7 +168,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Change the release stage to 'Release beta'</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_beta_release">Release beta</action>
+                i18n:translate="">Release beta</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -181,7 +181,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Release candidate</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_release_candidate">Release candidate</action>
+                i18n:translate="">Release candidate</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -194,7 +194,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Final release</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_final_release">Final Release</action>
+                i18n:translate="">Final Release</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -207,7 +207,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Retract release</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_retract_release">Retract release</action>
+                i18n:translate="">Retract release</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
@@ -220,7 +220,7 @@
                 i18n:attributes="title">
         <description i18n:translate="">Unhide release project</description>
         <action url="" category="workflow"
-                i18n:translate="title_tuc_wf_unhide_release">Unhide release</action>
+                i18n:translate="">Unhide release</action>
         <guard>
             <guard-permission>Modify portal content</guard-permission>
         </guard>
