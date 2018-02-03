@@ -10,6 +10,8 @@ Changelog
 - Add a further explanation for publishing a release and linked release
   and a link to the advanced state change. [Andreas Mantke]
 - Update versions of LibreOffice [Andreas Mantke]
+- Update of the internationalization template and the po-file and localilization for the
+  German language [Andreas Mantke]
 
 
 0.14 (2018-01-07)
