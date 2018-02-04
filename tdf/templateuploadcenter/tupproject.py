@@ -282,3 +282,21 @@ class TUpProjectView(DefaultView):
             return self.context.toLocalizedTime(latest_release.effective())
         else:
             return None
+
+    def latest_unstable_release(self):
+
+        context = self.context
+        res = None
+        catalog = api.portal.get_tool('portal_catalog')
+
+        res = catalog.searchResults(
+            portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
+            path='/'.join(context.getPhysicalPath()),
+            review_state=('alpha','beta','release-candidate'),
+            sort_on='effective',
+            sort_order='reverse')
+
+        if not res:
+            return None
+        else:
+            return res[0].getObject()

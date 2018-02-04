@@ -28,6 +28,7 @@
                                                           wf_tool here/portal_workflow;
                                                           all_releases view/all_releases;
                                                           latestRelease view/latest_release;
+                                                          latestunstablerelease view/latest_unstable_release;
                                                           review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
 
          <span tal:replace="structure context/@@authenticator/authenticator"/>
@@ -111,7 +112,30 @@
                     No stable release available yet.
                 </p>
             <tal:noreleases tal:condition="python:latestRelease is None">
+                <tal:nounstable tal:condition="nocall:latestunstablerelease">
+                <h2 i18n:translate="">Latest Not Stable Release</h2>
 
+                <h3>
+               <a href="#" title="Current unstable release for the project"
+               i18n:attributes="title"
+               tal:attributes="href latestunstablerelease/absolute_url">
+                    <span tal:content="latestunstablerelease/Title" />
+              </a>
+                </h3>
+                    <p class="discreet">
+                        <tal:compatibility condition="latestunstablerelease/compatibility_choice">
+                    &mdash; <span i18n:translate="">tested with:</span>
+                </tal:compatibility>
+                </p>
+                    <tal:compatibility condition="latestunstablerelease/compatibility_choice">
+                <p class="latestunstablereleasecompatibility">
+                         <tal:loop repeat="compatibility_choice latestunstablerelease/compatibility_choice">
+                            <span tal:content="compatibility_choice" />,
+                         </tal:loop>
+                </p>
+            </tal:compatibility>
+
+                </tal:nounstable>
                 </tal:noreleases>
 
         </tal:nostable>
