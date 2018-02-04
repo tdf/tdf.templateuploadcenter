@@ -4,7 +4,8 @@ Changelog
 0.16 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Adding a function to collect the latest unstable release and a slot in
+  the project view to present such releases to the user [Andreas Mantke]
 
 
 0.15 (2018-02-03)
