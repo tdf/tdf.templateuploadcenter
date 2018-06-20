@@ -155,9 +155,9 @@ class ITUpProject(model.Schema):
 
 def notifyProjectManager(tupproject, event):
     api.portal.send_email(
-        recipient="%s" % (tupproject.contactAddress),
-        sender="%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject="Your Project %s" % (tupproject.title),
+        recipient=("{}").format(tupproject.contactAddress),
+        sender=("{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject=("Your Project {}").format(tupproject.title),
         body="The status of your LibreOffice template project changed"
     )
 
