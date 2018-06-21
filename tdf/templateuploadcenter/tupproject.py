@@ -164,19 +164,19 @@ def notifyProjectManager(tupproject, event):
 
 def notifyProjectManagerReleaseAdd(tupproject, event):
     api.portal.send_email(
-        recipient="%s" % (tupproject.contactAddress),
-        sender="%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject="Your Project %s: new Release added" % (tupproject.title),
-        body="A new release was added to your project: '%s'" % (tupproject.title),
+        recipient=("{}").format(tupproject.contactAddress),
+        sender=("{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject=("Your Project {}: new Release added").format(tupproject.title),
+        body=("A new release was added to your project: '{}'").format(tupproject.title),
          )
 
 
 def notifyProjectManagerReleaseLinkedAdd(tupproject, event):
     api.portal.send_email(
-        recipient="%s" % (tupproject.contactAddress),
-        sender="%s <%s>" % ('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject="Your Project %s: new linked Release added" % (tupproject.title),
-        body="A new linked release was added to your project: '%s'" % (tupproject.title),
+        recipient=("{}").format(tupproject.contactAddress),
+        sender=("{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject=("Your Project {}: new linked Release added").format(tupproject.title),
+        body=("A new linked release was added to your project: '{}'").format(tupproject.title),
          )
 
 
