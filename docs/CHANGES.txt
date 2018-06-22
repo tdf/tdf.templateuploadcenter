@@ -6,7 +6,8 @@ Changelog
 
 - Adding a function to collect the latest unstable release and a slot in
   the project view to present such releases to the user [Andreas Mantke]
-- Updated string format handling to modern method in tupcenter.py [Andreas Mantke]
+- Updated string format handling to modern method in tupcenter.py
+  and tupproject.py [Andreas Mantke]
 
 
 0.15 (2018-02-03)
