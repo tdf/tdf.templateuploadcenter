@@ -46,7 +46,7 @@ if options.config_file is not None:
     args += ['-c', options.config_file]
 
 if options.version is not None:
-    VERSION = '==%s' % options.version
+    VERSION = ('=={}').format(options.version)
 else:
     VERSION = ''
 
@@ -78,7 +78,7 @@ except ImportError:
 if sys.platform == 'win32':
     def quote(c):
         if ' ' in c:
-            return '"%s"' % c # work around spawn lamosity on windows
+            return ('"{}"').format(c) # work around spawn lamosity on windows
         else:
             return c
 else:
@@ -167,7 +167,7 @@ if options.config_file is not None:
     args += ['-c', options.config_file]
 
 if options.version is not None:
-    VERSION = '==%s' % options.version
+    VERSION = ('=={}').format(options.version)
 else:
     VERSION = ''
 
@@ -199,7 +199,7 @@ except ImportError:
 if sys.platform == 'win32':
     def quote(c):
         if ' ' in c:
-            return '"%s"' % c # work around spawn lamosity on windows
+            return ('"{}"').format(c) # work around spawn lamosity on windows
         else:
             return c
 else:
