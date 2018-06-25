@@ -402,3 +402,10 @@ class TUpReleaseView(DefaultView):
 
     def canPublishContent(self):
         return checkPermission('cmf.ModifyPortalContent', self.context)
+
+    def releaseLicense(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path="/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        licenses= idx_data.get('releaseLicense')
+        return(r for r in licenses)
