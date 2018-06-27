@@ -8,6 +8,8 @@ Changelog
   the project view to present such releases to the user [Andreas Mantke]
 - Updated string format handling to modern method in tupcenter.py
   and tupproject.py [Andreas Mantke]
+- Add a function for search and display the license from the indexes of
+  the portal_catalog [Andreas Mantke]
 
 
 0.15 (2018-02-03)

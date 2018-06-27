@@ -24,7 +24,8 @@
 
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
+    <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                                          license view/releaseLicense;">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
 
@@ -63,7 +64,11 @@
 
 
      <h4 class="tupcenterlicense" i18n:translate="">License(s)</h4>
-      <div class="tupcenterlicense" tal:content="structure view/w/licenses_choice/render" />
+      <p>
+          <tal:loop repeat="releaselicense license">
+              <span tal:content="releaselicense" />,
+          </tal:loop>
+      </p>
       <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
       <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
         <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
