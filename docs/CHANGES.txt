@@ -10,6 +10,7 @@ Changelog
   and tupproject.py [Andreas Mantke]
 - Add a function for search and display the license from the indexes of
   the portal_catalog [Andreas Mantke]
+- Update of the German localization [Andreas Mantke]
 
 
 0.15 (2018-02-03)
