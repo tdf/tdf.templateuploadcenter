@@ -134,6 +134,71 @@
                          </tal:loop>
                 </p>
             </tal:compatibility>
+                                    <dl>
+                    <span tal:condition="not:python:latestunstablerelease.portal_type == 'tdf.templateuploadcenter.tupreleaselink'">
+                        <span tal:condition="latestunstablerelease/file">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file/${latestunstablerelease/file/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+                     <span tal:condition="latestunstablerelease/file1">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file1/${latestunstablerelease/file1/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file1/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file1.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+                        <span tal:condition="latestunstablerelease/file2">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file2/${latestunstablerelease/file2/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file2/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file2.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+                     <span tal:condition="latestunstablerelease/file3">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file3/${latestunstablerelease/file3/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file3/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file3.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+                     <span tal:condition="latestunstablerelease/file4">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file4/${latestunstablerelease/file4/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file4/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file4.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+                        <span tal:condition="latestunstablerelease/file5">
+                         <a tal:attributes="href string:${latestunstablerelease/absolute_url}/@@download/file5/${latestunstablerelease/file5/filename}">
+                        <img src="++resource++tdf.templateuploadcenter/download_icon.gif" />  <span tal:content="latestunstablerelease/file5/filename" /></a>
+                        <tal:loop repeat="platform_choice latestunstablerelease/platform_choice">
+                            <dl><div tal:content="platform_choice" /></dl>
+                         </tal:loop>
+                        <div class="tucfilesize">
+                       <span i18n:translate="">File size: </span> <span tal:content="python:latestunstablerelease.file5.size / 1024" /><span> kb</span>
+                            </div>
+                     </span>
+
+                    </span>
+                </dl>
 
                 </tal:nounstable>
                 </tal:noreleases>
