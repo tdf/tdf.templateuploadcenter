@@ -4,7 +4,9 @@ Changelog
 0.17 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Added download links for unstable release files to the project view, which
+  are displayed, if there is no stable release [Andreas Mantke]
+
 
 
 0.16 (2018-06-27)
