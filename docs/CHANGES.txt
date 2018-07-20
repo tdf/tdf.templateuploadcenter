@@ -6,6 +6,8 @@ Changelog
 
 - Added download links for unstable release files to the project view, which
   are displayed, if there is no stable release [Andreas Mantke]
+- Add an information about the current status to the message for
+  the project manager, send for changing the workflow state. [Andreas Mantke]
 
 
 
