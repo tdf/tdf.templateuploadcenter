@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2018-06-27 18:36+0200\n"
+"PO-Revision-Date: 2018-07-21 10:35+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Bitte fügen Sie ein Logo für Ihr Projekt (oder Organisation/Unternehme
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr "Bitte fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche \"Durchsuchen\"  hinzu. Sie können Grafiken der Dateiformate \"png\", \"gif\" oder \"jpg\"  verwenden."
 
-#: tupproject_templates/view.pt:296
+#: tupproject_templates/view.pt:361
 msgid "All Releases"
 msgstr "Alle Releases"
 
@@ -152,7 +152,7 @@ msgstr "Änderungsprotokoll"
 msgid "Choose your categories"
 msgstr "Wählen Sie Ihre Kategorien"
 
-#: tupproject_templates/view.pt:304 tuprelease_templates/view.pt:65
+#: tupproject_templates/view.pt:369 tuprelease_templates/view.pt:65
 #: tupreleaselink_templates/view.pt:72
 msgid "Compatibility"
 msgstr "Kompatibilität"
@@ -173,6 +173,10 @@ msgstr "Kontakt-Email-Adresse für das Projekt"
 msgid "Current Release"
 msgstr "Aktuelles Release"
 
+#: tupproject_templates/view.pt:210
+msgid "Current release for the project"
+msgstr "Aktuelles Release dieses Projekts"
+
 #: tupproject_templates/view.pt:119
 msgid "Current unstable release for the project"
 msgstr "Aktuelles instabiles Release für das Projekt"
@@ -181,7 +185,7 @@ msgstr "Aktuelles instabiles Release für das Projekt"
 msgid "Currently there are"
 msgstr "Aktuell sind hier"
 
-#: tupproject_templates/view.pt:305
+#: tupproject_templates/view.pt:370
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -217,7 +221,7 @@ msgstr "Externe Projektseite"
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject_templates/view.pt:188 tuprelease_templates/view.pt:82
+#: tupproject_templates/view.pt:146 tuprelease_templates/view.pt:82
 #: tupreleaselink_templates/view.pt:84
 msgid "File size:"
 msgstr "Dateigröße:"
@@ -358,7 +362,7 @@ msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 msgid "License of the uploaded file"
 msgstr "Lizenz der hochgeladenen Datei"
 
-#: tupproject_templates/view.pt:306 tuprelease_templates/view.pt:59
+#: tupproject_templates/view.pt:371 tuprelease_templates/view.pt:59
 #: tupreleaselink_templates/view.pt:66
 msgid "License(s)"
 msgstr "Lizenz(en)"
@@ -371,7 +375,7 @@ msgstr "Link zum Quellcode"
 msgid "Logo"
 msgstr "Logo"
 
-#: tupproject_templates/view.pt:176
+#: tupproject_templates/view.pt:241
 msgid "More about this release&hellip;"
 msgstr "Mehr über dieses Release&hellip;"
 
@@ -411,7 +415,7 @@ msgstr "Aktuell kein stabiles Release verfügbar."
 msgid "Or"
 msgstr "Oder"
 
-#: tupproject_templates/view.pt:303
+#: tupproject_templates/view.pt:368
 msgid "Platform(s)"
 msgstr "Plattform(en)"
 
@@ -499,7 +503,7 @@ msgstr "Bitte laden Sie Ihre Datei hoch."
 msgid "Project Description"
 msgstr "Projekt-Beschreibung"
 
-#: tupproject_templates/view.pt:353 tuprelease_templates/view.pt:146
+#: tupproject_templates/view.pt:418 tuprelease_templates/view.pt:146
 #: tupreleaselink_templates/view.pt:133
 msgid "Project Resources"
 msgstr "Projekt Ressourcen"
@@ -563,7 +567,7 @@ msgstr "Release-Kandidat"
 msgid "Release-Candidate"
 msgstr "Release-Kandidat"
 
-#: tupproject_templates/view.pt:154
+#: tupproject_templates/view.pt:219
 msgid "Released"
 msgstr "Released"
 
@@ -589,7 +593,7 @@ msgstr "Zurückziehen"
 msgid "Retract release"
 msgstr "Release zurückziehen"
 
-#: tupproject_templates/view.pt:364 tuprelease_templates/view.pt:156
+#: tupproject_templates/view.pt:429 tuprelease_templates/view.pt:156
 #: tupreleaselink_templates/view.pt:148
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
@@ -658,7 +662,7 @@ msgstr "Vorlagen-Projekt"
 msgid "Template Release"
 msgstr "Vorlagen-Release"
 
-#: tupproject_templates/view.pt:302
+#: tupproject_templates/view.pt:367
 msgid "Template Version"
 msgstr "Vorlagen-Version"
 
@@ -821,11 +825,6 @@ msgstr "nach Kategorie"
 msgid "in"
 msgstr "in"
 
-#. Default: "<span>x</span>"
-#: tupreleaselink_templates/view.pt:101
-msgid "label_linked_template_file"
-msgstr ""
-
 #: tupproject_templates/view.pt:48
 msgid "or:"
 msgstr "oder:"
@@ -854,11 +853,6 @@ msgstr "Releases verfügbar"
 #: tupproject_templates/view.pt:127
 msgid "tested with:"
 msgstr "getestet mit"
-
-#. Default: "Current release for the project"
-#: tupproject_templates/view.pt:145
-msgid "title_latest_release_project"
-msgstr ""
 
 #: tuprelease_templates/view.pt:45 tupreleaselink_templates/view.pt:46
 msgid "you could do this following this link."
