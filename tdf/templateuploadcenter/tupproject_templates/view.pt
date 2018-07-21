@@ -208,7 +208,7 @@
              <h2 i18n:translate="">Current Release</h2>
             <h3>
               <a href="#" title="Current release for the project"
-               i18n:attributes="title title_latest_release_project"
+               i18n:attributes="title"
                tal:attributes="href latestRelease/absolute_url">
                <span tal:content="latestRelease/Title" />
               </a>
