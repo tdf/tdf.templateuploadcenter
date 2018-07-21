@@ -8,6 +8,9 @@ Changelog
   are displayed, if there is no stable release [Andreas Mantke]
 - Add an information about the current status to the message for
   the project manager, send for changing the workflow state. [Andreas Mantke]
+- Fixed a few localization issues in the views of tuprelease and
+  tupreleaselink and updated localization template file and
+  localization into German. [Andreas Mantke}
 
 
 
