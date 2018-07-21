@@ -97,7 +97,7 @@
 
 
           <p tal:condition="context/link_to_file2">
-              <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file2">
+              <a tal:attributes=" href context/link_to_file2">
                   <span i18n:translate="">The linked Template file</span></a>
               <span tal:condition="context/platform_choice2">
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice2/render" />
@@ -109,7 +109,7 @@
 
 
           <p tal:condition="context/link_to_file3">
-              <a i18n:translate="label_linked_template_file" tal:attributes=" href context/link_to_file3">
+              <a tal:attributes=" href context/link_to_file3">
                   <span i18n:translate="">The linked Template file</span></a>
               <span tal:condition="context/platform_choice3">
                   <span class="tupcenterplatform" tal:content="structure view/w/platform_choice3/render" />
