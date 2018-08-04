@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-21 08:33+0000\n"
+"POT-Creation-Date: 2018-08-04 05:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,6 +44,10 @@ msgstr ""
 
 #: ./tupcenter_templates/view.pt:218
 msgid "${product_title}"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "- A simple workflow for Template project objects."
 msgstr ""
 
 #: ./tuprelease.py:117
@@ -215,6 +219,10 @@ msgstr ""
 msgid "Description of the features of templates"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "EUC Project Publication Workflow"
+msgstr ""
+
 #: ./tupcenter.py:172
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
@@ -333,6 +341,11 @@ msgstr ""
 msgid "If you already created a new"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits,
+          this will take it back."
+msgstr ""
+
 #: ./tupreleaselink.py:217
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file'."
 msgstr ""
@@ -403,6 +416,14 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr ""
+
 #: ./tupproject_templates/view.pt:241
 msgid "More about this release&hellip;"
 msgstr ""
@@ -443,6 +464,10 @@ msgstr ""
 #: ./tuprelease_templates/view.pt:41
 #: ./tupreleaselink_templates/view.pt:42
 msgid "Or"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Pending"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:368
@@ -536,6 +561,10 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Private"
+msgstr ""
+
 #: ./tupproject_templates/view.pt:90
 msgid "Project Description"
 msgstr ""
@@ -552,6 +581,23 @@ msgstr ""
 
 #: ./tupproject.py:87
 msgid "Project Title - minimum 5 and maximum 50 characters"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Publish"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Publishing the item makes it visible to the all
+          users of the site."
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
@@ -627,6 +673,7 @@ msgid "Reporting Template-Bugs"
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Retract"
 msgstr ""
@@ -634,6 +681,14 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Retract release"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:429
@@ -658,6 +713,15 @@ msgstr ""
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Send back"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Sending the item back will return the item to the original author instead of publishing it.
+          You should preferably provide a reason to the author why it was not published."
+msgstr ""
+
 #: ./tupcenter_templates/view.pt:116
 msgid "Show"
 msgstr ""
@@ -668,6 +732,10 @@ msgstr ""
 
 #: ./tupcenter_templates/view.pt:131
 msgid "Sort On"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Submit for publication"
 msgstr ""
 
 #: ./tupcenter_templates/own_project.pt:45
@@ -757,6 +825,10 @@ msgstr ""
 msgid "The linked Template file"
 msgstr ""
 
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "The owner can edit the template project"
+msgstr ""
+
 #: ./tupproject.py:231
 msgid "The project title is already in use"
 msgstr ""
@@ -834,6 +906,14 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Unreleased"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Visible to everyone, editable by the owner."
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "Waiting for the Review."
 msgstr ""
 
 #: ./tuprelease.py:75
