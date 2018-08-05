@@ -2,7 +2,7 @@
 <dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
              i18n:domain="tdf.templateuploadcenter"
              workflow_id="tuc_project_workflow"
-             title="EUC Project Publication Workflow"
+             title="TUC Project Publication Workflow"
              description=" - A simple workflow for Template project objects."
              state_variable="review_state"
              initial_state="private"
