@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-08-04 05:53+0000\n"
+"POT-Creation-Date: 2018-08-05 06:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,10 +217,6 @@ msgstr ""
 
 #: ./tupcenter.py:34
 msgid "Description of the features of templates"
-msgstr ""
-
-#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
-msgid "EUC Project Publication Workflow"
 msgstr ""
 
 #: ./tupcenter.py:172
@@ -748,6 +744,10 @@ msgstr ""
 
 #: ./configure.zcml:31
 msgid "TDF Template Upload Center"
+msgstr ""
+
+#: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "TUC Project Publication Workflow"
 msgstr ""
 
 #: ./profiles/default/types/tdf.templateuploadcenter.tupcenter.xml
