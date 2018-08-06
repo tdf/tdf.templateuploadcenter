@@ -200,7 +200,7 @@ class ITUpRelease(model.Schema):
 
     form.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
-        title=_(u" First uploaded file is compatible with the Platform(s)"),
+        title=_(u"First uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,

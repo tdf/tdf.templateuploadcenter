@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-08-05 06:11+0000\n"
+"POT-Creation-Date: 2018-08-06 17:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,26 +20,6 @@ msgstr ""
 #: ./tuprelease.py:157
 #: ./tupreleaselink.py:155
 msgid ""
-msgstr ""
-
-#: ./tupreleaselink.py:207
-msgid " First linked file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./tuprelease.py:203
-msgid " First uploaded file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./tupreleaselink.py:318
-msgid " Fourth linked file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./tupreleaselink.py:274
-msgid " Second linked file is compatible with the Platform(s)"
-msgstr ""
-
-#: ./tupreleaselink.py:296
-msgid " Third linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tupcenter_templates/view.pt:218
@@ -265,6 +245,18 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Final release"
+msgstr ""
+
+#: ./tupreleaselink.py:207
+msgid "First linked file is compatible with the Platform(s)"
+msgstr ""
+
+#: ./tuprelease.py:203
+msgid "First uploaded file is compatible with the Platform(s)"
+msgstr ""
+
+#: ./tupreleaselink.py:318
+msgid "Fourth linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tuprelease.py:263
@@ -705,6 +697,10 @@ msgstr ""
 msgid "Search ${product_title}"
 msgstr ""
 
+#: ./tupreleaselink.py:274
+msgid "Second linked file is compatible with the Platform(s)"
+msgstr ""
+
 #: ./tuprelease.py:233
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
@@ -866,6 +862,10 @@ msgstr ""
 
 #: ./tupcenter_templates/own_project.pt:13
 msgid "These are your projects on this site:"
+msgstr ""
+
+#: ./tupreleaselink.py:296
+msgid "Third linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tuprelease.py:248
