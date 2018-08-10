@@ -179,7 +179,7 @@ class ITUpCenter(model.Schema):
 def notifyAboutNewProject(tupproject, event):
     api.portal.send_email(
         recipient="templates@libreoffice.org",
-        subject=("A Project with the title {} was added").format(tupproject.title),
+        subject=(u"A Project with the title {} was added").format(tupproject.title),
         body="A member added a new project"
     )
 

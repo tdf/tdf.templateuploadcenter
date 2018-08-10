@@ -157,27 +157,27 @@ def notifyProjectManager(tupproject, event):
     state = api.content.get_state(tupproject)
     api.portal.send_email(
         recipient=("{}").format(tupproject.contactAddress),
-        sender=("{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject=("Your Project {}").format(tupproject.title),
-        body=("The status of your LibreOffice extension project changed. The new status is {}").format(state)
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject=(u"Your Project {}").format(tupproject.title),
+        body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
     )
 
 
 def notifyProjectManagerReleaseAdd(tupproject, event):
     api.portal.send_email(
         recipient=("{}").format(tupproject.contactAddress),
-        sender=("{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject=("Your Project {}: new Release added").format(tupproject.title),
-        body=("A new release was added to your project: '{}'").format(tupproject.title),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject=(u"Your Project {}: new Release added").format(tupproject.title),
+        body=(u"A new release was added to your project: '{}'").format(tupproject.title),
          )
 
 
 def notifyProjectManagerReleaseLinkedAdd(tupproject, event):
     api.portal.send_email(
         recipient=("{}").format(tupproject.contactAddress),
-        sender=("{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject=("Your Project {}: new linked Release added").format(tupproject.title),
-        body=("A new linked release was added to your project: '{}'").format(tupproject.title),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+        subject=(u"Your Project {}: new linked Release added").format(tupproject.title),
+        body=(u"A new linked release was added to your project: '{}'").format(tupproject.title),
          )
 
 
@@ -187,7 +187,7 @@ def notifyAboutNewReviewlistentry(self, event):
     if state == "pending":
         api.portal.send_email(
             recipient="templates@libreoffice.org",
-            subject=("A Project with the title {} was added to the review list").format(self.title),
+            subject=(u"A Project with the title {} was added to the review list").format(self.title),
             body="Please have a look at the review list and check if the project is "
                  "ready for publication. \n"
                  "\n"
