@@ -5,6 +5,7 @@ Changelog
 -----------------
 
 - Added a workflow for template projects [Andreas Mantke]
+- Marked some message strings as utf-8. [Andreas Mantke]
 
 
 0.17 (2018-07-21)
