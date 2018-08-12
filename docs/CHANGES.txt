@@ -5,6 +5,7 @@ Changelog
 -----------------
 
 - Added a workflow for template projects [Andreas Mantke]
+- Update of the localization to German. [Andreas Mantke]
 - Marked some message strings as utf-8. [Andreas Mantke]
 
 
