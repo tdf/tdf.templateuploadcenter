@@ -24,7 +24,8 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                                                          license view/releaseLicense;">
+                                                          license view/releaseLicense;
+                                                          compatibility view/releaseCompatibility;">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
 
@@ -36,7 +37,7 @@
             <dt i18n:translate="">Info</dt>
             <dd>
                 <span i18n:translate="">Remember to publish your release once all files have been added.
-                    You can do that on the left side within the menubar. Click on the entry 'State: Unreleased'.
+                    You can do that on the left side within the menu bar. Click on the entry 'State: Unreleased'.
                 <br /></span>
                 <span i18n:translate="">
                     Or
@@ -63,7 +64,11 @@
                        </tal:loop>
                    </p>
                    <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
-                   <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
+                   <p>
+                        <tal:loop repeat="releaseCompatibility compatibility">
+                            <span tal:content="releaseCompatibility" />,
+                        </tal:loop>
+                    </p>
                    <h4 tal:condition="context/changelog" class="documentSecondheading">Changelog</h4>
                    <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
                    <h2 class="tupcenter" i18n:translate="">Available Downloads</h2>
