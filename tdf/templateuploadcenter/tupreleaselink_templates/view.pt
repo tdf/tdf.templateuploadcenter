@@ -25,7 +25,8 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                                                          license view/releaseLicense;">
+                                                          license view/releaseLicense;
+                                                          compatibility view/linkedreleaseCompatibility">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
 
@@ -70,6 +71,11 @@
           </tal:loop>
       </p>
       <h4 class="tupcentercompatibility" i18n:translate="">Compatibility</h4>
+                    <p>
+                        <tal:loop repeat="linkedreleasecompatibility compatibility">
+                            <span tal:content="linkedreleasecompatibility" />
+                        </tal:loop>
+                    </p>
       <div class="tupcentercompatibility" tal:content="structure view/w/compatibility_choice/render" />
         <h4 tal:condition="context/changelog" class="documentSecondheading" i18n:translate="">Changelog</h4>
         <div class="tupcenterchangelog" tal:content="structure view/w/changelog/render" />
