@@ -4,7 +4,11 @@ Changelog
 0.19 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add a function for search and display the compatibility from the indexes of
+  the portal_catalog [Andreas Mantke]
+- Add an optional field to give users an information how to search for older
+  versions, if they are removed from the compatibility list in the tupcenter.py
+  [Andreas Mantke]
 
 
 0.18 (2018-08-12)
