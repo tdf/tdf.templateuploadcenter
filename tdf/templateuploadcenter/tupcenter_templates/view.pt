@@ -111,6 +111,9 @@
                          <h2 tal:condition="context/product_title" i18n:translate="">Search
                              <span tal:content="context/product_title" i18n:name="product_title" />
                          </h2>
+                         <div tal:condition="context/information_oldversions">
+                             <span tal:content="structure context/information_oldversions/output" />
+                         </div>
                          <div id="sort-by">
                              <form id="product_select" style="margin-bottom: 1em" tal:attributes="action string:${context/absolute_url}">
                                  <label class="hiddenStructure" i18n:translate="">Show</label>
