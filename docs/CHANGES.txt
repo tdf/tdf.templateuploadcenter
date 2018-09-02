@@ -9,6 +9,7 @@ Changelog
 - Add an optional field to give users an information how to search for older
   versions, if they are removed from the compatibility list in the tupcenter.py
   [Andreas Mantke]
+- Update localization template and localization into German. [Andreas Mantke]
 
 
 0.18 (2018-08-12)
