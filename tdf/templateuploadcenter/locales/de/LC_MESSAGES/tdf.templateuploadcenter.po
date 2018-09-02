@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2018-08-06 19:42+0200\n"
+"PO-Revision-Date: 2018-09-02 08:21+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Poedit 2.0.7\n"
 
-#: tupcenter_templates/view.pt:218
+#: tupcenter_templates/view.pt:221
 msgid "${product_title}"
 msgstr "${product_title}"
 
@@ -48,7 +48,7 @@ msgstr "Ein Template-Projekt"
 msgid "A template release"
 msgstr "Ein Template-Release"
 
-#: tupcenter_templates/view.pt:285
+#: tupcenter_templates/view.pt:288
 msgid "About"
 msgstr "Über"
 
@@ -68,7 +68,7 @@ msgstr "Bitte fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche 
 msgid "All Releases"
 msgstr "Alle Releases"
 
-#: tupcenter_templates/view.pt:118
+#: tupcenter_templates/view.pt:121
 msgid "All categories"
 msgstr "Alle Kategorien"
 
@@ -77,7 +77,7 @@ msgstr "Alle Kategorien"
 msgid "Alpha Release"
 msgstr "Alpha Release"
 
-#: tupcenter_templates/view.pt:128
+#: tupcenter_templates/view.pt:131
 msgid "Any version"
 msgstr "Jede Version"
 
@@ -85,7 +85,7 @@ msgstr "Jede Version"
 msgid "Available Categories"
 msgstr "Verfügbare Kategorien"
 
-#: tuprelease_templates/view.pt:69 tupreleaselink_templates/view.pt:77
+#: tuprelease_templates/view.pt:74 tupreleaselink_templates/view.pt:83
 msgid "Available Downloads"
 msgstr "Verfügbare Downloads"
 
@@ -93,7 +93,7 @@ msgstr "Verfügbare Downloads"
 msgid "Available Licenses"
 msgstr "Verfügbare Lizenzen"
 
-#: tupcenter.py:126
+#: tupcenter.py:127
 msgid "Available Platforms"
 msgstr "Verfügbare Plattformen"
 
@@ -106,11 +106,11 @@ msgstr "Verfügbare Versionen"
 msgid "Beta Release"
 msgstr "Beta Release"
 
-#: tupcenter_templates/view.pt:261
+#: tupcenter_templates/view.pt:264
 msgid "Browse"
 msgstr "Suchen"
 
-#: tupcenter_templates/view.pt:264
+#: tupcenter_templates/view.pt:267
 msgid "Browse Templates by Category"
 msgstr "Suchen von Vorlagen nach Kategorie"
 
@@ -128,7 +128,7 @@ msgstr "Ändere den Release-Status zu \"Release alpha\""
 msgid "Change the release stage to 'Release beta'"
 msgstr "Ändere den Release-Status zu \"Release beta\""
 
-#: tuprelease.py:133 tupreleaselink.py:132 tupreleaselink_templates/view.pt:74
+#: tuprelease.py:133 tupreleaselink.py:132 tupreleaselink_templates/view.pt:80
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
@@ -136,8 +136,8 @@ msgstr "Änderungsprotokoll"
 msgid "Choose your categories"
 msgstr "Wählen Sie Ihre Kategorien"
 
-#: tupproject_templates/view.pt:369 tuprelease_templates/view.pt:65
-#: tupreleaselink_templates/view.pt:72
+#: tupproject_templates/view.pt:369 tuprelease_templates/view.pt:66
+#: tupreleaselink_templates/view.pt:73
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
@@ -165,7 +165,7 @@ msgstr "Aktuelles Release dieses Projekts"
 msgid "Current unstable release for the project"
 msgstr "Aktuelles instabiles Release für das Projekt"
 
-#: tupcenter_templates/view.pt:222
+#: tupcenter_templates/view.pt:225
 msgid "Currently there are"
 msgstr "Aktuell sind hier"
 
@@ -181,11 +181,15 @@ msgstr "Beschreibung des Vorlagen-Centers"
 msgid "Description of the features of templates"
 msgstr "Beschreibung der Funktionen von Vorlagen"
 
-#: tupcenter.py:172
+#: tupcenter.py:182
+msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
+msgstr "Fügen Sie eine Information über die Suche nach älteren Versionen von LibreOffice ein, sofern diese nicht mehr in der Versionsliste (Kompatibilität) sind."
+
+#: tupcenter.py:173
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr "Fügen Sie den Text der  rechtlichen Hinweise und Einschränkungen für Downloads ein, der auf jeder Seite für herunter ladbare Dateien erscheinen soll."
 
-#: tupcenter.py:157
+#: tupcenter.py:158
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, der dem Ersteller eines Projektes angezeigt und von dem Projekt-Eigentümer zu akzeptieren ist."
 
@@ -193,11 +197,11 @@ msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, d
 msgid "Extension profile for TDF Template Upload Center"
 msgstr "Extension profile for TDF Template Upload Center"
 
-#: tupreleaselink_templates/view.pt:137
+#: tupreleaselink_templates/view.pt:143
 msgid "External Documentation"
 msgstr "Externe Dokumentation"
 
-#: tupreleaselink_templates/view.pt:142
+#: tupreleaselink_templates/view.pt:148
 msgid "External Project Page"
 msgstr "Externe Projektseite"
 
@@ -205,16 +209,16 @@ msgstr "Externe Projektseite"
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject_templates/view.pt:146 tuprelease_templates/view.pt:82
-#: tupreleaselink_templates/view.pt:84
+#: tupproject_templates/view.pt:146 tuprelease_templates/view.pt:87
+#: tupreleaselink_templates/view.pt:90
 msgid "File size:"
 msgstr "Dateigröße:"
 
-#: tupcenter.py:159
+#: tupcenter.py:160
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern zu akzeptieren ist"
 
-#: tupcenter.py:174
+#: tupcenter.py:175
 msgid "Fill in the text for the legal download disclaimer"
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein"
 
@@ -285,7 +289,7 @@ msgstr "Release verbergen"
 msgid "Hide this release"
 msgstr "Verstecken Sie dieses Release"
 
-#: tupcenter_templates/view.pt:134
+#: tupcenter_templates/view.pt:137
 msgid "Highest Rated"
 msgstr "Am höchsten bewerted"
 
@@ -317,16 +321,20 @@ msgstr "Falls Sie weitere Dateien für dieses Release verlinken wollen, z.B. wei
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
 msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die entsprechenden Felder auf dem Register \"File Upload 1\" und \"File Upload 2\"."
 
-#: tuprelease_templates/view.pt:36 tupreleaselink_templates/view.pt:37
+#: tuprelease_templates/view.pt:37 tupreleaselink_templates/view.pt:38
 msgid "Info"
 msgstr "Info"
 
-#: tupcenter_templates/view.pt:277 tuprelease_templates/view.pt:173
-#: tupreleaselink_templates/view.pt:164
+#: tupcenter.py:181
+msgid "Information About Search For Old LibreOffice Versions"
+msgstr "Information zur Suche nach älteren LibreOffice-Versionen"
+
+#: tupcenter_templates/view.pt:280 tuprelease_templates/view.pt:178
+#: tupreleaselink_templates/view.pt:170
 msgid "Install Instructions"
 msgstr "Installationsanleitung"
 
-#: tupcenter.py:145
+#: tupcenter.py:146
 msgid "Instruction how to report Bugs"
 msgstr "Anleitung, wie ein Fehler gemeldet wird"
 
@@ -346,11 +354,11 @@ msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 msgid "Latest Not Stable Release"
 msgstr "Letztes nicht stabiles Release"
 
-#: tupcenter.py:151
+#: tupcenter.py:152
 msgid "Legal Disclaimer and Limitations"
 msgstr "Rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:165
+#: tupcenter.py:166
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 
@@ -358,12 +366,12 @@ msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 msgid "License of the uploaded file"
 msgstr "Lizenz der hochgeladenen Datei"
 
-#: tupproject_templates/view.pt:371 tuprelease_templates/view.pt:59
-#: tupreleaselink_templates/view.pt:66
+#: tupproject_templates/view.pt:371 tuprelease_templates/view.pt:60
+#: tupreleaselink_templates/view.pt:67
 msgid "License(s)"
 msgstr "Lizenz(en)"
 
-#: tuprelease_templates/view.pt:169 tupreleaselink_templates/view.pt:160
+#: tuprelease_templates/view.pt:174 tupreleaselink_templates/view.pt:166
 msgid "Link to Source Code"
 msgstr "Link zum Quellcode"
 
@@ -387,7 +395,7 @@ msgstr "Mehr über dieses Release&hellip;"
 msgid "Most popular ${product_title}"
 msgstr "Beliebteste ${product_title}"
 
-#: tupcenter_templates/view.pt:233
+#: tupcenter_templates/view.pt:236
 msgid "Most recent"
 msgstr "Aktuellste"
 
@@ -399,7 +407,7 @@ msgstr "Name des Vorlagen-Center"
 msgid "Name of the Template product, e.g. only Templates or LibreOffice Templates"
 msgstr "Name des Vorlagen-Produkts, z.B.. nur Vorlagen oder LibreOffice-Vorlagen"
 
-#: tupcenter_templates/view.pt:135
+#: tupcenter_templates/view.pt:138
 msgid "Newest"
 msgstr "Neueste"
 
@@ -407,7 +415,7 @@ msgstr "Neueste"
 msgid "No"
 msgstr "Nein"
 
-#: tupcenter_templates/view.pt:154
+#: tupcenter_templates/view.pt:157
 msgid "No results were found."
 msgstr "Keine Ergebnisse gefunden."
 
@@ -415,7 +423,7 @@ msgstr "Keine Ergebnisse gefunden."
 msgid "No stable release available yet."
 msgstr "Aktuell kein stabiles Release verfügbar."
 
-#: tuprelease_templates/view.pt:41 tupreleaselink_templates/view.pt:42
+#: tuprelease_templates/view.pt:42 tupreleaselink_templates/view.pt:43
 msgid "Or"
 msgstr "Oder"
 
@@ -467,7 +475,7 @@ msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren"
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein"
 
-#: tupcenter.py:139
+#: tupcenter.py:140
 msgid "Please fill in the install instructions"
 msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 
@@ -515,8 +523,8 @@ msgstr "Privat"
 msgid "Project Description"
 msgstr "Projekt-Beschreibung"
 
-#: tupproject_templates/view.pt:418 tuprelease_templates/view.pt:146
-#: tupreleaselink_templates/view.pt:133
+#: tupproject_templates/view.pt:418 tuprelease_templates/view.pt:151
+#: tupreleaselink_templates/view.pt:139
 msgid "Project Resources"
 msgstr "Projekt Ressourcen"
 
@@ -555,7 +563,7 @@ msgstr "Erneut Releasen"
 msgid "Release Candidate"
 msgstr "Release-Kandidat"
 
-#: tuprelease_templates/view.pt:57 tupreleaselink_templates/view.pt:62
+#: tuprelease_templates/view.pt:58 tupreleaselink_templates/view.pt:63
 msgid "Release Details"
 msgstr "Release-Details"
 
@@ -595,15 +603,19 @@ msgstr "Release-Kandidat"
 msgid "Released"
 msgstr "Released"
 
-#: tuprelease_templates/view.pt:38 tupreleaselink_templates/view.pt:39
+#: tuprelease_templates/view.pt:39
+msgid "Remember to publish your release once all files have been added. You can do that on the left side within the menu bar. Click on the entry 'State: Unreleased'. <br />"
+msgstr "Denken Sie daran, Ihr Release zu veröffentlichen, sobald Sie alle Dateien hinzugefügt haben. Sie können dies in dem Menü auf der linken Seite machen. Klicken Sie auf den Eintrag: \"State: Unreleased\".<br />"
+
+#: tupreleaselink_templates/view.pt:40
 msgid "Remember to publish your release once all files have been added. You can do that on the left side within the menubar. Click on the entry 'State: Unreleased'. <br />"
 msgstr "Denken Sie daran, Ihr Release zu veröffentlichen, sobald Sie alle Dateien hinzugefügt haben. Sie können dies in dem Menü auf der linken Seite machen. Klicken Sie auf den Eintrag: \"State: Unreleased\".<br />"
 
-#: tupreleaselink_templates/view.pt:168
+#: tupreleaselink_templates/view.pt:174
 msgid "Reporting Extension-Bugs"
 msgstr "Extension-Fehler melden"
 
-#: tupcenter_templates/view.pt:281
+#: tupcenter_templates/view.pt:284
 msgid "Reporting Template-Bugs"
 msgstr "Vorlagen-Bugs melden"
 
@@ -626,8 +638,8 @@ msgstr "Reviewer veröffentlicht den Inhalt"
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
 
-#: tupproject_templates/view.pt:429 tuprelease_templates/view.pt:156
-#: tupreleaselink_templates/view.pt:148
+#: tupproject_templates/view.pt:429 tuprelease_templates/view.pt:161
+#: tupreleaselink_templates/view.pt:154
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
@@ -635,7 +647,7 @@ msgstr "Bildschirmfoto"
 msgid "Screenshot of the Template"
 msgstr "Bildschirmfoto der Vorlage"
 
-#: tupcenter_templates/view.pt:143
+#: tupcenter_templates/view.pt:146
 msgid "Search"
 msgstr "Suchen"
 
@@ -655,7 +667,7 @@ msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "Send back"
 msgstr "Zurück senden"
 
-#: tupcenter_templates/view.pt:116
+#: tupcenter_templates/view.pt:119
 msgid "Show"
 msgstr "Anzeigen"
 
@@ -663,7 +675,7 @@ msgstr "Anzeigen"
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr "Die sechste hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupcenter_templates/view.pt:131
+#: tupcenter_templates/view.pt:134
 msgid "Sort On"
 msgstr "Sortieren nach"
 
@@ -675,7 +687,7 @@ msgstr "Zur Veröffentlichung einreichen"
 msgid "Submit new"
 msgstr "Übermittele neue"
 
-#: tupcenter_templates/view.pt:227
+#: tupcenter_templates/view.pt:230
 msgid "Submit your"
 msgstr "Übermitteln Sie Ihre"
 
@@ -691,7 +703,7 @@ msgstr "TUC Projekt-Veröffentlichungs-Workflow"
 msgid "Template Center"
 msgstr "Template Center"
 
-#: tupcenter.py:138
+#: tupcenter.py:139
 msgid "Template Installation Instructions"
 msgstr "Installationsanleitung für Vorlagen"
 
@@ -715,15 +727,15 @@ msgstr "Vorlagen-Release"
 msgid "Template Version"
 msgstr "Vorlagen-Version"
 
-#: tupcenter_templates/view.pt:220
+#: tupcenter_templates/view.pt:223
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: tupcenter.py:156
+#: tupcenter.py:157
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen"
 
-#: tupcenter.py:171
+#: tupcenter.py:172
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 
@@ -757,7 +769,7 @@ msgstr "Der erste Status eines Vorlagen-Release"
 msgid "The fourth file you want to upload (this is optional)"
 msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 
-#: tupreleaselink_templates/view.pt:81
+#: tupreleaselink_templates/view.pt:87
 msgid "The linked Template file"
 msgstr "Die verlinkte Vorlagen-Datei"
 
@@ -814,11 +826,11 @@ msgstr "Die dritte hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "Title"
 msgstr "Titel"
 
-#: tupcenter.py:150
+#: tupcenter.py:151
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:164
+#: tupcenter.py:165
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 
@@ -882,7 +894,7 @@ msgstr "ein Release zu Ihrem"
 msgid "a linked Release to your"
 msgstr "ein verlinktes Release zu Ihrem"
 
-#: tupcenter_templates/view.pt:262
+#: tupcenter_templates/view.pt:265
 msgid "by Category"
 msgstr "nach Kategorie"
 
@@ -898,11 +910,11 @@ msgstr "oder:"
 msgid "please submit your new"
 msgstr "bitte übermitteln Sie Ihre neue"
 
-#: tupcenter_templates/view.pt:223
+#: tupcenter_templates/view.pt:226
 msgid "project(s) with"
 msgstr "Projekt(e) mit"
 
-#: tupcenter_templates/view.pt:157
+#: tupcenter_templates/view.pt:160
 msgid "projects matching your criteria."
 msgstr "Projekte entsprechen Ihren Kritierien."
 
@@ -911,7 +923,7 @@ msgstr "Projekte entsprechen Ihren Kritierien."
 msgid "re-release"
 msgstr "Erneut veröffentlichen"
 
-#: tupcenter_templates/view.pt:224
+#: tupcenter_templates/view.pt:227
 msgid "release(s) available."
 msgstr "Releases verfügbar."
 
@@ -919,6 +931,6 @@ msgstr "Releases verfügbar."
 msgid "tested with:"
 msgstr "getestet mit:"
 
-#: tuprelease_templates/view.pt:45 tupreleaselink_templates/view.pt:46
+#: tuprelease_templates/view.pt:46 tupreleaselink_templates/view.pt:47
 msgid "you could do this following this link."
 msgstr "Sie können dies über diesen Link tun."
