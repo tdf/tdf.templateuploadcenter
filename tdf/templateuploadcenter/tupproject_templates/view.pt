@@ -361,7 +361,7 @@
              <h2 i18n:translate="">All Releases</h2>
 
 
-<table class="tupcenterprojecttable" border="1" width="100%">
+<table border="1">
             <thead>
             <tr bgcolor="#40FB27">
                 <td><h4 i18n:translate="">Template Version</h4></td>
