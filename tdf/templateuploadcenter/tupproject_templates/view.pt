@@ -361,9 +361,9 @@
              <h2 i18n:translate="">All Releases</h2>
 
 
-<table border="1">
+<table class="tupcenterprojecttable">
             <thead>
-            <tr bgcolor="#40FB27">
+            <tr>
                 <td><h4 i18n:translate="">Template Version</h4></td>
                 <td><h4 i18n:translate="">Platform(s)</h4></td>
                 <td><h4 i18n:translate="">Compatibility</h4></td>

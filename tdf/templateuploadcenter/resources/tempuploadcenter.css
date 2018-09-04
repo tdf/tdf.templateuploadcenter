@@ -226,3 +226,18 @@ div.eupcenterreleaseinstallinstructions h3
     font-size: 16px;
     font-weight: 700;
 }
+
+table.tupcenterprojecttable
+{
+    border:true;
+}
+
+table.tupcenterprojecttable thead
+{
+   background-color:#00A500;
+}
+
+table.tupcenterprojecttable h4
+{
+    color:white;
+}
