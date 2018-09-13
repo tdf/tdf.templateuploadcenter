@@ -4,7 +4,8 @@ Changelog
 0.20 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Remove inline css style and add css styles for the table on
+  project view into the css-layout file [Andreas Mantke]
 
 
 0.19 (2018-09-03)
