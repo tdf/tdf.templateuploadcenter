@@ -162,4 +162,11 @@
     handler="tdf.templateuploadcenter.tuprelease.update_project_releases_compat_versions"
     />
 
+  <subscriber
+    for="tdf.templateuploadcenter.tupproject.ITUpProject
+         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler="tdf.templateuploadcenter.tupproject.textmodified_templateproject"
+    />
+
+
 </configure>
