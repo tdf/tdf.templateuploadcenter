@@ -6,6 +6,10 @@ Changelog
 
 - Remove inline css style and add css styles for the table on
   project view into the css-layout file [Andreas Mantke]
+- Added a new notify subscriber for modifications of
+  projects to get an information about the content of
+  the text fields. The content of the text fields will
+  be forwarded by email. [Andreas Mantke]
 
 
 0.19 (2018-09-03)
