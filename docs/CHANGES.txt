@@ -10,6 +10,8 @@ Changelog
   projects to get an information about the content of
   the text fields. The content of the text fields will
   be forwarded by email. [Andreas Mantke]
+- Add specific workflow permissions for private project
+  objects.[Andreas Mantke]
 
 
 0.19 (2018-09-03)
