@@ -12,6 +12,7 @@ Changelog
   be forwarded by email. [Andreas Mantke]
 - Add specific workflow permissions for private project
   objects.[Andreas Mantke]
+- Update buildout.cfg to Plone 5.1 [Andreas Mantke]
 
 
 0.19 (2018-09-03)
