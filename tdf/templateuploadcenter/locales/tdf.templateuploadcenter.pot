@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-09-02 06:13+0000\n"
+"POT-Creation-Date: 2018-10-25 18:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -334,8 +334,7 @@ msgid "If you already created a new"
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
-msgid "If you submitted the item by mistake or want to perform additional edits,
-          this will take it back."
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr ""
 
 #: ./tupreleaselink.py:217
@@ -836,7 +835,7 @@ msgstr ""
 msgid "The owner can edit the template project"
 msgstr ""
 
-#: ./tupproject.py:231
+#: ./tupproject.py:245
 msgid "The project title is already in use"
 msgstr ""
 
