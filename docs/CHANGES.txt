@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.20 (unreleased)
+0.20 (2018-10-25)
 -----------------
 
 - Remove inline css style and add css styles for the table on
