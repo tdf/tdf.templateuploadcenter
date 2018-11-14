@@ -50,6 +50,11 @@ class ITUpCenter(model.Schema):
         description=_(u"Name of the Template product, e.g. only Templates or LibreOffice Templates"),
     )
 
+    form.fieldset('categories_et_all',
+                  label=u"Categories et all",
+                  fields=['available_category', 'available_licenses',
+                          'available_versions', 'available_platforms'])
+
     available_category = schema.List(title=_(u"Available Categories"),
                                      default=['Accounting',
                                               'Agenda',
@@ -145,6 +150,10 @@ class ITUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
+    form.fieldset('instructions',
+                  label=u'Instructions',
+                  fields=['install_instructions', 'reporting_bugs', ])
+
     form.primary('install_instructions')
     install_instructions = RichText(
         title=_(u"Template Installation Instructions"),
@@ -157,6 +166,11 @@ class ITUpCenter(model.Schema):
         title=_(u"Instruction how to report Bugs"),
         required=False
     )
+
+    form.fieldset('disclaimer',
+                  label=u'Legal Disclaimer',
+                  fields=['title_legaldisclaimer', 'legal_disclaimer',
+                          'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
 
     title_legaldisclaimer = schema.TextLine(
         title=_(u"Title for Legal Disclaimer and Limitations"),
@@ -196,6 +210,9 @@ class ITUpCenter(model.Schema):
         required=False
     )
 
+    form.fieldset('contactadresses',
+                  label=u'Special Email Adresses',
+                  fields=['contactForCenter'])
 
     contactForCenter =schema.ASCIILine(
         title=_(u"EMail address for communication with the extension center manager and reviewer"),
