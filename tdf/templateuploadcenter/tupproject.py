@@ -209,6 +209,18 @@ def textmodified_templateproject(self, event):
     )
 
 
+def notifyAboutNewProject(self, event):
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='templates@libreoffice.org'
+    api.portal.send_email(
+        recipient=mailrecipient,
+        subject=(u"A Project with the title {} was added").format(self.title),
+        body="A member added a new project"
+    )
+
+
 def getLatestRelease(self):
 
     res = None

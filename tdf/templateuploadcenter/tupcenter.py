@@ -222,14 +222,6 @@ class ITUpCenter(model.Schema):
     )
 
 
-
-def notifyAboutNewProject(tupproject, event):
-    api.portal.send_email(
-        recipient="templates@libreoffice.org",
-        subject=(u"A Project with the title {} was added").format(tupproject.title),
-        body="A member added a new project"
-    )
-
 directives.languageindependent('available_category')
 directives.languageindependent('available_licenses')
 directives.languageindependent('available_versions')
