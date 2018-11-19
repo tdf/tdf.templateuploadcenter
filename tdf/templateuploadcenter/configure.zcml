@@ -92,7 +92,7 @@
   <subscriber
     for="tdf.templateuploadcenter.tupproject.ITUpProject
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
-    handler="tdf.templateuploadcenter.tupcenter.notifyAboutNewProject"
+    handler="tdf.templateuploadcenter.tupproject.notifyAboutNewProject"
     />
 
   <subscriber
