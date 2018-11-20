@@ -198,10 +198,14 @@ def notifyAboutNewReviewlistentry(self, event):
 def textmodified_templateproject(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='templates@libreoffice.org'
     if state == "published":
         api.portal.send_email(
-            recipient="templates@libreoffice.org",
-            sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
+            recipient=mailrecipient,
+            sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
             subject=(u"The content of the project {} has changed").format(self.title),
             body=(u"The content of the project {} has changed. Here you get the text of the "
                   u"description field of the project: \n'{}\n\nand this is the text of the "
