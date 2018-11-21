@@ -184,15 +184,19 @@ def notifyProjectManagerReleaseLinkedAdd(tupproject, event):
 def notifyAboutNewReviewlistentry(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='templates@libreoffice.org'
     if state == "pending":
         api.portal.send_email(
-            recipient="templates@libreoffice.org",
+            recipient=mailrecipient,
             subject=(u"A Project with the title {} was added to the review list").format(self.title),
             body="Please have a look at the review list and check if the project is "
                  "ready for publication. \n"
                  "\n"
                  "Kind regards,\n"
-                 "The Admin of the LibreOffice Templates Website"
+                 "The Admin of the Website"
         )
 
 def textmodified_templateproject(self, event):
