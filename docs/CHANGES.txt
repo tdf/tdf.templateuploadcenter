@@ -4,7 +4,8 @@ Changelog
 0.21 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Move the messaging about the creation of new projects to
+  the tupprojects module [Andreas Mantke]
 
 
 0.20 (2018-10-25)
