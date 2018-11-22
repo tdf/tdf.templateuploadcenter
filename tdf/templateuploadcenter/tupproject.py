@@ -172,12 +172,16 @@ def notifyProjectManagerReleaseAdd(tupproject, event):
          )
 
 
-def notifyProjectManagerReleaseLinkedAdd(tupproject, event):
+def notifyProjectManagerReleaseLinkedAdd(self, event):
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='templates@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(tupproject.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject=(u"Your Project {}: new linked Release added").format(tupproject.title),
-        body=(u"A new linked release was added to your project: '{}'").format(tupproject.title),
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
+        subject=(u"Your Project {}: new linked Release added").format(self.title),
+        body=(u"A new linked release was added to your project: '{}'").format(self.title),
          )
 
 
