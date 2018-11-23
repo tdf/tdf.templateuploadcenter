@@ -163,12 +163,16 @@ def notifyProjectManager(tupproject, event):
     )
 
 
-def notifyProjectManagerReleaseAdd(tupproject, event):
+def notifyProjectManagerReleaseAdd(self, event):
+    if (self.__parent__.contactForCenter) is not None:
+        mailrecipient = str(self.__parent__.contactForCenter)
+    else:
+        mailrecipient ='templates@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(tupproject.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject=(u"Your Project {}: new Release added").format(tupproject.title),
-        body=(u"A new release was added to your project: '{}'").format(tupproject.title),
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
+        subject=(u"Your Project {}: new Release added").format(self.title),
+        body=(u"A new release was added to your project: '{}'").format(self.title),
          )
 
 
