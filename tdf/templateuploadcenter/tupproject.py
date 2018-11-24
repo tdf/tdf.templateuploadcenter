@@ -153,13 +153,17 @@ class ITUpProject(model.Schema):
                                           u'appropriate fields below on this page.'))
 
 
-def notifyProjectManager(tupproject, event):
-    state = api.content.get_state(tupproject)
+def notifyProjectManager(self, event):
+    state = api.content.get_state(self)
+    if (self.__parent__.contactForCenter) is not None:
+        mailsender = str(self.__parent__.contactForCenter)
+    else:
+        mailsender ='templates@libreoffice.org'
     api.portal.send_email(
-        recipient=("{}").format(tupproject.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', 'templates@libreoffice.org'),
-        subject=(u"Your Project {}").format(tupproject.title),
-        body=(u"The status of your LibreOffice extension project changed. The new status is {}").format(state)
+        recipient=("{}").format(self.contactAddress),
+        sender=(u"{} <{}>").format('Admin of the Website', mailsender),
+        subject=(u"Your Project {}").format(self.title),
+        body=(u"The status of your LibreOffice templates project changed. The new status is {}").format(state)
     )
 
 
