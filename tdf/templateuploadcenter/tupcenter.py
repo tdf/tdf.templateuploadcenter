@@ -215,8 +215,8 @@ class ITUpCenter(model.Schema):
                   fields=['contactForCenter'])
 
     contactForCenter =schema.ASCIILine(
-        title=_(u"EMail address for communication with the extension center manager and reviewer"),
-        description=_(u"Enter an email address for the communication with extension center manager and reviewer"),
+        title=_(u"EMail address for communication with the template center manager and reviewer"),
+        description=_(u"Enter an email address for the communication with template center manager and reviewer"),
         default= 'templates@libreoffice.org',
         constraint= validateEmail
     )
