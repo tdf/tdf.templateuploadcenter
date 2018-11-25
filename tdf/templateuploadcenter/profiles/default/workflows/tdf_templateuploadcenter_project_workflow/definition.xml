@@ -21,6 +21,10 @@
             <exit-transition transition_id="retract" />
         <permission-map name="Access contents information"
                         acquired="True">
+            <permission-role>Owner</permission-role>
+            <permission-role>Reviewer</permission-role>
+            <permission-role>Manager</permission-role>
+            <permission-role>Site-Administrator</permission-role>
         </permission-map>
         <permission-map name="Modify portal content"
                         acquired="True">
@@ -31,6 +35,10 @@
         </permission-map>
         <permission-map name="View"
                         acquired="True">
+            <permission-role>Owner</permission-role>
+            <permission-role>Reviewer</permission-role>
+            <permission-role>Manager</permission-role>
+            <permission-role>Site-Administrator</permission-role>
         </permission-map>
     </state>
 
