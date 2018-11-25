@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2018-09-02 08:21+0200\n"
+"PO-Revision-Date: 2018-11-25 20:21+0100\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "Alpha Release"
 msgid "Any version"
 msgstr "Jede Version"
 
-#: tupcenter.py:42
+#: tupcenter.py:58
 msgid "Available Categories"
 msgstr "Verfügbare Kategorien"
 
@@ -89,15 +89,15 @@ msgstr "Verfügbare Kategorien"
 msgid "Available Downloads"
 msgstr "Verfügbare Downloads"
 
-#: tupcenter.py:93
+#: tupcenter.py:109
 msgid "Available Licenses"
 msgstr "Verfügbare Lizenzen"
 
-#: tupcenter.py:127
+#: tupcenter.py:143
 msgid "Available Platforms"
 msgstr "Verfügbare Plattformen"
 
-#: tupcenter.py:108
+#: tupcenter.py:124
 msgid "Available Versions"
 msgstr "Verfügbare Versionen"
 
@@ -173,23 +173,31 @@ msgstr "Aktuell sind hier"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: tupcenter.py:30
+#: tupcenter.py:41
 msgid "Description of the Template Center"
 msgstr "Beschreibung des Vorlagen-Centers"
 
-#: tupcenter.py:34
+#: tupcenter.py:45
 msgid "Description of the features of templates"
 msgstr "Beschreibung der Funktionen von Vorlagen"
 
-#: tupcenter.py:182
+#: tupcenter.py:218
+msgid "EMail address for communication with the template center manager and reviewer"
+msgstr "E-Mail-Adresse zur Kommunikation mit demTemplate-Center-Manager und -Reviewer"
+
+#: tupcenter.py:219
+msgid "Enter an email address for the communication with template center manager and reviewer"
+msgstr "Fügen Sie eine E-Mail-Adresse für die Kommunikation mit dem Template-Center-Manager und -Reviewer ein"
+
+#: tupcenter.py:207
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr "Fügen Sie eine Information über die Suche nach älteren Versionen von LibreOffice ein, sofern diese nicht mehr in der Versionsliste (Kompatibilität) sind."
 
-#: tupcenter.py:173
+#: tupcenter.py:198
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr "Fügen Sie den Text der  rechtlichen Hinweise und Einschränkungen für Downloads ein, der auf jeder Seite für herunter ladbare Dateien erscheinen soll."
 
-#: tupcenter.py:158
+#: tupcenter.py:183
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, der dem Ersteller eines Projektes angezeigt und von dem Projekt-Eigentümer zu akzeptieren ist."
 
@@ -214,11 +222,11 @@ msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "File size:"
 msgstr "Dateigröße:"
 
-#: tupcenter.py:160
+#: tupcenter.py:185
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern zu akzeptieren ist"
 
-#: tupcenter.py:175
+#: tupcenter.py:200
 msgid "Fill in the text for the legal download disclaimer"
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein"
 
@@ -313,6 +321,10 @@ msgstr "Falls Ihr Projekt eine extern verfügbare Dokumentation besitzt, fügen 
 msgid "If you already created a new"
 msgstr "Falls Sie bereits ein neues"
 
+#: profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
+msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergänzungen vornehmen wollen, führt Sie dies zurück."
+
 #: tupreleaselink.py:217
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file'."
 msgstr "Falls Sie weitere Dateien für dieses Release verlinken wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die Felder dafür auf den nächsten Registern, z.B. \"Zweite verlinkte Datei\"."
@@ -325,7 +337,7 @@ msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. wei
 msgid "Info"
 msgstr "Info"
 
-#: tupcenter.py:181
+#: tupcenter.py:206
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr "Information zur Suche nach älteren LibreOffice-Versionen"
 
@@ -334,11 +346,11 @@ msgstr "Information zur Suche nach älteren LibreOffice-Versionen"
 msgid "Install Instructions"
 msgstr "Installationsanleitung"
 
-#: tupcenter.py:146
+#: tupcenter.py:166
 msgid "Instruction how to report Bugs"
 msgstr "Anleitung, wie ein Fehler gemeldet wird"
 
-#: tupproject.py:69
+#: tupcenter.py:28 tupproject.py:69
 msgid "Invalid email address"
 msgstr "Ungültige Email-Adresse"
 
@@ -354,11 +366,11 @@ msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 msgid "Latest Not Stable Release"
 msgstr "Letztes nicht stabiles Release"
 
-#: tupcenter.py:152
+#: tupcenter.py:177
 msgid "Legal Disclaimer and Limitations"
 msgstr "Rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:166
+#: tupcenter.py:191
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 
@@ -399,11 +411,11 @@ msgstr "Beliebteste ${product_title}"
 msgid "Most recent"
 msgstr "Aktuellste"
 
-#: tupcenter.py:26
+#: tupcenter.py:37
 msgid "Name of the Template Center"
 msgstr "Name des Vorlagen-Center"
 
-#: tupcenter.py:39
+#: tupcenter.py:50
 msgid "Name of the Template product, e.g. only Templates or LibreOffice Templates"
 msgstr "Name des Vorlagen-Produkts, z.B.. nur Vorlagen oder LibreOffice-Vorlagen"
 
@@ -475,7 +487,7 @@ msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren"
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein"
 
-#: tupcenter.py:140
+#: tupcenter.py:160
 msgid "Please fill in the install instructions"
 msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 
@@ -703,7 +715,7 @@ msgstr "TUC Projekt-Veröffentlichungs-Workflow"
 msgid "Template Center"
 msgstr "Template Center"
 
-#: tupcenter.py:139
+#: tupcenter.py:159
 msgid "Template Installation Instructions"
 msgstr "Installationsanleitung für Vorlagen"
 
@@ -711,7 +723,7 @@ msgstr "Installationsanleitung für Vorlagen"
 msgid "Template Linked Release"
 msgstr "Template Linked Release"
 
-#: tupcenter.py:38
+#: tupcenter.py:49
 msgid "Template Product Name"
 msgstr "Vorlagen-Produktname"
 
@@ -731,11 +743,11 @@ msgstr "Vorlagen-Version"
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: tupcenter.py:157
+#: tupcenter.py:182
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen"
 
-#: tupcenter.py:172
+#: tupcenter.py:197
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 
@@ -777,7 +789,7 @@ msgstr "Die verlinkte Vorlagen-Datei"
 msgid "The owner can edit the template project"
 msgstr "Der Besitzer kann das Template(Vorlagen)-Projekt bearbeiten"
 
-#: tupproject.py:231
+#: tupproject.py:277
 msgid "The project title is already in use"
 msgstr "Der Projekt-Titel wird bereits verwendet"
 
@@ -826,11 +838,11 @@ msgstr "Die dritte hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "Title"
 msgstr "Titel"
 
-#: tupcenter.py:151
+#: tupcenter.py:176
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:165
+#: tupcenter.py:190
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 

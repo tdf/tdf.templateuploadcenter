@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-10-25 18:22+0000\n"
+"POT-Creation-Date: 2018-11-25 19:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Any version"
 msgstr ""
 
-#: ./tupcenter.py:42
+#: ./tupcenter.py:58
 msgid "Available Categories"
 msgstr ""
 
@@ -99,15 +99,15 @@ msgstr ""
 msgid "Available Downloads"
 msgstr ""
 
-#: ./tupcenter.py:93
+#: ./tupcenter.py:109
 msgid "Available Licenses"
 msgstr ""
 
-#: ./tupcenter.py:127
+#: ./tupcenter.py:143
 msgid "Available Platforms"
 msgstr ""
 
-#: ./tupcenter.py:108
+#: ./tupcenter.py:124
 msgid "Available Versions"
 msgstr ""
 
@@ -191,23 +191,31 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./tupcenter.py:30
+#: ./tupcenter.py:41
 msgid "Description of the Template Center"
 msgstr ""
 
-#: ./tupcenter.py:34
+#: ./tupcenter.py:45
 msgid "Description of the features of templates"
 msgstr ""
 
-#: ./tupcenter.py:182
+#: ./tupcenter.py:218
+msgid "EMail address for communication with the template center manager and reviewer"
+msgstr ""
+
+#: ./tupcenter.py:219
+msgid "Enter an email address for the communication with template center manager and reviewer"
+msgstr ""
+
+#: ./tupcenter.py:207
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr ""
 
-#: ./tupcenter.py:173
+#: ./tupcenter.py:198
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./tupcenter.py:158
+#: ./tupcenter.py:183
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
@@ -233,11 +241,11 @@ msgstr ""
 msgid "File size:"
 msgstr ""
 
-#: ./tupcenter.py:160
+#: ./tupcenter.py:185
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr ""
 
-#: ./tupcenter.py:175
+#: ./tupcenter.py:200
 msgid "Fill in the text for the legal download disclaimer"
 msgstr ""
 
@@ -350,7 +358,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: ./tupcenter.py:181
+#: ./tupcenter.py:206
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
@@ -360,10 +368,11 @@ msgstr ""
 msgid "Install Instructions"
 msgstr ""
 
-#: ./tupcenter.py:146
+#: ./tupcenter.py:166
 msgid "Instruction how to report Bugs"
 msgstr ""
 
+#: ./tupcenter.py:28
 #: ./tupproject.py:69
 msgid "Invalid email address"
 msgstr ""
@@ -382,11 +391,11 @@ msgstr ""
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./tupcenter.py:152
+#: ./tupcenter.py:177
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:166
+#: ./tupcenter.py:191
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -431,11 +440,11 @@ msgstr ""
 msgid "Most recent"
 msgstr ""
 
-#: ./tupcenter.py:26
+#: ./tupcenter.py:37
 msgid "Name of the Template Center"
 msgstr ""
 
-#: ./tupcenter.py:39
+#: ./tupcenter.py:50
 msgid "Name of the Template product, e.g. only Templates or LibreOffice Templates"
 msgstr ""
 
@@ -513,7 +522,7 @@ msgstr ""
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr ""
 
-#: ./tupcenter.py:140
+#: ./tupcenter.py:160
 msgid "Please fill in the install instructions"
 msgstr ""
 
@@ -760,7 +769,7 @@ msgstr ""
 msgid "Template Center"
 msgstr ""
 
-#: ./tupcenter.py:139
+#: ./tupcenter.py:159
 msgid "Template Installation Instructions"
 msgstr ""
 
@@ -768,7 +777,7 @@ msgstr ""
 msgid "Template Linked Release"
 msgstr ""
 
-#: ./tupcenter.py:38
+#: ./tupcenter.py:49
 msgid "Template Product Name"
 msgstr ""
 
@@ -788,11 +797,11 @@ msgstr ""
 msgid "Templates"
 msgstr ""
 
-#: ./tupcenter.py:157
+#: ./tupcenter.py:182
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:172
+#: ./tupcenter.py:197
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
@@ -835,7 +844,7 @@ msgstr ""
 msgid "The owner can edit the template project"
 msgstr ""
 
-#: ./tupproject.py:245
+#: ./tupproject.py:277
 msgid "The project title is already in use"
 msgstr ""
 
@@ -886,11 +895,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ./tupcenter.py:151
+#: ./tupcenter.py:176
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:165
+#: ./tupcenter.py:190
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
