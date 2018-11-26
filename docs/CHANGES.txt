@@ -6,6 +6,10 @@ Changelog
 
 - Move the messaging about the creation of new projects to
   the tupprojects module [Andreas Mantke]
+- Changed the email address for notifications about projects and (linked) releases
+  from hard coded to variable and added a validation for the email address [Andreas Mantke]
+- Improve the templates project workflow [Andreas Mantke]
+- Update German localization [Andreas Mantke]
 
 
 0.20 (2018-10-25)
