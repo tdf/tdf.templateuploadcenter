@@ -3,7 +3,6 @@ from plone import api
 from plone.app.layout.viewlets import ViewletBase
 from plone.app.multilingual.dx import directives
 from plone.app.textfield import RichText
-from plone.directives import form
 from plone.supermodel import model
 from Products.CMFPlone.browser.search import quote_chars
 from Products.Five import BrowserView
@@ -13,6 +12,7 @@ from tdf.templateuploadcenter.tupproject import ITUpProject
 from zope import schema
 import re
 from zope.interface import Invalid
+from plone.supermodel.directives import primary
 
 
 MULTISPACE = u'\u3000'.encode('utf-8')
@@ -50,7 +50,7 @@ class ITUpCenter(model.Schema):
         description=_(u"Name of the Template product, e.g. only Templates or LibreOffice Templates"),
     )
 
-    form.fieldset('categories_et_all',
+    model.fieldset('categories_et_all',
                   label=u"Categories et all",
                   fields=['available_category', 'available_licenses',
                           'available_versions', 'available_platforms'])
@@ -150,24 +150,24 @@ class ITUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
-    form.fieldset('instructions',
+    model.fieldset('instructions',
                   label=u'Instructions',
                   fields=['install_instructions', 'reporting_bugs', ])
 
-    form.primary('install_instructions')
+    primary('install_instructions')
     install_instructions = RichText(
         title=_(u"Template Installation Instructions"),
         description=_(u"Please fill in the install instructions"),
         required=False
     )
 
-    form.primary('reporting_bugs')
+    primary('reporting_bugs')
     reporting_bugs = RichText(
         title=_(u"Instruction how to report Bugs"),
         required=False
     )
 
-    form.fieldset('disclaimer',
+    model.fieldset('disclaimer',
                   label=u'Legal Disclaimer',
                   fields=['title_legaldisclaimer', 'legal_disclaimer',
                           'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
@@ -192,7 +192,7 @@ class ITUpCenter(model.Schema):
         required=False
     )
 
-    form.primary('legal_downloaddisclaimer')
+    primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
         title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
         description=_(u"Enter any legal disclaimer and limitations for downloads that should "
@@ -201,7 +201,7 @@ class ITUpCenter(model.Schema):
         required=False
     )
 
-    form.primary('information_oldversions')
+    primary('information_oldversions')
     information_oldversions = RichText(
         title=_(u"Information About Search For Old LibreOffice Versions"),
         description = _(u"Enter an information about the search for older "
@@ -210,7 +210,7 @@ class ITUpCenter(model.Schema):
         required=False
     )
 
-    form.fieldset('contactadresses',
+    model.fieldset('contactadresses',
                   label=u'Special Email Adresses',
                   fields=['contactForCenter'])
 
