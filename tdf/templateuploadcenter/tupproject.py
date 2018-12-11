@@ -17,10 +17,11 @@ from tdf.templateuploadcenter.tuprelease import ITUpRelease
 from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
-from plone.directives import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from Products.validation import V_REQUIRED
 from tdf.templateuploadcenter import quote_chars
+from plone.supermodel.directives import primary
+from plone.autoform import directives
 
 
 checkfileextension = re.compile(
@@ -95,14 +96,14 @@ class ITUpProject(model.Schema):
     )
 
     dexteritytextindexer.searchable('details')
-    form.primary('details')
+    primary('details')
     details = RichText(
         title=_(u"Full Project Description"),
         required=False
     )
 
     dexteritytextindexer.searchable('category_choice')
-    form.widget(category_choice=CheckBoxFieldWidget)
+    directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
         description=_(u"Please select the appropriate categories (one or more) for your project."),
