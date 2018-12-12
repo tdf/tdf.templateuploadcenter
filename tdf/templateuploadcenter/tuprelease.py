@@ -16,7 +16,6 @@ from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
 
-from plone.directives import form
 from zope import schema
 
 from zope.interface import provider
@@ -26,6 +25,8 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone import api
 import re
+from plone.supermodel.directives import primary
+from plone.autoform import directives
 
 
 checkfileextension = re.compile(
@@ -122,20 +123,20 @@ class ITUpRelease(model.Schema):
         title=_(u"Release Summary"),
     )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
         title=_(u"Full Release Description"),
         required=False
     )
 
-    form.primary('changelog')
+    primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
         required=False,
     )
 
-    form.widget(licenses_choice=CheckBoxFieldWidget)
+    directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
         description=_(u"Please mark one or more licenses you publish your release."),
@@ -143,7 +144,7 @@ class ITUpRelease(model.Schema):
         required=True,
     )
 
-    form.widget(compatibility_choice=CheckBoxFieldWidget)
+    directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
         description=_(u"Please mark one or more program versions with which this release is compatible with."),
@@ -198,7 +199,7 @@ class ITUpRelease(model.Schema):
         constraint=validatefileextension
     )
 
-    form.widget(platform_choice=CheckBoxFieldWidget)
+    directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
         title=_(u"First uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -207,7 +208,7 @@ class ITUpRelease(model.Schema):
     )
 
     form.mode(information_further_file_uploads='display')
-    model.primary('information_further_file_uploads')
+    primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title=_(u"Further File Uploads for this Release"),
         description=_(u"If you want to upload more files for this release, e.g. because there are files for "
@@ -216,7 +217,7 @@ class ITUpRelease(model.Schema):
         required=False
      )
 
-    form.fieldset('fileset1',
+    model.fieldset('fileset1',
                   label=u"File Upload 1",
                   fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
                   )
@@ -228,7 +229,7 @@ class ITUpRelease(model.Schema):
         constraint=validatefileextension
     )
 
-    form.widget(platform_choice1=CheckBoxFieldWidget)
+    directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
         title=_(u"Second uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -243,7 +244,7 @@ class ITUpRelease(model.Schema):
         constraint=validatefileextension
     )
 
-    form.widget(platform_choice2=CheckBoxFieldWidget)
+    directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
         title=_(u"Third uploaded file is compatible with the Platform(s))"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -258,7 +259,7 @@ class ITUpRelease(model.Schema):
         constraint=validatefileextension
     )
 
-    form.widget(platform_choice3=CheckBoxFieldWidget)
+    directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
         title=_(u"Fourth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -266,7 +267,7 @@ class ITUpRelease(model.Schema):
         required=False,
     )
 
-    form.fieldset('fileset2',
+    model.fieldset('fileset2',
                   label=u"File Upload 2",
                   fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
                   )
@@ -278,7 +279,7 @@ class ITUpRelease(model.Schema):
         constraint=validatefileextension
     )
 
-    form.widget(platform_choice4=CheckBoxFieldWidget)
+    directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
         title=_(u"Fifth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -293,7 +294,7 @@ class ITUpRelease(model.Schema):
         constraint=validatefileextension
     )
 
-    form.widget(platform_choice5=CheckBoxFieldWidget)
+    directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
         title=_(u"Sixth uploaded file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
