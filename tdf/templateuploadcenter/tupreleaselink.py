@@ -8,16 +8,12 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import directlyProvides
 from plone.indexer.decorator import indexer
-
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
 from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
-
-from plone.directives import form
 from zope import schema
-
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
@@ -25,6 +21,8 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone import api
 import re
+from plone.supermodel.directives import primary
+from plone.autoform import directives
 
 
 checkfileextension = re.compile(
@@ -121,13 +119,13 @@ class ITUpReleaseLink(model.Schema):
         title=_(u"Release Summary"),
     )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
         title=_(u"Full Release Description"),
         required=False
     )
 
-    form.primary('changelog')
+    primary('changelog')
     changelog = RichText(
         title=_(u"Changelog"),
         description=_(u"A detailed log of what has changed since the previous release."),
@@ -211,7 +209,7 @@ class ITUpReleaseLink(model.Schema):
     )
 
     form.mode(information_further_file_uploads='display')
-    form.primary('information_further_file_uploads')
+    primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title=_(u"Further linked files for this Release"),
         description=_(u"If you want to link more files for this release, e.g. because there are files for "
@@ -220,35 +218,35 @@ class ITUpReleaseLink(model.Schema):
         required=False
      )
 
-    form.fieldset('fileset1',
+    model.fieldset('fileset1',
                   label=u"Second linked file",
                   fields=['link_to_file1',
                           'external_file_size1',
                           'platform_choice1']
                   )
 
-    form.fieldset('fileset2',
+    model.fieldset('fileset2',
                   label=u"Third linked file",
                   fields=['link_to_file2',
                           'external_file_size2',
                           'platform_choice2']
                   )
 
-    form.fieldset('fileset3',
+    model.fieldset('fileset3',
                   label=u"Fourth linked file",
                   fields=['link_to_file3',
                           'external_file_size3',
                           'platform_choice3']
                   )
 
-    form.fieldset('fileset4',
+    model.fieldset('fileset4',
                   label=u"Fifth linked file",
                   fields=['link_to_file4',
                           'external_file_size4',
                           'platform_choice4']
                   )
 
-    form.fieldset('fileset5',
+    model.fieldset('fileset5',
                   label=u"Sixth linked file",
                   fields=['link_to_file5',
                           'external_file_size5',
