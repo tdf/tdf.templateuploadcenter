@@ -229,7 +229,7 @@ div.eupcenterreleaseinstallinstructions h3
 
 table.tupcenterprojecttable
 {
-    border:true;
+    border: 1px solid;
 }
 
 table.tupcenterprojecttable thead
