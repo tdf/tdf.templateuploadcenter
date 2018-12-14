@@ -23,15 +23,14 @@ from tdf.templateuploadcenter import quote_chars
 from plone.supermodel.directives import primary
 from plone.autoform import directives
 
-
 checkfileextension = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
+
 
 def validateImageextension(value):
     if not checkfileextension(value.filename):
         raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
     return True
-
 
 
 def vocabCategories(context):
@@ -52,6 +51,8 @@ def vocabCategories(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabCategories, IContextSourceBinder)
 
 
@@ -81,7 +82,6 @@ class MissingCategory(Invalid):
 
 
 class ITUpProject(model.Schema):
-
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Title"),
@@ -159,7 +159,7 @@ def notifyProjectManager(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailsender = str(self.__parent__.contactForCenter)
     else:
-        mailsender ='templates@libreoffice.org'
+        mailsender = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailsender),
@@ -172,26 +172,26 @@ def notifyProjectManagerReleaseAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='templates@libreoffice.org'
+        mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
         subject=(u"Your Project {}: new Release added").format(self.title),
         body=(u"A new release was added to your project: '{}'").format(self.title),
-         )
+    )
 
 
 def notifyProjectManagerReleaseLinkedAdd(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='templates@libreoffice.org'
+        mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
         subject=(u"Your Project {}: new linked Release added").format(self.title),
         body=(u"A new linked release was added to your project: '{}'").format(self.title),
-         )
+    )
 
 
 def notifyAboutNewReviewlistentry(self, event):
@@ -200,7 +200,7 @@ def notifyAboutNewReviewlistentry(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='templates@libreoffice.org'
+        mailrecipient = 'templates@libreoffice.org'
     if state == "pending":
         api.portal.send_email(
             recipient=mailrecipient,
@@ -212,13 +212,14 @@ def notifyAboutNewReviewlistentry(self, event):
                  "The Admin of the Website"
         )
 
+
 def textmodified_templateproject(self, event):
     portal = api.portal.get()
     state = api.content.get_state(self)
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='templates@libreoffice.org'
+        mailrecipient = 'templates@libreoffice.org'
     if state == "published":
         api.portal.send_email(
             recipient=mailrecipient,
@@ -227,14 +228,14 @@ def textmodified_templateproject(self, event):
             body=(u"The content of the project {} has changed. Here you get the text of the "
                   u"description field of the project: \n'{}\n\nand this is the text of the "
                   u"details field:\n{}'").format(self.title, self.description, self.details.output),
-    )
+        )
 
 
 def notifyAboutNewProject(self, event):
     if (self.__parent__.contactForCenter) is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
-        mailrecipient ='templates@libreoffice.org'
+        mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=mailrecipient,
         subject=(u"A Project with the title {} was added").format(self.title),
@@ -243,7 +244,6 @@ def notifyAboutNewProject(self, event):
 
 
 def getLatestRelease(self):
-
     res = None
     catalog = api.portal.get_tool(name='portal_catalog')
     res = catalog.searchResults(
@@ -339,7 +339,7 @@ class TUpProjectView(DefaultView):
         res = catalog.searchResults(
             portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
-            review_state=('alpha','beta','release-candidate'),
+            review_state=('alpha', 'beta', 'release-candidate'),
             sort_on='effective',
             sort_order='reverse')
 

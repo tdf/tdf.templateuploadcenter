@@ -24,13 +24,14 @@ import re
 from plone.supermodel.directives import primary
 from plone.autoform import directives
 
-
 checkfileextension = re.compile(
     r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
 
+
 def validatelinkedfileextension(value):
     if not checkfileextension(value):
-        raise Invalid(u'You could only link to an URL (a file) that is a LibreOffice template file with a proper file extension.')
+        raise Invalid(
+            u'You could only link to an URL (a file) that is a LibreOffice template file with a proper file extension.')
     return True
 
 
@@ -42,6 +43,8 @@ def vocabAvailLicenses(context):
     for value in license_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
 
@@ -53,6 +56,8 @@ def vocabAvailVersions(context):
     for value in versions_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
 
@@ -64,13 +69,14 @@ def vocabAvailPlatforms(context):
     for value in platforms_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
-directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
+
+directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
      SimpleTerm(value=1, title=_(u'Yes')), ]
-    )
+)
 
 
 @provider(IContextAwareDefaultFactory)
@@ -100,7 +106,6 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class ITUpReleaseLink(model.Schema):
-
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
@@ -216,42 +221,42 @@ class ITUpReleaseLink(model.Schema):
                       u"other operating systems, you'll find the fields to link this files on the "
                       u"next registers, e.g. 'Second linked file'."),
         required=False
-     )
+    )
 
     model.fieldset('fileset1',
-                  label=u"Second linked file",
-                  fields=['link_to_file1',
-                          'external_file_size1',
-                          'platform_choice1']
-                  )
+                   label=u"Second linked file",
+                   fields=['link_to_file1',
+                           'external_file_size1',
+                           'platform_choice1']
+                   )
 
     model.fieldset('fileset2',
-                  label=u"Third linked file",
-                  fields=['link_to_file2',
-                          'external_file_size2',
-                          'platform_choice2']
-                  )
+                   label=u"Third linked file",
+                   fields=['link_to_file2',
+                           'external_file_size2',
+                           'platform_choice2']
+                   )
 
     model.fieldset('fileset3',
-                  label=u"Fourth linked file",
-                  fields=['link_to_file3',
-                          'external_file_size3',
-                          'platform_choice3']
-                  )
+                   label=u"Fourth linked file",
+                   fields=['link_to_file3',
+                           'external_file_size3',
+                           'platform_choice3']
+                   )
 
     model.fieldset('fileset4',
-                  label=u"Fifth linked file",
-                  fields=['link_to_file4',
-                          'external_file_size4',
-                          'platform_choice4']
-                  )
+                   label=u"Fifth linked file",
+                   fields=['link_to_file4',
+                           'external_file_size4',
+                           'platform_choice4']
+                   )
 
     model.fieldset('fileset5',
-                  label=u"Sixth linked file",
-                  fields=['link_to_file5',
-                          'external_file_size5',
-                          'platform_choice5']
-                  )
+                   label=u"Sixth linked file",
+                   fields=['link_to_file5',
+                           'external_file_size5',
+                           'platform_choice5']
+                   )
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
@@ -443,15 +448,14 @@ class TUpReleaseLinkView(DefaultView):
 
     def releaseLicense(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
+        path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
-        licenses= idx_data.get('releaseLicense')
-        return(r for r in licenses)
-
+        licenses = idx_data.get('releaseLicense')
+        return (r for r in licenses)
 
     def linkedreleaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
-        idx_data= catalog.getIndexDataForUID(path)
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
-        return(r for r in compatibility)
+        return (r for r in compatibility)

@@ -28,9 +28,9 @@ import re
 from plone.supermodel.directives import primary
 from plone.autoform import directives
 
-
 checkfileextension = re.compile(
     r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
+
 
 def validatefileextension(value):
     if not checkfileextension(value.filename):
@@ -46,6 +46,8 @@ def vocabAvailLicenses(context):
     for value in license_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
 
@@ -57,6 +59,8 @@ def vocabAvailVersions(context):
     for value in versions_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
 
@@ -68,13 +72,14 @@ def vocabAvailPlatforms(context):
     for value in platforms_list:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
     return SimpleVocabulary(terms)
-directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
+
+directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
      SimpleTerm(value=1, title=_(u'Yes')), ]
-    )
+)
 
 
 @provider(IContextAwareDefaultFactory)
@@ -104,7 +109,6 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class ITUpRelease(model.Schema):
-
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
@@ -215,12 +219,12 @@ class ITUpRelease(model.Schema):
                       u"other operating systems, you'll find the upload fields on the "
                       u"register 'File Upload 1' and 'File Upload 2'."),
         required=False
-     )
+    )
 
     model.fieldset('fileset1',
-                  label=u"File Upload 1",
-                  fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
-                  )
+                   label=u"File Upload 1",
+                   fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
+                   )
 
     file1 = NamedBlobFile(
         title=_(u"The second file you want to upload (this is optional)"),
@@ -268,9 +272,9 @@ class ITUpRelease(model.Schema):
     )
 
     model.fieldset('fileset2',
-                  label=u"File Upload 2",
-                  fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
-                  )
+                   label=u"File Upload 2",
+                   fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
+                   )
 
     file4 = NamedBlobFile(
         title=_(u"The fifth file you want to upload (this is optional)"),
@@ -359,7 +363,6 @@ def update_project_releases_compat_versions(tuprelease, event):
         tuprelease.aq_parent).set(list(set(result)))
 
 
-
 class ValidateTUpReleaseUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of release titles.
 
@@ -406,14 +409,14 @@ class TUpReleaseView(DefaultView):
 
     def releaseLicense(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
+        path = "/".join(self.context.getPhysicalPath())
         idx_data = catalog.getIndexDataForUID(path)
-        licenses= idx_data.get('releaseLicense')
-        return(r for r in licenses)
+        licenses = idx_data.get('releaseLicense')
+        return (r for r in licenses)
 
     def releaseCompatibility(self):
         catalog = api.portal.get_tool(name='portal_catalog')
-        path="/".join(self.context.getPhysicalPath())
-        idx_data= catalog.getIndexDataForUID(path)
+        path = "/".join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
-        return(r for r in compatibility)
+        return (r for r in compatibility)

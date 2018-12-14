@@ -14,10 +14,8 @@ import re
 from zope.interface import Invalid
 from plone.supermodel.directives import primary
 
-
 MULTISPACE = u'\u3000'.encode('utf-8')
 BAD_CHARS = ('?', '-', '+', '*', MULTISPACE)
-
 
 checkEmail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
@@ -28,8 +26,8 @@ def validateEmail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
-class ITUpCenter(model.Schema):
 
+class ITUpCenter(model.Schema):
     """ An Template Upload Center for LibreOffice templates.
     """
 
@@ -51,9 +49,9 @@ class ITUpCenter(model.Schema):
     )
 
     model.fieldset('categories_et_all',
-                  label=u"Categories et all",
-                  fields=['available_category', 'available_licenses',
-                          'available_versions', 'available_platforms'])
+                   label=u"Categories et all",
+                   fields=['available_category', 'available_licenses',
+                           'available_versions', 'available_platforms'])
 
     available_category = schema.List(title=_(u"Available Categories"),
                                      default=['Accounting',
@@ -151,8 +149,8 @@ class ITUpCenter(model.Schema):
                                       value_type=schema.TextLine())
 
     model.fieldset('instructions',
-                  label=u'Instructions',
-                  fields=['install_instructions', 'reporting_bugs', ])
+                   label=u'Instructions',
+                   fields=['install_instructions', 'reporting_bugs', ])
 
     primary('install_instructions')
     install_instructions = RichText(
@@ -168,9 +166,9 @@ class ITUpCenter(model.Schema):
     )
 
     model.fieldset('disclaimer',
-                  label=u'Legal Disclaimer',
-                  fields=['title_legaldisclaimer', 'legal_disclaimer',
-                          'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
+                   label=u'Legal Disclaimer',
+                   fields=['title_legaldisclaimer', 'legal_disclaimer',
+                           'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
 
     title_legaldisclaimer = schema.TextLine(
         title=_(u"Title for Legal Disclaimer and Limitations"),
@@ -204,21 +202,21 @@ class ITUpCenter(model.Schema):
     primary('information_oldversions')
     information_oldversions = RichText(
         title=_(u"Information About Search For Old LibreOffice Versions"),
-        description = _(u"Enter an information about the search for older "
-                        u"versions of LibreOffice, if they are not on the "
-                        u"versions list (compatibility) anymore."),
+        description=_(u"Enter an information about the search for older "
+                      u"versions of LibreOffice, if they are not on the "
+                      u"versions list (compatibility) anymore."),
         required=False
     )
 
     model.fieldset('contactadresses',
-                  label=u'Special Email Adresses',
-                  fields=['contactForCenter'])
+                   label=u'Special Email Adresses',
+                   fields=['contactForCenter'])
 
-    contactForCenter =schema.ASCIILine(
+    contactForCenter = schema.ASCIILine(
         title=_(u"EMail address for communication with the template center manager and reviewer"),
         description=_(u"Enter an email address for the communication with template center manager and reviewer"),
-        default= 'templates@libreoffice.org',
-        constraint= validateEmail
+        default='templates@libreoffice.org',
+        constraint=validateEmail
     )
 
 
@@ -226,6 +224,7 @@ directives.languageindependent('available_category')
 directives.languageindependent('available_licenses')
 directives.languageindependent('available_versions')
 directives.languageindependent('available_platforms')
+
 
 # Views
 
@@ -273,20 +272,20 @@ class TUpCenterView(BrowserView):
         catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'positive_ratings'
         contentFilter = {
-                         'sort_on': sort_on,
-                         'sort_order': 'reverse',
-                         'review_state': 'published',
-                         'portal_type': 'tdf.templateuploadcenter.tupproject'}
+            'sort_on': sort_on,
+            'sort_order': 'reverse',
+            'review_state': 'published',
+            'portal_type': 'tdf.templateuploadcenter.tupproject'}
         return catalog(**contentFilter)
 
     def get_newest_products(self):
         self.catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'created'
         contentFilter = {
-                          'sort_on': sort_on,
-                          'sort_order': 'reverse',
-                          'review_state': 'published',
-                          'portal_type': 'tdf.templateuploadcenter.tupproject'}
+            'sort_on': sort_on,
+            'sort_order': 'reverse',
+            'review_state': 'published',
+            'portal_type': 'tdf.templateuploadcenter.tupproject'}
 
         results = self.catalog(**contentFilter)
 
