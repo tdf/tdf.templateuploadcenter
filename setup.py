@@ -31,7 +31,6 @@ setup(name='tdf.templateuploadcenter',
           # -*- Extra requirements: -*-
           'collective.dexteritytextindexer',
           'cioppino.twothumbs',
-          'plone.directives.form',
       ],
       entry_points="""
       # -*- Entry points: -*-
