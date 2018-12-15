@@ -4,8 +4,10 @@ Changelog
 0.22 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+- CSS fix [Andreas Mantke]
+- PEP8 fixes [Andreas Mantke]
+- Change over to supermodel.directives for primary fields and fieldsets [Andreas Mantke]
+- Change from plone.directives form.mode to plone.autoform directives.mode [Andreas Mantke]
 
 0.21 (2018-11-26)
 -----------------
