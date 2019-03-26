@@ -265,17 +265,21 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
 
     def validate(self, value):
         # Perform the standard validation first
+        from tdf.templateuploadcenter.tupsmallproject import ITUpSmallProject
         super(ValidateTUpProjectUniqueness, self).validate(value)
 
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
-            results = catalog({'Title': quote_chars(value),
-                               'object_provides': ITUpProject.__identifier__})
+            results1 = catalog({'Title': quote_chars(value),
+                                'object_provides': ITUpProject.__identifier__, })
+            results2 = catalog({'Title': quote_chars(value),
+                                'object_provides': ITUpSmallProject.__identifier__, })
+            results = results1 + results2
 
-            contextUUID = IUUID(self.context, None)
-            for result in results:
-                if result.UID != contextUUID:
-                    raise Invalid(_(u"The project title is already in use"))
+        contextUUID = IUUID(self.context, None)
+        for result in results:
+            if result.UID != contextUUID:
+                raise Invalid(_(u"The project title is already in use"))
 
 
 validator.WidgetValidatorDiscriminators(
