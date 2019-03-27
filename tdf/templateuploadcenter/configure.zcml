@@ -53,6 +53,14 @@
 
   <browser:page
       name="view"
+      for="tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject"
+      class="tdf.templateuploadcenter.tupsmallproject.TUpSmallProjectView"
+      template="tupsmallproject_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
       for="tdf.templateuploadcenter.tuprelease.ITUpRelease"
       class="tdf.templateuploadcenter.tuprelease.TUpReleaseView"
       template="tuprelease_templates/view.pt"
