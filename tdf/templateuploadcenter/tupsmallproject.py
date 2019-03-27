@@ -20,6 +20,8 @@ from Products.validation import V_REQUIRED
 from plone.dexterity.browser.view import DefaultView
 from zope.security import checkPermission
 from plone.indexer.decorator import indexer
+from plone.supermodel.directives import primary
+from plone.app.textfield import RichText
 
 
 checkfileextensionimage = re.compile(
@@ -213,7 +215,7 @@ class ITUpSmallProject(model.Schema):
     model.fieldset('legal',
                    label=u"Legal",
                    fields=['licenses_choice', 'title_declaration_legal', 'declaration_legal',
-                           'accept_legal_declaration', 'source_code_inside', 'link_to_source' ]
+                           'accept_legal_declaration' ]
                    )
 
 
