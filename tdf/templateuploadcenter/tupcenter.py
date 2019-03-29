@@ -258,7 +258,8 @@ class TUpCenterView(BrowserView):
         context = aq_inner(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
 
-        return len(catalog(portal_type='tdf.templateuploadcenter.tupproject'))
+        return len(catalog(portal_type=('tdf.templateuploadcenter.tupproject', 'tdf.templateuploaccenter.tupsmallproject'),
+                           review_state = 'published'))
 
     def tuprelease_count(self):
         """Return number of downloadable files
@@ -275,7 +276,8 @@ class TUpCenterView(BrowserView):
             'sort_on': sort_on,
             'sort_order': 'reverse',
             'review_state': 'published',
-            'portal_type': 'tdf.templateuploadcenter.tupproject'}
+            'portal_type': ('tdf.templateuploadcenter.tupproject',
+                           'tdf.templateuploadcenter.tupsmallproject')}
         return catalog(**contentFilter)
 
     def get_newest_products(self):
@@ -285,7 +287,9 @@ class TUpCenterView(BrowserView):
             'sort_on': sort_on,
             'sort_order': 'reverse',
             'review_state': 'published',
-            'portal_type': 'tdf.templateuploadcenter.tupproject'}
+            'portal_type': ('tdf.templateuploadcenter.tupproject',
+                            'tdf.templateuploadcenter.tupsmallproject')
+        }
 
         results = self.catalog(**contentFilter)
 
@@ -300,7 +304,8 @@ class TUpCenterView(BrowserView):
         contentFilter = {'sort_on': sort_on,
                          'SearchableText': SearchableText,
                          'sort_order': 'reverse',
-                         'portal_type': 'tdf.templateuploadcenter.tupproject'}
+                         'portal_type': ('tdf.templateuploadcenter.tupproject',
+                                         'tdf.templateuploadcenter.tupsmallproject')}
         if version != 'any':
             # We ask to the indexed value on the project (aggregated from
             # releases on creation/modify/delete of releases)
@@ -332,7 +337,8 @@ class TUpCenterOwnProjectsViewlet(ViewletBase):
         current_user = api.user.get_current()
         pc = api.portal.get_tool('portal_catalog')
         return pc.portal_catalog(
-            portal_type='tdf.templateuploadcenter.tupproject',
+            portal_type=('tdf.templateuploadcenter.tupproject',
+                         'tdf.templateuploadcenter.tupsmallproject'),
             sort_on='Date',
             sort_order='reverse',
             Creator=str(current_user))
