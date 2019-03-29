@@ -147,6 +147,8 @@
 
     <adapter name="release_number" factory=".tuprelease.release_number"/>
     <adapter name="release_number" factory=".tupreleaselink.release_number"/>
+    <adapter name="release_number" factory=".tupsmallproject.release_number" />
+    <adapter name="releases_compat_versions" factory=".tupsmallproject.project_compat_versions" />
 
   <adapter name="releases_compat_versions" factory=".adapter.releases_compat_versions"/>
 

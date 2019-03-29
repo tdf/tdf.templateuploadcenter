@@ -399,6 +399,11 @@ class ITUpSmallProject(model.Schema):
 def release_number(context, **kw):
     return context.releasenumber
 
+@indexer(ITUpSmallProject)
+def project_compat_versions(context, **kw):
+    return context.compatibility_choice
+
+
 
 def notifyProjectManager(self, event):
     state = api.content.get_state(self)
