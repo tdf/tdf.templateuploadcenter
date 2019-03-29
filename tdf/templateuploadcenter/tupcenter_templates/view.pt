@@ -226,10 +226,16 @@
                             <span tal:content="view/tupproject_count" /> <span i18n:translate="">project(s) with</span>
                             <span tal:content="view/tuprelease_count" /> <span i18n:translate="">release(s) available.</span>
                     </p>
+                    <p>
                     <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject">
                         <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">Submit your</span>
-                        <span tal:content="context/product_title | string:template_project" />
+                        <span tal:content="context/product_title | string:template_project" /> Project
+                    </a><br /> or <br />
+                    <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupsmallproject">
+                        <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate=""> Submit easy and fast a small </span>
+                        <span tal:content="context/product_title | string:template_project" /> Project
                     </a>
+                    </p>
                 </div>
                 <div tal:condition="not: isAnon" tal:replace="structure provider:plone.abovecontenttitle" />
                 <div id="mostrecent">
