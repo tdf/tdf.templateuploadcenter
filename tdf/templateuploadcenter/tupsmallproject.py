@@ -525,3 +525,6 @@ class TUpSmallProjectView(DefaultView):
         idx_data = catalog.getIndexDataForUID(path)
         category = idx_data.get('getCategories')
         return(r for r in category)
+
+    def latest_release_date(self):
+        return None
