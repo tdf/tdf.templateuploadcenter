@@ -267,7 +267,7 @@ class ITUpSmallProject(model.Schema):
     )
 
     screenshot = NamedBlobImage(
-        title=_(u"Screenshot of the Extension"),
+        title=_(u"Screenshot of the Tempate"),
         description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
                       u"format 'png', 'gif' or 'jpg'."),
         required=True,
@@ -276,7 +276,7 @@ class ITUpSmallProject(model.Schema):
 
     releasenumber = schema.TextLine(
         title=_(u"Versions Number"),
-        description=_(u"Version Number of the Extension File (up to twelf chars) which you upload in this project."),
+        description=_(u"Version Number of the Template File (up to twelf chars) which you upload in this project."),
         default=_(u"1.0"),
         max_length=12,
     )
