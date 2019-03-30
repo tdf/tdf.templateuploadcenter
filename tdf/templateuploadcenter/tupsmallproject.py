@@ -28,12 +28,19 @@ from Products.validation import V_REQUIRED
 checkfileextensionimage = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
 
-checkfileextension = re.compile(
-    r"^.*\.(oxt|OXT)").match
 
 def validateImageextension(value):
     if not checkfileextensionimage(value.filename):
         raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
+    return True
+
+checkfileextension = re.compile(
+    r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
+
+
+def validatefileextension(value):
+    if not checkfileextension(value.filename):
+        raise Invalid(u'You could only upload LibreOffice template files with a proper file extension.')
     return True
 
 
