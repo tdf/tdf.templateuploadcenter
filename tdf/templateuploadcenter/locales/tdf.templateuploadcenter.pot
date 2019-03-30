@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-30 11:56+0000\n"
+"POT-Creation-Date: 2019-03-30 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -754,7 +754,7 @@ msgid "Screenshot"
 msgstr ""
 
 #: ./tupsmallproject.py:270
-msgid "Screenshot of the Extension"
+msgid "Screenshot of the Tempate"
 msgstr ""
 
 #: ./tupproject.py:143
@@ -1018,7 +1018,7 @@ msgid "Unreleased"
 msgstr ""
 
 #: ./tupsmallproject.py:279
-msgid "Version Number of the Extension File (up to twelf chars) which you upload in this project."
+msgid "Version Number of the Template File (up to twelf chars) which you upload in this project."
 msgstr ""
 
 #: ./tupsmallproject.py:278
