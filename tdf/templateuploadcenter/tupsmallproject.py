@@ -22,6 +22,7 @@ from zope.security import checkPermission
 from plone.indexer.decorator import indexer
 from plone.supermodel.directives import primary
 from plone.app.textfield import RichText
+from Products.validation import V_REQUIRED
 
 
 checkfileextensionimage = re.compile(
