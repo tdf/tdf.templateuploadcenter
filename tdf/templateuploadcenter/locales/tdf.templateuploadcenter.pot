@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-12-15 19:20+0000\n"
+"POT-Creation-Date: 2019-03-30 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 
 #: ./tuprelease.py:162
 #: ./tupreleaselink.py:158
+#: ./tupsmallproject.py:234
 msgid ""
 msgstr ""
 
@@ -32,7 +33,12 @@ msgstr ""
 
 #: ./tuprelease.py:122
 #: ./tupreleaselink.py:119
+#: ./tupsmallproject.py:280
 msgid "1.0"
+msgstr ""
+
+#: ./profiles/default/types/tdf.templateuploadcenter.tupsmallproject.xml
+msgid "A Small template project"
 msgstr ""
 
 #: ./tuprelease.py:139
@@ -56,12 +62,13 @@ msgstr ""
 msgid "A template release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:288
+#: ./tupcenter_templates/view.pt:294
 msgid "About"
 msgstr ""
 
 #: ./tuprelease.py:176
 #: ./tupreleaselink.py:171
+#: ./tupsmallproject.py:247
 msgid "Accept the above legal disclaimer"
 msgstr ""
 
@@ -69,11 +76,15 @@ msgstr ""
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
+#: ./tupsmallproject.py:271
+msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
+msgstr ""
+
 #: ./tupproject.py:144
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr ""
 
-#: ./tupproject_templates/view.pt:361
+#: ./tupproject_templates/view.pt:366
 msgid "All Releases"
 msgstr ""
 
@@ -116,15 +127,15 @@ msgstr ""
 msgid "Beta Release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:264
+#: ./tupcenter_templates/view.pt:270
 msgid "Browse"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:267
+#: ./tupcenter_templates/view.pt:273
 msgid "Browse Templates by Category"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:92
+#: ./tupproject_templates/view.pt:93
 msgid "Category/Categories"
 msgstr ""
 
@@ -145,10 +156,11 @@ msgid "Changelog"
 msgstr ""
 
 #: ./tupproject.py:108
+#: ./tupsmallproject.py:256
 msgid "Choose your categories"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:369
+#: ./tupproject_templates/view.pt:374
 #: ./tuprelease_templates/view.pt:66
 #: ./tupreleaselink_templates/view.pt:73
 msgid "Compatibility"
@@ -156,6 +168,7 @@ msgstr ""
 
 #: ./tuprelease.py:153
 #: ./tupreleaselink.py:150
+#: ./tupsmallproject.py:286
 msgid "Compatible with versions of LibreOffice"
 msgstr ""
 
@@ -171,15 +184,15 @@ msgstr ""
 msgid "Contact email-address for the project."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:109
+#: ./tupproject_templates/view.pt:114
 msgid "Current Release"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:210
+#: ./tupproject_templates/view.pt:215
 msgid "Current release for the project"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:119
+#: ./tupproject_templates/view.pt:124
 msgid "Current unstable release for the project"
 msgstr ""
 
@@ -187,7 +200,7 @@ msgstr ""
 msgid "Currently there are"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:370
+#: ./tupproject_templates/view.pt:375
 msgid "Description"
 msgstr ""
 
@@ -235,7 +248,7 @@ msgstr ""
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:146
+#: ./tupproject_templates/view.pt:151
 #: ./tuprelease_templates/view.pt:87
 #: ./tupreleaselink_templates/view.pt:90
 msgid "File size:"
@@ -264,6 +277,7 @@ msgid "First linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tuprelease.py:208
+#: ./tupsmallproject.py:302
 msgid "First uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -276,6 +290,7 @@ msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tupproject.py:101
+#: ./tupsmallproject.py:208
 msgid "Full Project Description"
 msgstr ""
 
@@ -290,6 +305,14 @@ msgstr ""
 
 #: ./tupreleaselink.py:219
 msgid "Further linked files for this Release"
+msgstr ""
+
+#: ./tupsmallproject.py:330
+msgid "Here you could add an optional second file to your project, if the files support different platforms."
+msgstr ""
+
+#: ./tupsmallproject.py:354
+msgid "Here you could add an optional third file to your project, if the files support different platforms."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
@@ -325,7 +348,7 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:94
+#: ./tupproject_templates/view.pt:99
 msgid "Homepage of the Project"
 msgstr ""
 
@@ -358,11 +381,15 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
+#: ./tupsmallproject.py:184
+msgid "Information"
+msgstr ""
+
 #: ./tupcenter.py:204
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:280
+#: ./tupcenter_templates/view.pt:286
 #: ./tuprelease_templates/view.pt:178
 #: ./tupreleaselink_templates/view.pt:170
 msgid "Install Instructions"
@@ -374,6 +401,7 @@ msgstr ""
 
 #: ./tupcenter.py:26
 #: ./tupproject.py:71
+#: ./tupsmallproject.py:50
 msgid "Invalid email address"
 msgstr ""
 
@@ -384,10 +412,11 @@ msgstr ""
 
 #: ./tuprelease.py:108
 #: ./tupreleaselink.py:105
+#: ./tupsmallproject.py:178
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:116
+#: ./tupproject_templates/view.pt:121
 msgid "Latest Not Stable Release"
 msgstr ""
 
@@ -401,10 +430,11 @@ msgstr ""
 
 #: ./tuprelease.py:145
 #: ./tupreleaselink.py:142
+#: ./tupsmallproject.py:225
 msgid "License of the uploaded file"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:371
+#: ./tupproject_templates/view.pt:376
 #: ./tuprelease_templates/view.pt:60
 #: ./tupreleaselink_templates/view.pt:67
 msgid "License(s)"
@@ -416,7 +446,7 @@ msgid "Link to Source Code"
 msgstr ""
 
 #: ./tupproject.py:135
-#: ./tupproject_templates/view.pt:98
+#: ./tupproject_templates/view.pt:103
 msgid "Logo"
 msgstr ""
 
@@ -428,7 +458,7 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:241
+#: ./tupproject_templates/view.pt:246
 msgid "More about this release&hellip;"
 msgstr ""
 
@@ -436,7 +466,7 @@ msgstr ""
 msgid "Most popular ${product_title}"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:236
+#: ./tupcenter_templates/view.pt:242
 msgid "Most recent"
 msgstr ""
 
@@ -454,6 +484,7 @@ msgstr ""
 
 #: ./tuprelease.py:80
 #: ./tupreleaselink.py:77
+#: ./tupsmallproject.py:162
 msgid "No"
 msgstr ""
 
@@ -461,7 +492,7 @@ msgstr ""
 msgid "No results were found."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:111
+#: ./tupproject_templates/view.pt:116
 msgid "No stable release available yet."
 msgstr ""
 
@@ -474,11 +505,12 @@ msgstr ""
 msgid "Pending"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:368
+#: ./tupproject_templates/view.pt:373
 msgid "Platform(s)"
 msgstr ""
 
 #: ./tuprelease.py:322
+#: ./tupsmallproject.py:389
 msgid "Please accept the Legal Declaration about your Release and your Uploaded File"
 msgstr ""
 
@@ -499,11 +531,13 @@ msgid "Please choose a compatible platform for the linked file."
 msgstr ""
 
 #: ./tuprelease.py:335
+#: ./tupsmallproject.py:395
 msgid "Please choose a compatible platform for the uploaded file."
 msgstr ""
 
 #: ./tuprelease.py:312
 #: ./tupreleaselink.py:374
+#: ./tupsmallproject.py:378
 msgid "Please choose a license for your release."
 msgstr ""
 
@@ -512,9 +546,17 @@ msgstr ""
 msgid "Please choose one or more compatible product versions for your release"
 msgstr ""
 
+#: ./tupsmallproject.py:383
+msgid "Please choose one or more compatible product versions for your release."
+msgstr ""
+
 #: ./tuprelease.py:177
 #: ./tupreleaselink.py:172
 msgid "Please declare that you accept the above legal disclaimer"
+msgstr ""
+
+#: ./tupsmallproject.py:248
+msgid "Please declare that you accept the above legal disclaimer."
 msgstr ""
 
 #: ./tuprelease.py:195
@@ -534,12 +576,13 @@ msgstr ""
 msgid "Please insert a link to your extension file."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:36
+#: ./tupproject_templates/view.pt:37
 msgid "Please make sure the relevant project information has been entered and a release has been added to your project. Once you have finished that you could submit your project for approval (publication)."
 msgstr ""
 
 #: ./tuprelease.py:146
 #: ./tupreleaselink.py:143
+#: ./tupsmallproject.py:226
 msgid "Please mark one or more licenses you publish your release."
 msgstr ""
 
@@ -549,19 +592,23 @@ msgstr ""
 
 #: ./tuprelease.py:209
 #: ./tupreleaselink.py:211
+#: ./tupsmallproject.py:303
 msgid "Please mark one or more platforms with which the uploaded file is compatible."
 msgstr ""
 
 #: ./tuprelease.py:154
 #: ./tupreleaselink.py:151
+#: ./tupsmallproject.py:287
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr ""
 
 #: ./tupproject.py:109
+#: ./tupsmallproject.py:257
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr ""
 
 #: ./tuprelease.py:201
+#: ./tupsmallproject.py:295
 msgid "Please upload your file."
 msgstr ""
 
@@ -569,21 +616,23 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:90
+#: ./tupproject_templates/view.pt:91
 msgid "Project Description"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:418
+#: ./tupproject_templates/view.pt:423
 #: ./tuprelease_templates/view.pt:151
 #: ./tupreleaselink_templates/view.pt:139
 msgid "Project Resources"
 msgstr ""
 
 #: ./tupproject.py:95
+#: ./tupsmallproject.py:202
 msgid "Project Summary"
 msgstr ""
 
 #: ./tupproject.py:88
+#: ./tupsmallproject.py:194
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr ""
 
@@ -659,7 +708,7 @@ msgstr ""
 msgid "Release-Candidate"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:219
+#: ./tupproject_templates/view.pt:224
 msgid "Released"
 msgstr ""
 
@@ -675,7 +724,7 @@ msgstr ""
 msgid "Reporting Extension-Bugs"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:284
+#: ./tupcenter_templates/view.pt:290
 msgid "Reporting Template-Bugs"
 msgstr ""
 
@@ -698,10 +747,14 @@ msgstr ""
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:429
+#: ./tupproject_templates/view.pt:434
 #: ./tuprelease_templates/view.pt:161
 #: ./tupreleaselink_templates/view.pt:154
 msgid "Screenshot"
+msgstr ""
+
+#: ./tupsmallproject.py:270
+msgid "Screenshot of the Extension"
 msgstr ""
 
 #: ./tupproject.py:143
@@ -716,11 +769,16 @@ msgstr ""
 msgid "Search ${product_title}"
 msgstr ""
 
+#: ./tupsmallproject.py:329
+msgid "Second Release File"
+msgstr ""
+
 #: ./tupreleaselink.py:277
 msgid "Second linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tuprelease.py:238
+#: ./tupsmallproject.py:336
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -741,8 +799,16 @@ msgstr ""
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
+#: ./profiles/default/types/tdf.templateuploadcenter.tupsmallproject.xml
+msgid "Small Template Project"
+msgstr ""
+
 #: ./tupcenter_templates/view.pt:134
 msgid "Sort On"
+msgstr ""
+
+#: ./tupcenter_templates/view.pt:235
+msgid "Submit easy and fast a small"
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
@@ -753,7 +819,7 @@ msgstr ""
 msgid "Submit new"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:230
+#: ./tupcenter_templates/view.pt:231
 msgid "Submit your"
 msgstr ""
 
@@ -789,7 +855,7 @@ msgstr ""
 msgid "Template Release"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:367
+#: ./tupproject_templates/view.pt:372
 msgid "Template Version"
 msgstr ""
 
@@ -810,6 +876,14 @@ msgstr ""
 msgid "The Computed Project Title"
 msgstr ""
 
+#: ./tupsmallproject.py:185
+msgid "The Dialog to create a new project consists of different register. Please go through this register and fill in the appropriate data for your project or choose one of the options that are provided. You could upload one or more files to your project on the  register 'File Upload' and 'Optional Further File Upload'."
+msgstr ""
+
+#: ./tupsmallproject.py:315
+msgid "The First File You Want To Upload"
+msgstr ""
+
 #: ./tupreleaselink.py:195
 msgid "The Link to the file of the release"
 msgstr ""
@@ -825,6 +899,10 @@ msgstr ""
 
 #: ./tuprelease.py:200
 msgid "The first file you want to upload"
+msgstr ""
+
+#: ./tupsmallproject.py:294
+msgid "The first file you want to upload."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
@@ -844,8 +922,12 @@ msgstr ""
 msgid "The owner can edit the template project"
 msgstr ""
 
-#: ./tupproject.py:278
+#: ./tupproject.py:287
 msgid "The project title is already in use"
+msgstr ""
+
+#: ./tupsmallproject.py:496
+msgid "The project title is already in use."
 msgstr ""
 
 #: ./tuprelease.py:396
@@ -859,6 +941,7 @@ msgid "The release title will be computed from the parent project title"
 msgstr ""
 
 #: ./tuprelease.py:230
+#: ./tupsmallproject.py:343
 msgid "The second file you want to upload (this is optional)"
 msgstr ""
 
@@ -876,6 +959,7 @@ msgid "The size of the external hosted file"
 msgstr ""
 
 #: ./tuprelease.py:245
+#: ./tupsmallproject.py:368
 msgid "The third file you want to upload (this is optional)"
 msgstr ""
 
@@ -883,15 +967,21 @@ msgstr ""
 msgid "These are your projects on this site:"
 msgstr ""
 
+#: ./tupsmallproject.py:353
+msgid "Third Release File"
+msgstr ""
+
 #: ./tupreleaselink.py:299
 msgid "Third linked file is compatible with the Platform(s)"
 msgstr ""
 
 #: ./tuprelease.py:253
+#: ./tupsmallproject.py:361
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr ""
 
 #: ./tupproject.py:87
+#: ./tupsmallproject.py:193
 msgid "Title"
 msgstr ""
 
@@ -927,6 +1017,14 @@ msgstr ""
 msgid "Unreleased"
 msgstr ""
 
+#: ./tupsmallproject.py:279
+msgid "Version Number of the Extension File (up to twelf chars) which you upload in this project."
+msgstr ""
+
+#: ./tupsmallproject.py:278
+msgid "Versions Number"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "Visible to everyone, editable by the owner."
 msgstr ""
@@ -937,6 +1035,7 @@ msgstr ""
 
 #: ./tuprelease.py:81
 #: ./tupreleaselink.py:78
+#: ./tupsmallproject.py:163
 msgid "Yes"
 msgstr ""
 
@@ -949,23 +1048,27 @@ msgstr ""
 msgid "You have not chosen a category for the project"
 msgstr ""
 
+#: ./tupsmallproject.py:316
+msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
+msgstr ""
+
 #: ./tupcenter_templates/own_project.pt:12
 msgid "Your Own Projects"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:57
+#: ./tupproject_templates/view.pt:58
 msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:44
+#: ./tupproject_templates/view.pt:45
 msgid "a Release to your"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:50
+#: ./tupproject_templates/view.pt:51
 msgid "a linked Release to your"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:265
+#: ./tupcenter_templates/view.pt:271
 msgid "by Category"
 msgstr ""
 
@@ -973,7 +1076,7 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ./tupproject_templates/view.pt:48
+#: ./tupproject_templates/view.pt:49
 msgid "or:"
 msgstr ""
 
@@ -998,7 +1101,7 @@ msgstr ""
 msgid "release(s) available."
 msgstr ""
 
-#: ./tupproject_templates/view.pt:127
+#: ./tupproject_templates/view.pt:132
 msgid "tested with:"
 msgstr ""
 
