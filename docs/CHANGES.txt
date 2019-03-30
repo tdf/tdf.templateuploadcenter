@@ -4,8 +4,12 @@ Changelog
 0.23 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+- Add a new module for small templates projects [Andreas Mantke]
+- New function to search and display categories for template
+  projects and small template projects [Andreas Mantke]
+- CSS fix [Andreas Mantke]
+- Change listing of categories, licenses and compatility to a
+  portal_catalog search [Andreas Mantke]
 
 0.22 (2018-12-16)
 -----------------
