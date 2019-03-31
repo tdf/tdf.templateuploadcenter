@@ -82,6 +82,14 @@ class MissingCategory(Invalid):
 
 
 class ITUpProject(model.Schema):
+
+    directives.mode(information="display")
+    information = schema.Text(
+        title=_(u"Information"),
+        description=_(u"The Dialog to create a new project consists of different register. Please go through "
+                      u"these register and fill in the appropriate data for your project.")
+    )
+
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Title"),
@@ -100,6 +108,15 @@ class ITUpProject(model.Schema):
     details = RichText(
         title=_(u"Full Project Description"),
         required=False
+    )
+
+    model.fieldset('Categories',
+                   label = 'Category / Categories',
+                   fields = ['category_choice']
+    )
+    model.fieldset('logo_screenshot',
+                   label = 'Logo / Screenshot',
+                   fields = ['project_logo', 'screenshot']
     )
 
     dexteritytextindexer.searchable('category_choice')
