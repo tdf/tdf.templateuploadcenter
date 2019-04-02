@@ -5,6 +5,7 @@ Changelog
 -----------------
 
 - Structure the tupproject edit mode with register [Andreas Mantke]
+- Update German localization [Andreas Mantke]
 
 
 0.23 (2019-03-30)
