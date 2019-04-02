@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-30 20:36+0000\n"
+"POT-Creation-Date: 2019-04-01 19:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Accept the above legal disclaimer"
 msgstr ""
 
-#: ./tupproject.py:136
+#: ./tupproject.py:153
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
-#: ./tupproject.py:144
+#: ./tupproject.py:161
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: ./tupproject.py:108
+#: ./tupproject.py:125
 #: ./tupsmallproject.py:263
 msgid "Choose your categories"
 msgstr ""
@@ -174,13 +174,13 @@ msgstr ""
 msgid "Compatible with versions of LibreOffice"
 msgstr ""
 
-#: ./tupproject.py:116
+#: ./tupproject.py:133
 #: ./tuprelease.py:182
 #: ./tupreleaselink.py:177
 msgid "Contact email-address"
 msgstr ""
 
-#: ./tupproject.py:117
+#: ./tupproject.py:134
 #: ./tuprelease.py:183
 #: ./tupreleaselink.py:178
 msgid "Contact email-address for the project."
@@ -291,7 +291,7 @@ msgstr ""
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tupproject.py:101
+#: ./tupproject.py:109
 #: ./tupsmallproject.py:215
 msgid "Full Project Description"
 msgstr ""
@@ -346,7 +346,7 @@ msgstr ""
 msgid "Highest Rated"
 msgstr ""
 
-#: ./tupproject.py:122
+#: ./tupproject.py:139
 msgid "Homepage"
 msgstr ""
 
@@ -354,11 +354,11 @@ msgstr ""
 msgid "Homepage of the Project"
 msgstr ""
 
-#: ./tupproject.py:123
+#: ./tupproject.py:140
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
-#: ./tupproject.py:129
+#: ./tupproject.py:146
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
@@ -383,6 +383,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
+#: ./tupproject.py:88
 #: ./tupsmallproject.py:191
 msgid "Information"
 msgstr ""
@@ -447,7 +448,7 @@ msgstr ""
 msgid "Link to Source Code"
 msgstr ""
 
-#: ./tupproject.py:135
+#: ./tupproject.py:152
 #: ./tupproject_templates/view.pt:103
 msgid "Logo"
 msgstr ""
@@ -524,7 +525,7 @@ msgstr ""
 msgid "Please add a Screenshot or a Logo to your project. You find the appropriate fields below on this page."
 msgstr ""
 
-#: ./tupproject.py:153
+#: ./tupproject.py:170
 msgid "Please add a screenshot or a logo to your project page. You will find theappropriate fields below on this page."
 msgstr ""
 
@@ -608,7 +609,7 @@ msgstr ""
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr ""
 
-#: ./tupproject.py:109
+#: ./tupproject.py:126
 #: ./tupsmallproject.py:264
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr ""
@@ -632,12 +633,12 @@ msgstr ""
 msgid "Project Resources"
 msgstr ""
 
-#: ./tupproject.py:95
+#: ./tupproject.py:103
 #: ./tupsmallproject.py:209
 msgid "Project Summary"
 msgstr ""
 
-#: ./tupproject.py:88
+#: ./tupproject.py:96
 #: ./tupsmallproject.py:201
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr ""
@@ -763,7 +764,7 @@ msgstr ""
 msgid "Screenshot of the Tempate"
 msgstr ""
 
-#: ./tupproject.py:143
+#: ./tupproject.py:160
 msgid "Screenshot of the Template"
 msgstr ""
 
@@ -882,6 +883,10 @@ msgstr ""
 msgid "The Computed Project Title"
 msgstr ""
 
+#: ./tupproject.py:89
+msgid "The Dialog to create a new project consists of different register. Please go through these register and fill in the appropriate data for your project."
+msgstr ""
+
 #: ./tupsmallproject.py:192
 msgid "The Dialog to create a new project consists of different register. Please go through this register and fill in the appropriate data for your project or choose one of the options that are provided. You could upload one or more files to your project on the  register 'File Upload' and 'Optional Further File Upload'."
 msgstr ""
@@ -928,7 +933,7 @@ msgstr ""
 msgid "The owner can edit the template project"
 msgstr ""
 
-#: ./tupproject.py:287
+#: ./tupproject.py:304
 msgid "The project title is already in use"
 msgstr ""
 
@@ -986,7 +991,7 @@ msgstr ""
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr ""
 
-#: ./tupproject.py:87
+#: ./tupproject.py:95
 #: ./tupsmallproject.py:200
 msgid "Title"
 msgstr ""
@@ -999,7 +1004,7 @@ msgstr ""
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
-#: ./tupproject.py:128
+#: ./tupproject.py:145
 msgid "URL of documentation repository "
 msgstr ""
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-03-30 21:38+0100\n"
+"PO-Revision-Date: 2019-04-01 21:54+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Über"
 msgid "Accept the above legal disclaimer"
 msgstr "Akzeptieren Sie den obigen Haftungsausschlluss"
 
-#: tupproject.py:136
+#: tupproject.py:153
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr "Bitte fügen Sie ein Logo für Ihr Projekt (oder Organisation/Unternehmen) durch Klicken auf die Schaltfläche \"Durchsuchen\"  hinzu. Sie können Grafiken der Dateiformate \"png\", \"gif\" oder \"jpg\"  verwenden."
 
@@ -68,7 +68,7 @@ msgstr "Bitte fügen Sie ein Logo für Ihr Projekt (oder Organisation/Unternehme
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr "Fügen Sie ein Bildschirmfoto durch Klicken auf den Schalter \"Durchsuchen\" hinzu. Sie können Grafiken in den Dateiformaten \"png\", \"gif\" oder \"jpg\" verwenden."
 
-#: tupproject.py:144
+#: tupproject.py:161
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr "Bitte fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche \"Durchsuchen\"  hinzu. Sie können Grafiken verwenden der Dateiformate \"png\", \"gif\" oder \"jpg\". "
 
@@ -141,7 +141,7 @@ msgstr "Ändere den Release-Status zu \"Release beta\""
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
-#: tupproject.py:108 tupsmallproject.py:263
+#: tupproject.py:125 tupsmallproject.py:263
 msgid "Choose your categories"
 msgstr "Wählen Sie Ihre Kategorien"
 
@@ -154,11 +154,11 @@ msgstr "Kompatibilität"
 msgid "Compatible with versions of LibreOffice"
 msgstr "Kompatibel mit den LibreOffice-Versionen"
 
-#: tupproject.py:116 tuprelease.py:182 tupreleaselink.py:177
+#: tupproject.py:133 tuprelease.py:182 tupreleaselink.py:177
 msgid "Contact email-address"
 msgstr "Kontakt-Email-Adresse"
 
-#: tupproject.py:117 tuprelease.py:183 tupreleaselink.py:178
+#: tupproject.py:134 tuprelease.py:183 tupreleaselink.py:178
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt."
 
@@ -265,7 +265,7 @@ msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr "Die vierte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject.py:101 tupsmallproject.py:215
+#: tupproject.py:109 tupsmallproject.py:215
 msgid "Full Project Description"
 msgstr "Komplette Projekt-Beschreibung"
 
@@ -318,7 +318,7 @@ msgstr "Verstecken Sie dieses Release"
 msgid "Highest Rated"
 msgstr "Am höchsten bewerted"
 
-#: tupproject.py:122
+#: tupproject.py:139
 msgid "Homepage"
 msgstr "Homepage"
 
@@ -326,11 +326,11 @@ msgstr "Homepage"
 msgid "Homepage of the Project"
 msgstr "Homepage des Projekts"
 
-#: tupproject.py:123
+#: tupproject.py:140
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls das Projekt eine externe Homepage hat, füllen Sie hier die URL (Beispiel: 'http://www.mysite.org') ein."
 
-#: tupproject.py:129
+#: tupproject.py:146
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls Ihr Projekt eine extern verfügbare Dokumentation besitzt, fügen Sie hier die entsprechende URL (Beispiel: \"http://www.mysite.org\") ein."
 
@@ -354,7 +354,7 @@ msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. wei
 msgid "Info"
 msgstr "Info"
 
-#: tupsmallproject.py:191
+#: tupproject.py:88 tupsmallproject.py:191
 msgid "Information"
 msgstr "Information"
 
@@ -408,7 +408,7 @@ msgstr "Lizenz(en)"
 msgid "Link to Source Code"
 msgstr "Link zum Quellcode"
 
-#: tupproject.py:135 tupproject_templates/view.pt:103
+#: tupproject.py:152 tupproject_templates/view.pt:103
 msgid "Logo"
 msgstr "Logo"
 
@@ -480,7 +480,7 @@ msgstr "Bitte akzeptieren Sie den Haftungsausschluss für Ihr Release und Ihre v
 msgid "Please add a Screenshot or a Logo to your project. You find the appropriate fields below on this page."
 msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrer Projektseite hinzu. Sie finden die entsprechenden Felder unten auf dieser Seite."
 
-#: tupproject.py:153
+#: tupproject.py:170
 msgid "Please add a screenshot or a logo to your project page. You will find theappropriate fields below on this page."
 msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrer Projektseite hinzu. Sie finden die entsprechenden Felder unten auf dieser Seite."
 
@@ -552,7 +552,7 @@ msgstr "Bitte markieren Sie eine oder mehrere Plattformen, mit denen die hochgel
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr "Bitte markieren Sie eine oder mehrere Programm-Versionen, mit denen dieses Release kompatibel ist."
 
-#: tupproject.py:109 tupsmallproject.py:264
+#: tupproject.py:126 tupsmallproject.py:264
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre Projekt."
 
@@ -573,11 +573,11 @@ msgstr "Projekt-Beschreibung"
 msgid "Project Resources"
 msgstr "Projekt Ressourcen"
 
-#: tupproject.py:95 tupsmallproject.py:209
+#: tupproject.py:103 tupsmallproject.py:209
 msgid "Project Summary"
 msgstr "Projekt-Zusammenfassung"
 
-#: tupproject.py:88 tupsmallproject.py:201
+#: tupproject.py:96 tupsmallproject.py:201
 msgid "Project Title - minimum 5 and maximum 50 characters"
 msgstr "Projekt-Titel  - mindestens 5 und höchstens 50 Zeichen"
 
@@ -692,7 +692,7 @@ msgstr "Bildschirmfoto"
 msgid "Screenshot of the Tempate"
 msgstr "Bildschirmfoto der Vorlage"
 
-#: tupproject.py:143
+#: tupproject.py:160
 msgid "Screenshot of the Template"
 msgstr "Bildschirmfoto der Vorlage"
 
@@ -804,6 +804,10 @@ msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 msgid "The Computed Project Title"
 msgstr "Der berechnete Projekt-Titel"
 
+#: tupproject.py:89
+msgid "The Dialog to create a new project consists of different register. Please go through these register and fill in the appropriate data for your project."
+msgstr "Der Dialog zum Erstellen eines neuen Projektes besteht aus verschiedenen Registern. Bitte gehen Sie durch diese Register und geben Sie die passen Daten für Ihr Projekt ein."
+
 #: tupsmallproject.py:192
 msgid "The Dialog to create a new project consists of different register. Please go through this register and fill in the appropriate data for your project or choose one of the options that are provided. You could upload one or more files to your project on the  register 'File Upload' and 'Optional Further File Upload'."
 msgstr "Der Dialog zum Erstellen eines neuen Projektes besteht aus verschiedenen Registern. Bitte gehen Sie durch diese Register und tragen Sie die entsprechenden Daten für Ihr Projekt ein oder wählen Sie aus den verfügbaren Optionen. Sie können eine oder mehrere Dateien zu Ihrem Projekt auf den Registern 'File Upload' und 'Optional Further File Upload' hochladen."
@@ -850,7 +854,7 @@ msgstr "Die verlinkte Vorlagen-Datei"
 msgid "The owner can edit the template project"
 msgstr "Der Besitzer kann das Template(Vorlagen)-Projekt bearbeiten"
 
-#: tupproject.py:287
+#: tupproject.py:304
 msgid "The project title is already in use"
 msgstr "Der Projekt-Titel wird bereits verwendet"
 
@@ -903,7 +907,7 @@ msgstr "Die dritte verlinkte Datei ist kompatibel mit den Plattformen"
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr "Die dritte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject.py:87 tupsmallproject.py:200
+#: tupproject.py:95 tupsmallproject.py:200
 msgid "Title"
 msgstr "Titel"
 
@@ -915,7 +919,7 @@ msgstr "Titel für rechtliche Hinweise und Einschränkungen"
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 
-#: tupproject.py:128
+#: tupproject.py:145
 msgid "URL of documentation repository "
 msgstr "URL des Repository der Dokumentation "
 
