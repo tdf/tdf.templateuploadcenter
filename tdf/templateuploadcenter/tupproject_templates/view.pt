@@ -41,17 +41,23 @@
         <p tal:condition="python: is_editable and len(context.getFolderContents()) is 0">Your next step: add a first release to your project please.</p>
          <div tal:condition="python: is_editable">
         <p>Please submit:</p>
+             <p>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tuprelease">
                             <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">a Release to your</span>
                             <span tal:content="context/product_title | string:template_project" i18n:name="" /> Project
 
                         </a>
+             </p>
         <p i18n:translate="">or:</p>
+             <p>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupreleaselink">
                             <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">a linked Release to your</span>
                             <span tal:content="context/product_title | string:template_project" i18n:name="" /> Project
 
                         </a>
+             </p>
+             <p>If you want to host your release files on an external ressource (e.g. an external webpage or an external repository) create
+            a new 'linked release' (second option). In the oposite you had to go with adding a 'release' (first option).</p>
              </div>
         </div>
         <div class="portalinfomessage" tal:condition="python: is_editable and review_state == 'pending' ">
