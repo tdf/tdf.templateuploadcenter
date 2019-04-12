@@ -109,6 +109,18 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class ITUpRelease(model.Schema):
+    directives.mode(information="display")
+    information = schema.Text(
+        title=_(u"Information"),
+        description=_(u"This Dialog to create a new release consists of different register. Please go through "
+                      u"this register and fill in the appropriate data for your release. This register 'Default' "
+                      u"provide fields for general information of your release. The next register 'compatibility' is "
+                      u"the place to submit information about the versions with which your release file(s) is / are "
+                      u"compatible. The following register asks for some legal informations. The next register "
+                      u"'File Upload' provide a field to upload your release file. The further register are optional. "
+                      u"There is the opportunity to upload further release files (for different platforms).")
+    )
+
     form.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
@@ -139,6 +151,16 @@ class ITUpRelease(model.Schema):
         description=_(u"A detailed log of what has changed since the previous release."),
         required=False,
     )
+
+    model.fieldset('compatibility',
+                   label=u"Compatibility",
+                   fields=['compatibility_choice'])
+
+    model.fieldset('legal',
+                   label=u"Legal",
+                   fields=['licenses_choice', 'title_declaration_legal',
+                           'declaration_legal', 'accept_legal_declaration',
+                           'source_code_inside', 'link_to_source'])
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
@@ -196,6 +218,10 @@ class ITUpRelease(model.Schema):
         required=False
     )
 
+    model.fieldset('fileupload',
+                   label=u"Fileupload",
+                   fields=['file', 'platform_choice', 'information_further_file_uploads'])
+
     file = NamedBlobFile(
         title=_(u"The first file you want to upload"),
         description=_(u"Please upload your file."),
@@ -217,12 +243,12 @@ class ITUpRelease(model.Schema):
         title=_(u"Further File Uploads for this Release"),
         description=_(u"If you want to upload more files for this release, e.g. because there are files for "
                       u"other operating systems, you'll find the upload fields on the "
-                      u"register 'File Upload 1' and 'File Upload 2'."),
+                      u"register 'Further Uploads' and 'Further More Uploads'."),
         required=False
     )
 
     model.fieldset('fileset1',
-                   label=u"File Upload 1",
+                   label=u"Further Uploads",
                    fields=['file1', 'platform_choice1', 'file2', 'platform_choice2', 'file3', 'platform_choice3']
                    )
 
@@ -272,7 +298,7 @@ class ITUpRelease(model.Schema):
     )
 
     model.fieldset('fileset2',
-                   label=u"File Upload 2",
+                   label=u"Further More Uploads",
                    fields=['file4', 'platform_choice4', 'file5', 'platform_choice5']
                    )
 
