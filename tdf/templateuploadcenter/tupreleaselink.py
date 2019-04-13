@@ -118,7 +118,7 @@ class ITUpReleaseLink(model.Schema):
                       u" There is the opportunity to link further release files (for different platforms).")
     )
 
-    form.mode(projecttitle='hidden')
+    directives.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
         description=_(u"The release title will be computed from the parent project title"),
@@ -159,7 +159,7 @@ class ITUpReleaseLink(model.Schema):
                            'declaration_legal', 'accept_legal_declaration',
                            'source_code_inside', 'link_to_source'])
 
-    form.widget(licenses_choice=CheckBoxFieldWidget)
+    directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
         title=_(u'License of the uploaded file'),
         description=_(u"Please mark one or more licenses you publish your release."),
@@ -167,7 +167,7 @@ class ITUpReleaseLink(model.Schema):
         required=True,
     )
 
-    form.widget(compatibility_choice=CheckBoxFieldWidget)
+    directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
         title=_(u"Compatible with versions of LibreOffice"),
         description=_(u"Please mark one or more program versions with which this release is compatible with."),
@@ -175,14 +175,14 @@ class ITUpReleaseLink(model.Schema):
         required=True,
     )
 
-    form.mode(title_declaration_legal='display')
+    directives.mode(title_declaration_legal='display')
     title_declaration_legal = schema.TextLine(
         title=_(u""),
         required=False,
         defaultFactory=legal_declaration_title
     )
 
-    form.mode(declaration_legal='display')
+    directives.mode(declaration_legal='display')
     declaration_legal = schema.Text(
         title=_(u""),
         required=False,
@@ -232,7 +232,7 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice=CheckBoxFieldWidget)
+    directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
         title=_(u"First linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the uploaded file is compatible."),
@@ -240,7 +240,7 @@ class ITUpReleaseLink(model.Schema):
         required=True,
     )
 
-    form.mode(information_further_file_uploads='display')
+    directives.mode(information_further_file_uploads='display')
     primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title=_(u"Further linked files for this Release"),
@@ -299,7 +299,7 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice1=CheckBoxFieldWidget)
+    directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
         title=_(u"Second linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -321,7 +321,7 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice2=CheckBoxFieldWidget)
+    directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
         title=_(u"Third linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -343,7 +343,7 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice3=CheckBoxFieldWidget)
+    directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
         title=_(u"Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -365,7 +365,7 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice4=CheckBoxFieldWidget)
+    directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
         title=_(u"Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
@@ -387,7 +387,7 @@ class ITUpReleaseLink(model.Schema):
         required=False
     )
 
-    form.widget(platform_choice5=CheckBoxFieldWidget)
+    directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
         title=_(u"Fourth linked file is compatible with the Platform(s)"),
         description=_(u"Please mark one or more platforms with which the linked file is compatible."),
