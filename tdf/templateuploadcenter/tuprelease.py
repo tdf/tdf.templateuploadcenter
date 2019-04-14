@@ -121,7 +121,7 @@ class ITUpRelease(model.Schema):
                       u"There is the opportunity to upload further release files (for different platforms).")
     )
 
-    form.mode(projecttitle='hidden')
+    directives.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
         title=_(u"The Computed Project Title"),
         description=_(u"The release title will be computed from the parent project title"),
@@ -179,14 +179,14 @@ class ITUpRelease(model.Schema):
         default=[]
     )
 
-    form.mode(title_declaration_legal='display')
+    directives.mode(title_declaration_legal='display')
     title_declaration_legal = schema.TextLine(
         title=_(u""),
         required=False,
         defaultFactory=legal_declaration_title
     )
 
-    form.mode(declaration_legal='display')
+    directives.mode(declaration_legal='display')
     declaration_legal = schema.Text(
         title=_(u""),
         required=False,
@@ -237,7 +237,7 @@ class ITUpRelease(model.Schema):
         required=True,
     )
 
-    form.mode(information_further_file_uploads='display')
+    directives.mode(information_further_file_uploads='display')
     primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title=_(u"Further File Uploads for this Release"),
