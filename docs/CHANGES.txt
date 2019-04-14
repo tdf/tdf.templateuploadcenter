@@ -6,6 +6,10 @@ Changelog
 
 - Structure the tupproject edit mode with register [Andreas Mantke]
 - Update German localization [Andreas Mantke]
+- Improve the edit dialog and split it into more register for the release and
+  the linked release module. [Andreas Mantke]
+- Change from plone.directives form to plone.autoform directives for
+  the release and the linked release module [Andreas Mantke]
 
 
 0.23 (2019-03-30)
