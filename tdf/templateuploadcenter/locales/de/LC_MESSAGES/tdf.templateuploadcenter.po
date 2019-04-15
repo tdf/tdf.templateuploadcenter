@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-04-01 21:54+0200\n"
+"PO-Revision-Date: 2019-04-15 19:41+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "${product_title}"
 msgid "- A simple workflow for Template project objects."
 msgstr "Ein einfacher Workflow für Template-Projekt-Objekte."
 
-#: tuprelease.py:122 tupreleaselink.py:119 tupsmallproject.py:287
+#: tuprelease.py:134 tupreleaselink.py:131 tupsmallproject.py:287
 msgid "1.0"
 msgstr "1.0"
 
@@ -32,7 +32,7 @@ msgstr "1.0"
 msgid "A Small template project"
 msgstr "Ein kleines Volagen-Projekt"
 
-#: tuprelease.py:139 tupreleaselink.py:136
+#: tuprelease.py:151 tupreleaselink.py:148
 msgid "A detailed log of what has changed since the previous release."
 msgstr "Eine detaillierte Aufstellung über das, was sich seit dem letzten Release verändert hat."
 
@@ -56,7 +56,7 @@ msgstr "Ein Template-Release"
 msgid "About"
 msgstr "Über"
 
-#: tuprelease.py:176 tupreleaselink.py:171 tupsmallproject.py:254
+#: tuprelease.py:198 tupreleaselink.py:193 tupsmallproject.py:254
 msgid "Accept the above legal disclaimer"
 msgstr "Akzeptieren Sie den obigen Haftungsausschlluss"
 
@@ -72,7 +72,7 @@ msgstr "Fügen Sie ein Bildschirmfoto durch Klicken auf den Schalter \"Durchsuch
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr "Bitte fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche \"Durchsuchen\"  hinzu. Sie können Grafiken verwenden der Dateiformate \"png\", \"gif\" oder \"jpg\". "
 
-#: tupproject_templates/view.pt:366
+#: tupproject_templates/view.pt:372
 msgid "All Releases"
 msgstr "Alle Releases"
 
@@ -123,7 +123,7 @@ msgstr "Suchen"
 msgid "Browse Templates by Category"
 msgstr "Suchen von Vorlagen nach Kategorie"
 
-#: tupproject_templates/view.pt:93 tupsmallproject_templates/view.pt:55
+#: tupproject_templates/view.pt:99 tupsmallproject_templates/view.pt:55
 msgid "Category/Categories"
 msgstr "Kategorie/Kategorien"
 
@@ -137,7 +137,7 @@ msgstr "Ändere den Release-Status zu \"Release alpha\""
 msgid "Change the release stage to 'Release beta'"
 msgstr "Ändere den Release-Status zu \"Release beta\""
 
-#: tuprelease.py:138 tupreleaselink.py:135 tupreleaselink_templates/view.pt:80
+#: tuprelease.py:150 tupreleaselink.py:147 tupreleaselink_templates/view.pt:80
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
@@ -145,32 +145,32 @@ msgstr "Änderungsprotokoll"
 msgid "Choose your categories"
 msgstr "Wählen Sie Ihre Kategorien"
 
-#: tupproject_templates/view.pt:374 tuprelease_templates/view.pt:66
+#: tupproject_templates/view.pt:380 tuprelease_templates/view.pt:66
 #: tupreleaselink_templates/view.pt:73
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
-#: tuprelease.py:153 tupreleaselink.py:150 tupsmallproject.py:293
+#: tuprelease.py:175 tupreleaselink.py:172 tupsmallproject.py:293
 msgid "Compatible with versions of LibreOffice"
 msgstr "Kompatibel mit den LibreOffice-Versionen"
 
-#: tupproject.py:133 tuprelease.py:182 tupreleaselink.py:177
+#: tupproject.py:133 tuprelease.py:204 tupreleaselink.py:199
 msgid "Contact email-address"
 msgstr "Kontakt-Email-Adresse"
 
-#: tupproject.py:134 tuprelease.py:183 tupreleaselink.py:178
+#: tupproject.py:134 tuprelease.py:205 tupreleaselink.py:200
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt."
 
-#: tupproject_templates/view.pt:114
+#: tupproject_templates/view.pt:120
 msgid "Current Release"
 msgstr "Aktuelles Release"
 
-#: tupproject_templates/view.pt:215
+#: tupproject_templates/view.pt:221
 msgid "Current release for the project"
 msgstr "Aktuelles Release dieses Projekts"
 
-#: tupproject_templates/view.pt:124
+#: tupproject_templates/view.pt:130
 msgid "Current unstable release for the project"
 msgstr "Aktuelles instabiles Release für das Projekt"
 
@@ -178,7 +178,7 @@ msgstr "Aktuelles instabiles Release für das Projekt"
 msgid "Currently there are"
 msgstr "Aktuell sind hier"
 
-#: tupproject_templates/view.pt:375
+#: tupproject_templates/view.pt:381
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -222,11 +222,11 @@ msgstr "Externe Dokumentation"
 msgid "External Project Page"
 msgstr "Externe Projektseite"
 
-#: tuprelease.py:288
+#: tuprelease.py:314
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupproject_templates/view.pt:151 tuprelease_templates/view.pt:87
+#: tupproject_templates/view.pt:157 tuprelease_templates/view.pt:87
 #: tupreleaselink_templates/view.pt:90
 msgid "File size:"
 msgstr "Dateigröße:"
@@ -249,19 +249,19 @@ msgstr "Finales Release"
 msgid "Final release"
 msgstr "Finales Release"
 
-#: tupreleaselink.py:210
+#: tupreleaselink.py:237
 msgid "First linked file is compatible with the Platform(s)"
 msgstr "Die erste verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tuprelease.py:208 tupsmallproject.py:309
+#: tuprelease.py:234 tupsmallproject.py:309
 msgid "First uploaded file is compatible with the Platform(s)"
 msgstr "Die erste hochgeladene Datei ist kompatibel mit den Plattformen"
 
-#: tupreleaselink.py:321
+#: tupreleaselink.py:348
 msgid "Fourth linked file is compatible with the Platform(s)"
 msgstr "Die vierte verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tuprelease.py:268
+#: tuprelease.py:294
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr "Die vierte hochgeladene Datei ist kompatibel mit den Plattformen"
 
@@ -269,15 +269,15 @@ msgstr "Die vierte hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "Full Project Description"
 msgstr "Komplette Projekt-Beschreibung"
 
-#: tuprelease.py:132 tupreleaselink.py:129
+#: tuprelease.py:144 tupreleaselink.py:141
 msgid "Full Release Description"
 msgstr "Komplette Release-Beschreibung"
 
-#: tuprelease.py:217
+#: tuprelease.py:243
 msgid "Further File Uploads for this Release"
 msgstr "Weitere Datei-Hochlademöglichkeiten für dieses Release"
 
-#: tupreleaselink.py:219
+#: tupreleaselink.py:246
 msgid "Further linked files for this Release"
 msgstr "Weitere verlinkte Dateien für dieses Release"
 
@@ -322,7 +322,7 @@ msgstr "Am höchsten bewerted"
 msgid "Homepage"
 msgstr "Homepage"
 
-#: tupproject_templates/view.pt:99
+#: tupproject_templates/view.pt:105
 msgid "Homepage of the Project"
 msgstr "Homepage des Projekts"
 
@@ -342,19 +342,19 @@ msgstr "Falls Sie bereits ein neues"
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergänzungen vornehmen wollen, führt Sie dies zurück."
 
-#: tupreleaselink.py:220
+#: tupreleaselink.py:247
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file'."
 msgstr "Falls Sie weitere Dateien für dieses Release verlinken wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die Felder dafür auf den nächsten Registern, z.B. \"Zweite verlinkte Datei\"."
 
-#: tuprelease.py:218
-msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'File Upload 1' and 'File Upload 2'."
-msgstr "Falls Sie weitere Dateien für dieses Release hochladen wollen, z.B. weil es Dateien für andere Betriebssysteme gibt, finden Sie die entsprechenden Felder auf dem Register \"File Upload 1\" und \"File Upload 2\"."
+#: tuprelease.py:244
+msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'Further Uploads' and 'Further More Uploads'."
+msgstr "Falls Sie weitere Dateien für Ihr Release hochladen wollen, z.B. Dateien für andere Betriebssysteme,  finden Felder für das Hochladen auf den Registern 'Further Uploads' und 'Further More Uploads'."
 
 #: tuprelease_templates/view.pt:37 tupreleaselink_templates/view.pt:38
 msgid "Info"
 msgstr "Info"
 
-#: tupproject.py:88 tupsmallproject.py:191
+#: tupproject.py:88 tuprelease.py:114 tupreleaselink.py:111
 msgid "Information"
 msgstr "Information"
 
@@ -375,7 +375,7 @@ msgstr "Anleitung, wie ein Fehler gemeldet wird"
 msgid "Invalid email address"
 msgstr "Ungültige Email-Adresse"
 
-#: tuprelease.py:189 tupreleaselink.py:184
+#: tuprelease.py:211 tupreleaselink.py:206
 msgid "Is the source code inside the extension?"
 msgstr "Ist der Quellcode in der Extension enthalten?"
 
@@ -383,7 +383,7 @@ msgstr "Ist der Quellcode in der Extension enthalten?"
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 
-#: tupproject_templates/view.pt:121
+#: tupproject_templates/view.pt:127
 msgid "Latest Not Stable Release"
 msgstr "Letztes nicht stabiles Release"
 
@@ -395,11 +395,11 @@ msgstr "Rechtliche Hinweise und Einschränkungen"
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 
-#: tuprelease.py:145 tupreleaselink.py:142 tupsmallproject.py:232
+#: tuprelease.py:167 tupreleaselink.py:164 tupsmallproject.py:232
 msgid "License of the uploaded file"
 msgstr "Lizenz der hochgeladenen Datei"
 
-#: tupproject_templates/view.pt:376 tuprelease_templates/view.pt:60
+#: tupproject_templates/view.pt:382 tuprelease_templates/view.pt:60
 #: tupreleaselink_templates/view.pt:67
 msgid "License(s)"
 msgstr "Lizenz(en)"
@@ -408,7 +408,7 @@ msgstr "Lizenz(en)"
 msgid "Link to Source Code"
 msgstr "Link zum Quellcode"
 
-#: tupproject.py:152 tupproject_templates/view.pt:103
+#: tupproject.py:152 tupproject_templates/view.pt:109
 msgid "Logo"
 msgstr "Logo"
 
@@ -420,7 +420,7 @@ msgstr "Mitglied zieht Einreichung zurück"
 msgid "Member submits content for publication"
 msgstr "Mitglied reicht Inhalt zur Veröffentlichung ein"
 
-#: tupproject_templates/view.pt:246
+#: tupproject_templates/view.pt:252
 msgid "More about this release&hellip;"
 msgstr "Mehr über dieses Release&hellip;"
 
@@ -452,7 +452,7 @@ msgstr "Nein"
 msgid "No results were found."
 msgstr "Keine Ergebnisse gefunden."
 
-#: tupproject_templates/view.pt:116
+#: tupproject_templates/view.pt:122
 msgid "No stable release available yet."
 msgstr "Aktuell kein stabiles Release verfügbar."
 
@@ -464,15 +464,15 @@ msgstr "Oder"
 msgid "Pending"
 msgstr "Schwebend"
 
-#: tupproject_templates/view.pt:373
+#: tupproject_templates/view.pt:379
 msgid "Platform(s)"
 msgstr "Plattform(en)"
 
-#: tuprelease.py:322 tupsmallproject.py:396
+#: tuprelease.py:348 tupsmallproject.py:396
 msgid "Please accept the Legal Declaration about your Release and your Uploaded File"
 msgstr "Bitte akzeptieren Sie den Haftungsausschluss für Ihr Release und Ihre hochgeladenen Dateien"
 
-#: tupreleaselink.py:384
+#: tupreleaselink.py:411
 msgid "Please accept the Legal Declaration about your Release and your linked File"
 msgstr "Bitte akzeptieren Sie den Haftungsausschluss für Ihr Release und Ihre verlinkten Dateien"
 
@@ -484,19 +484,19 @@ msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrer Projektseite hin
 msgid "Please add a screenshot or a logo to your project page. You will find theappropriate fields below on this page."
 msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrer Projektseite hinzu. Sie finden die entsprechenden Felder unten auf dieser Seite."
 
-#: tupreleaselink.py:397
+#: tupreleaselink.py:424
 msgid "Please choose a compatible platform for the linked file."
 msgstr "Bitte wählen Sie eine zu der verlinkten Datei kompatible Plattform."
 
-#: tuprelease.py:335 tupsmallproject.py:402
+#: tuprelease.py:361 tupsmallproject.py:402
 msgid "Please choose a compatible platform for the uploaded file."
 msgstr "Bitte wählen Sie eine zu der hochgeladenen Datei kompatible Plattform."
 
-#: tuprelease.py:312 tupreleaselink.py:374 tupsmallproject.py:385
+#: tuprelease.py:338 tupreleaselink.py:401 tupsmallproject.py:385
 msgid "Please choose a license for your release."
 msgstr "Bitte wählen Sie eine Lizenz für Ihr Release."
 
-#: tuprelease.py:317 tupreleaselink.py:379
+#: tuprelease.py:343 tupreleaselink.py:406
 msgid "Please choose one or more compatible product versions for your release"
 msgstr "Bitte wählen Sie eine oder mehrere kompatible Produkt-Versionen für Ihr Release"
 
@@ -504,7 +504,7 @@ msgstr "Bitte wählen Sie eine oder mehrere kompatible Produkt-Versionen für Ih
 msgid "Please choose one or more compatible product versions for your release."
 msgstr "Bitte wählen Sie eine oder mehrere kompatible Produkt-Versionen für Ihr Release."
 
-#: tuprelease.py:177 tupreleaselink.py:172
+#: tuprelease.py:199 tupreleaselink.py:194
 msgid "Please declare that you accept the above legal disclaimer"
 msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren"
 
@@ -512,7 +512,7 @@ msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren"
 msgid "Please declare that you accept the above legal disclaimer."
 msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren."
 
-#: tuprelease.py:195 tupreleaselink.py:190
+#: tuprelease.py:217 tupreleaselink.py:212
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein"
 
@@ -520,11 +520,11 @@ msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein"
 msgid "Please fill in the install instructions"
 msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 
-#: tupreleaselink.py:203
+#: tupreleaselink.py:230
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr "Bitte füllen Sie die Größe der extern gehosteten Datei  in Kilobyte (z.B. 633, falls die Größe 633 KB ist) ein."
 
-#: tupreleaselink.py:196
+#: tupreleaselink.py:223
 msgid "Please insert a link to your extension file."
 msgstr "Bitte fügen Sie einen Link zu Ihrer Extension-Datei ein."
 
@@ -536,19 +536,19 @@ msgstr "Bitte stellen Sie sicher, dass Sie alle relevanten Informationen eingetr
 msgid "Please make sure the relevant project information has been entered and submit your project for approval (publication)."
 msgstr "Bitte stellen Sie sicher, dass die relevanten Projekt-Informationen eingetragen sind und übermitteln Sie Ihr Projekt zur Prüfung (Veröffentlichung)."
 
-#: tuprelease.py:146 tupreleaselink.py:143 tupsmallproject.py:233
+#: tuprelease.py:168 tupreleaselink.py:165 tupsmallproject.py:233
 msgid "Please mark one or more licenses you publish your release."
 msgstr "Bitte markieren Sie eine oder mehrere Lizenzen, unter denen Sie Ihr Release veröffentlichen."
 
-#: tupreleaselink.py:278
+#: tupreleaselink.py:305
 msgid "Please mark one or more platforms with which the linked file is compatible."
 msgstr "Bitte markieren Sie eine oder mehrere Plattformen, mit denen Ihre verlinkte Datei kompatibel ist."
 
-#: tuprelease.py:209 tupreleaselink.py:211 tupsmallproject.py:310
+#: tuprelease.py:235 tupreleaselink.py:238 tupsmallproject.py:310
 msgid "Please mark one or more platforms with which the uploaded file is compatible."
 msgstr "Bitte markieren Sie eine oder mehrere Plattformen, mit denen die hochgeladene Datei kompatibel ist."
 
-#: tuprelease.py:154 tupreleaselink.py:151 tupsmallproject.py:294
+#: tuprelease.py:176 tupreleaselink.py:173 tupsmallproject.py:294
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr "Bitte markieren Sie eine oder mehrere Programm-Versionen, mit denen dieses Release kompatibel ist."
 
@@ -556,7 +556,7 @@ msgstr "Bitte markieren Sie eine oder mehrere Programm-Versionen, mit denen dies
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre Projekt."
 
-#: tuprelease.py:201 tupsmallproject.py:302
+#: tuprelease.py:227 tupsmallproject.py:302
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
 
@@ -564,11 +564,11 @@ msgstr "Bitte laden Sie Ihre Datei hoch."
 msgid "Private"
 msgstr "Privat"
 
-#: tupproject_templates/view.pt:91
+#: tupproject_templates/view.pt:97
 msgid "Project Description"
 msgstr "Projekt-Beschreibung"
 
-#: tupproject_templates/view.pt:423 tuprelease_templates/view.pt:151
+#: tupproject_templates/view.pt:429 tuprelease_templates/view.pt:151
 #: tupreleaselink_templates/view.pt:139
 msgid "Project Resources"
 msgstr "Projekt Ressourcen"
@@ -612,15 +612,15 @@ msgstr "Release-Kandidat"
 msgid "Release Details"
 msgstr "Release-Details"
 
-#: tuprelease.py:120 tupreleaselink.py:117
+#: tuprelease.py:132 tupreleaselink.py:129
 msgid "Release Number"
 msgstr "Release-Nummer"
 
-#: tuprelease.py:121 tupreleaselink.py:118
+#: tuprelease.py:133 tupreleaselink.py:130
 msgid "Release Number (up to twelf chars)"
 msgstr "Release-Nummer (bis zu zwölf Zeichen)"
 
-#: tuprelease.py:127 tupreleaselink.py:124
+#: tuprelease.py:139 tupreleaselink.py:136
 msgid "Release Summary"
 msgstr "Release-Zusammenfassung"
 
@@ -644,7 +644,7 @@ msgstr "Release-Kandidat"
 msgid "Release-Candidate"
 msgstr "Release-Kandidat"
 
-#: tupproject_templates/view.pt:224
+#: tupproject_templates/view.pt:230
 msgid "Released"
 msgstr "Released"
 
@@ -683,7 +683,7 @@ msgstr "Reviewer veröffentlicht den Inhalt"
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
 
-#: tupproject_templates/view.pt:434 tuprelease_templates/view.pt:161
+#: tupproject_templates/view.pt:440 tuprelease_templates/view.pt:161
 #: tupreleaselink_templates/view.pt:154
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
@@ -708,11 +708,11 @@ msgstr "Suche ${product_title}"
 msgid "Second Release File"
 msgstr "Zweite Release-Datei"
 
-#: tupreleaselink.py:277
+#: tupreleaselink.py:304
 msgid "Second linked file is compatible with the Platform(s)"
 msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tuprelease.py:238 tupsmallproject.py:343
+#: tuprelease.py:264 tupsmallproject.py:343
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 
@@ -724,7 +724,7 @@ msgstr "Zurück senden"
 msgid "Show"
 msgstr "Anzeigen"
 
-#: tuprelease.py:303
+#: tuprelease.py:329
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr "Die sechste hochgeladene Datei ist kompatibel mit den Plattformen"
 
@@ -784,7 +784,7 @@ msgstr "Vorlagen-Projekt"
 msgid "Template Release"
 msgstr "Vorlagen-Release"
 
-#: tupproject_templates/view.pt:372
+#: tupproject_templates/view.pt:378
 msgid "Template Version"
 msgstr "Vorlagen-Version"
 
@@ -800,7 +800,7 @@ msgstr "Text der rechtlichen Hinweise und -begrenzungen"
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 
-#: tuprelease.py:114 tupreleaselink.py:111
+#: tuprelease.py:126 tupreleaselink.py:123
 msgid "The Computed Project Title"
 msgstr "Der berechnete Projekt-Titel"
 
@@ -816,11 +816,11 @@ msgstr "Der Dialog zum Erstellen eines neuen Projektes besteht aus verschiedenen
 msgid "The First File You Want To Upload"
 msgstr "Die erste Datei, die Sie hochladen wollen"
 
-#: tupreleaselink.py:195
+#: tupreleaselink.py:222
 msgid "The Link to the file of the release"
 msgstr "Der Link zu der Datei dieses Release"
 
-#: tuprelease.py:280
+#: tuprelease.py:306
 msgid "The fifth file you want to upload (this is optional)"
 msgstr "Die fünfte Datei, die Sie hochladen wollen (dies ist optional)"
 
@@ -829,7 +829,7 @@ msgstr "Die fünfte Datei, die Sie hochladen wollen (dies ist optional)"
 msgid "The final stage of a template release"
 msgstr "Der finale Status eines Vorlagen-Release"
 
-#: tuprelease.py:200
+#: tuprelease.py:226
 msgid "The first file you want to upload"
 msgstr "Die erste Datei, die Sie hochladen wollen"
 
@@ -842,7 +842,7 @@ msgstr "Die erste Datei, die Sie hochladen wollen"
 msgid "The first stage of a template release"
 msgstr "Der erste Status eines Vorlagen-Release"
 
-#: tuprelease.py:260
+#: tuprelease.py:286
 msgid "The fourth file you want to upload (this is optional)"
 msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 
@@ -862,15 +862,15 @@ msgstr "Der Projekt-Titel wird bereits verwendet"
 msgid "The project title is already in use."
 msgstr "Der Projekt-Titel wird bereits verwendet."
 
-#: tuprelease.py:396 tupreleaselink.py:435
+#: tuprelease.py:422 tupreleaselink.py:462
 msgid "The release number is already in use. Please choose another one."
 msgstr "Die Release-Nummer ist bereits im Gebrauch. Bitte wählen Sie eine andere."
 
-#: tuprelease.py:115 tupreleaselink.py:112
+#: tuprelease.py:127 tupreleaselink.py:124
 msgid "The release title will be computed from the parent project title"
 msgstr "Der Release-Titel wird maschinell aus dem Projekt-Titel erstellt"
 
-#: tuprelease.py:230 tupsmallproject.py:350
+#: tuprelease.py:256 tupsmallproject.py:350
 msgid "The second file you want to upload (this is optional)"
 msgstr "Die zweite Datei, die Sie hochladen wollen (dies ist optional)."
 
@@ -879,15 +879,15 @@ msgstr "Die zweite Datei, die Sie hochladen wollen (dies ist optional)."
 msgid "The second stage of a template release"
 msgstr "Der zweite Status eines Vorlagen-Release"
 
-#: tuprelease.py:295
+#: tuprelease.py:321
 msgid "The sixth file you want to upload (this is optional)"
 msgstr "Die sechste Datei, die Sie hochladen wollen (dies ist optional)."
 
-#: tupreleaselink.py:202
+#: tupreleaselink.py:229
 msgid "The size of the external hosted file"
 msgstr "Die Größe der extern gehosteten Datei"
 
-#: tuprelease.py:245 tupsmallproject.py:375
+#: tuprelease.py:271 tupsmallproject.py:375
 msgid "The third file you want to upload (this is optional)"
 msgstr "Die dritte Datei, die Sie hochladen wollen (dies ist optional)"
 
@@ -899,13 +899,21 @@ msgstr "Dies sind Ihre Projekte auf dieser Seite:"
 msgid "Third Release File"
 msgstr "Dritte Release-Datei"
 
-#: tupreleaselink.py:299
+#: tupreleaselink.py:326
 msgid "Third linked file is compatible with the Platform(s)"
 msgstr "Die dritte verlinkte Datei ist kompatibel mit den Plattformen"
 
-#: tuprelease.py:253 tupsmallproject.py:368
+#: tuprelease.py:279 tupsmallproject.py:368
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr "Die dritte hochgeladene Datei ist kompatibel mit den Plattformen"
+
+#: tupreleaselink.py:112
+msgid "This Dialog to create a new linked release consists of different register. Please go through this register and fill in the appropriate data for your linked release. This register 'Default' provide fields for general information of your linked release. The next register 'compatibility is the place to submit information about the versions with which your linked release file(s) is / are compatible. The next register asks for some legal informations. The next register  'Linked File' provide a field to link your release file. The further register are optional.  There is the opportunity to link further release files (for different platforms)."
+msgstr "Dieser Dialog zum Erstellen neuer verlinkter Releases umfasst mehrere Register. Bitte gehen Sie durch alle Register und tragen Sie die für Ihr verlinktes Release passenden Daten ein. Das Register 'Default' stellt die Felder für generelle Informationen für Ihr verlinktes Release bereit. Das nächste Register 'Compatibility' ist der Ort, um Informationen zu Versionen einzutragen, mit denen Ihr(e) verlinkten Release Datei(en) kompatibel ist/sind. Das folgende Register fragt einige rechtliche Informationen ab. Das nächste Register 'Linked File' stellt ein Feld zum Verlinken Ihrer Release-Datei bereeit. Die weiteren Register sind optional. Dort besteht die Möglichkeit weitere Release-Dateien (für andere Plattformen) zu verlinken."
+
+#: tuprelease.py:115
+msgid "This Dialog to create a new release consists of different register. Please go through this register and fill in the appropriate data for your release. This register 'Default' provide fields for general information of your release. The next register 'compatibility' is the place to submit information about the versions with which your release file(s) is / are compatible. The following register asks for some legal informations. The next register 'File Upload' provide a field to upload your release file. The further register are optional. There is the opportunity to upload further release files (for different platforms)."
+msgstr "Dieser Dialog zum Erstellen neuer Releases umfasst mehrere Register. Bitte gehen Sie durch alle Register und tragen Sie die für Ihr Release passenden Daten ein. Das Register 'Default' stellt die Felder für generelle Informationen für Ihr Release bereit. Das nächste Register 'Compatibility' ist der Ort, um Informationen zu Versionen einzutragen, mit denen Ihr(e) Release Datei(en) kompatibel ist/sind. Das folgende Register fragt einige rechtliche Informationen ab. Das nächste Register 'File Upload' ermöglicht das Hochladen Ihrer Release-Datei. Die weiteren Register sind optional. Dort besteht die Möglichkeit zum Hochladen von weiteren Release-Dateien (für andere Plattformen)."
 
 #: tupproject.py:95 tupsmallproject.py:200
 msgid "Title"
@@ -963,7 +971,7 @@ msgstr "Auf Review wartend."
 msgid "Yes"
 msgstr "Ja"
 
-#: tuprelease.py:328 tupreleaselink.py:390
+#: tuprelease.py:354 tupreleaselink.py:417
 msgid "You answered the question, whether the source code is inside your template with no (default answer). If this is the correct answer, please fill in the Link (URL) to the Source Code."
 msgstr "Sie haben die Frage, ob der Quelltext in Ihrer Vorlage ist, mit nein (Standardantwort) beantwortet. Falls dies zutreffend ist, schreiben Sie bitte den Link (URL) zum Quelltext unten in das entsprechende Feld."
 
@@ -979,15 +987,15 @@ msgstr "Sie brauchen nur eine Datei zu Ihrem Projekt hochladen. Es bestehen Mög
 msgid "Your Own Projects"
 msgstr "Ihre eigenen Projekte"
 
-#: tupproject_templates/view.pt:58 tupsmallproject_templates/view.pt:41
+#: tupproject_templates/view.pt:64 tupsmallproject_templates/view.pt:41
 msgid "Your project has been submitted for publication and will be reviewed now. You will get an email, once the status of your project changed again."
 msgstr "Ihr Projekt wurde zur Veröffentlichung übermittelt und wird nun geprüft. Sie bekommen eine Email, sobald sich der Status Ihres Projektes erneut ändert."
 
-#: tupproject_templates/view.pt:45
+#: tupproject_templates/view.pt:46
 msgid "a Release to your"
 msgstr "ein Release zu Ihrem"
 
-#: tupproject_templates/view.pt:51
+#: tupproject_templates/view.pt:54
 msgid "a linked Release to your"
 msgstr "ein verlinktes Release zu Ihrem"
 
@@ -999,7 +1007,7 @@ msgstr "nach Kategorie"
 msgid "in"
 msgstr "in"
 
-#: tupproject_templates/view.pt:49
+#: tupproject_templates/view.pt:51
 msgid "or:"
 msgstr "oder:"
 
@@ -1024,7 +1032,7 @@ msgstr "Erneut veröffentlichen"
 msgid "release(s) available."
 msgstr "Releases verfügbar."
 
-#: tupproject_templates/view.pt:132
+#: tupproject_templates/view.pt:138
 msgid "tested with:"
 msgstr "getestet mit:"
 
