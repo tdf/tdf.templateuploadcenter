@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.24 (unreleased)
+0.24 (2019-04-16)
 -----------------
 
 - Structure the tupproject edit mode with register [Andreas Mantke]
