@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tdf.templateuploadcenter import MessageFactory as _
 import re
 from zope.interface import Invalid, invariant
@@ -22,7 +23,6 @@ from zope.security import checkPermission
 from plone.indexer.decorator import indexer
 from plone.supermodel.directives import primary
 from plone.app.textfield import RichText
-from Products.validation import V_REQUIRED
 
 checkfileextensionimage = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
