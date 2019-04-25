@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from plone import api
 from plone.app.layout.viewlets import ViewletBase
@@ -45,7 +46,9 @@ class ITUpCenter(model.Schema):
 
     product_title = schema.TextLine(
         title=_(u"Template Product Name"),
-        description=_(u"Name of the Template product, e.g. only Templates or LibreOffice Templates"),
+        description=_(
+            u"Name of the Template product, e.g. only Templates or "
+            u"LibreOffice Templates"),
     )
 
     model.fieldset('categories_et_all',
@@ -75,7 +78,8 @@ class ITUpCenter(model.Schema):
                                               'E-book',
                                               'Education',
                                               'Academia',
-                                              'Elementary/Secondary school panels',
+                                              'Elementary/Secondary '
+                                              'school panels',
                                               'Envelope'
                                               'Fax',
                                               'Genealogy',
@@ -105,18 +109,28 @@ class ITUpCenter(model.Schema):
                                      value_type=schema.TextLine())
 
     available_licenses = schema.List(title=_(u"Available Licenses"),
-                                     default=['GNU-GPL-v2 (GNU General Public License Version 2)',
-                                              'GNU-GPL-v3+ (General Public License Version 3 and later)',
-                                              'LGPL-v2.1 (GNU Lesser General Public License Version 2.1)',
-                                              'LGPL-v3+ (GNU Lesser General Public License Version 3 and later)',
-                                              'BSD (BSD License (revised))',
-                                              'MPL-v1.1 (Mozilla Public License Version 1.1)',
-                                              'MPL-v2.0+ (Mozilla Public License Version 2.0 or later)',
-                                              'CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',
-                                              'CC-BY-SA-v4 (Creative Commons Attribution-ShareAlike 4.0 International)',
-                                              'AL-v2 (Apache License Version 2.0)',
-                                              'Public Domain',
-                                              'OSI (Other OSI Approved)'],
+                                     default=[
+                                         'GNU-GPL-v2 (GNU General Public '
+                                         'License Version 2)',
+                                         'GNU-GPL-v3+ (General Public License '
+                                         'Version 3 and later)',
+                                         'LGPL-v2.1 (GNU Lesser General '
+                                         'Public License Version 2.1)',
+                                         'LGPL-v3+ (GNU Lesser General Public '
+                                         'License Version 3 and later)',
+                                         'BSD (BSD License (revised))',
+                                         'MPL-v1.1 (Mozilla Public License '
+                                         'Version 1.1)',
+                                         'MPL-v2.0+ (Mozilla Public License '
+                                         'Version 2.0 or later)',
+                                         'CC-by-sa-v3 (Creative Commons '
+                                         'Attribution-ShareAlike 3.0)',
+                                         'CC-BY-SA-v4 (Creative Commons '
+                                         'Attribution-ShareAlike 4.0 '
+                                         'International)',
+                                         'AL-v2 (Apache License Version 2.0)',
+                                         'Public Domain',
+                                         'OSI (Other OSI Approved)'],
                                      value_type=schema.TextLine())
 
     available_versions = schema.List(title=_(u"Available Versions"),
@@ -168,7 +182,8 @@ class ITUpCenter(model.Schema):
     model.fieldset('disclaimer',
                    label=u'Legal Disclaimer',
                    fields=['title_legaldisclaimer', 'legal_disclaimer',
-                           'title_legaldownloaddisclaimer', 'legal_downloaddisclaimer'])
+                           'title_legaldownloaddisclaimer',
+                           'legal_downloaddisclaimer'])
 
     title_legaldisclaimer = schema.TextLine(
         title=_(u"Title for Legal Disclaimer and Limitations"),
@@ -178,14 +193,19 @@ class ITUpCenter(model.Schema):
 
     legal_disclaimer = schema.Text(
         title=_(u"Text of the Legal Disclaimer and Limitations"),
-        description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed "
-                      u"to the project creator and should be accepted by the owner of the project."),
-        default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
+        description=_(
+            u"Enter the text of the legal disclaimer and limitations that "
+            u"should be displayed to the project creator and should be "
+            u"accepted by the owner of the project."),
+        default=_(
+            u"Fill in the legal disclaimer, that had to be accepted by the "
+            u"project owner"),
         required=False
     )
 
     title_legaldownloaddisclaimer = schema.TextLine(
-        title=_(u"Title of the Legal Disclaimer and Limitations for Downloads"),
+        title=_(
+            u"Title of the Legal Disclaimer and Limitations for Downloads"),
         default=_(u"Legal Disclaimer and Limitations for Downloads"),
         required=False
     )
@@ -193,8 +213,9 @@ class ITUpCenter(model.Schema):
     primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
         title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
-        description=_(u"Enter any legal disclaimer and limitations for downloads that should "
-                      u"appear on each page for dowloadable files."),
+        description=_(
+            u"Enter any legal disclaimer and limitations for downloads that "
+            u"should appear on each page for dowloadable files."),
         default=_(u"Fill in the text for the legal download disclaimer"),
         required=False
     )
@@ -213,8 +234,12 @@ class ITUpCenter(model.Schema):
                    fields=['contactForCenter'])
 
     contactForCenter = schema.ASCIILine(
-        title=_(u"EMail address for communication with the template center manager and reviewer"),
-        description=_(u"Enter an email address for the communication with template center manager and reviewer"),
+        title=_(
+            u"EMail address for communication with the template center "
+            u"manager and reviewer"),
+        description=_(
+            u"Enter an email address for the communication with template "
+            u"center manager and reviewer"),
         default='templates@libreoffice.org',
         constraint=validateEmail
     )
@@ -258,8 +283,10 @@ class TUpCenterView(BrowserView):
         context = aq_inner(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
 
-        return len(catalog(portal_type=('tdf.templateuploadcenter.tupproject', 'tdf.templateuploaccenter.tupsmallproject'),
-                           review_state = 'published'))
+        return len(catalog(portal_type=(
+            'tdf.templateuploadcenter.tupproject',
+            'tdf.templateuploaccenter.tupsmallproject'),
+                           review_state='published'))
 
     def tuprelease_count(self):
         """Return number of downloadable files
@@ -277,7 +304,7 @@ class TUpCenterView(BrowserView):
             'sort_order': 'reverse',
             'review_state': 'published',
             'portal_type': ('tdf.templateuploadcenter.tupproject',
-                           'tdf.templateuploadcenter.tupsmallproject')}
+                            'tdf.templateuploadcenter.tupsmallproject')}
         return catalog(**contentFilter)
 
     def get_newest_products(self):
@@ -304,8 +331,9 @@ class TUpCenterView(BrowserView):
         contentFilter = {'sort_on': sort_on,
                          'SearchableText': SearchableText,
                          'sort_order': 'reverse',
-                         'portal_type': ('tdf.templateuploadcenter.tupproject',
-                                         'tdf.templateuploadcenter.tupsmallproject')}
+                         'portal_type': (
+                             'tdf.templateuploadcenter.tupproject',
+                             'tdf.templateuploadcenter.tupsmallproject')}
         if version != 'any':
             # We ask to the indexed value on the project (aggregated from
             # releases on creation/modify/delete of releases)
