@@ -1,9 +1,9 @@
+# -*- coding: utf-8 -*-
 from tdf.templateuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
 from plone.dexterity.browser.view import DefaultView
-from Acquisition import aq_inner
 from plone import api
 from collective import dexteritytextindexer
 from zope.schema.interfaces import IContextSourceBinder
@@ -12,7 +12,6 @@ from zope.interface import directlyProvides
 import re
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import Invalid, invariant
-from plone import api
 from tdf.templateuploadcenter.tuprelease import ITUpRelease
 from tdf.templateuploadcenter.tupreleaselink import ITUpReleaseLink
 from z3c.form import validator
@@ -29,7 +28,9 @@ checkfileextension = re.compile(
 
 def validateImageextension(value):
     if not checkfileextension(value.filename):
-        raise Invalid(u"You could only add images in the png, gif or jpg file format to your project.")
+        raise Invalid(
+            u"You could only add images in the png, gif or jpg file format "
+            u"to your project.")
     return True
 
 
@@ -48,7 +49,8 @@ def vocabCategories(context):
 
     terms = []
     for value in category_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
 
     return SimpleVocabulary(terms)
 
@@ -58,7 +60,8 @@ directlyProvides(vocabCategories, IContextSourceBinder)
 
 def isNotEmptyCategory(value):
     if not value:
-        raise Invalid(u'You have to choose at least one category for your project.')
+        raise Invalid(
+            u'You have to choose at least one category for your project.')
     return True
 
 
@@ -73,8 +76,10 @@ def validateEmail(value):
 
 
 class ProvideScreenshotLogo(Invalid):
-    __doc__ = _(u"Please add a Screenshot or a Logo to your project. You find the appropriate fields below "
-                u"on this page.")
+    __doc__ = _(
+        u"Please add a Screenshot or a Logo to your project. You find the "
+        u"appropriate fields below "
+        u"on this page.")
 
 
 class MissingCategory(Invalid):
@@ -82,12 +87,13 @@ class MissingCategory(Invalid):
 
 
 class ITUpProject(model.Schema):
-
     directives.mode(information="display")
     information = schema.Text(
         title=_(u"Information"),
-        description=_(u"The Dialog to create a new project consists of different register. Please go through "
-                      u"these register and fill in the appropriate data for your project.")
+        description=_(
+            u"The Dialog to create a new project consists of different "
+            u"register. Please go through these register and fill in the "
+            u"appropriate data for your project.")
     )
 
     dexteritytextindexer.searchable('title')
@@ -111,19 +117,21 @@ class ITUpProject(model.Schema):
     )
 
     model.fieldset('Categories',
-                   label = 'Category / Categories',
-                   fields = ['category_choice']
-    )
+                   label='Category / Categories',
+                   fields=['category_choice']
+                   )
     model.fieldset('logo_screenshot',
-                   label = 'Logo / Screenshot',
-                   fields = ['project_logo', 'screenshot']
-    )
+                   label='Logo / Screenshot',
+                   fields=['project_logo', 'screenshot']
+                   )
 
     dexteritytextindexer.searchable('category_choice')
     directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
         title=_(u"Choose your categories"),
-        description=_(u"Please select the appropriate categories (one or more) for your project."),
+        description=_(
+            u"Please select the appropriate categories (one or more) for "
+            u"your project."),
         value_type=schema.Choice(source=vocabCategories),
         constraint=isNotEmptyCategory,
         required=True
@@ -137,29 +145,35 @@ class ITUpProject(model.Schema):
 
     homepage = schema.URI(
         title=_(u"Homepage"),
-        description=_(u"If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."),
+        description=_(
+            u"If the project has an external home page, enter its URL "
+            u"(example: 'http://www.mysite.org')."),
         required=False
     )
 
     documentation_link = schema.URI(
         title=_(u"URL of documentation repository "),
-        description=_(u"If the project has externally hosted documentation, enter its "
-                      u"URL (example: 'http://www.mysite.org')."),
+        description=_(
+            u"If the project has externally hosted documentation, enter its "
+            u"URL (example: 'http://www.mysite.org')."),
         required=False
     )
 
     project_logo = NamedBlobImage(
         title=_(u"Logo"),
-        description=_(u"Add a logo for the project (or organization/company) by clicking the 'Browse' button. "
-                      u"You could provide an image of the file format 'png', 'gif' or 'jpg'."),
+        description=_(
+            u"Add a logo for the project (or organization/company) by "
+            u"clicking the 'Browse' button. You could provide an image of "
+            u"the file format 'png', 'gif' or 'jpg'."),
         required=False,
         constraint=validateImageextension
     )
 
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Template"),
-        description=_(u"Add a screenshot by clicking the 'Browse' button. You could provide an image of the file "
-                      u"format 'png', 'gif' or 'jpg'. "),
+        description=_(
+            u"Add a screenshot by clicking the 'Browse' button. You could "
+            u"provide an image of the file format 'png', 'gif' or 'jpg'. "),
         required=False,
         constraint=validateImageextension
     )
@@ -167,13 +181,14 @@ class ITUpProject(model.Schema):
     @invariant
     def missingScreenshotOrLogo(data):
         if not data.screenshot and not data.project_logo:
-            raise ProvideScreenshotLogo(_(u'Please add a screenshot or a logo to your project page. You will find the'
-                                          u'appropriate fields below on this page.'))
+            raise ProvideScreenshotLogo(_(
+                u'Please add a screenshot or a logo to your project page. '
+                u'You will find the appropriate fields below on this page.'))
 
 
 def notifyProjectManager(self, event):
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailsender = str(self.__parent__.contactForCenter)
     else:
         mailsender = 'templates@libreoffice.org'
@@ -181,49 +196,57 @@ def notifyProjectManager(self, event):
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailsender),
         subject=(u"Your Project {}").format(self.title),
-        body=(u"The status of your LibreOffice templates project changed. The new status is {}").format(state)
+        body=(
+            u"The status of your LibreOffice templates project changed. "
+            u"The new status is {}").format(state)
     )
 
 
 def notifyProjectManagerReleaseAdd(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site',
+                                   mailrecipient),
         subject=(u"Your Project {}: new Release added").format(self.title),
-        body=(u"A new release was added to your project: '{}'").format(self.title),
+        body=(u"A new release was added to your project: '{}'").format(
+            self.title),
     )
 
 
 def notifyProjectManagerReleaseLinkedAdd(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
-        subject=(u"Your Project {}: new linked Release added").format(self.title),
-        body=(u"A new linked release was added to your project: '{}'").format(self.title),
+        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site',
+                                   mailrecipient),
+        subject=(u"Your Project {}: new linked Release added").format(
+            self.title),
+        body=(u"A new linked release was added to your project: '{}'").format(
+            self.title),
     )
 
 
 def notifyAboutNewReviewlistentry(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'templates@libreoffice.org'
     if state == "pending":
         api.portal.send_email(
             recipient=mailrecipient,
-            subject=(u"A Project with the title {} was added to the review list").format(self.title),
-            body="Please have a look at the review list and check if the project is "
-                 "ready for publication. \n"
+            subject=(
+                u"A Project with the title {} was added to the review "
+                u"list").format(self.title),
+            body="Please have a look at the review list and check if the "
+                 "project is ready for publication. \n"
                  "\n"
                  "Kind regards,\n"
                  "The Admin of the Website"
@@ -231,9 +254,8 @@ def notifyAboutNewReviewlistentry(self, event):
 
 
 def textmodified_templateproject(self, event):
-    portal = api.portal.get()
     state = api.content.get_state(self)
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'templates@libreoffice.org'
@@ -245,16 +267,22 @@ def textmodified_templateproject(self, event):
 
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site', mailrecipient),
-            subject=(u"The content of the project {} has changed").format(self.title),
-            body=(u"The content of the project {} has changed. Here you get the text of the "
-                  u"description field of the project: \n'{}\n\nand this is the text of the "
-                  u"details field:\n{}'").format(self.title, self.description, detailed_description),
+            sender=(u"{} <{}>").format(
+                'Admin of the LibreOffice Templates site', mailrecipient),
+            subject=(u"The content of the project {} has changed").format(
+                self.title),
+            body=(
+                u"The content of the project {} has changed. Here you get the "
+                u"text of the description field of the project: \n"
+                u"'{}\n\nand this is the text of the details field:\n"
+                u"{}'").format(self.title,
+                               self.description,
+                               detailed_description),
         )
 
 
 def notifyAboutNewProject(self, event):
-    if (self.__parent__.contactForCenter) is not None:
+    if self.__parent__.contactForCenter is not None:
         mailrecipient = str(self.__parent__.contactForCenter)
     else:
         mailrecipient = 'templates@libreoffice.org'
@@ -273,7 +301,8 @@ def getLatestRelease(self):
         review_state='published',
         sort_on='Date',
         sort_order='reverse',
-        portal_type='tdf.templateuploadcenter.tuprelease, tdf.templateuploadcenter.tupreleaselink')
+        portal_type='tdf.templateuploadcenter.tuprelease,'
+                    'tdf.templateuploadcenter.tupreleaselink')
 
     if not res:
         return None
@@ -293,9 +322,11 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results1 = catalog({'Title': quote_chars(value),
-                                'object_provides': ITUpProject.__identifier__, })
+                                'object_provides':
+                                    ITUpProject.__identifier__, })
             results2 = catalog({'Title': quote_chars(value),
-                                'object_provides': ITUpSmallProject.__identifier__, })
+                                'object_provides':
+                                    ITUpSmallProject.__identifier__, })
             results = results1 + results2
 
         contextUUID = IUUID(self.context, None)
@@ -314,13 +345,15 @@ validator.WidgetValidatorDiscriminators(
 class TUpProjectView(DefaultView):
 
     def all_releases(self):
-        """Get a list of all releases, ordered by version, starting with the latest.
+        """Get a list of all releases, ordered by version, starting
+           with the latest.
         """
 
         catalog = api.portal.get_tool(name='portal_catalog')
         current_path = "/".join(self.context.getPhysicalPath())
         res = catalog.searchResults(
-            portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
+            portal_type=('tdf.templateuploadcenter.tuprelease',
+                         'tdf.templateuploadcenter.tupreleaselink'),
             path=current_path,
             sort_on='Date',
             sort_order='reverse')
@@ -335,7 +368,8 @@ class TUpProjectView(DefaultView):
         catalog = api.portal.get_tool(name='portal_catalog')
 
         res = catalog.searchResults(
-            portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
+            portal_type=('tdf.templateuploadcenter.tuprelease',
+                         'tdf.templateuploadcenter.tupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
             review_state='final',
             sort_on='effective',
@@ -363,7 +397,8 @@ class TUpProjectView(DefaultView):
         catalog = api.portal.get_tool('portal_catalog')
 
         res = catalog.searchResults(
-            portal_type=('tdf.templateuploadcenter.tuprelease', 'tdf.templateuploadcenter.tupreleaselink'),
+            portal_type=('tdf.templateuploadcenter.tuprelease',
+                         'tdf.templateuploadcenter.tupreleaselink'),
             path='/'.join(context.getPhysicalPath()),
             review_state=('alpha', 'beta', 'release-candidate'),
             sort_on='effective',
@@ -380,4 +415,3 @@ class TUpProjectView(DefaultView):
         idx_data = catalog.getIndexDataForUID(path)
         category = idx_data.get('getCategories')
         return (r for r in category)
-
