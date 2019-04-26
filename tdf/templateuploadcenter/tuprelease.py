@@ -3,7 +3,6 @@ from tdf.templateuploadcenter import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
-from plone.autoform import directives as form
 from plone.indexer.decorator import indexer
 from plone.dexterity.browser.view import DefaultView
 from zope.schema.interfaces import IContextSourceBinder
@@ -12,18 +11,15 @@ from zope.interface import directlyProvides
 
 from zope.security import checkPermission
 from zope.interface import invariant, Invalid
-from Acquisition import aq_inner, aq_parent, aq_get, aq_chain
+from Acquisition import aq_inner, aq_parent
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
-
-from zope import schema
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from Products.validation import V_REQUIRED
 from z3c.form import validator
-from plone.uuid.interfaces import IUUID
 from plone import api
 import re
 from plone.supermodel.directives import primary
