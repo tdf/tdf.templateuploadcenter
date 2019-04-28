@@ -24,8 +24,8 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                                                          license view/releaseLicense;
-                                                          compatibility view/releaseCompatibility;">
+                                                          license view/releaselicense;
+                                                          compatibility view/releasecompatibility;">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
 
