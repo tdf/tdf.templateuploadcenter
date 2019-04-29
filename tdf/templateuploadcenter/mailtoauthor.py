@@ -91,7 +91,8 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
         # Redirect back to the front page with a status message
 
         IStatusMessage(self.request).addStatusMessage(
-                _(u"Thank you for your order. We will contact you shortly"),
+                _(u"We send your message to the author of the project. It's "
+                  u"on his choice, if he'll get back to you."),
                 "info"
             )
 
