@@ -6,7 +6,7 @@ from zope import component
 from z3c.form import form, button
 import re
 from zope.interface import Invalid
-
+from plone import api
 from Products.statusmessages.interfaces import IStatusMessage
 
 from tdf.templateuploadcenter import MessageFactory as _
@@ -87,6 +87,28 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
         if errors:
             self.status = self.formErrorsMessage
             return
+
+        catalog = api.portal.get_tool('portal_catalog')
+        project = catalog(
+                      portal_type=('tdf.templateuploadcenter.tupproject',
+                         'tdf.templateuploadcenter.tupsmallproject'),
+                      Title=data['projectname']
+        )
+
+        for brain in project:
+            projectemail = brain.getObject().contactAddress
+
+        mailrecipient=(u"{}").format(projectemail)
+        api.portal.send_email(
+            recipient=mailrecipient,
+            sender=(u"{} {} <{}>").format(data['inquirerfirstname'],
+                                            data['inquirerfamilyname'],
+                                            data['inquireremailaddress']),
+            subject=(u"Your Project: {}").format(data['projectname']),
+            body=(u"{}").format(data['inquiry'])
+
+
+        )
 
         # Redirect back to the front page with a status message
 
