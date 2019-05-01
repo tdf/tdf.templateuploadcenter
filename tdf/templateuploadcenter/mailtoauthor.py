@@ -95,8 +95,12 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
                       Title=data['projectname']
         )
 
-        for brain in project:
-            projectemail = brain.getObject().contactAddress
+        for brain in project[:1]:
+            if brain.getObject().contactAddress is not None:
+                projectemail = brain.getObject().contactAddress
+
+            else:
+                projectemail = 'templates@libreoffice.org'
 
         mailrecipient=(u"{}").format(projectemail)
         api.portal.send_email(
