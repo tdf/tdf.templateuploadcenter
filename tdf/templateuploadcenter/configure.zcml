@@ -178,5 +178,14 @@
     handler="tdf.templateuploadcenter.tupproject.textmodified_templateproject"
     />
 
+  <adapter factory=".mailtoauthor.MailToAuthorAdapter"/>
+
+  <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="mail-to-templateauthor"
+        class=".mailtoauthor.MailToAuthorForm"
+        permission="zope2.View"
+        />
+
 
 </configure>
