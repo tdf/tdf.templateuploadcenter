@@ -125,7 +125,18 @@
                          <h3 i18n:translate="">Install Instructions</h3>
                          <span tal:content="structure context/install_instructions/output" />
                      </div>
-                 </div>
+                     div>
+                <h2>Contact The Author</h2>
+                <p>You can send a message to the author of the project and
+                    give him feedback by following the following the following
+                    link and fill in your information into the form:<br />
+                    <a class="pointer" tal:attributes="hrefsidebar
+                            string:${context/portal_url}/@@mail-to-templateauthor">
+                        Get in contact with the project author
+                    </a>.
+                </p>
+            </div>
+
              </div>
          </div>
      </tal:main-macro>
