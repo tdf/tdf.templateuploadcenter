@@ -11,6 +11,13 @@ from Products.statusmessages.interfaces import IStatusMessage
 
 from tdf.templateuploadcenter import MessageFactory as _
 
+import logging
+from z3c.form import field
+
+from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
+from Acquisition import aq_inner
+from zope.component import getMultiAdapter
+
 
 checkemail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
@@ -21,6 +28,24 @@ def validateemail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
+
+logger = logging.getLogger(__name__)
+
+
+class IReCaptchaForm(interface.Interface):
+
+    captcha = schema.TextLine(
+        title=u"ReCaptcha",
+        description=u"",
+        required=False
+    )
+
+
+class ReCaptcha(object):
+    captcha = u""
+
+    def __init__(self, context):
+        self.context = context
 
 
 class MailToAuthorSchema(interface.Interface):
@@ -74,6 +99,9 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
     label = _(u"Mail To The Project Author")
     description = _(u"Contact the project author and send your feedback")
 
+    fields = field.Fields(MailToAuthorSchema, IReCaptchaForm)
+    fields['captcha'].widgetFactory = ReCaptchaFieldWidget
+
     def update(self):
         # disable Plone's editable border
         self.request.set('disable_border', True)
@@ -84,9 +112,24 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
     @button.buttonAndHandler(_(u'Send Email'))
     def handleApply(self, action):
         data, errors = self.extractData()
+        captcha = getMultiAdapter(
+            (aq_inner(self.context), self.request),
+            name='recaptcha'
+        )
+
         if errors:
             self.status = self.formErrorsMessage
             return
+
+        elif captcha.verify():
+            logger.info('ReCaptcha validation passed.')
+        else:
+            logger.info(
+                'The code you entered was wrong, please enter the new one.'
+            )
+            return
+
+
 
         catalog = api.portal.get_tool('portal_catalog')
         project = catalog(
