@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-27 08:19+0000\n"
+"POT-Creation-Date: 2019-05-06 12:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,10 @@ msgstr ""
 msgid "Browse Templates by Category"
 msgstr ""
 
+#: ./mailtoauthor.py:173
+msgid "Cancel"
+msgstr ""
+
 #: ./tupproject_templates/view.pt:99
 #: ./tupsmallproject_templates/view.pt:55
 msgid "Category/Categories"
@@ -184,6 +188,10 @@ msgstr ""
 #: ./tuprelease.py:219
 #: ./tupreleaselink.py:213
 msgid "Contact email-address for the project."
+msgstr ""
+
+#: ./mailtoauthor.py:100
+msgid "Contact the project author and send your feedback"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:120
@@ -403,9 +411,9 @@ msgstr ""
 msgid "Instruction how to report Bugs"
 msgstr ""
 
+#: ./mailtoauthor.py:28
 #: ./tupcenter.py:27
 #: ./tupproject.py:74
-#: ./tupsmallproject.py:60
 msgid "Invalid email address"
 msgstr ""
 
@@ -452,6 +460,10 @@ msgstr ""
 #: ./tupproject.py:163
 #: ./tupproject_templates/view.pt:109
 msgid "Logo"
+msgstr ""
+
+#: ./mailtoauthor.py:99
+msgid "Mail To The Project Author"
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
@@ -576,6 +588,18 @@ msgstr ""
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr ""
 
+#: ./mailtoauthor.py:65
+msgid "Please fill in your email address."
+msgstr ""
+
+#: ./mailtoauthor.py:60
+msgid "Please fill in your familiy name"
+msgstr ""
+
+#: ./mailtoauthor.py:55
+msgid "Please fill in your first name(s)"
+msgstr ""
+
 #: ./tupreleaselink.py:237
 msgid "Please insert a link to your extension file."
 msgstr ""
@@ -620,12 +644,21 @@ msgstr ""
 msgid "Please upload your file."
 msgstr ""
 
+#: ./mailtoauthor.py:131
+#: ./recaptchamailextender.py:24
+msgid "Please validate the recaptcha field before sending the form."
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "Private"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:97
 msgid "Project Description"
+msgstr ""
+
+#: ./mailtoauthor.py:70
+msgid "Project Name"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:429
@@ -790,6 +823,10 @@ msgstr ""
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
 
+#: ./mailtoauthor.py:112
+msgid "Send Email"
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "Send back"
 msgstr ""
@@ -930,6 +967,10 @@ msgstr ""
 msgid "The linked Template file"
 msgstr ""
 
+#: ./mailtoauthor.py:71
+msgid "The name of the project, to which author you want to send feedback."
+msgstr ""
+
 #: ./profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "The owner can edit the template project"
 msgstr ""
@@ -1053,6 +1094,14 @@ msgstr ""
 msgid "Waiting for the Review."
 msgstr ""
 
+#: ./mailtoauthor.py:165
+msgid "We send your message to the author of the project. It's on his choice, if he'll get back to you."
+msgstr ""
+
+#: ./mailtoauthor.py:77
+msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
+msgstr ""
+
 #: ./tuprelease.py:83
 #: ./tupreleaselink.py:79
 #: ./tupsmallproject.py:189
@@ -1070,6 +1119,22 @@ msgstr ""
 
 #: ./tupsmallproject.py:353
 msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
+msgstr ""
+
+#: ./mailtoauthor.py:64
+msgid "Your Email Address"
+msgstr ""
+
+#: ./mailtoauthor.py:59
+msgid "Your Family Name"
+msgstr ""
+
+#: ./mailtoauthor.py:54
+msgid "Your First Name"
+msgstr ""
+
+#: ./mailtoauthor.py:76
+msgid "Your Message To The Author"
 msgstr ""
 
 #: ./tupcenter_templates/own_project.pt:12
