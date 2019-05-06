@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-04-27 10:22+0200\n"
+"PO-Revision-Date: 2019-05-06 15:02+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -123,6 +123,10 @@ msgstr "Suchen"
 msgid "Browse Templates by Category"
 msgstr "Suchen von Vorlagen nach Kategorie"
 
+#: mailtoauthor.py:173
+msgid "Cancel"
+msgstr "Abbrechen"
+
 #: tupproject_templates/view.pt:99 tupsmallproject_templates/view.pt:55
 msgid "Category/Categories"
 msgstr "Kategorie/Kategorien"
@@ -161,6 +165,10 @@ msgstr "Kontakt-Email-Adresse"
 #: tupproject.py:142 tuprelease.py:219 tupreleaselink.py:213
 msgid "Contact email-address for the project."
 msgstr "Kontakt-Email-Adresse für das Projekt."
+
+#: mailtoauthor.py:100
+msgid "Contact the project author and send your feedback"
+msgstr "Kontaktieren Sie den Projekt-Autoren und senden Sie Feedback"
 
 #: tupproject_templates/view.pt:120
 msgid "Current Release"
@@ -371,7 +379,7 @@ msgstr "Installationsanleitung"
 msgid "Instruction how to report Bugs"
 msgstr "Anleitung, wie ein Fehler gemeldet wird"
 
-#: tupcenter.py:27 tupproject.py:74 tupsmallproject.py:60
+#: mailtoauthor.py:28 tupcenter.py:27 tupproject.py:74
 msgid "Invalid email address"
 msgstr "Ungültige Email-Adresse"
 
@@ -411,6 +419,10 @@ msgstr "Link zum Quellcode"
 #: tupproject.py:163 tupproject_templates/view.pt:109
 msgid "Logo"
 msgstr "Logo"
+
+#: mailtoauthor.py:99
+msgid "Mail To The Project Author"
+msgstr "E-Mail an den Projekt-Autor"
 
 #: profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "Member retracts submission"
@@ -524,6 +536,18 @@ msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr "Bitte füllen Sie die Größe der extern gehosteten Datei  in Kilobyte (z.B. 633, falls die Größe 633 KB ist) ein."
 
+#: mailtoauthor.py:65
+msgid "Please fill in your email address."
+msgstr "Bitte tragen Sie Ihre E-Mail-Adresse ein."
+
+#: mailtoauthor.py:60
+msgid "Please fill in your familiy name"
+msgstr "Bitte tragen Sie Ihren Familiennamen ein."
+
+#: mailtoauthor.py:55
+msgid "Please fill in your first name(s)"
+msgstr "Bitte tragen Sie Ihre(n) Vornamen ein."
+
 #: tupreleaselink.py:237
 msgid "Please insert a link to your extension file."
 msgstr "Bitte fügen Sie einen Link zu Ihrer Extension-Datei ein."
@@ -560,6 +584,10 @@ msgstr "Bitte wählen Sie eine passende Kategorie (eine oder mehrere) für ihre 
 msgid "Please upload your file."
 msgstr "Bitte laden Sie Ihre Datei hoch."
 
+#: mailtoauthor.py:131 recaptchamailextender.py:24
+msgid "Please validate the recaptcha field before sending the form."
+msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden."
+
 #: profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "Private"
 msgstr "Privat"
@@ -567,6 +595,10 @@ msgstr "Privat"
 #: tupproject_templates/view.pt:97
 msgid "Project Description"
 msgstr "Projekt-Beschreibung"
+
+#: mailtoauthor.py:70
+msgid "Project Name"
+msgstr "Projekt-Name"
 
 #: tupproject_templates/view.pt:429 tuprelease_templates/view.pt:151
 #: tupreleaselink_templates/view.pt:139
@@ -716,6 +748,10 @@ msgstr "Die zweite verlinkte Datei ist kompatibel mit den Plattformen"
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr "Die zweite hochgeladene Datei ist kompatibel mit den Plattformen"
 
+#: mailtoauthor.py:112
+msgid "Send Email"
+msgstr "E-Mail senden"
+
 #: profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "Send back"
 msgstr "Zurück senden"
@@ -850,6 +886,10 @@ msgstr "Die vierte Datei, die Sie hochladen wollen (dies ist optional)"
 msgid "The linked Template file"
 msgstr "Die verlinkte Vorlagen-Datei"
 
+#: mailtoauthor.py:71
+msgid "The name of the project, to which author you want to send feedback."
+msgstr "Der Name des Projekts, dessen Autor Sie Feedback senden wollen."
+
 #: profiles/default/workflows/tdf_templateuploadcenter_project_workflow/definition.xml
 msgid "The owner can edit the template project"
 msgstr "Der Besitzer kann das Template(Vorlagen)-Projekt bearbeiten"
@@ -967,6 +1007,14 @@ msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
 msgid "Waiting for the Review."
 msgstr "Auf Review wartend."
 
+#: mailtoauthor.py:165
+msgid "We send your message to the author of the project. It's on his choice, if he'll get back to you."
+msgstr "Wir senden Ihre Nachricht an den Projekt-Autor. Es ist seine Entscheidung, ob er sich bei Ihnen meldet."
+
+#: mailtoauthor.py:77
+msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
+msgstr "Wie lautet Ihre Nachricht an den Projekt-Autor? Ihre Nachricht ist auf 1000 Zeichen begrenzt."
+
 #: tuprelease.py:83 tupreleaselink.py:79 tupsmallproject.py:189
 msgid "Yes"
 msgstr "Ja"
@@ -982,6 +1030,22 @@ msgstr "Sie haben noch keine Kategorie für Ihr Projekt gewählt"
 #: tupsmallproject.py:353
 msgid "You need only to upload one file to your project. There are options for further two file uploads if you want to provide files for different platforms."
 msgstr "Sie brauchen nur eine Datei zu Ihrem Projekt hochladen. Es bestehen Möglichkeiten für das Hochladen von zwei weiteren Dateien, falls Sie Dateien für andere Plattformen zur Verfügung stellen wollen."
+
+#: mailtoauthor.py:64
+msgid "Your Email Address"
+msgstr "Ihre E-Mail-Adresse"
+
+#: mailtoauthor.py:59
+msgid "Your Family Name"
+msgstr "Ihr Familienname"
+
+#: mailtoauthor.py:54
+msgid "Your First Name"
+msgstr "Ihr Vorname"
+
+#: mailtoauthor.py:76
+msgid "Your Message To The Author"
+msgstr "Ihre Nachricht an den Autor"
 
 #: tupcenter_templates/own_project.pt:12
 msgid "Your Own Projects"
