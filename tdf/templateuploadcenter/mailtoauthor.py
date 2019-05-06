@@ -125,11 +125,13 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
             logger.info('ReCaptcha validation passed.')
         else:
             logger.info(
-                'The code you entered was wrong, please enter the new one.'
+                "Please validate the recaptcha field before sending the form."
+            )
+            IStatusMessage(self.request).addStatusMessage(
+                _(u"Please validate the recaptcha field before sending "
+                  u"the form."), "error"
             )
             return
-
-
 
         catalog = api.portal.get_tool('portal_catalog')
         project = catalog(
