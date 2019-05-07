@@ -28,6 +28,19 @@ def validateemail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
+def validateprojectname(value):
+    catalog = api.portal.get_tool('portal_catalog')
+    project = catalog(
+        portal_type=('tdf.templateuploadcenter.tupproject',
+                     'tdf.templateuploadcenter.tupsmallproject'),
+        Title=value
+    )
+
+    for brain in project[:1]:
+        if brain.Title is None:
+            raise Invalid(_(u"Not a valid project name. Please retry."))
+        return True
+
 
 logger = logging.getLogger(__name__)
 
@@ -69,7 +82,8 @@ class MailToAuthorSchema(interface.Interface):
     projectname = schema.TextLine(
         title=_(u"Project Name"),
         description=_(u"The name of the project, to which author you want "
-                      u"to send feedback.")
+                      u"to send feedback."),
+        constraint= validateprojectname
     )
 
     inquiry = schema.Text(
