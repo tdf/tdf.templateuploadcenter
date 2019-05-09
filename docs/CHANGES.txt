@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.25 (unreleased)
+0.25 (2019-05-09)
 -----------------
 
 - Add a new email form to send feedback to a project author with recaptcha
