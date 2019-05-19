@@ -130,7 +130,7 @@
                 <p>You can send a message to the author of the project and
                     give him feedback by following the following the following
                     link and fill in your information into the form:<br />
-                    <a class="pointer" tal:attributes="hrefsidebar
+                    <a class="pointer" tal:attributes="href
                             string:${context/portal_url}/@@mail-to-templateauthor">
                         Get in contact with the project author
                     </a>.
