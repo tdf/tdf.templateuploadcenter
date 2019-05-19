@@ -191,7 +191,7 @@ def notifyProjectManager(self, event):
     if self.__parent__.contactForCenter is not None:
         mailsender = str(self.__parent__.contactForCenter)
     else:
-        mailsender = 'templates@libreoffice.org'
+        mailsender = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
         sender=(u"{} <{}>").format('Admin of the Website', mailsender),
