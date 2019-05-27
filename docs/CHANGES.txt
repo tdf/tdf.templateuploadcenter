@@ -4,7 +4,11 @@ Changelog
 0.26 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Change fallback email sender and recipient from hard coded to the variable
+  site email address [Andreas Mantke]
+- Remove redundant source code [Andreas Mantke]
+- Update localization template and German localization [Andreas Mantke]
+
 
 
 0.25 (2019-05-09)
