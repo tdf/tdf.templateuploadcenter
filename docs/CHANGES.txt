@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.26 (unreleased)
+0.26 (2019-05-28)
 -----------------
 
 - Change fallback email sender and recipient from hard coded to the variable
