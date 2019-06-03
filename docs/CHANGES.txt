@@ -4,7 +4,10 @@ Changelog
 0.27 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Project view for stable releases changed thus a release date is only
+  shown, if there is a publishing date for a release within a
+  project available. {Andreas Mantke]
+
 
 
 0.26 (2019-05-28)
