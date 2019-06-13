@@ -7,7 +7,7 @@ Changelog
 - Project view for stable releases changed thus a release date is only
   shown, if there is a publishing date for a release within a
   project available. {Andreas Mantke]
-
+- Update localization template and German translation file [Andreas Mantke]
 
 
 0.26 (2019-05-28)
@@ -17,7 +17,6 @@ Changelog
   site email address [Andreas Mantke]
 - Remove redundant source code [Andreas Mantke]
 - Update localization template and German localization [Andreas Mantke]
-
 
 
 0.25 (2019-05-09)
