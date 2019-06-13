@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-05-26 19:57+0000\n"
+"POT-Creation-Date: 2019-06-13 13:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:221
+#: ./tupcenter_templates/view.pt:225
 msgid "${product_title}"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "A template release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:294
+#: ./tupcenter_templates/view.pt:298
 msgid "About"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "All Releases"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:121
+#: ./tupcenter_templates/view.pt:123
 msgid "All categories"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Alpha Release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:131
+#: ./tupcenter_templates/view.pt:133
 msgid "Any version"
 msgstr ""
 
@@ -128,11 +128,11 @@ msgstr ""
 msgid "Beta Release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:270
+#: ./tupcenter_templates/view.pt:274
 msgid "Browse"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:273
+#: ./tupcenter_templates/view.pt:277
 msgid "Browse Templates by Category"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "Current unstable release for the project"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:225
+#: ./tupcenter_templates/view.pt:229
 msgid "Currently there are"
 msgstr ""
 
@@ -350,7 +350,7 @@ msgstr ""
 msgid "Hide this release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:137
+#: ./tupcenter_templates/view.pt:139
 msgid "Highest Rated"
 msgstr ""
 
@@ -401,7 +401,7 @@ msgstr ""
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:286
+#: ./tupcenter_templates/view.pt:290
 #: ./tuprelease_templates/view.pt:178
 #: ./tupreleaselink_templates/view.pt:170
 msgid "Install Instructions"
@@ -482,7 +482,7 @@ msgstr ""
 msgid "Most popular ${product_title}"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:242
+#: ./tupcenter_templates/view.pt:246
 msgid "Most recent"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgstr ""
 msgid "Name of the Template product, e.g. only Templates or LibreOffice Templates"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:138
+#: ./tupcenter_templates/view.pt:140
 msgid "Newest"
 msgstr ""
 
@@ -504,7 +504,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:157
+#: ./tupcenter_templates/view.pt:159
 msgid "No results were found."
 msgstr ""
 
@@ -768,7 +768,7 @@ msgstr ""
 msgid "Reporting Extension-Bugs"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:290
+#: ./tupcenter_templates/view.pt:294
 msgid "Reporting Template-Bugs"
 msgstr ""
 
@@ -805,11 +805,11 @@ msgstr ""
 msgid "Screenshot of the Template"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:146
+#: ./tupcenter_templates/view.pt:148
 msgid "Search"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:112
+#: ./tupcenter_templates/view.pt:114
 msgid "Search ${product_title}"
 msgstr ""
 
@@ -839,7 +839,7 @@ msgid "Sending the item back will return the item to the original author instead
           You should preferably provide a reason to the author why it was not published."
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:119
+#: ./tupcenter_templates/view.pt:121
 msgid "Show"
 msgstr ""
 
@@ -851,11 +851,11 @@ msgstr ""
 msgid "Small Template Project"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:134
+#: ./tupcenter_templates/view.pt:136
 msgid "Sort On"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:235
+#: ./tupcenter_templates/view.pt:239
 msgid "Submit easy and fast a small"
 msgstr ""
 
@@ -867,7 +867,7 @@ msgstr ""
 msgid "Submit new"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:231
+#: ./tupcenter_templates/view.pt:235
 msgid "Submit your"
 msgstr ""
 
@@ -907,7 +907,7 @@ msgstr ""
 msgid "Template Version"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:223
+#: ./tupcenter_templates/view.pt:227
 msgid "Templates"
 msgstr ""
 
@@ -1157,11 +1157,11 @@ msgstr ""
 msgid "a linked Release to your"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:271
+#: ./tupcenter_templates/view.pt:275
 msgid "by Category"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:93
+#: ./tupcenter_templates/view.pt:95
 msgid "in"
 msgstr ""
 
@@ -1173,11 +1173,11 @@ msgstr ""
 msgid "please submit your new"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:226
+#: ./tupcenter_templates/view.pt:230
 msgid "project(s) with"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:160
+#: ./tupcenter_templates/view.pt:162
 msgid "projects matching your criteria."
 msgstr ""
 
@@ -1186,7 +1186,7 @@ msgstr ""
 msgid "re-release"
 msgstr ""
 
-#: ./tupcenter_templates/view.pt:227
+#: ./tupcenter_templates/view.pt:231
 msgid "release(s) available."
 msgstr ""
 
