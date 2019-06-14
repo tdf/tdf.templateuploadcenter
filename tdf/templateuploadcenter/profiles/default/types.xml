@@ -12,4 +12,5 @@
     <object name="tdf.templateuploadcenter.tupproject" meta_type="Dexterity FTI" />
     <object name="tdf.templateuploadcenter.tuprelease" meta_type="Dexterity FTI" />
     <object name="tdf.templateuploadcenter.tupreleaselink" meta_type="Dexterity FTI" />
+    <object name="tdf.templateuploadcenter.tupsmallproject" meta_type="Dexterity FTI" />
 </object>

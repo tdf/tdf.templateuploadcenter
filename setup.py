@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.22.dev0'
+version = '0.28.dev0'
 
 setup(name='tdf.templateuploadcenter',
       version=version,
@@ -31,7 +31,7 @@ setup(name='tdf.templateuploadcenter',
           # -*- Extra requirements: -*-
           'collective.dexteritytextindexer',
           'cioppino.twothumbs',
-          'plone.directives.form',
+          'plone.formwidget.recaptcha',
       ],
       entry_points="""
       # -*- Entry points: -*-

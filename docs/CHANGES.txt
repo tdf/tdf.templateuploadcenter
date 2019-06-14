@@ -1,11 +1,70 @@
 Changelog
 =========
 
-0.22 (unreleased)
+0.28 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+0.27 (2019-06-13)
+-----------------
+
+- Project view for stable releases changed thus a release date is only
+  shown, if there is a publishing date for a release within a
+  project available. {Andreas Mantke]
+- Update localization template and German translation file [Andreas Mantke]
+
+
+0.26 (2019-05-28)
+-----------------
+
+- Change fallback email sender and recipient from hard coded to the variable
+  site email address [Andreas Mantke]
+- Remove redundant source code [Andreas Mantke]
+- Update localization template and German localization [Andreas Mantke]
+
+
+0.25 (2019-05-09)
+-----------------
+
+- Add a new email form to send feedback to a project author with recaptcha
+  protection and link it from the project and the smallproject
+  view [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
+- Update localization template and German localization [Andreas Mantke]
+
+
+0.24 (2019-04-16)
+-----------------
+
+- Structure the tupproject edit mode with register [Andreas Mantke]
+- Update German localization [Andreas Mantke]
+- Improve the edit dialog and split it into more register for the release and
+  the linked release module. [Andreas Mantke]
+- Change from plone.directives form to plone.autoform directives for
+  the release and the linked release module [Andreas Mantke]
+- Update German localization [Andreas Mantke]
+
+
+0.23 (2019-03-30)
+-----------------
+
+- Add a new module for small templates projects [Andreas Mantke]
+- New function to search and display categories for template
+  projects and small template projects [Andreas Mantke]
+- CSS fix [Andreas Mantke]
+- Change listing of categories, licenses and compatility to a
+  portal_catalog search [Andreas Mantke]
+- Update German localization [Andreas Mantke]
+
+0.22 (2018-12-16)
+-----------------
+
+- CSS fix [Andreas Mantke]
+- PEP8 fixes [Andreas Mantke]
+- Change over to supermodel.directives for primary fields and fieldsets [Andreas Mantke]
+- Change from plone.directives form.mode to plone.autoform directives.mode [Andreas Mantke]
 
 0.21 (2018-11-26)
 -----------------

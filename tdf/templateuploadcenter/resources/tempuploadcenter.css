@@ -39,7 +39,7 @@
 
 
 #sidebar-downloads {
-    height: 15em;
+    height: 20em;
 }
 
 div.pullout {
@@ -229,7 +229,7 @@ div.eupcenterreleaseinstallinstructions h3
 
 table.tupcenterprojecttable
 {
-    border:true;
+    border: 1px solid;
 }
 
 table.tupcenterprojecttable thead

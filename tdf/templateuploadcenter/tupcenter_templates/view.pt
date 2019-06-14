@@ -85,9 +85,11 @@
                                                 <div class="product-details">
                                                     <span class="product-leadin">
 
+                                                        <span tal:condition="project/view/latest_release_date">
                                                         <span tal:define="LatestReleaseDate project/view/latest_release_date;"
                                                                 tal:replace="python:toLocalizedTime(LatestReleaseDate , long_format=0)">
                                                             Jan. 22, 2016
+                                                        </span>
                                                         </span>
 
                                                         <span i18n:translate="">in</span>
@@ -192,10 +194,12 @@
                                              </span>
                                              <div class="product-details">
                                                  <span class="product-leadin">
+                                                     <span tal:condition="project/view/latest_release_date">
                                                      <span tal:define="LatestReleaseDate project/view/latest_release_date;"
                                                            tal:replace="python:toLocalizedTime(LatestReleaseDate , long_format=0)">
                                                             Jan. 22, 2016
                                                      </span>
+                                                          </span>
                                                      <span i18n:translate="">in</span>
                                                      <span tal:replace="python:', '.join(result.getObject().category_choice)"></span>
                                            </span>
@@ -226,10 +230,16 @@
                             <span tal:content="view/tupproject_count" /> <span i18n:translate="">project(s) with</span>
                             <span tal:content="view/tuprelease_count" /> <span i18n:translate="">release(s) available.</span>
                     </p>
+                    <p>
                     <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupproject">
                         <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">Submit your</span>
-                        <span tal:content="context/product_title | string:template_project" />
+                        <span tal:content="context/product_title | string:template_project" /> Project
+                    </a><br /> or <br />
+                    <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupsmallproject">
+                        <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate=""> Submit easy and fast a small </span>
+                        <span tal:content="context/product_title | string:template_project" /> Project
                     </a>
+                    </p>
                 </div>
                 <div tal:condition="not: isAnon" tal:replace="structure provider:plone.abovecontenttitle" />
                 <div id="mostrecent">

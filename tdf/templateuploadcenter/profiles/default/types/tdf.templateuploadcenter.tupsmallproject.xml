@@ -1,37 +1,36 @@
 <?xml version="1.0"?>
-<object name="tdf.templateuploadcenter.tupcenter" meta_type="Dexterity FTI"
+<object name="tdf.templateuploadcenter.tuproject" meta_type="Dexterity FTI"
         i18n:domain="tdf.templateuploadcenter" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <!-- Basic metadata -->
-    <property name="title" i18n:translate="">Template Center</property>
-    <property name="description" i18n:translate="">A template center</property>
+    <property name="title" i18n:translate="">Small Template Project</property>
+    <property name="description" i18n:translate="">A Small template project</property>
 
     <property name="allow_discussion">True</property>
-    <property name="global_allow">True</property>
+    <property name="global_allow">False</property>
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
-        <element value="tdf.templateuploadcenter.tupproject" />
-        <element value="tdf.templateuploadcenter.tupsmallproject" />
+
     </property>
 
     <!-- schema interface -->
-    <property name="schema">tdf.templateuploadcenter.tupcenter.ITUpCenter</property>
+    <property name="schema">tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject</property>
 
     <!-- class used for content items -->
-    <property name="klass">plone.dexterity.content.Container</property>
+    <property name="klass">plone.dexterity.content.Item</property>
 
     <!-- add permission -->
-    <property name="add_permission">cmf.AddPortalContent</property>
+    <property name="add_permission">tdf.templateuploadcenter.AddTemplateProject</property>
 
     <!-- enabled behaviors -->
     <property name="behaviors">
         <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
-
-
+        <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
         <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
+        <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
         <element value="cioppino.twothumbs.interfaces.ILoveThumbsDontYou" />
+        <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
+        <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
     </property>
 
     <!-- View information -->

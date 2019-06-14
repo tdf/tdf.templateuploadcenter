@@ -53,6 +53,14 @@
 
   <browser:page
       name="view"
+      for="tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject"
+      class="tdf.templateuploadcenter.tupsmallproject.TUpSmallProjectView"
+      template="tupsmallproject_templates/view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="view"
       for="tdf.templateuploadcenter.tuprelease.ITUpRelease"
       class="tdf.templateuploadcenter.tuprelease.TUpReleaseView"
       template="tuprelease_templates/view.pt"
@@ -139,6 +147,8 @@
 
     <adapter name="release_number" factory=".tuprelease.release_number"/>
     <adapter name="release_number" factory=".tupreleaselink.release_number"/>
+    <adapter name="release_number" factory=".tupsmallproject.release_number" />
+    <adapter name="releases_compat_versions" factory=".tupsmallproject.project_compat_versions" />
 
   <adapter name="releases_compat_versions" factory=".adapter.releases_compat_versions"/>
 
@@ -167,6 +177,22 @@
          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
     handler="tdf.templateuploadcenter.tupproject.textmodified_templateproject"
     />
+
+  <adapter factory=".mailtoauthor.MailToAuthorAdapter"/>
+
+  <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="mail-to-templateauthor"
+        class=".mailtoauthor.MailToAuthorForm"
+        permission="zope2.View"
+        />
+
+  <adapter
+      factory=".mailtoauthor.ReCaptcha"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      provides=".mailtoauthor.IReCaptchaForm"
+   />
+
 
 
 </configure>

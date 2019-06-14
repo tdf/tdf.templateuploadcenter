@@ -29,6 +29,7 @@
                                                           all_releases view/all_releases;
                                                           latestRelease view/latest_release;
                                                           latestunstablerelease view/latest_unstable_release;
+                                                          categories view/projectCategory;
                                                           review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
 
          <span tal:replace="structure context/@@authenticator/authenticator"/>
@@ -40,17 +41,23 @@
         <p tal:condition="python: is_editable and len(context.getFolderContents()) is 0">Your next step: add a first release to your project please.</p>
          <div tal:condition="python: is_editable">
         <p>Please submit:</p>
+             <p>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tuprelease">
                             <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">a Release to your</span>
                             <span tal:content="context/product_title | string:template_project" i18n:name="" /> Project
 
                         </a>
+             </p>
         <p i18n:translate="">or:</p>
+             <p>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/++add++tdf.templateuploadcenter.tupreleaselink">
                             <img src="++resource++tdf.templateuploadcenter/yellowarrow.png"  alt=""/> <span i18n:translate="">a linked Release to your</span>
                             <span tal:content="context/product_title | string:template_project" i18n:name="" /> Project
 
                         </a>
+             </p>
+             <p>If you want to host your release files on an external ressource (e.g. an external webpage or an external repository) create
+            a new 'linked release' (second option). In the oposite you had to go with adding a 'release' (first option).</p>
              </div>
         </div>
         <div class="portalinfomessage" tal:condition="python: is_editable and review_state == 'pending' ">
@@ -90,7 +97,11 @@
         <h2 tal:condition="context/details" class="documentSecondHeading" i18n:translate="">Project Description</h2>
         <p class="documentDescription" tal:content="structure view/w/details/render" />
         <h3 i18n:translate="">Category/Categories</h3>
-        <div tal:content="structure view/w/category_choice/render" />
+             <p>
+                 <tal:loop repeat="releasecategories categories">
+                     <span tal:content="releasecategories" />,
+                 </tal:loop>
+             </p>
         <h3 tal:condition="context/homepage" i18n:translate="">Homepage of the Project</h3>
         <div tal:content="context/homepage" />
 
@@ -445,6 +456,17 @@
             <div class="eupcenterprojectreportingbugs" tal:condition="context/reporting_bugs">
                 <h3>Reporting Template-Bugs</h3>
                 <span tal:content="structure context/reporting_bugs/output" />
+            </div>
+            <div>
+                <h2>Contact The Author</h2>
+                <p>You can send a message to the author of the project and
+                    give him feedback by following the following the following
+                    link and fill in your information into the form:<br />
+                    <a class="pointer" tal:attributes="href
+                            string:${context/portal_url}/@@mail-to-templateauthor">
+                        Get in contact with the project author
+                    </a>.
+                </p>
             </div>
             </div>
         </div>
