@@ -183,6 +183,20 @@ class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
+def validatetemplatefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedtemplatefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed template file '
+            u'extension. Please try again with to upload a file with the '
+            u'correct template file extension.')
+    return True
+
+
+
 class ITUpSmallProject(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
@@ -308,7 +322,7 @@ class ITUpSmallProject(model.Schema):
         title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
         required=True,
-        constraint=validateextensionfileextension,
+        constraint=validatetemplatefileextension,
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
@@ -363,7 +377,7 @@ class ITUpSmallProject(model.Schema):
         title=_(u"The second file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validatetemplatefileextension,
     )
 
     directives.mode(filetitlefield2='display')
@@ -388,7 +402,7 @@ class ITUpSmallProject(model.Schema):
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validateextensionfileextension,
+        constraint=validatetemplatefileextension,
     )
 
     @invariant
