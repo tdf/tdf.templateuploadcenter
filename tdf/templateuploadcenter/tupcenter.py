@@ -162,6 +162,13 @@ class ITUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
+    allowed_templatefileextension = schema.TextLine(
+        title=_(u'Allowed Template File Extensions'),
+        description=_(u'Fill in the allowed template file extensions, '
+                      u'seperated by a pipe \'|\'.'),
+        default=_(u'ott|OTT|ots|OTS|otp|OTP|otg|OTG'),
+    )
+
     model.fieldset('instructions',
                    label=u'Instructions',
                    fields=['install_instructions', 'reporting_bugs', ])
