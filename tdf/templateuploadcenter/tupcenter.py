@@ -334,13 +334,19 @@ class TUpCenterView(BrowserView):
         # sort_on = 'positive_ratings'
         if SearchableText:
             SearchableText = self.munge_search_term(SearchableText)
+            contentFilter = {'sort_on': sort_on,
+                             'SearchableText': SearchableText,
+                             'sort_order': 'reverse',
+                             'portal_type': (
+                                 'tdf.templateuploadcenter.tupproject',
+                                 'tdf.templateuploadcenter.tupsmallproject')}
+        else:
+            contentFilter = {'sort_on': sort_on,
+                             'sort_order': 'reverse',
+                             'portal_type': (
+                                 'tdf.templateuploadcenter.tupproject',
+                                 'tdf.templateuploadcenter.tupsmallproject')}
 
-        contentFilter = {'sort_on': sort_on,
-                         'SearchableText': SearchableText,
-                         'sort_order': 'reverse',
-                         'portal_type': (
-                             'tdf.templateuploadcenter.tupproject',
-                             'tdf.templateuploadcenter.tupsmallproject')}
         if version != 'any':
             # We ask to the indexed value on the project (aggregated from
             # releases on creation/modify/delete of releases)
