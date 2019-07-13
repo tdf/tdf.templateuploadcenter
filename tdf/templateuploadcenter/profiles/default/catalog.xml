@@ -19,4 +19,7 @@
     <index name="allowedtemplatefileextensions" meta_type="FieldIndex">
         <indexed_attr value="allowed_templatefileextension" />
     </index>
+    <index name="allowedimagefileextensions" meta_type="FieldIndex">
+        <indexed_attr value="allowed_imagefilextension" />
+    </index>
 </object>
