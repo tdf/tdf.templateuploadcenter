@@ -37,11 +37,11 @@ class ITUpCenter(model.Schema):
     )
 
     description = schema.Text(
-        description=_(u"Description of the Template Center"),
+        title=_(u'Descirption Of The Template Center'),
     )
 
     product_description = schema.Text(
-        description=_(u"Description of the features of templates")
+        title=_(u"Description Of The Features Of Templates")
     )
 
     product_title = schema.TextLine(
@@ -167,6 +167,13 @@ class ITUpCenter(model.Schema):
         description=_(u'Fill in the allowed template file extensions, '
                       u'seperated by a pipe \'|\'.'),
         default=_(u'ott|OTT|ots|OTS|otp|OTP|otg|OTG'),
+    )
+
+    allowed_imagefileextension = schema.TextLine(
+        title=_(u'Allowed Image File Extensions'),
+        description=_(u'Fill in the allowed image file extensions, '
+                      u'seperated by a pipe \'|\'.'),
+        default=_(u'png|PNG|gif|GIF|jpg|JPG'),
     )
 
     model.fieldset('instructions',
