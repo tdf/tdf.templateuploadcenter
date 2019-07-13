@@ -40,14 +40,6 @@ checkfileextension = re.compile(
     r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
 
 
-def validatefileextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(
-            u'You could only upload LibreOffice template files with a proper '
-            u'file extension.')
-    return True
-
-
 checkdocfileextension = re.compile(
     r"^.*\.(pdf|PDF|odt|ODT)").match
 
