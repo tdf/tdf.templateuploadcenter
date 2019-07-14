@@ -20,6 +20,6 @@
         <indexed_attr value="allowed_templatefileextension" />
     </index>
     <index name="allowedtucimagefileextensions" meta_type="FieldIndex">
-        <indexed_attr value="allowed_imagefilextension" />
+        <indexed_attr value="allowed_imagefileextension" />
     </index>
 </object>
