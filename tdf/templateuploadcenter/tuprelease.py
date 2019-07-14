@@ -25,17 +25,6 @@ import re
 from plone.supermodel.directives import primary
 from plone.autoform import directives
 
-checkfileextension = re.compile(
-    r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
-
-
-def validatefileextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(
-            u'You could only upload LibreOffice template files with a proper '
-            u'file extension.')
-    return True
-
 
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
