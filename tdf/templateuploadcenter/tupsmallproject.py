@@ -341,6 +341,13 @@ class ITUpSmallProject(model.Schema):
         default=[]
     )
 
+    directives.mode(tucfileextension='display')
+    tucfileextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
     file = NamedBlobFile(
         title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
@@ -360,7 +367,8 @@ class ITUpSmallProject(model.Schema):
 
     model.fieldset('fileset1',
                    label=u"File Upload",
-                   fields=['filetitlefield', 'platform_choice', 'file', ]
+                   fields=['filetitlefield', 'platform_choice',
+                           'tucfileextension', 'file', ]
                    )
 
     directives.mode(filetitlefield='display')
@@ -374,8 +382,10 @@ class ITUpSmallProject(model.Schema):
 
     model.fieldset('fileset2',
                    label=u"Optional Further File Upload",
-                   fields=['filetitlefield1', 'platform_choice1', 'file1',
-                           'filetitlefield2', 'platform_choice2', 'file2']
+                   fields=['filetitlefield1', 'platform_choice1',
+                           'tucfileextension1', 'file1',
+                           'filetitlefield2', 'platform_choice2',
+                           'tucfileextension2', 'file2']
                    )
 
     directives.mode(filetitlefield1='display')
@@ -394,6 +404,13 @@ class ITUpSmallProject(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    directives.mode(tucfileextension1='display')
+    tucfileextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     file1 = NamedBlobFile(
@@ -419,6 +436,13 @@ class ITUpSmallProject(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    directives.mode(tucfileextension2='display')
+    tucfileextension2 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     file2 = NamedBlobFile(
