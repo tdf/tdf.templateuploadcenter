@@ -4,7 +4,24 @@ Changelog
 0.28 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add a title to fields description and product_description of the
+  tupcenter and remove their description entry [Andreas Mantke]
+- Add fields to submit allowed image and template file extensions
+  instead of formerly hard coded file extensions for both to give
+  more flexibility to the site administrator [Andreas Mantke]
+- Add new indexes to the portal_catalog to hold the values of
+  allowed image and template file extensions [Andreas Mantke]
+- Create a new validator for image file extensions inside the
+  tupproject module and move the validation to this validator
+  [Andreas Mantke]
+- Create new validators for template file extensions inside the
+  tuprelease and the tuplinkedrelease module and move the
+  validation to this validator [Andreas Mantke]
+- Add new fields to display the currently allowed image and
+  template file extensions to the tupproject, the tuprelease and
+  the tuplinkedrelease [Andreas Mantke]
+- Add subscribers for the messaging functions of the
+  tupsmallproject module to configure.zcml [Andreas Mantke]
 
 
 0.27 (2019-06-13)
