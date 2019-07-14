@@ -171,6 +171,16 @@ def legal_declaration_text(context):
     return context.legal_disclaimer
 
 
+@provider(IContextAwareDefaultFactory)
+def allowedtemplatefileextensions(context):
+    return context.allowed_templatefileextension.replace("|", ", ")
+
+
+@provider(IContextAwareDefaultFactory)
+def allowedimagefileextensions(context):
+    return context.allowed_imagefileextension.replace("|", ",")
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
