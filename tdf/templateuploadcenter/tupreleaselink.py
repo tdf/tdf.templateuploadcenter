@@ -102,6 +102,25 @@ def legal_declaration_text(context):
     return context.legal_disclaimer
 
 
+@provider(IContextAwareDefaultFactory)
+def allowedtemplatefileextensions(context):
+    conext = context.aq_inner.aq_parent
+    return context.allowed_templatefileextension.replace("|", ", ")
+
+
+def validatelinkedtemplatefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result = catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only link to a file with an allowed template file '
+            u'extension. Please try again with to link to a file with the '
+            u'correct template file extension.')
+    return True
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
@@ -228,15 +247,24 @@ class ITUpReleaseLink(model.Schema):
 
     model.fieldset('linked_file',
                    label='Linked File',
-                   fields=['link_to_file', 'external_file_size',
-                           'platform_choice',
+                   fields=['tucfileextension','link_to_file',
+                           'external_file_size', 'platform_choice',
                            'information_further_file_uploads'])
+
+
+    directives.mode(tucfileextension='display')
+    tucfileextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'template files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
 
     link_to_file = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=True,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedtemplatefileextension
     )
 
     external_file_size = schema.Float(
@@ -271,44 +299,59 @@ class ITUpReleaseLink(model.Schema):
 
     model.fieldset('fileset1',
                    label=u"Second linked file",
-                   fields=['link_to_file1',
+                   fields=['tucfileextension1',
+                           'link_to_file1',
                            'external_file_size1',
                            'platform_choice1']
                    )
 
     model.fieldset('fileset2',
                    label=u"Third linked file",
-                   fields=['link_to_file2',
+                   fields=['tucfileextension2',
+                           'link_to_file2',
                            'external_file_size2',
                            'platform_choice2']
                    )
 
     model.fieldset('fileset3',
                    label=u"Fourth linked file",
-                   fields=['link_to_file3',
+                   fields=['tucfileextension3',
+                           'link_to_file3',
                            'external_file_size3',
                            'platform_choice3']
                    )
 
     model.fieldset('fileset4',
                    label=u"Fifth linked file",
-                   fields=['link_to_file4',
+                   fields=['tucfileextension4',
+                           'link_to_file4',
                            'external_file_size4',
                            'platform_choice4']
                    )
 
     model.fieldset('fileset5',
                    label=u"Sixth linked file",
-                   fields=['link_to_file5',
+                   fields=['tucfileextension5',
+                           'link_to_file5',
                            'external_file_size5',
                            'platform_choice5']
                    )
+
+
+    directives.mode(tucfileextension1='display')
+    tucfileextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'template files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedtemplatefileextension
     )
 
     external_file_size1 = schema.Float(
@@ -329,11 +372,20 @@ class ITUpReleaseLink(model.Schema):
         required=True,
     )
 
+    directives.mode(tucfileextension2='display')
+    tucfileextension2 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'template files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
+
     link_to_file2 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedtemplatefileextension
     )
 
     external_file_size2 = schema.Float(
@@ -354,11 +406,19 @@ class ITUpReleaseLink(model.Schema):
         required=True
     )
 
+    directives.mode(tucfileextension3='display')
+    tucfileextension3 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'template files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
     link_to_file3 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedtemplatefileextension
     )
 
     external_file_size3 = schema.Float(
@@ -379,11 +439,19 @@ class ITUpReleaseLink(model.Schema):
         required=True,
     )
 
+    directives.mode(tucfileextension4='display')
+    tucfileextension4 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'template files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
     link_to_file4 = schema.URI(
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedtemplatefileextension
     )
 
     external_file_size4 = schema.Float(
@@ -401,6 +469,14 @@ class ITUpReleaseLink(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
+    )
+
+    directives.mode(tucfileextension5='display')
+    tucfileextension5 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for linked '
+                u'template files (upper case and lower case and mix of '
+                u'both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     link_to_file5 = schema.URI(
