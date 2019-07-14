@@ -187,7 +187,7 @@ class AcceptLegalDeclaration(Invalid):
 
 def validatetemplatefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedtemplatefileextensions')
+    result=catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
     pattern = r'^.*\.{0}'.format(result)
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -197,6 +197,18 @@ def validatetemplatefileextension(value):
             u'correct template file extension.')
     return True
 
+
+def validateimagefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedtucimagefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed file extension. '
+            u'Please try again to upload a file with the correct file'
+            u'extension.')
+    return True
 
 
 class ITUpSmallProject(model.Schema):
@@ -291,13 +303,22 @@ class ITUpSmallProject(model.Schema):
         constraint=validateEmail
     )
 
+
+    directives.mode(tucimageextension='display')
+    tucimageextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedimagefileextensions,
+    )
+
+
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Tempate"),
         description=_(
             u"Add a screenshot by clicking the 'Browse' button. You could "
             u"provide an image of the file format 'png', 'gif' or 'jpg'."),
         required=True,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
     )
 
     releasenumber = schema.TextLine(
