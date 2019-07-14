@@ -21,6 +21,8 @@ from Products.validation import V_REQUIRED
 from tdf.templateuploadcenter import quote_chars
 from plone.supermodel.directives import primary
 from plone.autoform import directives
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
 
 checkfileextension = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
@@ -75,6 +77,25 @@ def validateEmail(value):
     return True
 
 
+@provider(IContextAwareDefaultFactory)
+def allowedimagefileextensions(context):
+    return context.allowed_imagefileextension.replace("|", ",")
+
+
+def validateimagefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedtucimagefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed file extension. '
+            u'Please try again to upload a file with the correct file'
+            u'extension.')
+    return True
+
+
+
 class ProvideScreenshotLogo(Invalid):
     __doc__ = _(
         u"Please add a Screenshot or a Logo to your project. You find the "
@@ -122,7 +143,8 @@ class ITUpProject(model.Schema):
                    )
     model.fieldset('logo_screenshot',
                    label='Logo / Screenshot',
-                   fields=['project_logo', 'screenshot']
+                   fields=['tucimageextension', 'project_logo',
+                           'tucimageextension1', 'screenshot']
                    )
 
     dexteritytextindexer.searchable('category_choice')
@@ -159,6 +181,13 @@ class ITUpProject(model.Schema):
         required=False
     )
 
+    directives.mode(tucimageextension='display')
+    tucimageextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedimagefileextensions,
+    )
+
     project_logo = NamedBlobImage(
         title=_(u"Logo"),
         description=_(
@@ -166,7 +195,14 @@ class ITUpProject(model.Schema):
             u"clicking the 'Browse' button. You could provide an image of "
             u"the file format 'png', 'gif' or 'jpg'."),
         required=False,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
+    )
+
+    directives.mode(tucimageextension1='display')
+    tucimageextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedimagefileextensions,
     )
 
     screenshot = NamedBlobImage(
@@ -175,7 +211,7 @@ class ITUpProject(model.Schema):
             u"Add a screenshot by clicking the 'Browse' button. You could "
             u"provide an image of the file format 'png', 'gif' or 'jpg'. "),
         required=False,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
     )
 
     @invariant

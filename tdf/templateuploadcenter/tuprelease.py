@@ -105,6 +105,24 @@ def legal_declaration_text(context):
     context = context.aq_inner.aq_parent
     return context.legal_disclaimer
 
+@provider(IContextAwareDefaultFactory)
+def allowedtemplatefileextensions(context):
+    context = context.aq_inner.aq_parent
+    return context.allowed_templatefileextension.replace("|", ", ")
+
+
+def validatetemplatefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed template file '
+            u'extension. Please try again with to upload a file with the '
+            u'correct template file extension.')
+    return True
+
 
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
@@ -234,14 +252,21 @@ class ITUpRelease(model.Schema):
 
     model.fieldset('fileupload',
                    label=u"Fileupload",
-                   fields=['file', 'platform_choice',
+                   fields=['tucfileextension', 'file', 'platform_choice',
                            'information_further_file_uploads'])
+
+    directives.mode(tucfileextension='display')
+    tucfileextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
 
     file = NamedBlobFile(
         title=_(u"The first file you want to upload"),
         description=_(u"Please upload your file."),
         required=True,
-        constraint=validatefileextension
+        constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
@@ -268,15 +293,24 @@ class ITUpRelease(model.Schema):
 
     model.fieldset('fileset1',
                    label=u"Further Uploads",
-                   fields=['file1', 'platform_choice1', 'file2',
-                           'platform_choice2', 'file3', 'platform_choice3']
+                   fields=['tucfileextension1', 'file1', 'platform_choice1',
+                           'tucfileextension2', 'file2', 'platform_choice2',
+                           'tucfileextension3', 'file3', 'platform_choice3']
                    )
+
+    directives.mode(tucfileextension1='display')
+    tucfileextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
 
     file1 = NamedBlobFile(
         title=_(u"The second file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension
+        constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
@@ -289,11 +323,18 @@ class ITUpRelease(model.Schema):
         required=False,
     )
 
+    directives.mode(tucfileextension2='display')
+    tucfileextension2 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
     file2 = NamedBlobFile(
         title=_(u"The third file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension
+        constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
@@ -304,6 +345,13 @@ class ITUpRelease(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    directives.mode(tucfileextension3='display')
+    tucfileextension3 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     file3 = NamedBlobFile(
@@ -325,9 +373,16 @@ class ITUpRelease(model.Schema):
 
     model.fieldset('fileset2',
                    label=u"Further More Uploads",
-                   fields=['file4', 'platform_choice4', 'file5',
-                           'platform_choice5']
+                   fields=['tucfileextension4', 'file4', 'platform_choice4',
+                           'tucfileextension5', 'file5', 'platform_choice5']
                    )
+
+    directives.mode(tucfileextension4='display')
+    tucfileextension4 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
 
     file4 = NamedBlobFile(
         title=_(u"The fifth file you want to upload (this is optional)"),
@@ -344,6 +399,13 @@ class ITUpRelease(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    directives.mode(tucfileextension5='display')
+    tucfileextension5 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     file5 = NamedBlobFile(

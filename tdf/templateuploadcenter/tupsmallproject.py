@@ -40,14 +40,6 @@ checkfileextension = re.compile(
     r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
 
 
-def validatefileextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(
-            u'You could only upload LibreOffice template files with a proper '
-            u'file extension.')
-    return True
-
-
 checkdocfileextension = re.compile(
     r"^.*\.(pdf|PDF|odt|ODT)").match
 
@@ -179,13 +171,23 @@ def legal_declaration_text(context):
     return context.legal_disclaimer
 
 
+@provider(IContextAwareDefaultFactory)
+def allowedtemplatefileextensions(context):
+    return context.allowed_templatefileextension.replace("|", ", ")
+
+
+@provider(IContextAwareDefaultFactory)
+def allowedimagefileextensions(context):
+    return context.allowed_imagefileextension.replace("|", ",")
+
+
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
 def validatetemplatefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedtemplatefileextensions')
+    result=catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
     pattern = r'^.*\.{0}'.format(result)
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -195,6 +197,18 @@ def validatetemplatefileextension(value):
             u'correct template file extension.')
     return True
 
+
+def validateimagefileextension(value):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    result=catalog.uniqueValuesFor('allowedtucimagefileextensions')
+    pattern = r'^.*\.{0}'.format(result)
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(
+            u'You could only upload files with an allowed file extension. '
+            u'Please try again to upload a file with the correct file'
+            u'extension.')
+    return True
 
 
 class ITUpSmallProject(model.Schema):
@@ -289,13 +303,22 @@ class ITUpSmallProject(model.Schema):
         constraint=validateEmail
     )
 
+
+    directives.mode(tucimageextension='display')
+    tucimageextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedimagefileextensions,
+    )
+
+
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Tempate"),
         description=_(
             u"Add a screenshot by clicking the 'Browse' button. You could "
             u"provide an image of the file format 'png', 'gif' or 'jpg'."),
         required=True,
-        constraint=validateImageextension
+        constraint=validateimagefileextension
     )
 
     releasenumber = schema.TextLine(
@@ -318,6 +341,13 @@ class ITUpSmallProject(model.Schema):
         default=[]
     )
 
+    directives.mode(tucfileextension='display')
+    tucfileextension = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
+    )
+
     file = NamedBlobFile(
         title=_(u"The first file you want to upload."),
         description=_(u"Please upload your file."),
@@ -337,7 +367,8 @@ class ITUpSmallProject(model.Schema):
 
     model.fieldset('fileset1',
                    label=u"File Upload",
-                   fields=['filetitlefield', 'platform_choice', 'file', ]
+                   fields=['filetitlefield', 'platform_choice',
+                           'tucfileextension', 'file', ]
                    )
 
     directives.mode(filetitlefield='display')
@@ -351,8 +382,10 @@ class ITUpSmallProject(model.Schema):
 
     model.fieldset('fileset2',
                    label=u"Optional Further File Upload",
-                   fields=['filetitlefield1', 'platform_choice1', 'file1',
-                           'filetitlefield2', 'platform_choice2', 'file2']
+                   fields=['filetitlefield1', 'platform_choice1',
+                           'tucfileextension1', 'file1',
+                           'filetitlefield2', 'platform_choice2',
+                           'tucfileextension2', 'file2']
                    )
 
     directives.mode(filetitlefield1='display')
@@ -371,6 +404,13 @@ class ITUpSmallProject(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    directives.mode(tucfileextension1='display')
+    tucfileextension1 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     file1 = NamedBlobFile(
@@ -396,6 +436,13 @@ class ITUpSmallProject(model.Schema):
             u"is compatible."),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
+    )
+
+    directives.mode(tucfileextension2='display')
+    tucfileextension2 = schema.TextLine(
+        title=_(u'The following file extensions are allowed for template '
+                u'files (upper case and lower case and mix of both):'),
+        defaultFactory=allowedtemplatefileextensions,
     )
 
     file2 = NamedBlobFile(
