@@ -22,6 +22,8 @@ Changelog
   the tuplinkedrelease [Andreas Mantke]
 - Add subscribers for the messaging functions of the
   tupsmallproject module to configure.zcml [Andreas Mantke]
+- Remove old and unnecessary functions for the validation of
+  image and template file extensions [Andreas Mantke]
 
 
 0.27 (2019-06-13)
