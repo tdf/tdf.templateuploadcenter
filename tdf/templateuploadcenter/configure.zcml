@@ -193,6 +193,33 @@
       provides=".mailtoauthor.IReCaptchaForm"
    />
 
+  <subscriber
+    for="tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.templateuploadcenter.tupsmallproject.notifyAboutNewReviewlistentry"
+    />
+
+
+  <subscriber
+    for="tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler="tdf.templateuploadcenter.tupsmallproject.notifyAboutNewProject"
+    />
+
+
+  <subscriber
+    for="tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject
+               Products.CMFCore.interfaces.IActionSucceededEvent"
+    handler="tdf.templateuploadcenter.tupsmallproject.notifyProjectManager"
+    />
+
+
+  <subscriber
+    for="tdf.templateuploadcenter.tupsmallproject.ITUpSmallProject
+         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler="tdf.templateuploadcenter.tupsmallproject.textmodified_project"
+    />
+
 
 
 </configure>
