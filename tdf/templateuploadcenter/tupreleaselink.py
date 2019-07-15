@@ -21,17 +21,6 @@ import re
 from plone.supermodel.directives import primary
 from plone.autoform import directives
 
-checkfileextension = re.compile(
-    r"^.*\.(ott|OTT|ots|OTS|otp|OTP|otg|OTG)").match
-
-
-def validatelinkedfileextension(value):
-    if not checkfileextension(value):
-        raise Invalid(
-            u'You could only link to an URL (a file) that is a LibreOffice '
-            u'template file with a proper file extension.')
-    return True
-
 
 def vocabAvailLicenses(context):
     """ pick up licenses list from parent """
