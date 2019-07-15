@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.28 (unreleased)
+0.29 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.28 (2019-07-16)
 -----------------
 
 - Add a title to fields description and product_description of the
