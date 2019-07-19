@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.29 (unreleased)
+0.29 (2019-07-19)
 -----------------
 
 - Fix constraints for some options to upload and link template files in
