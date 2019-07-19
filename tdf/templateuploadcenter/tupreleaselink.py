@@ -472,7 +472,7 @@ class ITUpReleaseLink(model.Schema):
         title=_(u"The Link to the file of the release"),
         description=_(u"Please insert a link to your extension file."),
         required=False,
-        constraint=validatelinkedfileextension
+        constraint=validatelinkedtemplatefileextension
     )
 
     external_file_size5 = schema.Float(

@@ -347,7 +347,7 @@ class ITUpRelease(model.Schema):
         title=_(u"The fourth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension
+        constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
@@ -377,7 +377,7 @@ class ITUpRelease(model.Schema):
         title=_(u"The fifth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension
+        constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
@@ -401,7 +401,7 @@ class ITUpRelease(model.Schema):
         title=_(u"The sixth file you want to upload (this is optional)"),
         description=_(u"Please upload your file."),
         required=False,
-        constraint=validatefileextension
+        constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
