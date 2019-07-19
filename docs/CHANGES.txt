@@ -4,7 +4,8 @@ Changelog
 0.29 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix constraints for some options to upload and link template files in
+  the release and the linked release module [Andreas Mantke]
 
 
 0.28 (2019-07-16)
