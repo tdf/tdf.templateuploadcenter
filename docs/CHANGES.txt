@@ -4,7 +4,7 @@ Changelog
 0.30 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix the validator for linked release files [Andreas Mantke]
 
 
 0.29 (2019-07-19)
