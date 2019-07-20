@@ -108,7 +108,7 @@ def validatetemplatefileextension(value):
     if not matches(value.filename):
         raise Invalid(
             u'You could only upload files with an allowed template file '
-            u'extension. Please try again with to upload a file with the '
+            u'extension. Please try again to upload a file with the '
             u'correct template file extension.')
     return True
 
