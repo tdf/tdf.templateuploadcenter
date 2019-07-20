@@ -4,8 +4,10 @@ Changelog
 0.30 (unreleased)
 -----------------
 
-- Fix the validator for linked release files [Andreas Mantke]
-
+- Fix the validator for linked release files and its message
+  text [Andreas Mantke]
+- Fix the IContextAwareDefaultFactory in the linked release
+  module [Andreas Mantke]
 
 0.29 (2019-07-19)
 -----------------
