@@ -93,7 +93,7 @@ def legal_declaration_text(context):
 
 @provider(IContextAwareDefaultFactory)
 def allowedtemplatefileextensions(context):
-    conext = context.aq_inner.aq_parent
+    context = context.aq_inner.aq_parent
     return context.allowed_templatefileextension.replace("|", ", ")
 
 
