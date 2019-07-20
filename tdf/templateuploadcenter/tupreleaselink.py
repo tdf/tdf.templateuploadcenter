@@ -102,7 +102,7 @@ def validatelinkedtemplatefileextension(value):
     result = catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
     pattern = r'^.*\.{0}'.format(result)
     matches = re.compile(pattern, re.IGNORECASE).match
-    if not matches(value.filename):
+    if not matches(value):
         raise Invalid(
             u'You could only link to a file with an allowed template file '
             u'extension. Please try again with to link to a file with the '
