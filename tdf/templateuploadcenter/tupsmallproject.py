@@ -146,15 +146,6 @@ def vocabAvailPlatforms(context):
 directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 
-def validateextensionfileextension(value):
-    if not checkfileextension(value.filename):
-        raise Invalid(
-            u'You could only upload LibreOffice extension files with a proper '
-            u'file extension.\n'
-            u'LibreOffice extensions have an \'oxt\' file extension.')
-    return True
-
-
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
      SimpleTerm(value=1, title=_(u'Yes')), ]
