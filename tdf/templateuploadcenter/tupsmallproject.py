@@ -179,7 +179,7 @@ class AcceptLegalDeclaration(Invalid):
 def validatetemplatefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result=catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
@@ -192,7 +192,7 @@ def validatetemplatefileextension(value):
 def validateimagefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
     result=catalog.uniqueValuesFor('allowedtucimagefileextensions')
-    pattern = r'^.*\.{0}'.format(result)
+    pattern = r'^.*\.{0}'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
         raise Invalid(
