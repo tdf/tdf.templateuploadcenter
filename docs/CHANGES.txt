@@ -4,8 +4,11 @@ Changelog
 0.31 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+- Remove an old function from the smalltemplateproject module [Andreas Mantke]
+- Use only the first value of the catalog search tuple for the pattern
+  of the regular expressions. {Andreas Mantke]
+- Remove default values of the fields for the allowed file extensions,
+  because this didn't work with the validation functions {Andreas Mantke]
 
 0.30 (2019-07-20)
 -----------------
