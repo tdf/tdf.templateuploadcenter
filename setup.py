@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.31.dev0'
+version = '0.32.dev0'
 
 setup(name='tdf.templateuploadcenter',
       version=version,
