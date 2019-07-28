@@ -166,14 +166,12 @@ class ITUpCenter(model.Schema):
         title=_(u'Allowed Template File Extensions'),
         description=_(u'Fill in the allowed template file extensions, '
                       u'seperated by a pipe \'|\'.'),
-        default=_(u'ott|OTT|ots|OTS|otp|OTP|otg|OTG'),
     )
 
     allowed_imagefileextension = schema.TextLine(
         title=_(u'Allowed Image File Extensions'),
         description=_(u'Fill in the allowed image file extensions, '
                       u'seperated by a pipe \'|\'.'),
-        default=_(u'png|PNG|gif|GIF|jpg|JPG'),
     )
 
     model.fieldset('instructions',
