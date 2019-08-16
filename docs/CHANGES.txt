@@ -4,7 +4,7 @@ Changelog
 0.32 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix regular expressions for validation of file extensions [Andreas Mantke]
 
 
 0.31 (2019-07-28)
