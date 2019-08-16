@@ -4,7 +4,8 @@ Changelog
 0.33 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix css classes in project view [Andreas Mantke]
+- Fix regular expressions for validation of file extensions [Andreas Mantke]
 
 
 0.32 (2019-08-16)
