@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-07-28 17:57+0200\n"
+"PO-Revision-Date: 2019-09-06 19:31+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: tdf.templateuploadcenter\n"
 "Language: de\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: tupcenter_templates/view.pt:225
 msgid "${product_title}"
@@ -1040,8 +1040,8 @@ msgid "Waiting for the Review."
 msgstr "Auf Review wartend."
 
 #: mailtoauthor.py:179
-msgid "We send your message to the author of the project. It's on his choice, if he'll get back to you."
-msgstr "Wir senden Ihre Nachricht an den Projekt-Autor. Es ist seine Entscheidung, ob er sich bei Ihnen meldet."
+msgid "We send your message to the author of the project. It's on her / his choice, if she'll / he'll get back to you."
+msgstr "Wir senden Ihre Nachricht an den Projekt-Autor. Es ist ihre / seine Entscheidung, ob sie / er sich bei Ihnen meldet."
 
 #: mailtoauthor.py:91
 msgid "What is your message to the author of the project? Your message is limited to 1000 characters."

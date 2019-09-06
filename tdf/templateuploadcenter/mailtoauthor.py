@@ -177,7 +177,7 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
 
         IStatusMessage(self.request).addStatusMessage(
                 _(u"We send your message to the author of the project. It's "
-                  u"on his choice, if he'll get back to you."),
+                  u"on her / his choice, if she'll / he'll get back to you."),
                 "info"
             )
 
