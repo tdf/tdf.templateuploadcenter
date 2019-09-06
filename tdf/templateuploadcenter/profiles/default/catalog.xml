@@ -22,4 +22,7 @@
     <index name="allowedtucimagefileextensions" meta_type="FieldIndex">
         <indexed_attr value="allowed_imagefileextension" />
     </index>
+    <index name="tempprojectemail" meta_type="FieldIndex">
+        <indexed_attr value="contactAddress" />
+    </index>
 </object>
