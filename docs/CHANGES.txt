@@ -4,8 +4,11 @@ Changelog
 0.33 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+- Improve the message to the sender of the contact to author
+  form. [Andreas Mantke]
+- Send notifications about a new product version not to all users of
+  the site, but only to the project contact addresses. [Andreas Mantke]
+- Update localization files and German localization. [Andreas Mantke]
 
 0.32 (2019-08-16)
 -----------------
