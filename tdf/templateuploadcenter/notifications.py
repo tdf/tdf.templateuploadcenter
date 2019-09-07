@@ -9,7 +9,7 @@ def notifiyAboutNewVersion(tupproject, event):
             if hasattr(d, 'interface') and d.interface is ITUpCenter and \
                     'available_versions' in d.attributes:
                 catalog = api.portal.get_tool(name='portal_catalog')
-                projectemail = catalog.uniqueValuesFor('tempprojectcontact')
+                projectemail = catalog.uniqueValuesFor('tempprojectmail')
                 message = 'We added a new version of LibreOffice to the ' \
                           'list.\n Please add this version to your ' \
                           'LibreOffice template release(s), if it is (they ' \
