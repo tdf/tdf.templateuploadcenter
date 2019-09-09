@@ -4,7 +4,7 @@ Changelog
 0.35 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix a typo in the notifications module [Andreas Mantke]
 
 
 0.34 (2019-09-07)
