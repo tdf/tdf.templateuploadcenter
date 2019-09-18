@@ -236,10 +236,9 @@ class ITUpReleaseLink(model.Schema):
 
     model.fieldset('linked_file',
                    label='Linked File',
-                   fields=['tucfileextension','link_to_file',
+                   fields=['tucfileextension', 'link_to_file',
                            'external_file_size', 'platform_choice',
                            'information_further_file_uploads'])
-
 
     directives.mode(tucfileextension='display')
     tucfileextension = schema.TextLine(
@@ -326,7 +325,6 @@ class ITUpReleaseLink(model.Schema):
                            'platform_choice5']
                    )
 
-
     directives.mode(tucfileextension1='display')
     tucfileextension1 = schema.TextLine(
         title=_(u'The following file extensions are allowed for linked '
@@ -334,7 +332,6 @@ class ITUpReleaseLink(model.Schema):
                 u'both):'),
         defaultFactory=allowedtemplatefileextensions,
     )
-
 
     link_to_file1 = schema.URI(
         title=_(u"The Link to the file of the release"),
@@ -368,7 +365,6 @@ class ITUpReleaseLink(model.Schema):
                 u'both):'),
         defaultFactory=allowedtemplatefileextensions,
     )
-
 
     link_to_file2 = schema.URI(
         title=_(u"The Link to the file of the release"),
