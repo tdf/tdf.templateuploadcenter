@@ -94,6 +94,7 @@ def legal_declaration_text(context):
     context = context.aq_inner.aq_parent
     return context.legal_disclaimer
 
+
 @provider(IContextAwareDefaultFactory)
 def allowedtemplatefileextensions(context):
     context = context.aq_inner.aq_parent
@@ -102,7 +103,7 @@ def allowedtemplatefileextensions(context):
 
 def validatetemplatefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
+    result = catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -293,7 +294,6 @@ class ITUpRelease(model.Schema):
                 u'files (upper case and lower case and mix of both):'),
         defaultFactory=allowedtemplatefileextensions,
     )
-
 
     file1 = NamedBlobFile(
         title=_(u"The second file you want to upload (this is optional)"),
