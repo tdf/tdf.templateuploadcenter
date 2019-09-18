@@ -125,7 +125,6 @@ def isNotEmptyCategory(value):
     return True
 
 
-
 def vocabAvailPlatforms(context):
     """ pick up the list of platforms from parent """
     from tdf.templateuploadcenter.tupcenter import ITUpCenter
@@ -178,7 +177,7 @@ class AcceptLegalDeclaration(Invalid):
 
 def validatetemplatefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
+    result = catalog.uniqueValuesFor('allowedtuctemplatefileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -191,7 +190,7 @@ def validatetemplatefileextension(value):
 
 def validateimagefileextension(value):
     catalog = api.portal.get_tool(name='portal_catalog')
-    result=catalog.uniqueValuesFor('allowedtucimagefileextensions')
+    result = catalog.uniqueValuesFor('allowedtucimagefileextensions')
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
@@ -294,14 +293,12 @@ class ITUpSmallProject(model.Schema):
         constraint=validateEmail
     )
 
-
     directives.mode(tucimageextension='display')
     tucimageextension = schema.TextLine(
         title=_(u'The following file extensions are allowed for screenshot '
                 u'files (upper case and lower case and mix of both):'),
         defaultFactory=allowedimagefileextensions,
     )
-
 
     screenshot = NamedBlobImage(
         title=_(u"Screenshot of the Tempate"),

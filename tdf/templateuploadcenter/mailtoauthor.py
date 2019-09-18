@@ -84,7 +84,7 @@ class MailToAuthorSchema(interface.Interface):
         title=_(u"Project Name"),
         description=_(u"The name of the project, to which author you want "
                       u"to send feedback."),
-        constraint = validateprojectname
+        constraint=validateprojectname
     )
 
     inquiry = schema.Text(
