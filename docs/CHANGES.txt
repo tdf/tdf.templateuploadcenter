@@ -1,10 +1,19 @@
 Changelog
 =========
 
-0.35 (unreleased)
+0.36 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.35 (2019-09-19)
 -----------------
 
 - Fix a typo in the notifications module [Andreas Mantke]
+- Improve quotation marks in the notification module [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
+- Update localization files and German localization. [Andreas Mantke]
 
 
 0.34 (2019-09-07)
