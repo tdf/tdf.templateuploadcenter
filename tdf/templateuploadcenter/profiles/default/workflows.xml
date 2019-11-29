@@ -21,4 +21,9 @@
             <bound-workflow workflow_id="tdf_templateuploadcenter_project_workflow" />
         </type>
     </bindings>
+     <bindings>
+        <type type_id="tdf.templateuploadcenter.tupsmallproject">
+            <bound-workflow workflow_id="tdf_templateuploadcenter_project_workflow" />
+        </type>
+    </bindings>
 </object>

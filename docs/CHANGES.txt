@@ -4,7 +4,8 @@ Changelog
 0.36 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Bind project publication workflow to small template
+  projects too [Andreas Mantke]
 
 
 0.35 (2019-09-19)
