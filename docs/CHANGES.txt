@@ -6,6 +6,7 @@ Changelog
 
 - Bind project publication workflow to small template
   projects too [Andreas Mantke]
+- Move CHANGES.txt, README and LICENSE to the main directory [Andreas Mantke]
 
 
 0.35 (2019-09-19)
