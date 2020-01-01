@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 
 long_description = '\n\n'.join([
     open('README.txt').read(),
+    open('CONTRIBUTORS.rst').read(),
     open('CHANGES.rst').read(),
 ])
 
