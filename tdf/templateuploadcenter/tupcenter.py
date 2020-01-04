@@ -162,6 +162,11 @@ class ITUpCenter(model.Schema):
                                                'UNIX (other)'],
                                       value_type=schema.TextLine())
 
+    model.fieldset('Allowed File Extensions',
+                   label=u'Allowed file extensions',
+                   fields=['allowed_templatefileextension',
+                           'allowed_imagefileextension'])
+
     allowed_templatefileextension = schema.TextLine(
         title=_(u'Allowed Template File Extensions'),
         description=_(u'Fill in the allowed template file extensions, '
