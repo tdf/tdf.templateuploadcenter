@@ -230,7 +230,7 @@ class ITUpRelease(model.Schema):
     )
 
     source_code_inside = schema.Choice(
-        title=_(u"Is the source code inside the extension?"),
+        title=_(u"Is the source code inside the template?"),
         vocabulary=yesnochoice,
         required=True
     )
