@@ -13,4 +13,5 @@ User documentation
    source/addnewtemplatesmallproject.rst
    source/addnewtemplateproject.rst
    source/addnewtemplaterelease.rst
+   source/addnewtemplatelinkedrelease.rst
 
