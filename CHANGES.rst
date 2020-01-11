@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.36 (unreleased)
+0.36 (2020-01-11)
 -----------------
 
 - Bind project publication workflow to small template
