@@ -7,6 +7,18 @@ Changelog
 - Bind project publication workflow to small template
   projects too [Andreas Mantke]
 - Move CHANGES.txt, README and LICENSE to the main directory [Andreas Mantke]
+- Add new interface and browserlayer for installation and
+  uninstall and add new profiles for uninstall to setup [Andreas Mantke]
+- Fix missing pointer to an element of a list for file extension
+  validation [Andreas Mantke]
+- Move contributors list to the root folder [Andreas Mantke]
+- Reorder edit form of the template center module and add
+  a new register [Andreas Mantke]
+- Small text fixes in release and linked release [Andreas Mantke]
+- Add user documentation and create a HTML and a PDF version
+  of it [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
+- Adapt the MANIFEST.in to the current structure of the add-on [Andreas Mantke]
 
 
 0.35 (2019-09-19)
