@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-09-18 18:52+0000\n"
+"POT-Creation-Date: 2020-01-10 21:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,11 +92,11 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: ./tupcenter.py:172
+#: ./tupcenter.py:177
 msgid "Allowed Image File Extensions"
 msgstr ""
 
-#: ./tupcenter.py:166
+#: ./tupcenter.py:171
 msgid "Allowed Template File Extensions"
 msgstr ""
 
@@ -230,23 +230,23 @@ msgstr ""
 msgid "Description Of The Features Of Templates"
 msgstr ""
 
-#: ./tupcenter.py:249
+#: ./tupcenter.py:254
 msgid "EMail address for communication with the template center manager and reviewer"
 msgstr ""
 
-#: ./tupcenter.py:252
+#: ./tupcenter.py:257
 msgid "Enter an email address for the communication with template center manager and reviewer"
 msgstr ""
 
-#: ./tupcenter.py:238
+#: ./tupcenter.py:243
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr ""
 
-#: ./tupcenter.py:228
+#: ./tupcenter.py:233
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./tupcenter.py:208
+#: ./tupcenter.py:213
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
@@ -272,19 +272,19 @@ msgstr ""
 msgid "File size:"
 msgstr ""
 
-#: ./tupcenter.py:173
+#: ./tupcenter.py:178
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./tupcenter.py:167
+#: ./tupcenter.py:172
 msgid "Fill in the allowed template file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./tupcenter.py:212
+#: ./tupcenter.py:217
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr ""
 
-#: ./tupcenter.py:231
+#: ./tupcenter.py:236
 msgid "Fill in the text for the legal download disclaimer"
 msgstr ""
 
@@ -413,7 +413,7 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-#: ./tupcenter.py:237
+#: ./tupcenter.py:242
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
@@ -423,7 +423,7 @@ msgstr ""
 msgid "Install Instructions"
 msgstr ""
 
-#: ./tupcenter.py:190
+#: ./tupcenter.py:195
 msgid "Instruction how to report Bugs"
 msgstr ""
 
@@ -435,7 +435,7 @@ msgstr ""
 
 #: ./tuprelease.py:233
 #: ./tupreleaselink.py:227
-msgid "Is the source code inside the extension?"
+msgid "Is the source code inside the template?"
 msgstr ""
 
 #: ./tuprelease.py:118
@@ -448,11 +448,11 @@ msgstr ""
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./tupcenter.py:202
+#: ./tupcenter.py:207
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:221
+#: ./tupcenter.py:226
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -600,7 +600,7 @@ msgstr ""
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr ""
 
-#: ./tupcenter.py:184
+#: ./tupcenter.py:189
 msgid "Please fill in the install instructions"
 msgstr ""
 
@@ -899,7 +899,7 @@ msgstr ""
 msgid "Template Center"
 msgstr ""
 
-#: ./tupcenter.py:183
+#: ./tupcenter.py:188
 msgid "Template Installation Instructions"
 msgstr ""
 
@@ -927,11 +927,11 @@ msgstr ""
 msgid "Templates"
 msgstr ""
 
-#: ./tupcenter.py:207
+#: ./tupcenter.py:212
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:227
+#: ./tupcenter.py:232
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
@@ -1079,11 +1079,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ./tupcenter.py:201
+#: ./tupcenter.py:206
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:219
+#: ./tupcenter.py:224
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -1104,6 +1104,10 @@ msgstr ""
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: ./profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Unhide release project"
+msgstr ""
+
+#: ./configure.zcml:41
+msgid "Uninstalls the tdf.templateuploadcenter add-on."
 msgstr ""
 
 #: ./profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
@@ -1218,6 +1222,10 @@ msgstr ""
 
 #: ./tupcenter_templates/view.pt:231
 msgid "release(s) available."
+msgstr ""
+
+#: ./configure.zcml:41
+msgid "tdf.templateuploadcenter (uninstall)"
 msgstr ""
 
 #: ./tupproject_templates/view.pt:138

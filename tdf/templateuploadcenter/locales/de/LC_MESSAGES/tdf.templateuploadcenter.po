@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2019-09-18 20:54+0200\n"
+"PO-Revision-Date: 2020-01-10 22:16+0100\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,11 +80,11 @@ msgstr "Alle Releases"
 msgid "All categories"
 msgstr "Alle Kategorien"
 
-#: tupcenter.py:172
+#: tupcenter.py:177
 msgid "Allowed Image File Extensions"
 msgstr "Erlaubte Bilddatei-Erweiterungen"
 
-#: tupcenter.py:166
+#: tupcenter.py:171
 msgid "Allowed Template File Extensions"
 msgstr "Erlaubte Vorlagendatei-Erweiterungen"
 
@@ -206,23 +206,23 @@ msgstr "Beschreibung"
 msgid "Description Of The Features Of Templates"
 msgstr "Beschreibung der Vorlagen-Funktionen"
 
-#: tupcenter.py:249
+#: tupcenter.py:254
 msgid "EMail address for communication with the template center manager and reviewer"
 msgstr "E-Mail-Adresse zur Kommunikation mit demTemplate-Center-Manager und -Reviewer"
 
-#: tupcenter.py:252
+#: tupcenter.py:257
 msgid "Enter an email address for the communication with template center manager and reviewer"
 msgstr "Fügen Sie eine E-Mail-Adresse für die Kommunikation mit dem Template-Center-Manager und -Reviewer ein"
 
-#: tupcenter.py:238
+#: tupcenter.py:243
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr "Fügen Sie eine Information über die Suche nach älteren Versionen von LibreOffice ein, sofern diese nicht mehr in der Versionsliste (Kompatibilität) sind."
 
-#: tupcenter.py:228
+#: tupcenter.py:233
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr "Fügen Sie den Text der  rechtlichen Hinweise und Einschränkungen für Downloads ein, der auf jeder Seite für herunter ladbare Dateien erscheinen soll."
 
-#: tupcenter.py:208
+#: tupcenter.py:213
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text der rechtlichen Hinweise und Einschränkungen ein, der dem Ersteller eines Projektes angezeigt und von dem Projekt-Eigentümer zu akzeptieren ist."
 
@@ -247,19 +247,19 @@ msgstr "Die fünfte hochgeladene Datei ist kompatibel mit den Plattformen"
 msgid "File size:"
 msgstr "Dateigröße:"
 
-#: tupcenter.py:173
+#: tupcenter.py:178
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr "Fügen Sie die erlaubten Grafik-Datei-Erweiterungen ein, getrennt durch einen senkrechten Strich '|'."
 
-#: tupcenter.py:167
+#: tupcenter.py:172
 msgid "Fill in the allowed template file extensions, seperated by a pipe '|'."
 msgstr "Fügen Sie die erlaubten Vorlagen- Datei-Erweiterungen ein, getrennt durch einen senkrechten Trennstrich '|'."
 
-#: tupcenter.py:212
+#: tupcenter.py:217
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr "Fügen Sie den Haftungsausschluss ein, der von den Projekteigentümern zu akzeptieren ist"
 
-#: tupcenter.py:231
+#: tupcenter.py:236
 msgid "Fill in the text for the legal download disclaimer"
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein"
 
@@ -382,7 +382,7 @@ msgstr "Info"
 msgid "Information"
 msgstr "Information"
 
-#: tupcenter.py:237
+#: tupcenter.py:242
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr "Information zur Suche nach älteren LibreOffice-Versionen"
 
@@ -391,7 +391,7 @@ msgstr "Information zur Suche nach älteren LibreOffice-Versionen"
 msgid "Install Instructions"
 msgstr "Installationsanleitung"
 
-#: tupcenter.py:190
+#: tupcenter.py:195
 msgid "Instruction how to report Bugs"
 msgstr "Anleitung, wie ein Fehler gemeldet wird"
 
@@ -400,8 +400,8 @@ msgid "Invalid email address"
 msgstr "Ungültige Email-Adresse"
 
 #: tuprelease.py:233 tupreleaselink.py:227
-msgid "Is the source code inside the extension?"
-msgstr "Ist der Quellcode in der Extension enthalten?"
+msgid "Is the source code inside the template?"
+msgstr "Ist der Quellcode in der Vorlage enthalten?"
 
 #: tuprelease.py:118 tupreleaselink.py:114 tupsmallproject.py:175
 msgid "It is necessary that you accept the Legal Declaration"
@@ -411,11 +411,11 @@ msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 msgid "Latest Not Stable Release"
 msgstr "Letztes nicht stabiles Release"
 
-#: tupcenter.py:202
+#: tupcenter.py:207
 msgid "Legal Disclaimer and Limitations"
 msgstr "Rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:221
+#: tupcenter.py:226
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Rechtliche Hinweise und Einschränkungen für das Herunterladen"
 
@@ -548,7 +548,7 @@ msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren.
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr "Bitte füllen Sie den Link (URL) zu dem Quellcode ein"
 
-#: tupcenter.py:184
+#: tupcenter.py:189
 msgid "Please fill in the install instructions"
 msgstr "Bitte füllen Sie die Installationsanweisungen ein"
 
@@ -820,7 +820,7 @@ msgstr "TUC Projekt-Veröffentlichungs-Workflow"
 msgid "Template Center"
 msgstr "Template Center"
 
-#: tupcenter.py:183
+#: tupcenter.py:188
 msgid "Template Installation Instructions"
 msgstr "Installationsanleitung für Vorlagen"
 
@@ -848,11 +848,11 @@ msgstr "Vorlagen-Version"
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: tupcenter.py:207
+#: tupcenter.py:212
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen"
 
-#: tupcenter.py:227
+#: tupcenter.py:232
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text der rechtlichen Hinweise und -begrenzungen für Downloads"
 
@@ -991,11 +991,11 @@ msgstr "Dieser Dialog zum Erstellen neuer Releases umfasst mehrere Register. Bit
 msgid "Title"
 msgstr "Titel"
 
-#: tupcenter.py:201
+#: tupcenter.py:206
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen"
 
-#: tupcenter.py:219
+#: tupcenter.py:224
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titel für rechtliche Hinweise und Einschränkungen für Downloads"
 
@@ -1017,6 +1017,10 @@ msgstr "Release wieder einblenden"
 #: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
 msgid "Unhide release project"
 msgstr "Release Projekt sichtbar machen"
+
+#: configure.zcml:41
+msgid "Uninstalls the tdf.templateuploadcenter add-on."
+msgstr "Deinstalliert das tdf.templateuploadcenter Add-on."
 
 #: profiles/default/workflows/tdf_templateuploadcenter_linked_release_workflow/definition.xml
 #: profiles/default/workflows/tdf_templateuploadcenter_release_workflow/definition.xml
@@ -1127,6 +1131,10 @@ msgstr "Erneut veröffentlichen"
 #: tupcenter_templates/view.pt:231
 msgid "release(s) available."
 msgstr "Releases verfügbar."
+
+#: configure.zcml:41
+msgid "tdf.templateuploadcenter (uninstall)"
+msgstr "tdf.templateuploadcenter (deinstallieren)"
 
 #: tupproject_templates/view.pt:138
 msgid "tested with:"
