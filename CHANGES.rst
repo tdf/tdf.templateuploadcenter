@@ -4,7 +4,8 @@ Changelog
 0.37 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add information about messages to the small project owner and from
+  small template projects [Andreas Mantke]
 
 
 0.36 (2020-01-11)
