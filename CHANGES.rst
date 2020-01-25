@@ -5,7 +5,9 @@ Changelog
 -----------------
 
 - Add information about messages to the small project owner and from
-  small template projects [Andreas Mantke]
+  small template projects and update documentation in HTML and
+  PDF file format. [Andreas Mantke]
+- Add further versions of LibreOffice to the Template Center [Andreas Mantke]
 
 
 0.36 (2020-01-11)
