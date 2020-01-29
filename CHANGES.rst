@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.37 (unreleased)
+0.38 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.37 (2020-01-29)
 -----------------
 
 - Add information about messages to the small project owner and from
