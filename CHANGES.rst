@@ -4,7 +4,7 @@ Changelog
 0.38 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Update localization files [Andreas Mantke]
 
 
 0.37 (2020-01-29)
