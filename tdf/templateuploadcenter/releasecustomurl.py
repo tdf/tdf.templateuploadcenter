@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.app.content.interfaces import INameFromTitle
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class INameForReleaseURL(INameFromTitle):
@@ -8,8 +8,8 @@ class INameForReleaseURL(INameFromTitle):
         """Return a processed title"""
 
 
+@implementer(INameForReleaseURL)
 class NameForReleaseURL(object):
-    implements(INameForReleaseURL)
 
     def __init__(self, context):
         self.context = context
@@ -17,3 +17,4 @@ class NameForReleaseURL(object):
     @property
     def title(self):
         return self.context.releasenumber
+
