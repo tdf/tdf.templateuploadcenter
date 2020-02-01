@@ -15,7 +15,7 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone import api
 from z3c.form import validator
-from tdf.extensionuploadcenter import quote_chars
+from tdf.templateuploadcenter import quote_chars
 from plone.uuid.interfaces import IUUID
 from Products.validation import V_REQUIRED
 from plone.dexterity.browser.view import DefaultView

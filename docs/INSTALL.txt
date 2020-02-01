@@ -1,4 +1,4 @@
-tdf.extensionuploadcenter Installation
+tdf.templateuploadcenter Installation
 --------------------------------------
 
 To install tdf.templateuploadcenter using zc.buildout and the plone.recipe.zope2instance
