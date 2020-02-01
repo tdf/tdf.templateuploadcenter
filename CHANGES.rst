@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.38 (unreleased)
+0.38 (2020-02-01)
 -----------------
 
 - Update localization files [Andreas Mantke]
