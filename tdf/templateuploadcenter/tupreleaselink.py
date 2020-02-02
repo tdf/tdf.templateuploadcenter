@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from tdf.templateuploadcenter import MessageFactory as _
+from tdf.templateuploadcenter import _
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema

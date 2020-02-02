@@ -2,7 +2,7 @@
 from zope.i18nmessageid import MessageFactory
 
 # Set up the i18n message factory for our package
-MessageFactory = MessageFactory('tdf.templateuploadcenter')
+_ = MessageFactory('tdf.templateuploadcenter')
 
 MULTISPACE = u'\u3000'
 

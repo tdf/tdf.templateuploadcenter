@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from tdf.templateuploadcenter import MessageFactory as _
+from tdf.templateuploadcenter import _
 import re
 from zope.interface import Invalid, invariant
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
