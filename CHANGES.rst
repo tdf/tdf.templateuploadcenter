@@ -4,7 +4,15 @@ Changelog
 0.39 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Fix typos in install.txt and wrong imports in tupsmallproject
+  module [Andreas Mantke]
+- Change to @implementer in the releasecustomurl module for Python-3
+  compatibility [Andreas Mantke]
+- Change the messagefactory entry for compatiblity to current Plone
+  versions [Andreas Mantke]
+- Update the mailtoauthor module for compatibility with current Plone
+  versions and Python-3
+- Update localization files.
 
 
 0.38 (2020-02-01)
