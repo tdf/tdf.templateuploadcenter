@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.39 (unreleased)
+0.39 (2020-02-07)
 -----------------
 
 - Fix typos in install.txt and wrong imports in tupsmallproject
