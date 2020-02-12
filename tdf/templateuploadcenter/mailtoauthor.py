@@ -18,7 +18,6 @@ from zope.interface import Invalid
 import logging
 import re
 
-
 checkemail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
 
@@ -48,7 +47,6 @@ logger = logging.getLogger(__name__)
 
 
 class IReCaptchaForm(interface.Interface):
-
     captcha = schema.TextLine(
         title=u"ReCaptcha",
         description=u"",
@@ -64,7 +62,6 @@ class ReCaptcha(object):
 
 
 class MailToAuthorSchema(interface.Interface):
-
     inquirerfirstname = schema.TextLine(
         title=_(safe_unicode('Your First Name')),
         description=_(safe_unicode('Please fill in your first name(s)')),
@@ -84,7 +81,7 @@ class MailToAuthorSchema(interface.Interface):
     projectname = schema.TextLine(
         title=_(safe_unicode('Project Name')),
         description=_(safe_unicode('The name of the project, to which author '
-                                    'you want to send feedback.')),
+                                   'you want to send feedback.')),
         constraint=validateprojectname
     )
 
@@ -92,7 +89,7 @@ class MailToAuthorSchema(interface.Interface):
         title=_(safe_unicode('Your Message To The Author')),
         description=_(safe_unicode('What is your message to the author of '
                                    'the project? Your message is limited '
-                                    'to 1000 characters.')),
+                                   'to 1000 characters.')),
         max_length=1000
     )
 
@@ -160,10 +157,10 @@ class MailToAuthorForm(AutoExtensibleForm, form.Form):
 
         catalog = api.portal.get_tool('portal_catalog')
         project = catalog(
-                      portal_type=(
-                          'tdf.templateuploadcenter.tupproject',
-                          'tdf.templateuploadcenter.tupsmallproject'),
-                      Title=data['projectname']
+            portal_type=(
+                'tdf.templateuploadcenter.tupproject',
+                'tdf.templateuploadcenter.tupsmallproject'),
+            Title=data['projectname']
         )
 
         for brain in project[:1]:
