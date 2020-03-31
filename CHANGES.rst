@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.40 (unreleased)
+0.41 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.40 (2020-03-31)
 -----------------
 
 - Pep8 fixes [Andreas Mantke]
