@@ -4,7 +4,9 @@ Changelog
 0.40 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Pep8 fixes [Andreas Mantke]
+- Add new module for mail to a project owner [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
 
 
 0.39 (2020-02-07)
