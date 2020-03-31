@@ -231,6 +231,19 @@
     handler="tdf.templateuploadcenter.tupsmallproject.textmodified_project"
     />
 
+  <adapter factory=".mailtemplateprojectowner.MailTemplateProjectOwnerAdapter" />
 
+  <browser:page
+      for="tdf.templateuploadcenter.tupproject.ITUpProject"
+      name="contact-template-project-owner"
+      class=".mailtemplateprojectowner.ReCaptchaForm"
+      permission="zope2.View"
+      />
+
+  <adapter
+      factory=".mailtemplateprojectowner.ReCaptcha"
+      for="tdf.templateuploadcenter.tupproject.ITUpProject"
+      provides=".mailtemplateprojectowner.IReCaptchaForm"
+   />
 
 </configure>

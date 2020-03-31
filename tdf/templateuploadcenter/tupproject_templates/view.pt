@@ -458,13 +458,13 @@
                 <span tal:content="structure context/reporting_bugs/output" />
             </div>
             <div>
-                <h2>Contact The Author</h2>
-                <p>You can send a message to the author of the project and
-                    give him feedback by following the following the following
-                    link and fill in your information into the form:<br />
+                <h2>Contact The Project Owner</h2>
+                <p>You can send a message to the project owner and
+                    give her/him feedback by following the link and fill in your information
+                    into the displayed mail form:<br />
                     <a class="pointer" tal:attributes="href
-                            string:${context/portal_url}/@@mail-to-templateauthor">
-                        Get in contact with the project author
+                            string:${context/absolute_url}/@@contact-template-project-owner">
+                        Get in contact with the project owner
                     </a>.
                 </p>
             </div>
