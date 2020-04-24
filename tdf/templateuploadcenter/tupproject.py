@@ -23,6 +23,7 @@ from plone.supermodel.directives import primary
 from plone.autoform import directives
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
+from Products.CMFPlone.utils import safe_unicode
 
 
 def vocabCategories(context):
@@ -62,7 +63,7 @@ checkEmail = re.compile(
 
 def validateEmail(value):
     if not checkEmail(value):
-        raise Invalid(_(u"Invalid email address"))
+        raise Invalid(_(safe_unicode("Invalid email address")))
     return True
 
 
@@ -85,43 +86,43 @@ def validateimagefileextension(value):
 
 
 class ProvideScreenshotLogo(Invalid):
-    __doc__ = _(
-        u"Please add a Screenshot or a Logo to your project. You find the "
-        u"appropriate fields below "
-        u"on this page.")
+    __doc__ = _(safe_unicode(
+        "Please add a Screenshot or a Logo to your project. You find the "
+        "appropriate fields below "
+        "on this page."))
 
 
 class MissingCategory(Invalid):
-    __doc__ = _(u"You have not chosen a category for the project")
+    __doc__ = _(safe_unicode("You have not chosen a category for the project"))
 
 
 class ITUpProject(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
-        title=_(u"Information"),
-        description=_(
-            u"The Dialog to create a new project consists of different "
-            u"register. Please go through these register and fill in the "
-            u"appropriate data for your project.")
+        title=_(safe_unicode("Information")),
+        description=_(safe_unicode(
+            "The Dialog to create a new project consists of different "
+            "register. Please go through these register and fill in the "
+            "appropriate data for your project."))
     )
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Project Title - minimum 5 and maximum 50 characters"),
+        title=_(safe_unicode("Title")),
+        description=_(safe_unicode("Project Title - minimum 5 and maximum 50 characters")),
         min_length=5,
         max_length=50
     )
 
     dexteritytextindexer.searchable('description')
     description = schema.Text(
-        title=_(u"Project Summary"),
+        title=_(safe_unicode("Project Summary")),
     )
 
     dexteritytextindexer.searchable('details')
     primary('details')
     details = RichText(
-        title=_(u"Full Project Description"),
+        title=_(safe_unicode("Full Project Description")),
         required=False
     )
 
@@ -138,50 +139,50 @@ class ITUpProject(model.Schema):
     dexteritytextindexer.searchable('category_choice')
     directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
-        title=_(u"Choose your categories"),
-        description=_(
-            u"Please select the appropriate categories (one or more) for "
-            u"your project."),
+        title=_(safe_unicode("Choose your categories")),
+        description=_(safe_unicode(
+            "Please select the appropriate categories (one or more) for "
+            "your project.")),
         value_type=schema.Choice(source=vocabCategories),
         constraint=isNotEmptyCategory,
         required=True
     )
 
     contactAddress = schema.TextLine(
-        title=_(u"Contact email-address"),
-        description=_(u"Contact email-address for the project."),
+        title=_(safe_unicode("Contact email-address")),
+        description=_(safe_unicode("Contact email-address for the project.")),
         constraint=validateEmail
     )
 
     homepage = schema.URI(
-        title=_(u"Homepage"),
-        description=_(
-            u"If the project has an external home page, enter its URL "
-            u"(example: 'http://www.mysite.org')."),
+        title=_(safe_unicode("Homepage")),
+        description=_(safe_unicode(
+            "If the project has an external home page, enter its URL "
+            "(example: 'http://www.mysite.org').")),
         required=False
     )
 
     documentation_link = schema.URI(
-        title=_(u"URL of documentation repository "),
-        description=_(
-            u"If the project has externally hosted documentation, enter its "
-            u"URL (example: 'http://www.mysite.org')."),
+        title=_(safe_unicode("URL of documentation repository ")),
+        description=_(safe_unicode(
+            "If the project has externally hosted documentation, enter its "
+            "URL (example: 'http://www.mysite.org').")),
         required=False
     )
 
     directives.mode(tucimageextension='display')
     tucimageextension = schema.TextLine(
-        title=_(u'The following file extensions are allowed for screenshot '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode('The following file extensions are allowed for screenshot '
+                u'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedimagefileextensions,
     )
 
     project_logo = NamedBlobImage(
-        title=_(u"Logo"),
-        description=_(
-            u"Add a logo for the project (or organization/company) by "
-            u"clicking the 'Browse' button. You could provide an image of "
-            u"the file format 'png', 'gif' or 'jpg'."),
+        title=_(safe_unicode("Logo")),
+        description=_(safe_unicode(
+            "Add a logo for the project (or organization/company) by "
+            "clicking the 'Browse' button. You could provide an image of "
+            "the file format 'png', 'gif' or 'jpg'.")),
         required=False,
         constraint=validateimagefileextension
     )
@@ -194,10 +195,10 @@ class ITUpProject(model.Schema):
     )
 
     screenshot = NamedBlobImage(
-        title=_(u"Screenshot of the Template"),
-        description=_(
-            u"Add a screenshot by clicking the 'Browse' button. You could "
-            u"provide an image of the file format 'png', 'gif' or 'jpg'. "),
+        title=_(safe_unicode("Screenshot of the Template")),
+        description=_(safe_unicode(
+            "Add a screenshot by clicking the 'Browse' button. You could "
+            "provide an image of the file format 'png', 'gif' or 'jpg'. ")),
         required=False,
         constraint=validateimagefileextension
     )
@@ -218,11 +219,11 @@ def notifyProjectManager(self, event):
         mailsender = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailsender),
-        subject=(u"Your Project {}").format(self.title),
-        body=(
-            u"The status of your LibreOffice templates project changed. "
-            u"The new status is {}").format(state)
+        sender=(safe_unicode("{} <{}>")).format('Admin of the Website', mailsender),
+        subject=(safe_unicode("Your Project {}")).format(self.title),
+        body=(safe_unicode(
+            "The status of your LibreOffice templates project changed. "
+            "The new status is {}")).format(state)
     )
 
 
@@ -234,10 +235,10 @@ def notifyProjectManagerReleaseAdd(self, event):
             'plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site',
+        sender=(safe_unicode("{} <{}>")).format('Admin of the LibreOffice Templates site',
                                    mailrecipient),
-        subject=(u"Your Project {}: new Release added").format(self.title),
-        body=(u"A new release was added to your project: '{}'").format(
+        subject=(safe_unicode("Your Project {}: new Release added")).format(self.title),
+        body=(safe_unicode("A new release was added to your project: '{}'")).format(
             self.title),
     )
 
@@ -250,11 +251,11 @@ def notifyProjectManagerReleaseLinkedAdd(self, event):
             'plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the LibreOffice Templates site',
+        sender=(safe_unicode("{} <{}>")).format('Admin of the LibreOffice Templates site',
                                    mailrecipient),
-        subject=(u"Your Project {}: new linked Release added").format(
+        subject=(safe_unicode("Your Project {}: new linked Release added")).format(
             self.title),
-        body=(u"A new linked release was added to your project: '{}'").format(
+        body=(safe_unicode("A new linked release was added to your project: '{}'")).format(
             self.title),
     )
 
@@ -269,9 +270,9 @@ def notifyAboutNewReviewlistentry(self, event):
     if state == "pending":
         api.portal.send_email(
             recipient=mailrecipient,
-            subject=(
-                u"A Project with the title {} was added to the review "
-                u"list").format(self.title),
+            subject=(safe_unicode(
+                "A Project with the title {} was added to the review "
+                "list")).format(self.title),
             body="Please have a look at the review list and check if the "
                  "project is ready for publication. \n"
                  "\n"
@@ -295,15 +296,15 @@ def textmodified_templateproject(self, event):
 
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} <{}>").format(
+            sender=(safe_unicode("{} <{}>")).format(
                 'Admin of the LibreOffice Templates site', mailrecipient),
-            subject=(u"The content of the project {} has changed").format(
+            subject=(safe_unicode("The content of the project {} has changed")).format(
                 self.title),
-            body=(
-                u"The content of the project {} has changed. Here you get the "
-                u"text of the description field of the project: \n"
-                u"'{}\n\nand this is the text of the details field:\n"
-                u"{}'").format(self.title,
+            body=(safe_unicode(
+                "The content of the project {} has changed. Here you get the "
+                "text of the description field of the project: \n"
+                "'{}\n\nand this is the text of the details field:\n"
+                "{}'")).format(self.title,
                                self.description,
                                detailed_description),
         )
@@ -317,7 +318,7 @@ def notifyAboutNewProject(self, event):
             'plone.email_from_address')
     api.portal.send_email(
         recipient=mailrecipient,
-        subject=(u"A Project with the title {} was added").format(self.title),
+        subject=(safe_unicode("A Project with the title {} was added")).format(self.title),
         body="A member added a new project"
     )
 
@@ -361,7 +362,7 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
         contextUUID = IUUID(self.context, None)
         for result in results:
             if result.UID != contextUUID:
-                raise Invalid(_(u"The project title is already in use"))
+                raise Invalid(_(safe_unicode("The project title is already in use")))
 
 
 validator.WidgetValidatorDiscriminators(
