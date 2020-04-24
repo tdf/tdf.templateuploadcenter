@@ -15,6 +15,7 @@ from Acquisition import aq_inner, aq_parent
 from plone.namedfile.field import NamedBlobFile
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
+from Products.CMFPlone.utils import safe_unicode
 
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
@@ -115,86 +116,86 @@ def validatetemplatefileextension(value):
 
 
 class AcceptLegalDeclaration(Invalid):
-    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
+    __doc__ = _(safe_unicode("It is necessary that you accept the Legal Declaration"))
 
 
 class ITUpRelease(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
-        title=_(u"Information"),
-        description=_(
-            u"This Dialog to create a new release consists of different "
-            u"register. Please go through this register and fill in the "
-            u"appropriate data for your release. This register 'Default' "
-            u"provide fields for general information of your release. The "
-            u"next register 'compatibility' is the place to submit "
-            u"information about the versions with which your release file(s) "
-            u"is / are compatible. The following register asks for some "
-            u"legal informations. The next register File Upload' provide a "
-            u"field to upload your release file. The further register are "
-            u"optional. There is the opportunity to upload further release "
-            u"files (for different platforms).")
+        title=_(safe_unicode("Information")),
+        description=_(safe_unicode(
+            "This Dialog to create a new release consists of different "
+            "register. Please go through this register and fill in the "
+            "appropriate data for your release. This register 'Default' "
+            "provide fields for general information of your release. The "
+            "next register 'compatibility' is the place to submit "
+            "information about the versions with which your release file(s) "
+            "is / are compatible. The following register asks for some "
+            "legal informations. The next register File Upload' provide a "
+            "field to upload your release file. The further register are "
+            "optional. There is the opportunity to upload further release "
+            "files (for different platforms)."))
     )
 
     directives.mode(projecttitle='hidden')
     projecttitle = schema.TextLine(
-        title=_(u"The Computed Project Title"),
-        description=_(
-            u"The release title will be computed from the parent project "
-            u"title"),
+        title=_(safe_unicode("The Computed Project Title")),
+        description=_(safe_unicode(
+            "The release title will be computed from the parent project "
+            "title")),
         defaultFactory=getContainerTitle
     )
 
     releasenumber = schema.TextLine(
-        title=_(u"Release Number"),
-        description=_(u"Release Number (up to twelf chars)"),
-        default=_(u"1.0"),
+        title=_(safe_unicode("Release Number")),
+        description=_(safe_unicode("Release Number (up to twelf chars)")),
+        default=_(safe_unicode("1.0")),
         max_length=12
     )
 
     description = schema.Text(
-        title=_(u"Release Summary"),
+        title=_(safe_unicode("Release Summary")),
     )
 
     primary('details')
     details = RichText(
-        title=_(u"Full Release Description"),
+        title=_(safe_unicode("Full Release Description")),
         required=False
     )
 
     primary('changelog')
     changelog = RichText(
-        title=_(u"Changelog"),
-        description=_(
-            u"A detailed log of what has changed since the previous release."),
+        title=_(safe_unicode("Changelog")),
+        description=_(safe_unicode(
+            "A detailed log of what has changed since the previous release.")),
         required=False,
     )
 
     model.fieldset('compatibility',
-                   label=u"Compatibility",
+                   label=safe_unicode("Compatibility"),
                    fields=['compatibility_choice'])
 
     model.fieldset('legal',
-                   label=u"Legal",
+                   label=safe_unicode("Legal"),
                    fields=['licenses_choice', 'title_declaration_legal',
                            'declaration_legal', 'accept_legal_declaration',
                            'source_code_inside', 'link_to_source'])
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
-        title=_(u'License of the uploaded file'),
-        description=_(
-            u"Please mark one or more licenses you publish your release."),
+        title=_(safe_unicode('License of the uploaded file')),
+        description=_(safe_unicode(
+            "Please mark one or more licenses you publish your release.")),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
 
     directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
-        title=_(u"Compatible with versions of LibreOffice"),
-        description=_(
-            u"Please mark one or more program versions with which this "
-            u"release is compatible with."),
+        title=_(safe_unicode("Compatible with versions of LibreOffice")),
+        description=_(safe_unicode(
+            "Please mark one or more program versions with which this "
+            "release is compatible with.")),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
         default=[]
@@ -202,69 +203,70 @@ class ITUpRelease(model.Schema):
 
     directives.mode(title_declaration_legal='display')
     title_declaration_legal = schema.TextLine(
-        title=_(u""),
+        title=_(safe_unicode("")),
         required=False,
         defaultFactory=legal_declaration_title
     )
 
     directives.mode(declaration_legal='display')
     declaration_legal = schema.Text(
-        title=_(u""),
+        title=_(safe_unicode("")),
         required=False,
         defaultFactory=legal_declaration_text
-
     )
 
     accept_legal_declaration = schema.Bool(
-        title=_(u"Accept the above legal disclaimer"),
-        description=_(
-            u"Please declare that you accept the above legal disclaimer"),
+        title=_(safe_unicode("Accept the above legal disclaimer")),
+        description=_(safe_unicode(
+            "Please declare that you accept the above legal disclaimer")),
         required=True
     )
 
     contact_address2 = schema.TextLine(
-        title=_(u"Contact email-address"),
-        description=_(u"Contact email-address for the project."),
+        title=_(safe_unicode("Contact email-address")),
+        description=_(safe_unicode("Contact email-address for the project.")),
         required=False,
         defaultFactory=contactinfoDefault
     )
 
     source_code_inside = schema.Choice(
-        title=_(u"Is the source code inside the template?"),
+        title=_(safe_unicode("Is the source code inside the template?")),
         vocabulary=yesnochoice,
         required=True
     )
 
     link_to_source = schema.URI(
-        title=_(u"Please fill in the Link (URL) to the Source Code"),
+        title=_(safe_unicode("Please fill in the Link (URL) to the Source Code")),
         required=False
     )
 
     model.fieldset('fileupload',
-                   label=u"Fileupload",
+                   label=safe_unicode("Fileupload"),
                    fields=['tucfileextension', 'file', 'platform_choice',
                            'information_further_file_uploads'])
 
     directives.mode(tucfileextension='display')
     tucfileextension = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file = NamedBlobFile(
-        title=_(u"The first file you want to upload"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The first file you want to upload")),
+        description=_(safe_unicode("Please upload your file.")),
         required=True,
         constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
-        title=_(u"First uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode(
+            "First uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
@@ -272,17 +274,17 @@ class ITUpRelease(model.Schema):
     directives.mode(information_further_file_uploads='display')
     primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
-        title=_(u"Further File Uploads for this Release"),
-        description=_(
-            u"If you want to upload more files for this release, e.g. "
-            u"because there are files for other operating systems, you'll "
-            u"find the upload fields on the register 'Further Uploads' and "
-            u"'Further More Uploads'."),
+        title=_(safe_unicode("Further File Uploads for this Release")),
+        description=_(safe_unicode(
+            "If you want to upload more files for this release, e.g. "
+            "because there are files for other operating systems, you'll "
+            "find the upload fields on the register 'Further Uploads' and "
+            "'Further More Uploads'.")),
         required=False
     )
 
     model.fieldset('fileset1',
-                   label=u"Further Uploads",
+                   label=safe_unicode("Further Uploads"),
                    fields=['tucfileextension1', 'file1', 'platform_choice1',
                            'tucfileextension2', 'file2', 'platform_choice2',
                            'tucfileextension3', 'file3', 'platform_choice3']
@@ -290,126 +292,131 @@ class ITUpRelease(model.Schema):
 
     directives.mode(tucfileextension1='display')
     tucfileextension1 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file1 = NamedBlobFile(
-        title=_(u"The second file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The second file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
-        title=_(u"Second uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode("Second uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     directives.mode(tucfileextension2='display')
     tucfileextension2 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file2 = NamedBlobFile(
-        title=_(u"The third file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The third file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
-        title=_(u"Third uploaded file is compatible with the Platform(s))"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode("Third uploaded file is compatible with the Platform(s))")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     directives.mode(tucfileextension3='display')
     tucfileextension3 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file3 = NamedBlobFile(
-        title=_(u"The fourth file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The fourth file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
-        title=_(u"Fourth uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode("Fourth uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     model.fieldset('fileset2',
-                   label=u"Further More Uploads",
+                   label=safe_unicode("Further More Uploads"),
                    fields=['tucfileextension4', 'file4', 'platform_choice4',
                            'tucfileextension5', 'file5', 'platform_choice5']
                    )
 
     directives.mode(tucfileextension4='display')
     tucfileextension4 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file4 = NamedBlobFile(
-        title=_(u"The fifth file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The fifth file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
-        title=_(u"Fifth uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode("Fifth uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     directives.mode(tucfileextension5='display')
     tucfileextension5 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file5 = NamedBlobFile(
-        title=_(u"The sixth file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The sixth file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
     )
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
-        title=_(u"Sixth uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode("Sixth uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
@@ -417,36 +424,37 @@ class ITUpRelease(model.Schema):
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
-            raise Invalid(_(u"Please choose a license for your release."))
+            raise Invalid(_(safe_unicode("Please choose a license for your release.")))
 
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(
-                u"Please choose one or more compatible product versions for "
-                u"your release"))
+            raise Invalid(_(safe_unicode(
+                "Please choose one or more compatible product versions for "
+                "your release")))
 
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
             raise AcceptLegalDeclaration(
-                _(u"Please accept the Legal Declaration about "
-                  u"your Release and your Uploaded File"))
+                _(safe_unicode(
+                    "Please accept the Legal Declaration about "
+                    "your Release and your Uploaded File")))
 
     @invariant
     def testingvalue(data):
         if data.source_code_inside is not 1 and data.link_to_source is None:
-            raise Invalid(_(
-                u"You answered the question, whether the source code is "
-                u"inside your template with no (default answer). If this is "
-                u"the correct answer, please fill in the Link (URL) "
-                u"to the Source Code."))
+            raise Invalid(_(safe_unicode(
+                "You answered the question, whether the source code is "
+                "inside your template with no (default answer). If this is "
+                "the correct answer, please fill in the Link (URL) "
+                "to the Source Code.")))
 
     @invariant
     def noOSChosen(data):
         if data.file is not None and data.platform_choice == []:
-            raise Invalid(_(
-                u"Please choose a compatible platform for the uploaded file."))
+            raise Invalid(_(safe_unicode(
+                "Please choose a compatible platform for the uploaded file.")))
 
 
 @indexer(ITUpRelease)
@@ -507,9 +515,9 @@ class ValidateTUpReleaseUniqueness(validator.SimpleFieldValidator):
                 'release_number': value})
 
             if len(result) > 0:
-                raise Invalid(_(
-                    u"The release number is already in use. Please choose "
-                    u"another one."))
+                raise Invalid(_(safe_unicode(
+                    "The release number is already in use. Please choose "
+                    "another one.")))
 
 
 validator.WidgetValidatorDiscriminators(
