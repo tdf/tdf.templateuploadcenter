@@ -112,7 +112,8 @@ def validatelinkedtemplatefileextension(value):
 
 
 class AcceptLegalDeclaration(Invalid):
-    __doc__ = _(safe_unicode("It is necessary that you accept the Legal Declaration"))
+    __doc__ = _(safe_unicode(
+        "It is necessary that you accept the Legal Declaration"))
 
 
 class ITUpReleaseLink(model.Schema):
@@ -231,7 +232,8 @@ class ITUpReleaseLink(model.Schema):
     )
 
     link_to_source = schema.URI(
-        title=_(safe_unicode("Please fill in the Link (URL) to the Source Code")),
+        title=_(safe_unicode(
+            "Please fill in the Link (URL) to the Source Code")),
         required=False
     )
 
@@ -252,7 +254,8 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file = schema.URI(
         title=_(safe_unicode("The Link to the file of the release")),
-        description=_(safe_unicode("Please insert a link to your extension file.")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=True,
         constraint=validatelinkedtemplatefileextension
     )
@@ -339,7 +342,8 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file1 = schema.URI(
         title=_(safe_unicode("The Link to the file of the release")),
-        description=_(safe_unicode("Please insert a link to your extension file.")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedtemplatefileextension
     )
@@ -354,7 +358,8 @@ class ITUpReleaseLink(model.Schema):
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
-        title=_(safe_unicode("Second linked file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Second linked file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the linked file "
             "is compatible.")),
@@ -373,7 +378,8 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file2 = schema.URI(
         title=_(safe_unicode("The Link to the file of the release")),
-        description=_(safe_unicode("Please insert a link to your extension file.")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedtemplatefileextension
     )
@@ -388,7 +394,8 @@ class ITUpReleaseLink(model.Schema):
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
-        title=_(safe_unicode("Third linked file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Third linked file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the linked file "
             "is compatible.")),
@@ -407,7 +414,8 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file3 = schema.URI(
         title=_(safe_unicode("The Link to the file of the release")),
-        description=_(safe_unicode("Please insert a link to your extension file.")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedtemplatefileextension
     )
@@ -422,7 +430,8 @@ class ITUpReleaseLink(model.Schema):
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
-        title=_(safe_unicode("Fourth linked file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Fourth linked file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the linked file "
             "is compatible.")),
@@ -441,7 +450,8 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file4 = schema.URI(
         title=_(safe_unicode("The Link to the file of the release")),
-        description=_(safe_unicode("Please insert a link to your extension file.")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedtemplatefileextension
     )
@@ -456,7 +466,8 @@ class ITUpReleaseLink(model.Schema):
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
-        title=_(safe_unicode("Fourth linked file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Fourth linked file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the linked file "
             "is compatible.")),
@@ -475,7 +486,8 @@ class ITUpReleaseLink(model.Schema):
 
     link_to_file5 = schema.URI(
         title=_(safe_unicode("The Link to the file of the release")),
-        description=_(safe_unicode("Please insert a link to your extension file.")),
+        description=_(safe_unicode(
+            "Please insert a link to your extension file.")),
         required=False,
         constraint=validatelinkedtemplatefileextension
     )
@@ -490,7 +502,8 @@ class ITUpReleaseLink(model.Schema):
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
-        title=_(safe_unicode("Fourth linked file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Fourth linked file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the linked file is "
             "compatible.")),
@@ -501,7 +514,8 @@ class ITUpReleaseLink(model.Schema):
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
-            raise Invalid(_(safe_unicode("Please choose a license for your release.")))
+            raise Invalid(_(safe_unicode(
+                "Please choose a license for your release.")))
 
     @invariant
     def compatibilitynotchoosen(data):
@@ -520,7 +534,7 @@ class ITUpReleaseLink(model.Schema):
 
     @invariant
     def testingvalue(data):
-        if data.source_code_inside is not 1 and data.link_to_source is None:
+        if data.source_code_inside != 1 and data.link_to_source is None:
             raise Invalid(_(safe_unicode(
                 "You answered the question, whether the source code is "
                 "inside your template with no (default answer). If this is "
@@ -532,7 +546,8 @@ class ITUpReleaseLink(model.Schema):
         if data.link_to_file is not None and data.platform_choice == []:
             raise Invalid(
                 _(safe_unicode(
-                    "Please choose a compatible platform for the linked file.")))
+                    "Please choose a compatible platform "
+                    "for the linked file.")))
 
 
 @indexer(ITUpReleaseLink)
