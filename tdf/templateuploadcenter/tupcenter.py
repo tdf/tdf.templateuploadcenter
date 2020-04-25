@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
-from Acquisition import aq_inner
-from plone import api
-from plone.app.layout.viewlets import ViewletBase
-from plone.app.multilingual.dx import directives
-from plone.app.textfield import RichText
-from plone.supermodel import model
+import re
+
 from Products.CMFPlone.browser.search import quote_chars
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.ZCTextIndex.ParseTree import ParseError
 from tdf.templateuploadcenter import _
 from tdf.templateuploadcenter.tupproject import ITUpProject
-from zope import schema
-import re
-from zope.interface import Invalid
+
+from Acquisition import aq_inner
+from plone import api
+from plone.app.layout.viewlets import ViewletBase
+from plone.app.multilingual.dx import directives
+from plone.app.textfield import RichText
+from plone.supermodel import model
 from plone.supermodel.directives import primary
+from zope import schema
+from zope.interface import Invalid
 
 MULTISPACE = u'\u3000'.encode('utf-8')
 BAD_CHARS = ('?', '-', '+', '*', MULTISPACE)
@@ -57,114 +59,119 @@ class ITUpCenter(model.Schema):
                    fields=['available_category', 'available_licenses',
                            'available_versions', 'available_platforms'])
 
-    available_category = schema.List(title=_(safe_unicode("Available Categories")),
-                                     default=['Accounting',
-                                              'Agenda',
-                                              'Arts',
-                                              'Book',
-                                              'Brochure / Pamphlet',
-                                              'Budget',
-                                              'Business',
-                                              'Business POS',
-                                              'Business Shipping',
-                                              'Calendar',
-                                              'Cards',
-                                              'Curriculum Vitae',
-                                              'CD / DVD|CD',
-                                              'Certificate',
-                                              'Checkbook',
-                                              'Christmas',
-                                              'Computer',
-                                              'Conference',
-                                              'E-book',
-                                              'Education',
-                                              'Academia',
-                                              'Elementary/Secondary '
-                                              'school panels',
-                                              'Envelope'
-                                              'Fax',
-                                              'Genealogy',
-                                              'Grocery',
-                                              'Invoice',
-                                              'Labels',
-                                              'LibreLogo',
-                                              'Letter',
-                                              'Magazine',
-                                              'Media',
-                                              'Medical',
-                                              'Memo',
-                                              'Music',
-                                              'Newsletter',
-                                              'Notes',
-                                              'Paper',
-                                              'Presentation',
-                                              'Recipe',
-                                              'Science',
-                                              'Sports',
-                                              'Timeline',
-                                              'Timesheet',
-                                              'Trades',
-                                              'To Do List',
-                                              'Writer',
-                                              ],
-                                     value_type=schema.TextLine())
+    available_category = schema.List(title=_(safe_unicode(
+        "Available Categories")),
+        default=[
+            'Accounting',
+            'Agenda',
+            'Arts',
+            'Book',
+            'Brochure / Pamphlet',
+            'Budget',
+            'Business',
+            'Business POS',
+            'Business Shipping',
+            'Calendar',
+            'Cards',
+            'Curriculum Vitae',
+            'CD / DVD|CD',
+            'Certificate',
+            'Checkbook',
+            'Christmas',
+            'Computer',
+            'Conference',
+            'E-book',
+            'Education',
+            'Academia',
+            'Elementary/Secondary '
+            'school panels',
+            'Envelope'
+            'Fax',
+            'Genealogy',
+            'Grocery',
+            'Invoice',
+            'Labels',
+            'LibreLogo',
+            'Letter',
+            'Magazine',
+            'Media',
+            'Medical',
+            'Memo',
+            'Music',
+            'Newsletter',
+            'Notes',
+            'Paper',
+            'Presentation',
+            'Recipe',
+            'Science',
+            'Sports',
+            'Timeline',
+            'Timesheet',
+            'Trades',
+            'To Do List',
+            'Writer',
+        ],
+        value_type=schema.TextLine())
 
-    available_licenses = schema.List(title=_(safe_unicode("Available Licenses")),
-                                     default=[
-                                         'GNU-GPL-v2 (GNU General Public '
-                                         'License Version 2)',
-                                         'GNU-GPL-v3+ (General Public License '
-                                         'Version 3 and later)',
-                                         'LGPL-v2.1 (GNU Lesser General '
-                                         'Public License Version 2.1)',
-                                         'LGPL-v3+ (GNU Lesser General Public '
-                                         'License Version 3 and later)',
-                                         'BSD (BSD License (revised))',
-                                         'MPL-v1.1 (Mozilla Public License '
-                                         'Version 1.1)',
-                                         'MPL-v2.0+ (Mozilla Public License '
-                                         'Version 2.0 or later)',
-                                         'CC-by-sa-v3 (Creative Commons '
-                                         'Attribution-ShareAlike 3.0)',
-                                         'CC-BY-SA-v4 (Creative Commons '
-                                         'Attribution-ShareAlike 4.0 '
-                                         'International)',
-                                         'AL-v2 (Apache License Version 2.0)',
-                                         'Public Domain',
-                                         'OSI (Other OSI Approved)'],
-                                     value_type=schema.TextLine())
+    available_licenses = schema.List(title=_(safe_unicode(
+        "Available Licenses")),
+        default=[
+            'GNU-GPL-v2 (GNU General Public '
+            'License Version 2)',
+            'GNU-GPL-v3+ (General Public License '
+            'Version 3 and later)',
+            'LGPL-v2.1 (GNU Lesser General '
+            'Public License Version 2.1)',
+            'LGPL-v3+ (GNU Lesser General Public '
+            'License Version 3 and later)',
+            'BSD (BSD License (revised))',
+            'MPL-v1.1 (Mozilla Public License '
+            'Version 1.1)',
+            'MPL-v2.0+ (Mozilla Public License '
+            'Version 2.0 or later)',
+            'CC-by-sa-v3 (Creative Commons '
+            'Attribution-ShareAlike 3.0)',
+            'CC-BY-SA-v4 (Creative Commons '
+            'Attribution-ShareAlike 4.0 '
+            'International)',
+            'AL-v2 (Apache License Version 2.0)',
+            'Public Domain',
+            'OSI (Other OSI Approved)'],
+        value_type=schema.TextLine())
 
-    available_versions = schema.List(title=_(safe_unicode("Available Versions")),
-                                     default=['LibreOffice 3.3',
-                                              'LibreOffice 3.4',
-                                              'LibreOffice 3.5',
-                                              'LibreOffice 3.6',
-                                              'LibreOffice 4.0',
-                                              'LibreOffice 4.1',
-                                              'LibreOffice 4.2',
-                                              'LibreOffice 4.3',
-                                              'LibreOffice 4.4',
-                                              'LibreOffice 5.0',
-                                              'LibreOffice 5.1',
-                                              'LibreOffice 5.2',
-                                              'LibreOffice 5.3',
-                                              'LibreOffice 5.4',
-                                              'LibreOffice 6.0',
-                                              'LibreOffice 6.1',
-                                              'LibreOffice 6.2',
-                                              'LibreOffice 6.3',
-                                              'LibreOffice 6.4'],
-                                     value_type=schema.TextLine())
+    available_versions = schema.List(title=_(safe_unicode(
+        "Available Versions")),
+        default=['LibreOffice 3.3',
+                 'LibreOffice 3.4',
+                 'LibreOffice 3.5',
+                 'LibreOffice 3.6',
+                 'LibreOffice 4.0',
+                 'LibreOffice 4.1',
+                 'LibreOffice 4.2',
+                 'LibreOffice 4.3',
+                 'LibreOffice 4.4',
+                 'LibreOffice 5.0',
+                 'LibreOffice 5.1',
+                 'LibreOffice 5.2',
+                 'LibreOffice 5.3',
+                 'LibreOffice 5.4',
+                 'LibreOffice 6.0',
+                 'LibreOffice 6.1',
+                 'LibreOffice 6.2',
+                 'LibreOffice 6.3',
+                 'LibreOffice 6.4'],
+        value_type=schema.TextLine())
 
-    available_platforms = schema.List(title=_(safe_unicode("Available Platforms")),
-                                      default=['All platforms',
-                                               'Linux',
-                                               'Linux-x64',
-                                               'Mac OS X',
-                                               'Windows',
-                                               'BSD',
-                                               'UNIX (other)'],
-                                      value_type=schema.TextLine())
+    available_platforms = schema.List(title=_(safe_unicode(
+        "Available Platforms")),
+        default=['All platforms',
+                 'Linux',
+                 'Linux-x64',
+                 'Mac OS X',
+                 'Windows',
+                 'BSD',
+                 'UNIX (other)'],
+        value_type=schema.TextLine())
 
     model.fieldset('Allowed File Extensions',
                    label=safe_unicode('Allowed file extensions'),
@@ -229,23 +236,27 @@ class ITUpCenter(model.Schema):
     title_legaldownloaddisclaimer = schema.TextLine(
         title=_(safe_unicode(
             "Title of the Legal Disclaimer and Limitations for Downloads")),
-        default=_(safe_unicode("Legal Disclaimer and Limitations for Downloads")),
+        default=_(safe_unicode(
+            "Legal Disclaimer and Limitations for Downloads")),
         required=False
     )
 
     primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
-        title=_(safe_unicode("Text of the Legal Disclaimer and Limitations for Downlaods")),
+        title=_(safe_unicode(
+            "Text of the Legal Disclaimer and Limitations for Downlaods")),
         description=_(safe_unicode(
             "Enter any legal disclaimer and limitations for downloads that "
             "should appear on each page for dowloadable files.")),
-        default=_(safe_unicode("Fill in the text for the legal download disclaimer")),
+        default=_(safe_unicode(
+            "Fill in the text for the legal download disclaimer")),
         required=False
     )
 
     primary('information_oldversions')
     information_oldversions = RichText(
-        title=_(safe_unicode("Information About Search For Old LibreOffice Versions")),
+        title=_(safe_unicode(
+            "Information About Search For Old LibreOffice Versions")),
         description=_(safe_unicode(
             "Enter an information about the search for older "
             "versions of LibreOffice, if they are not on the "
@@ -310,7 +321,7 @@ class TUpCenterView(BrowserView):
         return len(catalog(portal_type=(
             'tdf.templateuploadcenter.tupproject',
             'tdf.templateuploaccenter.tupsmallproject'),
-                           review_state='published'))
+            review_state='published'))
 
     def tuprelease_count(self):
         """Return number of downloadable files

@@ -1,30 +1,28 @@
 # -*- coding: utf-8 -*-
-from tdf.templateuploadcenter import _
-from plone.app.textfield import RichText
-from plone.supermodel import model
-from zope import schema
-from plone.indexer.decorator import indexer
-from plone.dexterity.browser.view import DefaultView
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.interface import directlyProvides
-
-from zope.security import checkPermission
-from zope.interface import invariant, Invalid
-from Acquisition import aq_inner, aq_parent
-from plone.namedfile.field import NamedBlobFile
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
-from Products.CMFPlone.utils import safe_unicode
-
-from zope.interface import provider
-from zope.schema.interfaces import IContextAwareDefaultFactory
-from Products.validation import V_REQUIRED
-from z3c.form import validator
-from plone import api
 import re
-from plone.supermodel.directives import primary
+
+from Products.CMFPlone.utils import safe_unicode
+from Products.validation import V_REQUIRED
+from tdf.extensionuploadcenter.adapter import IReleasesCompatVersions
+from tdf.templateuploadcenter import _
+
+from Acquisition import aq_inner, aq_parent
+from plone import api
+from plone.app.textfield import RichText
 from plone.autoform import directives
+from plone.dexterity.browser.view import DefaultView
+from plone.indexer.decorator import indexer
+from plone.namedfile.field import NamedBlobFile
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from z3c.form import validator
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from zope import schema
+from zope.interface import Invalid, directlyProvides, invariant, provider
+from zope.schema.interfaces import (IContextAwareDefaultFactory,
+                                    IContextSourceBinder)
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.security import checkPermission
 
 
 def vocabAvailLicenses(context):
@@ -116,7 +114,8 @@ def validatetemplatefileextension(value):
 
 
 class AcceptLegalDeclaration(Invalid):
-    __doc__ = _(safe_unicode("It is necessary that you accept the Legal Declaration"))
+    __doc__ = _(safe_unicode(
+        "It is necessary that you accept the Legal Declaration"))
 
 
 class ITUpRelease(model.Schema):
@@ -236,7 +235,8 @@ class ITUpRelease(model.Schema):
     )
 
     link_to_source = schema.URI(
-        title=_(safe_unicode("Please fill in the Link (URL) to the Source Code")),
+        title=_(safe_unicode(
+            "Please fill in the Link (URL) to the Source Code")),
         required=False
     )
 
@@ -299,7 +299,8 @@ class ITUpRelease(model.Schema):
     )
 
     file1 = NamedBlobFile(
-        title=_(safe_unicode("The second file you want to upload (this is optional)")),
+        title=_(safe_unicode(
+            "The second file you want to upload (this is optional)")),
         description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
@@ -307,7 +308,8 @@ class ITUpRelease(model.Schema):
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
-        title=_(safe_unicode("Second uploaded file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Second uploaded file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the uploaded file "
             "is compatible.")),
@@ -324,7 +326,8 @@ class ITUpRelease(model.Schema):
     )
 
     file2 = NamedBlobFile(
-        title=_(safe_unicode("The third file you want to upload (this is optional)")),
+        title=_(safe_unicode(
+            "The third file you want to upload (this is optional)")),
         description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
@@ -332,7 +335,8 @@ class ITUpRelease(model.Schema):
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
-        title=_(safe_unicode("Third uploaded file is compatible with the Platform(s))")),
+        title=_(safe_unicode(
+            "Third uploaded file is compatible with the Platform(s))")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the uploaded file "
             "is compatible.")),
@@ -349,7 +353,8 @@ class ITUpRelease(model.Schema):
     )
 
     file3 = NamedBlobFile(
-        title=_(safe_unicode("The fourth file you want to upload (this is optional)")),
+        title=_(safe_unicode(
+            "The fourth file you want to upload (this is optional)")),
         description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
@@ -357,7 +362,8 @@ class ITUpRelease(model.Schema):
 
     directives.widget(platform_choice3=CheckBoxFieldWidget)
     platform_choice3 = schema.List(
-        title=_(safe_unicode("Fourth uploaded file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Fourth uploaded file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the uploaded file "
             "is compatible.")),
@@ -380,7 +386,8 @@ class ITUpRelease(model.Schema):
     )
 
     file4 = NamedBlobFile(
-        title=_(safe_unicode("The fifth file you want to upload (this is optional)")),
+        title=_(safe_unicode(
+            "The fifth file you want to upload (this is optional)")),
         description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
@@ -388,7 +395,8 @@ class ITUpRelease(model.Schema):
 
     directives.widget(platform_choice4=CheckBoxFieldWidget)
     platform_choice4 = schema.List(
-        title=_(safe_unicode("Fifth uploaded file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Fifth uploaded file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the uploaded file "
             "is compatible.")),
@@ -405,7 +413,8 @@ class ITUpRelease(model.Schema):
     )
 
     file5 = NamedBlobFile(
-        title=_(safe_unicode("The sixth file you want to upload (this is optional)")),
+        title=_(safe_unicode(
+            "The sixth file you want to upload (this is optional)")),
         description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension
@@ -413,7 +422,8 @@ class ITUpRelease(model.Schema):
 
     directives.widget(platform_choice5=CheckBoxFieldWidget)
     platform_choice5 = schema.List(
-        title=_(safe_unicode("Sixth uploaded file is compatible with the Platform(s)")),
+        title=_(safe_unicode(
+            "Sixth uploaded file is compatible with the Platform(s)")),
         description=_(safe_unicode(
             "Please mark one or more platforms with which the uploaded file "
             "is compatible.")),
@@ -424,7 +434,8 @@ class ITUpRelease(model.Schema):
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
-            raise Invalid(_(safe_unicode("Please choose a license for your release.")))
+            raise Invalid(_(safe_unicode(
+                "Please choose a license for your release.")))
 
     @invariant
     def compatibilitynotchoosen(data):
@@ -443,7 +454,7 @@ class ITUpRelease(model.Schema):
 
     @invariant
     def testingvalue(data):
-        if data.source_code_inside is not 1 and data.link_to_source is None:
+        if data.source_code_inside != 1 and data.link_to_source is None:
             raise Invalid(_(safe_unicode(
                 "You answered the question, whether the source code is "
                 "inside your template with no (default answer). If this is "
@@ -544,4 +555,3 @@ class TUpReleaseView(DefaultView):
         idx_data = catalog.getIndexDataForUID(path)
         compatibility = idx_data.get('getCompatibility')
         return (r for r in compatibility)
-
