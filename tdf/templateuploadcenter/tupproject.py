@@ -108,7 +108,8 @@ class ITUpProject(model.Schema):
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(safe_unicode("Title")),
-        description=_(safe_unicode("Project Title - minimum 5 and maximum 50 characters")),
+        description=_(safe_unicode(
+            "Project Title - minimum 5 and maximum 50 characters")),
         min_length=5,
         max_length=50
     )
@@ -171,8 +172,9 @@ class ITUpProject(model.Schema):
 
     directives.mode(tucimageextension='display')
     tucimageextension = schema.TextLine(
-        title=_(safe_unicode('The following file extensions are allowed for screenshot '
-                u'files (upper case and lower case and mix of both):')),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for screenshot '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedimagefileextensions,
     )
 
@@ -218,7 +220,8 @@ def notifyProjectManager(self, event):
         mailsender = api.portal.get_registry_record('plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(safe_unicode("{} <{}>")).format('Admin of the Website', mailsender),
+        sender=(safe_unicode(
+            "{} <{}>")).format('Admin of the Website', mailsender),
         subject=(safe_unicode("Your Project {}")).format(self.title),
         body=(safe_unicode(
             "The status of your LibreOffice templates project changed. "
@@ -234,10 +237,13 @@ def notifyProjectManagerReleaseAdd(self, event):
             'plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(safe_unicode("{} <{}>")).format('Admin of the LibreOffice Templates site',
-                                   mailrecipient),
-        subject=(safe_unicode("Your Project {}: new Release added")).format(self.title),
-        body=(safe_unicode("A new release was added to your project: '{}'")).format(
+        sender=(safe_unicode(
+            "{} <{}>")).format('Admin of the LibreOffice Templates site',
+                               mailrecipient),
+        subject=(safe_unicode(
+            "Your Project {}: new Release added")).format(self.title),
+        body=(safe_unicode(
+            "A new release was added to your project: '{}'")).format(
             self.title),
     )
 
@@ -250,11 +256,14 @@ def notifyProjectManagerReleaseLinkedAdd(self, event):
             'plone.email_from_address')
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(safe_unicode("{} <{}>")).format('Admin of the LibreOffice Templates site',
-                                   mailrecipient),
-        subject=(safe_unicode("Your Project {}: new linked Release added")).format(
+        sender=(safe_unicode(
+            "{} <{}>")).format('Admin of the LibreOffice Templates site',
+                               mailrecipient),
+        subject=(safe_unicode(
+            "Your Project {}: new linked Release added")).format(
             self.title),
-        body=(safe_unicode("A new linked release was added to your project: '{}'")).format(
+        body=(safe_unicode(
+            "A new linked release was added to your project: '{}'")).format(
             self.title),
     )
 
@@ -297,7 +306,8 @@ def textmodified_templateproject(self, event):
             recipient=mailrecipient,
             sender=(safe_unicode("{} <{}>")).format(
                 'Admin of the LibreOffice Templates site', mailrecipient),
-            subject=(safe_unicode("The content of the project {} has changed")).format(
+            subject=(safe_unicode(
+                "The content of the project {} has changed")).format(
                 self.title),
             body=(safe_unicode(
                 "The content of the project {} has changed. Here you get the "
@@ -317,7 +327,8 @@ def notifyAboutNewProject(self, event):
             'plone.email_from_address')
     api.portal.send_email(
         recipient=mailrecipient,
-        subject=(safe_unicode("A Project with the title {} was added")).format(self.title),
+        subject=(safe_unicode(
+            "A Project with the title {} was added")).format(self.title),
         body="A member added a new project"
     )
 
@@ -361,7 +372,8 @@ class ValidateTUpProjectUniqueness(validator.SimpleFieldValidator):
         contextUUID = IUUID(self.context, None)
         for result in results:
             if result.UID != contextUUID:
-                raise Invalid(_(safe_unicode("The project title is already in use")))
+                raise Invalid(_(safe_unicode(
+                    "The project title is already in use")))
 
 
 validator.WidgetValidatorDiscriminators(
