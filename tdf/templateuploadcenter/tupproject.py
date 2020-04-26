@@ -334,6 +334,8 @@ def notifyAboutNewProject(self, event):
 
 
 def getLatestRelease(self):
+
+    context = self.context
     res = None
     catalog = api.portal.get_tool(name='portal_catalog')
     res = catalog.searchResults(
