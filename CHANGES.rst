@@ -4,7 +4,9 @@ Changelog
 0.42 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Move strings of tupsmallproject module from unicode to
+  save_unicode [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 0.41 (2020-04-26)
