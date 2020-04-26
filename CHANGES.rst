@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.42 (unreleased)
+0.42 (2020-04-26)
 -----------------
 
 - Move strings of tupsmallproject module from unicode to
