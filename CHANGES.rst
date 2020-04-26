@@ -4,7 +4,11 @@ Changelog
 0.41 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Move strings from unicode to save_unicode [Andreas Mantke]
+- Pep8 fixes [Andreas Mantke]
+- Add missing definition for context in function
+  getLatestRelease on tupproject module [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 0.40 (2020-03-31)
