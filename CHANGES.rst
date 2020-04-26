@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.41 (unreleased)
+0.42 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.41 (2020-04-26)
 -----------------
 
 - Move strings from unicode to save_unicode [Andreas Mantke]
