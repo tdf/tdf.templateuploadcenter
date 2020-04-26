@@ -23,6 +23,7 @@ from zope.security import checkPermission
 from plone.indexer.decorator import indexer
 from plone.supermodel.directives import primary
 from plone.app.textfield import RichText
+from Products.CMFPlone.utils import safe_unicode
 
 checkfileextensionimage = re.compile(
     r"^.*\.(png|PNG|gif|GIF|jpg|JPG)").match
@@ -30,9 +31,9 @@ checkfileextensionimage = re.compile(
 
 def validateImageextension(value):
     if not checkfileextensionimage(value.filename):
-        raise Invalid(
-            u"You could only add images in the png, gif or jpg file format "
-            u"to your project.")
+        raise Invalid(safe_unicode(
+            "You could only add images in the png, gif or jpg file format "
+            "to your project."))
     return True
 
 
@@ -49,7 +50,7 @@ checkEmail = re.compile(
 
 def validateEmail(value):
     if not checkEmail(value):
-        raise Invalid(_(u"Invalid email address"))
+        raise Invalid(_(safe_unicode("Invalid email address")))
     return True
 
 
@@ -121,7 +122,8 @@ directlyProvides(vocabAvailVersions, IContextSourceBinder)
 def isNotEmptyCategory(value):
     if not value:
         raise Invalid(
-            u'You have to choose at least one category for your project.')
+            safe_unicode(
+                'You have to choose at least one category for your project.'))
     return True
 
 
@@ -146,8 +148,8 @@ directlyProvides(vocabAvailPlatforms, IContextSourceBinder)
 
 
 yesnochoice = SimpleVocabulary(
-    [SimpleTerm(value=0, title=_(u'No')),
-     SimpleTerm(value=1, title=_(u'Yes')), ]
+    [SimpleTerm(value=0, title=_(safe_unicode('No'))),
+     SimpleTerm(value=1, title=_(safe_unicode('Yes'))), ]
 )
 
 
@@ -172,7 +174,8 @@ def allowedimagefileextensions(context):
 
 
 class AcceptLegalDeclaration(Invalid):
-    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
+    __doc__ = _(safe_unicode(
+        "It is necessary that you accept the Legal Declaration"))
 
 
 def validatetemplatefileextension(value):
@@ -181,10 +184,10 @@ def validatetemplatefileextension(value):
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
-        raise Invalid(
-            u'You could only upload files with an allowed template file '
-            u'extension. Please try again with to upload a file with the '
-            u'correct template file extension.')
+        raise Invalid(safe_unicode(
+            'You could only upload files with an allowed template file '
+            'extension. Please try again with to upload a file with the '
+            'correct template file extension.'))
     return True
 
 
@@ -194,52 +197,53 @@ def validateimagefileextension(value):
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):
-        raise Invalid(
-            u'You could only upload files with an allowed file extension. '
-            u'Please try again to upload a file with the correct file'
-            u'extension.')
+        raise Invalid(safe_unicode(
+            'You could only upload files with an allowed file extension. '
+            'Please try again to upload a file with the correct file'
+            'extension.'))
     return True
 
 
 class ITUpSmallProject(model.Schema):
     directives.mode(information="display")
     information = schema.Text(
-        title=_(u"Information"),
-        description=_(
-            u"The Dialog to create a new project consists of different "
-            u"register. Please go through this register and fill in the "
-            u"appropriate data for your project or choose one of the "
-            u"options that are provided. You could upload one or more files "
-            u"to your project on the register 'File Upload' and "
-            u"'Optional Further File Upload'.")
+        title=_(safe_unicode("Information")),
+        description=_(safe_unicode(
+            "The Dialog to create a new project consists of different "
+            "register. Please go through this register and fill in the "
+            "appropriate data for your project or choose one of the "
+            "options that are provided. You could upload one or more files "
+            "to your project on the register 'File Upload' and "
+            "'Optional Further File Upload'."))
     )
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Project Title - minimum 5 and maximum 50 characters"),
+        title=_(safe_unicode("Title")),
+        description=_(safe_unicode(
+            'Project Title - minimum 5 and maximum 50 characters')),
         min_length=5,
         max_length=50
     )
 
     dexteritytextindexer.searchable('description')
     description = schema.Text(
-        title=_(u"Project Summary"),
+        title=_(safe_unicode("Project Summary")),
     )
 
     dexteritytextindexer.searchable('details')
     primary('details')
     details = RichText(
-        title=_(u"Full Project Description"),
+        title=_(safe_unicode("Full Project Description")),
         required=False
     )
     model.fieldset('category_compatibility',
-                   label=u"Categories / Compatibility",
+                   label=safe_unicode("Categories / Compatibility"),
                    fields=['category_choice', 'compatibility_choice']
                    )
 
     model.fieldset('legal',
-                   label=u"Legal",
+                   label=safe_unicode("Legal"),
                    fields=['licenses_choice', 'title_declaration_legal',
                            'declaration_legal',
                            'accept_legal_declaration']
@@ -247,83 +251,84 @@ class ITUpSmallProject(model.Schema):
 
     directives.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
-        title=_(u'License of the uploaded file'),
-        description=_(
-            u"Please mark one or more licenses you publish your release."),
+        title=_(safe_unicode('License of the uploaded file')),
+        description=_(safe_unicode(
+            "Please mark one or more licenses you publish your release.")),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
 
     directives.mode(title_declaration_legal='display')
     title_declaration_legal = schema.TextLine(
-        title=_(u""),
+        title=_(safe_unicode("")),
         required=False,
         defaultFactory=legal_declaration_title
     )
 
     directives.mode(declaration_legal='display')
     declaration_legal = schema.Text(
-        title=_(u""),
+        title=_(safe_unicode("")),
         required=False,
         defaultFactory=legal_declaration_text
     )
 
     accept_legal_declaration = schema.Bool(
-        title=_(u"Accept the above legal disclaimer"),
-        description=_(
-            u"Please declare that you accept the above legal disclaimer."),
+        title=_(safe_unicode("Accept the above legal disclaimer")),
+        description=_(safe_unicode(
+            "Please declare that you accept the above legal disclaimer.")),
         required=True
     )
 
     dexteritytextindexer.searchable('category_choice')
     directives.widget(category_choice=CheckBoxFieldWidget)
     category_choice = schema.List(
-        title=_(u"Choose your categories"),
-        description=_(
-            u"Please select the appropriate categories (one or more) for "
-            u"your project."),
+        title=_(safe_unicode("Choose your categories")),
+        description=_(safe_unicode(
+            "Please select the appropriate categories (one or more) for "
+            "your project.")),
         value_type=schema.Choice(source=vocabCategories),
         constraint=isNotEmptyCategory,
         required=True
     )
 
     contactAddress = schema.TextLine(
-        title=_(u"Contact email-address"),
-        description=_(u"Contact email-address for the project."),
+        title=_(safe_unicode("Contact email-address")),
+        description=_(safe_unicode("Contact email-address for the project.")),
         constraint=validateEmail
     )
 
     directives.mode(tucimageextension='display')
     tucimageextension = schema.TextLine(
-        title=_(u'The following file extensions are allowed for screenshot '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for screenshot '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedimagefileextensions,
     )
 
     screenshot = NamedBlobImage(
-        title=_(u"Screenshot of the Tempate"),
-        description=_(
-            u"Add a screenshot by clicking the 'Browse' button. You could "
-            u"provide an image of the file format 'png', 'gif' or 'jpg'."),
+        title=_(safe_unicode("Screenshot of the Tempate")),
+        description=_(safe_unicode(
+            "Add a screenshot by clicking the 'Browse' button. You could "
+            "provide an image of the file format 'png', 'gif' or 'jpg'.")),
         required=True,
         constraint=validateimagefileextension
     )
 
     releasenumber = schema.TextLine(
-        title=_(u"Versions Number"),
-        description=_(
-            u"Version Number of the Template File (up to twelf chars) "
-            u"which you upload in this project."),
-        default=_(u"1.0"),
+        title=_(safe_unicode("Versions Number")),
+        description=_(safe_unicode(
+            "Version Number of the Template File (up to twelf chars) "
+            "which you upload in this project.")),
+        default=_(safe_unicode("1.0")),
         max_length=12,
     )
 
     directives.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
-        title=_(u"Compatible with versions of LibreOffice"),
-        description=_(
-            u"Please mark one or more program versions with which this "
-            u"release is compatible with."),
+        title=_(safe_unicode("Compatible with versions of LibreOffice")),
+        description=_(safe_unicode(
+            "Please mark one or more program versions with which this "
+            "release is compatible with.")),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
         default=[]
@@ -331,45 +336,47 @@ class ITUpSmallProject(model.Schema):
 
     directives.mode(tucfileextension='display')
     tucfileextension = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file = NamedBlobFile(
-        title=_(u"The first file you want to upload."),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode("The first file you want to upload.")),
+        description=_(safe_unicode("Please upload your file.")),
         required=True,
         constraint=validatetemplatefileextension,
     )
 
     directives.widget(platform_choice=CheckBoxFieldWidget)
     platform_choice = schema.List(
-        title=_(u"First uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode(
+            "First uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=True,
     )
 
     model.fieldset('fileset1',
-                   label=u"File Upload",
+                   label=safe_unicode("File Upload"),
                    fields=['filetitlefield', 'platform_choice',
                            'tucfileextension', 'file', ]
                    )
 
     directives.mode(filetitlefield='display')
     filetitlefield = schema.TextLine(
-        title=_(u"The First File You Want To Upload"),
-        description=_(
-            u"You need only to upload one file to your project. There are "
-            u"options for further two file uploads if you want to provide "
-            u"files for different platforms.")
+        title=_(safe_unicode("The First File You Want To Upload")),
+        description=_(safe_unicode(
+            "You need only to upload one file to your project. There are "
+            "options for further two file uploads if you want to provide "
+            "files for different platforms.")),
     )
 
     model.fieldset('fileset2',
-                   label=u"Optional Further File Upload",
+                   label=safe_unicode("Optional Further File Upload"),
                    fields=['filetitlefield1', 'platform_choice1',
                            'tucfileextension1', 'file1',
                            'filetitlefield2', 'platform_choice2',
@@ -378,64 +385,70 @@ class ITUpSmallProject(model.Schema):
 
     directives.mode(filetitlefield1='display')
     filetitlefield1 = schema.TextLine(
-        title=_(u"Second Release File"),
-        description=_(
-            u"Here you could add an optional second file to your project, if "
-            u"the files support different platforms.")
+        title=_(safe_unicode("Second Release File")),
+        description=_(safe_unicode(
+            "Here you could add an optional second file to your project, if "
+            "the files support different platforms."))
     )
 
     directives.widget(platform_choice1=CheckBoxFieldWidget)
     platform_choice1 = schema.List(
-        title=_(u"Second uploaded file is compatible with the Platform(s)"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode(
+            "Second uploaded file is compatible with the Platform(s)")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     directives.mode(tucfileextension1='display')
     tucfileextension1 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file1 = NamedBlobFile(
-        title=_(u"The second file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode(
+            "The second file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension,
     )
 
     directives.mode(filetitlefield2='display')
     filetitlefield2 = schema.TextLine(
-        title=_(u"Third Release File"),
-        description=_(
-            u"Here you could add an optional third file to your project, if "
-            u"the files support different platforms.")
+        title=_(safe_unicode("Third Release File")),
+        description=_(safe_unicode(
+            "Here you could add an optional third file to your project, if "
+            "the files support different platforms.")),
     )
 
     directives.widget(platform_choice2=CheckBoxFieldWidget)
     platform_choice2 = schema.List(
-        title=_(u"Third uploaded file is compatible with the Platform(s))"),
-        description=_(
-            u"Please mark one or more platforms with which the uploaded file "
-            u"is compatible."),
+        title=_(safe_unicode(
+            "Third uploaded file is compatible with the Platform(s))")),
+        description=_(safe_unicode(
+            "Please mark one or more platforms with which the uploaded file "
+            "is compatible.")),
         value_type=schema.Choice(source=vocabAvailPlatforms),
         required=False,
     )
 
     directives.mode(tucfileextension2='display')
     tucfileextension2 = schema.TextLine(
-        title=_(u'The following file extensions are allowed for template '
-                u'files (upper case and lower case and mix of both):'),
+        title=_(safe_unicode(
+            'The following file extensions are allowed for template '
+            'files (upper case and lower case and mix of both):')),
         defaultFactory=allowedtemplatefileextensions,
     )
 
     file2 = NamedBlobFile(
-        title=_(u"The third file you want to upload (this is optional)"),
-        description=_(u"Please upload your file."),
+        title=_(safe_unicode(
+            "The third file you want to upload (this is optional)")),
+        description=_(safe_unicode("Please upload your file.")),
         required=False,
         constraint=validatetemplatefileextension,
     )
@@ -443,28 +456,29 @@ class ITUpSmallProject(model.Schema):
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
-            raise Invalid(_(u"Please choose a license for your release."))
+            raise Invalid(_(safe_unicode(
+                "Please choose a license for your release.")))
 
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(
-                u"Please choose one or more compatible product versions for "
-                u"your release."))
+            raise Invalid(_(safe_unicode(
+                "Please choose one or more compatible product versions for "
+                "your release.")))
 
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
             raise AcceptLegalDeclaration(
-                _(
-                    u"Please accept the Legal Declaration about your Release "
-                    u"and your Uploaded File"))
+                _(safe_unicode(
+                    "Please accept the Legal Declaration about your Release "
+                    "and your Uploaded File")))
 
     @invariant
     def noOSChosen(data):
         if data.file is not None and data.platform_choice == []:
-            raise Invalid(_(
-                u"Please choose a compatible platform for the uploaded file."))
+            raise Invalid(_(safe_unicode(
+                "Please choose a compatible platform for the uploaded file.")))
 
 
 @indexer(ITUpSmallProject)
@@ -485,11 +499,11 @@ def notifyProjectManager(self, event):
         mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=("{}").format(self.contactAddress),
-        sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-        subject=(u"Your Project {}").format(self.title),
-        body=(
-            u"The status of your LibreOffice templates project changed. "
-            u"The new status is {}").format(
+        sender=(safe_unicode("{} <{}>")).format('Admin of the Website', mailrecipient),
+        subject=(safe_unicode("Your Project {}")).format(self.title),
+        body=(safe_unicode(
+            "The status of your LibreOffice templates project changed. "
+            "The new status is {}")).format(
             state)
     )
 
@@ -504,9 +518,9 @@ def notifyAboutNewReviewlistentry(self, event):
     if state == "pending":
         api.portal.send_email(
             recipient=mailrecipient,
-            subject=(
-                u"A Project with the title {} was added to the review "
-                u"list").format(self.title),
+            subject=(safe_unicode(
+                "A Project with the title {} was added to the review "
+                "list").format(self.title)),
             body="Please have a look at the review list and check if the "
                  "project is ready for publication. \n"
                  "\n"
@@ -529,14 +543,14 @@ def textmodified_project(self, event):
 
         api.portal.send_email(
             recipient=mailrecipient,
-            sender=(u"{} <{}>").format('Admin of the Website', mailrecipient),
-            subject=(u"The content of the project {} has changed").format(
+            sender=(safe_unicode("{} <{}>")).format('Admin of the Website', mailrecipient),
+            subject=(safe_unicode("The content of the project {} has changed")).format(
                 self.title),
-            body=(
-                u"The content of the project {} has changed. Here you get "
-                u"the text of the description field of the project: \n"
-                u"'{}\n\nand this is the text of the details field:\n"
-                u"{}'").format(self.title,
+            body=(safe_unicode(
+                "The content of the project {} has changed. Here you get "
+                "the text of the description field of the project: \n"
+                "'{}\n\nand this is the text of the details field:\n"
+                "{}'")).format(self.title,
                                self.description,
                                detailed_description),
         )
@@ -549,7 +563,7 @@ def notifyAboutNewProject(self, event):
         mailrecipient = 'templates@libreoffice.org'
     api.portal.send_email(
         recipient=mailrecipient,
-        subject=(u"A Project with the title {} was added").format(self.title),
+        subject=(safe_unicode("A Project with the title {} was added")).format(self.title),
         body="A member added a new project"
     )
 
@@ -575,7 +589,7 @@ class ValidateTUpSmallProjectUniqueness(validator.SimpleFieldValidator):
             contextUUID = IUUID(self.context, None)
             for result in results:
                 if result.UID != contextUUID:
-                    raise Invalid(_(u"The project title is already in use."))
+                    raise Invalid(_(safe_unicode("The project title is already in use.")))
 
 
 validator.WidgetValidatorDiscriminators(
