@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-31 12:10+0000\n"
+"POT-Creation-Date: 2020-04-26 08:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Domain: tdf.templateuploadcenter\n"
 
 #: ./tuprelease.py:205
-#: ./tupreleaselink.py:200
+#: ./tupreleaselink.py:202
 #: ./tupsmallproject.py:259
 msgid ""
 msgstr ""
@@ -32,7 +32,7 @@ msgid "- A simple workflow for Template project objects."
 msgstr ""
 
 #: ./tuprelease.py:151
-#: ./tupreleaselink.py:147
+#: ./tupreleaselink.py:149
 #: ./tupsmallproject.py:317
 msgid "1.0"
 msgstr ""
@@ -42,7 +42,7 @@ msgid "A Small template project"
 msgstr ""
 
 #: ./tuprelease.py:168
-#: ./tupreleaselink.py:164
+#: ./tupreleaselink.py:166
 msgid "A detailed log of what has changed since the previous release."
 msgstr ""
 
@@ -66,13 +66,13 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: ./tuprelease.py:219
-#: ./tupreleaselink.py:213
+#: ./tuprelease.py:218
+#: ./tupreleaselink.py:215
 #: ./tupsmallproject.py:272
 msgid "Accept the above legal disclaimer"
 msgstr ""
 
-#: ./tupproject.py:181
+#: ./tupproject.py:183
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'."
 msgstr ""
 
-#: ./tupproject.py:198
+#: ./tupproject.py:200
 msgid "Add a screenshot by clicking the 'Browse' button. You could provide an image of the file format 'png', 'gif' or 'jpg'. "
 msgstr ""
 
@@ -92,11 +92,11 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: ./tupcenter.py:180
+#: ./tupcenter.py:189
 msgid "Allowed Image File Extensions"
 msgstr ""
 
-#: ./tupcenter.py:174
+#: ./tupcenter.py:182
 msgid "Allowed Template File Extensions"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Any version"
 msgstr ""
 
-#: ./tupcenter.py:59
+#: ./tupcenter.py:62
 msgid "Available Categories"
 msgstr ""
 
@@ -119,15 +119,15 @@ msgstr ""
 msgid "Available Downloads"
 msgstr ""
 
-#: ./tupcenter.py:111
+#: ./tupcenter.py:116
 msgid "Available Licenses"
 msgstr ""
 
-#: ./tupcenter.py:158
+#: ./tupcenter.py:165
 msgid "Available Platforms"
 msgstr ""
 
-#: ./tupcenter.py:136
+#: ./tupcenter.py:142
 msgid "Available Versions"
 msgstr ""
 
@@ -165,12 +165,12 @@ msgid "Change the release stage to 'Release beta'"
 msgstr ""
 
 #: ./tuprelease.py:167
-#: ./tupreleaselink.py:163
+#: ./tupreleaselink.py:165
 #: ./tupreleaselink_templates/view.pt:80
 msgid "Changelog"
 msgstr ""
 
-#: ./tupproject.py:141
+#: ./tupproject.py:142
 #: ./tupsmallproject.py:281
 msgid "Choose your categories"
 msgstr ""
@@ -182,20 +182,20 @@ msgid "Compatibility"
 msgstr ""
 
 #: ./tuprelease.py:194
-#: ./tupreleaselink.py:190
+#: ./tupreleaselink.py:192
 #: ./tupsmallproject.py:323
 msgid "Compatible with versions of LibreOffice"
 msgstr ""
 
-#: ./tupproject.py:151
-#: ./tuprelease.py:226
-#: ./tupreleaselink.py:220
+#: ./tupproject.py:152
+#: ./tuprelease.py:225
+#: ./tupreleaselink.py:222
 msgid "Contact email-address"
 msgstr ""
 
-#: ./tupproject.py:152
-#: ./tuprelease.py:227
-#: ./tupreleaselink.py:221
+#: ./tupproject.py:153
+#: ./tuprelease.py:226
+#: ./tupreleaselink.py:223
 msgid "Contact email-address for the project."
 msgstr ""
 
@@ -223,7 +223,7 @@ msgstr ""
 msgid "Currently there are"
 msgstr ""
 
-#: ./tupcenter.py:40
+#: ./tupcenter.py:43
 msgid "Descirption Of The Template Center"
 msgstr ""
 
@@ -231,27 +231,27 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./tupcenter.py:44
+#: ./tupcenter.py:47
 msgid "Description Of The Features Of Templates"
 msgstr ""
 
-#: ./tupcenter.py:257
+#: ./tupcenter.py:272
 msgid "EMail address for communication with the template center manager and reviewer"
 msgstr ""
 
-#: ./tupcenter.py:260
+#: ./tupcenter.py:275
 msgid "Enter an email address for the communication with template center manager and reviewer"
 msgstr ""
 
-#: ./tupcenter.py:246
+#: ./tupcenter.py:260
 msgid "Enter an information about the search for older versions of LibreOffice, if they are not on the versions list (compatibility) anymore."
 msgstr ""
 
-#: ./tupcenter.py:236
+#: ./tupcenter.py:248
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./tupcenter.py:216
+#: ./tupcenter.py:226
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "External Project Page"
 msgstr ""
 
-#: ./tuprelease.py:385
+#: ./tuprelease.py:398
 msgid "Fifth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -277,19 +277,19 @@ msgstr ""
 msgid "File size:"
 msgstr ""
 
-#: ./tupcenter.py:181
+#: ./tupcenter.py:190
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./tupcenter.py:175
+#: ./tupcenter.py:183
 msgid "Fill in the allowed template file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./tupcenter.py:220
+#: ./tupcenter.py:230
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr ""
 
-#: ./tupcenter.py:239
+#: ./tupcenter.py:251
 msgid "Fill in the text for the legal download disclaimer"
 msgstr ""
 
@@ -303,38 +303,38 @@ msgstr ""
 msgid "Final release"
 msgstr ""
 
-#: ./tupreleaselink.py:268
+#: ./tupreleaselink.py:273
 msgid "First linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tuprelease.py:264
+#: ./tuprelease.py:265
 #: ./tupsmallproject.py:348
 msgid "First uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tupreleaselink.py:419
+#: ./tupreleaselink.py:433
 msgid "Fourth linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tuprelease.py:355
+#: ./tuprelease.py:365
 msgid "Fourth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tupproject.py:124
+#: ./tupproject.py:125
 #: ./tupsmallproject.py:233
 msgid "Full Project Description"
 msgstr ""
 
 #: ./tuprelease.py:161
-#: ./tupreleaselink.py:157
+#: ./tupreleaselink.py:159
 msgid "Full Release Description"
 msgstr ""
 
-#: ./tuprelease.py:275
+#: ./tuprelease.py:277
 msgid "Further File Uploads for this Release"
 msgstr ""
 
-#: ./tupreleaselink.py:279
+#: ./tupreleaselink.py:285
 msgid "Further linked files for this Release"
 msgstr ""
 
@@ -375,7 +375,7 @@ msgstr ""
 msgid "Highest Rated"
 msgstr ""
 
-#: ./tupproject.py:157
+#: ./tupproject.py:158
 msgid "Homepage"
 msgstr ""
 
@@ -383,11 +383,11 @@ msgstr ""
 msgid "Homepage of the Project"
 msgstr ""
 
-#: ./tupproject.py:158
+#: ./tupproject.py:159
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
-#: ./tupproject.py:166
+#: ./tupproject.py:167
 msgid "If the project has externally hosted documentation, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
 
@@ -399,11 +399,11 @@ msgstr ""
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr ""
 
-#: ./tupreleaselink.py:280
+#: ./tupreleaselink.py:286
 msgid "If you want to link more files for this release, e.g. because there are files for other operating systems, you'll find the fields to link this files on the next registers, e.g. 'Second linked file'."
 msgstr ""
 
-#: ./tuprelease.py:276
+#: ./tuprelease.py:278
 msgid "If you want to upload more files for this release, e.g. because there are files for other operating systems, you'll find the upload fields on the register 'Further Uploads' and 'Further More Uploads'."
 msgstr ""
 
@@ -414,11 +414,11 @@ msgstr ""
 
 #: ./tupproject.py:101
 #: ./tuprelease.py:124
-#: ./tupreleaselink.py:120
+#: ./tupreleaselink.py:122
 msgid "Information"
 msgstr ""
 
-#: ./tupcenter.py:245
+#: ./tupcenter.py:258
 msgid "Information About Search For Old LibreOffice Versions"
 msgstr ""
 
@@ -428,23 +428,23 @@ msgstr ""
 msgid "Install Instructions"
 msgstr ""
 
-#: ./tupcenter.py:198
+#: ./tupcenter.py:208
 msgid "Instruction how to report Bugs"
 msgstr ""
 
 #: ./mailtemplateprojectowner.py:31
 #: ./mailtoauthor.py:27
-#: ./tupcenter.py:27
+#: ./tupcenter.py:30
 msgid "Invalid email address"
 msgstr ""
 
-#: ./tuprelease.py:233
-#: ./tupreleaselink.py:227
+#: ./tuprelease.py:232
+#: ./tupreleaselink.py:229
 msgid "Is the source code inside the template?"
 msgstr ""
 
-#: ./tuprelease.py:118
-#: ./tupreleaselink.py:114
+#: ./tuprelease.py:117
+#: ./tupreleaselink.py:115
 #: ./tupsmallproject.py:175
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr ""
@@ -453,16 +453,16 @@ msgstr ""
 msgid "Latest Not Stable Release"
 msgstr ""
 
-#: ./tupcenter.py:210
+#: ./tupcenter.py:220
 msgid "Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:229
+#: ./tupcenter.py:239
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
 #: ./tuprelease.py:185
-#: ./tupreleaselink.py:181
+#: ./tupreleaselink.py:183
 #: ./tupsmallproject.py:250
 msgid "License of the uploaded file"
 msgstr ""
@@ -478,7 +478,7 @@ msgstr ""
 msgid "Link to Source Code"
 msgstr ""
 
-#: ./tupproject.py:180
+#: ./tupproject.py:182
 #: ./tupproject_templates/view.pt:109
 msgid "Logo"
 msgstr ""
@@ -511,11 +511,11 @@ msgstr ""
 msgid "Most recent"
 msgstr ""
 
-#: ./tupcenter.py:36
+#: ./tupcenter.py:39
 msgid "Name of the Template Center"
 msgstr ""
 
-#: ./tupcenter.py:49
+#: ./tupcenter.py:52
 msgid "Name of the Template product, e.g. only Templates or LibreOffice Templates"
 msgstr ""
 
@@ -523,8 +523,8 @@ msgstr ""
 msgid "Newest"
 msgstr ""
 
-#: ./tuprelease.py:71
-#: ./tupreleaselink.py:67
+#: ./tuprelease.py:70
+#: ./tupreleaselink.py:68
 #: ./tupsmallproject.py:149
 msgid "No"
 msgstr ""
@@ -554,12 +554,12 @@ msgstr ""
 msgid "Platform(s)"
 msgstr ""
 
-#: ./tuprelease.py:433
+#: ./tuprelease.py:451
 #: ./tupsmallproject.py:459
 msgid "Please accept the Legal Declaration about your Release and your Uploaded File"
 msgstr ""
 
-#: ./tupreleaselink.py:508
+#: ./tupreleaselink.py:531
 msgid "Please accept the Legal Declaration about your Release and your linked File"
 msgstr ""
 
@@ -567,27 +567,27 @@ msgstr ""
 msgid "Please add a Screenshot or a Logo to your project. You find the appropriate fields below on this page."
 msgstr ""
 
-#: ./tupproject.py:208
+#: ./tupproject.py:210
 msgid "Please add a screenshot or a logo to your project page. You will find the appropriate fields below on this page."
 msgstr ""
 
-#: ./tupreleaselink.py:524
+#: ./tupreleaselink.py:548
 msgid "Please choose a compatible platform for the linked file."
 msgstr ""
 
-#: ./tuprelease.py:448
+#: ./tuprelease.py:467
 #: ./tupsmallproject.py:466
 msgid "Please choose a compatible platform for the uploaded file."
 msgstr ""
 
-#: ./tuprelease.py:420
-#: ./tupreleaselink.py:495
+#: ./tuprelease.py:437
+#: ./tupreleaselink.py:517
 #: ./tupsmallproject.py:446
 msgid "Please choose a license for your release."
 msgstr ""
 
-#: ./tuprelease.py:425
-#: ./tupreleaselink.py:500
+#: ./tuprelease.py:443
+#: ./tupreleaselink.py:523
 msgid "Please choose one or more compatible product versions for your release"
 msgstr ""
 
@@ -595,8 +595,8 @@ msgstr ""
 msgid "Please choose one or more compatible product versions for your release."
 msgstr ""
 
-#: ./tuprelease.py:220
-#: ./tupreleaselink.py:214
+#: ./tuprelease.py:219
+#: ./tupreleaselink.py:216
 msgid "Please declare that you accept the above legal disclaimer"
 msgstr ""
 
@@ -604,16 +604,16 @@ msgstr ""
 msgid "Please declare that you accept the above legal disclaimer."
 msgstr ""
 
-#: ./tuprelease.py:239
-#: ./tupreleaselink.py:233
+#: ./tuprelease.py:238
+#: ./tupreleaselink.py:235
 msgid "Please fill in the Link (URL) to the Source Code"
 msgstr ""
 
-#: ./tupcenter.py:192
+#: ./tupcenter.py:202
 msgid "Please fill in the install instructions"
 msgstr ""
 
-#: ./tupreleaselink.py:260
+#: ./tupreleaselink.py:265
 msgid "Please fill in the size in kilobyte of the external hosted file (e.g. 633, if the size is 633 kb)"
 msgstr ""
 
@@ -632,7 +632,7 @@ msgstr ""
 msgid "Please fill in your first name(s)"
 msgstr ""
 
-#: ./tupreleaselink.py:253
+#: ./tupreleaselink.py:257
 msgid "Please insert a link to your extension file."
 msgstr ""
 
@@ -645,33 +645,33 @@ msgid "Please make sure the relevant project information has been entered and su
 msgstr ""
 
 #: ./tuprelease.py:186
-#: ./tupreleaselink.py:182
+#: ./tupreleaselink.py:184
 #: ./tupsmallproject.py:251
 msgid "Please mark one or more licenses you publish your release."
 msgstr ""
 
-#: ./tupreleaselink.py:354
+#: ./tupreleaselink.py:363
 msgid "Please mark one or more platforms with which the linked file is compatible."
 msgstr ""
 
-#: ./tuprelease.py:265
-#: ./tupreleaselink.py:269
+#: ./tuprelease.py:267
+#: ./tupreleaselink.py:275
 #: ./tupsmallproject.py:349
 msgid "Please mark one or more platforms with which the uploaded file is compatible."
 msgstr ""
 
 #: ./tuprelease.py:195
-#: ./tupreleaselink.py:191
+#: ./tupreleaselink.py:193
 #: ./tupsmallproject.py:324
 msgid "Please mark one or more program versions with which this release is compatible with."
 msgstr ""
 
-#: ./tupproject.py:142
+#: ./tupproject.py:143
 #: ./tupsmallproject.py:282
 msgid "Please select the appropriate categories (one or more) for your project."
 msgstr ""
 
-#: ./tuprelease.py:257
+#: ./tuprelease.py:258
 #: ./tupsmallproject.py:341
 msgid "Please upload your file."
 msgstr ""
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Project Resources"
 msgstr ""
 
-#: ./tupproject.py:118
+#: ./tupproject.py:119
 #: ./tupsmallproject.py:227
 msgid "Project Summary"
 msgstr ""
@@ -748,17 +748,17 @@ msgid "Release Details"
 msgstr ""
 
 #: ./tuprelease.py:149
-#: ./tupreleaselink.py:145
+#: ./tupreleaselink.py:147
 msgid "Release Number"
 msgstr ""
 
 #: ./tuprelease.py:150
-#: ./tupreleaselink.py:146
+#: ./tupreleaselink.py:148
 msgid "Release Number (up to twelf chars)"
 msgstr ""
 
 #: ./tuprelease.py:156
-#: ./tupreleaselink.py:152
+#: ./tupreleaselink.py:154
 msgid "Release Summary"
 msgstr ""
 
@@ -831,7 +831,7 @@ msgstr ""
 msgid "Screenshot of the Tempate"
 msgstr ""
 
-#: ./tupproject.py:197
+#: ./tupproject.py:199
 msgid "Screenshot of the Template"
 msgstr ""
 
@@ -847,11 +847,11 @@ msgstr ""
 msgid "Second Release File"
 msgstr ""
 
-#: ./tupreleaselink.py:353
+#: ./tupreleaselink.py:361
 msgid "Second linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tuprelease.py:307
+#: ./tuprelease.py:311
 #: ./tupsmallproject.py:389
 msgid "Second uploaded file is compatible with the Platform(s)"
 msgstr ""
@@ -874,7 +874,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: ./tuprelease.py:409
+#: ./tuprelease.py:425
 msgid "Sixth uploaded file is compatible with the Platform(s)"
 msgstr ""
 
@@ -914,7 +914,7 @@ msgstr ""
 msgid "Template Center"
 msgstr ""
 
-#: ./tupcenter.py:191
+#: ./tupcenter.py:201
 msgid "Template Installation Instructions"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "Template Linked Release"
 msgstr ""
 
-#: ./tupcenter.py:48
+#: ./tupcenter.py:51
 msgid "Template Product Name"
 msgstr ""
 
@@ -942,16 +942,16 @@ msgstr ""
 msgid "Templates"
 msgstr ""
 
-#: ./tupcenter.py:215
+#: ./tupcenter.py:225
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:235
+#: ./tupcenter.py:246
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
 #: ./tuprelease.py:141
-#: ./tupreleaselink.py:137
+#: ./tupreleaselink.py:139
 msgid "The Computed Project Title"
 msgstr ""
 
@@ -967,11 +967,11 @@ msgstr ""
 msgid "The First File You Want To Upload"
 msgstr ""
 
-#: ./tupreleaselink.py:252
+#: ./tupreleaselink.py:256
 msgid "The Link to the file of the release"
 msgstr ""
 
-#: ./tuprelease.py:377
+#: ./tuprelease.py:389
 msgid "The fifth file you want to upload (this is optional)"
 msgstr ""
 
@@ -980,7 +980,7 @@ msgstr ""
 msgid "The final stage of a template release"
 msgstr ""
 
-#: ./tuprelease.py:256
+#: ./tuprelease.py:257
 msgid "The first file you want to upload"
 msgstr ""
 
@@ -993,11 +993,11 @@ msgstr ""
 msgid "The first stage of a template release"
 msgstr ""
 
-#: ./tupreleaselink.py:245
+#: ./tupreleaselink.py:248
 msgid "The following file extensions are allowed for linked template files (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./tupproject.py:174
+#: ./tupproject.py:175
 #: ./tupsmallproject.py:298
 msgid "The following file extensions are allowed for screenshot files (upper case and lower case and mix of both):"
 msgstr ""
@@ -1007,7 +1007,7 @@ msgstr ""
 msgid "The following file extensions are allowed for template files (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./tuprelease.py:347
+#: ./tuprelease.py:356
 msgid "The fourth file you want to upload (this is optional)"
 msgstr ""
 
@@ -1024,7 +1024,7 @@ msgstr ""
 msgid "The owner can edit the template project"
 msgstr ""
 
-#: ./tupproject.py:364
+#: ./tupproject.py:377
 msgid "The project title is already in use"
 msgstr ""
 
@@ -1032,17 +1032,17 @@ msgstr ""
 msgid "The project title is already in use."
 msgstr ""
 
-#: ./tuprelease.py:510
-#: ./tupreleaselink.py:562
+#: ./tuprelease.py:529
+#: ./tupreleaselink.py:588
 msgid "The release number is already in use. Please choose another one."
 msgstr ""
 
 #: ./tuprelease.py:142
-#: ./tupreleaselink.py:138
+#: ./tupreleaselink.py:140
 msgid "The release title will be computed from the parent project title"
 msgstr ""
 
-#: ./tuprelease.py:299
+#: ./tuprelease.py:302
 #: ./tupsmallproject.py:405
 msgid "The second file you want to upload (this is optional)"
 msgstr ""
@@ -1052,15 +1052,15 @@ msgstr ""
 msgid "The second stage of a template release"
 msgstr ""
 
-#: ./tuprelease.py:401
+#: ./tuprelease.py:416
 msgid "The sixth file you want to upload (this is optional)"
 msgstr ""
 
-#: ./tupreleaselink.py:259
+#: ./tupreleaselink.py:264
 msgid "The size of the external hosted file"
 msgstr ""
 
-#: ./tuprelease.py:323
+#: ./tuprelease.py:329
 #: ./tupsmallproject.py:437
 msgid "The third file you want to upload (this is optional)"
 msgstr ""
@@ -1073,16 +1073,16 @@ msgstr ""
 msgid "Third Release File"
 msgstr ""
 
-#: ./tupreleaselink.py:386
+#: ./tupreleaselink.py:397
 msgid "Third linked file is compatible with the Platform(s)"
 msgstr ""
 
-#: ./tuprelease.py:331
+#: ./tuprelease.py:338
 #: ./tupsmallproject.py:421
 msgid "Third uploaded file is compatible with the Platform(s))"
 msgstr ""
 
-#: ./tupreleaselink.py:121
+#: ./tupreleaselink.py:123
 msgid "This Dialog to create a new linked release consists of different register. Please go through this register and fill in the appropriate data for your linked release. This register 'Default' provide fields for general information of your linked release. The next register 'compatibility is the place to submit information about the versions with which your linked release file(s) is / are compatible. The next register asks for some legal informations. The next register 'Linked File' provide a field to link your release file. The further register are optional. There is the opportunity to link further release files (for different platforms)."
 msgstr ""
 
@@ -1095,15 +1095,15 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ./tupcenter.py:209
+#: ./tupcenter.py:219
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./tupcenter.py:227
+#: ./tupcenter.py:237
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
-#: ./tupproject.py:165
+#: ./tupproject.py:166
 msgid "URL of documentation repository "
 msgstr ""
 
@@ -1160,14 +1160,14 @@ msgstr ""
 msgid "What is your message to the author of the project? Your message is limited to 1000 characters."
 msgstr ""
 
-#: ./tuprelease.py:72
-#: ./tupreleaselink.py:68
+#: ./tuprelease.py:71
+#: ./tupreleaselink.py:69
 #: ./tupsmallproject.py:150
 msgid "Yes"
 msgstr ""
 
-#: ./tuprelease.py:439
-#: ./tupreleaselink.py:514
+#: ./tuprelease.py:458
+#: ./tupreleaselink.py:538
 msgid "You answered the question, whether the source code is inside your template with no (default answer). If this is the correct answer, please fill in the Link (URL) to the Source Code."
 msgstr ""
 
