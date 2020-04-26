@@ -6,7 +6,7 @@ long_description = '\n\n'.join([
     open('CHANGES.rst').read(),
 ])
 
-version = '0.41'
+version = '0.42.dev0'
 
 setup(name='tdf.templateuploadcenter',
       version=version,
