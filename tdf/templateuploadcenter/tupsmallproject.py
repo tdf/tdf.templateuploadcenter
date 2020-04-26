@@ -200,7 +200,7 @@ def validateimagefileextension(value):
         raise Invalid(safe_unicode(
             'You could only upload files with an allowed file extension. '
             'Please try again to upload a file with the correct file'
-            'extension.')
+            'extension.'))
     return True
 
 
